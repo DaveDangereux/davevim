@@ -30,11 +30,12 @@ I want my IDE to:
 
 ## Completed
 
-- _pending_
+- 'jk' shortcut for Escape
+- nice table format for keymaps and options
 
 ## Sorted
 
-- 'jk' shortcut for Escape
+- keymap for reloading config
 - auto-install Packer and plugins on fresh installation
 
 ## Unsorted
