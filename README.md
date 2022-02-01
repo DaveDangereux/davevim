@@ -35,13 +35,20 @@ I want my IDE to:
 - auto-install Packer and plugins on fresh installation
 - word wrap toggle shortcut (<Leader>-Z)
 - auto bracket pairs
-
-## Sorted
-
+- add keymaps for managing windows and buffers
 - file explorer (nvim-tree)
+
+## Upcoming
+
+- Zen Mode
+- auto commenting (Comment)
 
 ## Unsorted
 
+- add tab line plugin (barbar)
+- add status line plugin (lualine or feline)
+- add which-key and unify keymap config
+- improve word wrap settings
 - port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background

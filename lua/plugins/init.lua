@@ -12,7 +12,18 @@ local plugins = {
     config = function()
       require("plugins.autopairs").config()
     end
-  }}
+  },
+  -- File explorer
+  { "kyazdani42/nvim-web-devicons" },
+  { "kyazdani42/nvim-tree.lua",
+    config = function()
+      require("plugins.nvimtree").config()
+    end,
+    setup = function()
+      require("core.keymaps").nvimtree()
+    end
+  }
+}
 
 -------------------------------------------------------------------------------
 -- Automagic Wizardry
@@ -46,7 +57,7 @@ end
 vim.cmd [[
   augroup packer_config
     autocmd!
-    autocmd BufWritePost *nvim/lua/plugins/init.lua source <afile> | PackerSync
+    autocmd BufWritePost *nvim/lua/plugins/* source <afile> | PackerSync
   augroup end
 ]]
 

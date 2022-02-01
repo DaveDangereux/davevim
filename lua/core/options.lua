@@ -3,10 +3,16 @@ local options = {
   tabstop = 2,                            -- insert this many spaces for <Tab> 
   shiftwidth = 0,                         -- number of steps for (auto)indent, uses tabstop when 0
   expandtab = true,                       -- convert tabs to spaces
+  -- word wrap
+  wrap = false,
+  linebreak = true,
+  breakindent = true,
+  showbreak = "  ",
   -- unsorted
   number = true,                          -- line numbers
   mouse = "a",                            -- full mouse functionality
-  timeoutlen = 200
+  timeoutlen = 150,
+  termguicolors = true                    -- enables 24-bit colour 
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines
