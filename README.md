@@ -31,16 +31,17 @@ I want my IDE to:
 ## Completed
 
 - 'jk' shortcut for Escape
-- nice table format for keymaps and options
+- nice table and function format for keymaps and options
+- auto-install Packer and plugins on fresh installation
 
 ## Sorted
 
-- keymap for reloading config
-- auto-install Packer and plugins on fresh installation
+- word wrap toggle shortcut (Alt-Z)
+- auto bracket pairs
+- file explorer (nvim-tree)
 
 ## Unsorted
 
-- file explorer (nvim-tree)
 - port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background
@@ -48,7 +49,6 @@ I want my IDE to:
 - setup LSP (Language Server Protocol)
 - linting
 - code formatting
-- auto bracket pairs
 - TypeScript React snippets ala [dsznajder](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - find text in project
 - easy plugin adding / disabling
