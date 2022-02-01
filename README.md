@@ -33,22 +33,25 @@ I want my IDE to:
 - 'jk' shortcut for Escape
 - nice table and function format for keymaps and options
 - auto-install Packer and plugins on fresh installation
-- word wrap toggle shortcut (<Leader>-Z)
+- word wrap toggle shortcut (Leader-W)
 - auto bracket pairs
 - add keymaps for managing windows and buffers
 - file explorer (nvim-tree)
+- improve word wrap settings
+- Zen Mode
 
 ## Upcoming
 
-- Zen Mode
 - auto commenting (Comment)
 
 ## Unsorted
 
+- project for dropping me in the right home folder
+- treesitter (honestly just for Twilight right now)
+- Twilight for Zen Mode
 - add tab line plugin (barbar)
 - add status line plugin (lualine or feline)
 - add which-key and unify keymap config
-- improve word wrap settings
 - port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background

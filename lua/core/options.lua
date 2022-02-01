@@ -12,7 +12,11 @@ local options = {
   number = true,                          -- line numbers
   mouse = "a",                            -- full mouse functionality
   timeoutlen = 150,
-  termguicolors = true                    -- enables 24-bit colour 
+  termguicolors = true,                   -- enables 24-bit colour 
+  showtabline = 2,                        -- always show tabs at top of screen
+  cursorline = true, 
+  scrolloff = 8,                          -- minimal number of lines to keep above / below cursor
+  sidescrolloff = 8,                      -- minimal number of lines to keep left / right of cursor
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines

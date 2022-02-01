@@ -7,12 +7,14 @@ local fn = vim.fn
 local plugins = {
   -- Have Packer manage itself
   { "wbthomason/packer.nvim" },
+
   -- Auto brackets
   { "windwp/nvim-autopairs",
     config = function()
       require("plugins.autopairs").config()
     end
   },
+ 
   -- File explorer
   { "kyazdani42/nvim-web-devicons" },
   { "kyazdani42/nvim-tree.lua",
@@ -21,6 +23,16 @@ local plugins = {
     end,
     setup = function()
       require("core.keymaps").nvimtree()
+    end
+  },
+
+  -- Zen mode
+  { "folke/zen-mode.nvim",
+    config = function()
+      require("plugins.zenmode").config()
+    end,
+    setup = function()
+      require("core.keymaps").zenmode()
     end
   }
 }

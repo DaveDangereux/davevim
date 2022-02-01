@@ -23,11 +23,15 @@ local keymaps = {
     ["<C-Left>"] = ":vertical resize +2 <CR>",
     ["<C-Right>"] = ":vertical resize -2 <CR>",
      
-    -- Toggle word-wrap
-    ["<Leader>w"] = ":set wrap! <CR>",
-    
+    -- Navigate buffers
+    ["<S-l>"] = ":bnext <CR>",
+    ["<S-h>"] = ":bprevious <CR>",
+
     -- Buffer management
-    ["<Leader>c"] = ":bd <CR>"
+    ["<Leader>c"] = ":bd <CR>",
+    
+    -- Toggle word-wrap
+    ["<Leader>w"] = ":set wrap! <CR>"
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
@@ -36,7 +40,18 @@ local keymaps = {
   visual_mode = {
     -- Stay in indent mode
     ["<"] = "<gv",
-    [">"] = ">gv"
+    [">"] = ">gv",
+
+    -- Move text up and down
+    ["<A-j>"] = ":m .+1 <CR>==",
+    ["<A-k>"] = ":m .-2 <CR>==",
+    --["p"] = '"_dP' -- what does this do?
+  },
+  visual_block_mode = {
+    ["J"] = ":move '>+1 <CR>gv-gv",
+    ["K"] = ":move '<-2 <CR>gv-gv",
+    ["<A-j>"] = ":move '>+1<CR>gv-gv",
+    ["<A-k>"] = ":move '<-2<CR>gv-gv"
   }
 }
 
@@ -55,6 +70,17 @@ local nvimtree_keymaps = {
 
 M.nvimtree = function()
   apply_keymaps(nvimtree_keymaps)
+end
+
+-- zen-mode
+local zenmode_keymaps = {
+  normal_mode = {
+    ["<Leader>z"] = ":ZenMode <CR>"
+  }
+}
+
+M.zenmode = function()
+  apply_keymaps(zenmode_keymaps)
 end
 
 return M
