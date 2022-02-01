@@ -1,9 +1,22 @@
 local fn = vim.fn
 
+-------------------------------------------------------------------------------
+-- Plugins
+-------------------------------------------------------------------------------
+
 local plugins = {
-  { "wbthomason/packer.nvim" },           -- Have Packer manage itself
-  { "Tastyep/structlog.nvim" }
-}
+  -- Have Packer manage itself
+  { "wbthomason/packer.nvim" },
+  -- Auto brackets
+  { "windwp/nvim-autopairs",
+    config = function()
+      require("plugins.autopairs").config()
+    end
+  }}
+
+-------------------------------------------------------------------------------
+-- Automagic Wizardry
+-------------------------------------------------------------------------------
 
 local packer_bootstrapped = false
 
@@ -29,11 +42,11 @@ if fn.empty(fn.glob(packer_install_path)) > 0 then
   vim.cmd "packadd packer.nvim"
 end
 
--- Autocommand that syncs Packer whenever you save a file in the plugins directory
+-- Autocommand that syncs Packer whenever you save this file 
 vim.cmd [[
   augroup packer_config
     autocmd!
-    autocmd BufWritePost *nvim/lua/plugins/* source <afile> | PackerSync
+    autocmd BufWritePost *nvim/lua/plugins/init.lua source <afile> | PackerSync
   augroup end
 ]]
 

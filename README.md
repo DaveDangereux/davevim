@@ -34,10 +34,10 @@ I want my IDE to:
 - nice table and function format for keymaps and options
 - auto-install Packer and plugins on fresh installation
 - word wrap toggle shortcut (<Leader>-Z)
+- auto bracket pairs
 
 ## Sorted
 
-- auto bracket pairs
 - file explorer (nvim-tree)
 
 ## Unsorted
