@@ -6,7 +6,7 @@ local options = {
   -- unsorted
   number = true,                          -- line numbers
   mouse = "a",                            -- full mouse functionality
-  timeoutlen = 300
+  timeoutlen = 200
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines

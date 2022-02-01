@@ -33,10 +33,10 @@ I want my IDE to:
 - 'jk' shortcut for Escape
 - nice table and function format for keymaps and options
 - auto-install Packer and plugins on fresh installation
+- word wrap toggle shortcut (<Leader>-Z)
 
 ## Sorted
 
-- word wrap toggle shortcut (Alt-Z)
 - auto bracket pairs
 - file explorer (nvim-tree)
 

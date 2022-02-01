@@ -1,16 +1,21 @@
+local M = {}
+
 -- Remap space as leader key
 vim.g.mapleader = " "
 
+-- Main keymaps
 local keymaps = {
   normal_mode = {
+    -- Toggle word-wrap
+    ["<Leader>z"] = "<cmd>set wrap!<cr><cmd>lua print('Hello')<cr>"
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
-    ["jk"] = "<Esc>",
-    ["<leader>k"] = "<Esc>"
+    ["jk"] = "<Esc>"
   }
 }
 
+-- Utility tables
 local generic_options_any = {noremap = true, silent = true}
 
 local generic_options = {
@@ -31,6 +36,7 @@ local mode_name_adapters = {
   term_mode = "t"
 }
 
+-- Apply keymaps
 for mode_name, mode_keymaps in pairs(keymaps) do
   local mode = mode_name_adapters[mode_name]
 
@@ -50,3 +56,7 @@ for mode_name, mode_keymaps in pairs(keymaps) do
     end
   end
 end
+
+-- TODO: Put Plugin-specific shortcuts here
+
+return M
