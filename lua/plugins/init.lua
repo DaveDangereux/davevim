@@ -34,6 +34,14 @@ local plugins = {
     setup = function()
       require("core.keymaps").zenmode()
     end
+  },
+  
+  -- Comment
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("plugins.comment").config()
+    end
   }
 }
 

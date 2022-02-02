@@ -39,24 +39,23 @@ I want my IDE to:
 - file explorer (nvim-tree)
 - improve word wrap settings
 - Zen Mode
+- auto commenting (Comment)
 
 ## Upcoming
-
-- auto commenting (Comment)
+- add tab line plugin (barbar)
+- add status line plugin (lualine or feline)
+- treesitter (honestly just for Twilight right now)
+- Twilight for Zen Mode
+- setup LSP (Language Server Protocol)
 
 ## Unsorted
 
 - project for dropping me in the right home folder
-- treesitter (honestly just for Twilight right now)
-- Twilight for Zen Mode
-- add tab line plugin (barbar)
-- add status line plugin (lualine or feline)
 - add which-key and unify keymap config
 - port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background
 - colour-matched brackets
-- setup LSP (Language Server Protocol)
 - linting
 - code formatting
 - TypeScript React snippets ala [dsznajder](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)

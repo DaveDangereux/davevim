@@ -11,7 +11,7 @@ local options = {
   -- unsorted
   number = true,                          -- line numbers
   mouse = "a",                            -- full mouse functionality
-  timeoutlen = 150,
+  timeoutlen = 200,
   termguicolors = true,                   -- enables 24-bit colour 
   showtabline = 2,                        -- always show tabs at top of screen
   cursorline = true, 
