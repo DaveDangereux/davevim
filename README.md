@@ -43,10 +43,12 @@ I want my IDE to:
 - add tab line plugin (bufferline)
 - treesitter (honestly just for Twilight right now)
 - colour-matched brackets
+- treesitter playground / highlight group identifying solution (ongoing)
 
 ## Upcoming
-- add status line plugin (lualine or feline)
 - Twilight for Zen Mode
+- telescope with fzf
+- add status line plugin (lualine or feline)
 - setup LSP (Language Server Protocol)
 - nvim-gps for breadcrumbs
 

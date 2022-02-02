@@ -1,6 +1,14 @@
+-------------------------------------------------------------------------------
+-- Includes configs for
+-- - treesitter
+-- - ts-rainbow
+-- - playground
+-------------------------------------------------------------------------------
+
 local M = {}
 
 local settings = {
+  -- treesitter
   ensure_installed = "maintained",
   sync_install = false,
   ignore_install = { "" },
@@ -10,6 +18,8 @@ local settings = {
     additional_vim_regex_highlighting = true
   },
   indent = { enable = true, disable = { "" }},
+
+  -- ts-rainbow
   rainbow = {
     enable = true,
     colors = {
@@ -22,6 +32,11 @@ local settings = {
       "#ff8c00",                          -- DarkOrange
       "#fff8dc"                           -- Cornsilk
     }
+  },
+
+  -- playground 
+  playground = {
+    enable = true
   }
 }
 

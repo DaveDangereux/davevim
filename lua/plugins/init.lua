@@ -78,10 +78,18 @@ local plugins = {
       require("plugins.treesitter").config()
     end
   },
+  
   -- Rainbow brackets
   {
     "p00f/nvim-ts-rainbow"
-  } 
+    -- Config in plugins/treesitter.lua
+  },
+  
+  -- Playground
+  {
+    "nvim-treesitter/playground"
+    -- Config in plugins/treesitter.lua
+  }
 }
 
 -------------------------------------------------------------------------------
