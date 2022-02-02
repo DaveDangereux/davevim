@@ -23,13 +23,6 @@ local keymaps = {
     ["<C-Left>"] = ":vertical resize +2 <CR>",
     ["<C-Right>"] = ":vertical resize -2 <CR>",
      
-    -- Navigate buffers
-    ["<S-l>"] = ":bnext <CR>",
-    ["<S-h>"] = ":bprevious <CR>",
-
-    -- Buffer management
-    ["<Leader>c"] = ":bd <CR>",
-    
     -- Toggle word-wrap
     ["<Leader>w"] = ":set wrap! <CR>"
   },
@@ -68,10 +61,6 @@ local nvimtree_keymaps = {
   }
 }
 
-M.nvimtree = function()
-  apply_keymaps(nvimtree_keymaps)
-end
-
 -- zen-mode
 local zenmode_keymaps = {
   normal_mode = {
@@ -79,8 +68,39 @@ local zenmode_keymaps = {
   }
 }
 
+-- bufferline
+local bufferline_keymaps = {
+  normal_mode = {
+    ["<S-l>"] = ":BufferLineCycleNext <CR>",
+    ["<S-h>"] = ":BufferLineCyclePrev <CR>",
+  }
+}
+
+-- bufdel
+local bufdel_keymaps = {
+  normal_mode = {
+    ["<Leader>c"] = ":BufDel <CR>"
+  }
+}
+
+-------------------------------------------------------------------------------
+-- Exports
+-------------------------------------------------------------------------------
+
+M.nvimtree = function()
+  apply_keymaps(nvimtree_keymaps)
+end
+
 M.zenmode = function()
   apply_keymaps(zenmode_keymaps)
+end
+
+M.bufferline = function()
+  apply_keymaps(bufferline_keymaps)
+end
+
+M.bufdel = function()
+  apply_keymaps(bufdel_keymaps)
 end
 
 return M

@@ -51,7 +51,7 @@ M.config = function()
     print "Failed to load nvim-tree"
     return
   end
-
+ 
   nvimtree.setup(settings)
 end
 

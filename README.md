@@ -40,22 +40,31 @@ I want my IDE to:
 - improve word wrap settings
 - Zen Mode
 - auto commenting (Comment)
+- add tab line plugin (bufferline)
+- treesitter (honestly just for Twilight right now)
 
 ## Upcoming
-- add tab line plugin (barbar)
 - add status line plugin (lualine or feline)
-- treesitter (honestly just for Twilight right now)
 - Twilight for Zen Mode
 - setup LSP (Language Server Protocol)
+- nvim-gps for breadcrumbs
 
 ## Unsorted
 
+- see if there's a fix for empty buffers hanging around
+- git diff tools
+- notifications
+- logging
+- terminal
+- lazy-loading
+- caching (impatient)
 - project for dropping me in the right home folder
 - add which-key and unify keymap config
 - port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background
 - colour-matched brackets
+- better diagnostics
 - linting
 - code formatting
 - TypeScript React snippets ala [dsznajder](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)

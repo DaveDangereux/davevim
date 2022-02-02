@@ -42,6 +42,37 @@ local plugins = {
     config = function()
       require("plugins.comment").config()
     end
+  },
+
+  -- Tab line
+  {
+    "akinsho/bufferline.nvim",
+    config = function()
+      require("plugins.bufferline").config()
+    end,
+    setup = function()
+      require("core.keymaps").bufferline()
+    end
+  },
+
+  -- Better buffer deletion
+  {
+    "ojroques/nvim-bufdel",
+    config = function()
+      require("bufdel").setup({ quit = false })
+    end,
+    setup = function()
+      require("core.keymaps").bufdel()
+    end
+  },
+
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = function()
+      require("plugins.treesitter").config()
+    end
   }
 }
 
@@ -77,7 +108,7 @@ end
 vim.cmd [[
   augroup packer_config
     autocmd!
-    autocmd BufWritePost *nvim/lua/plugins/* source <afile> | PackerSync
+    autocmd BufWritePost *nvim/lua/plugins/init.lua source <afile> | PackerSync
   augroup end
 ]]
 
