@@ -9,7 +9,20 @@ local settings = {
     disable = { "" },
     additional_vim_regex_highlighting = true
   },
-  indent = { enable = true, disable = { "" }}
+  indent = { enable = true, disable = { "" }},
+  rainbow = {
+    enable = true,
+    colors = {
+      -- Color test: { { { { { { { } } } } } } }
+      "#ffd700",                          -- Gold
+      "#da70d6",                          -- Orchid
+      "#87cefa",                          -- LightSkyBlue
+      "#fa8072",                          -- Salmon
+      "#7cf800",                          -- LawnGreen
+      "#ff8c00",                          -- DarkOrange
+      "#fff8dc"                           -- Cornsilk
+    }
+  }
 }
 
 M.config = function()

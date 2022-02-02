@@ -42,6 +42,7 @@ I want my IDE to:
 - auto commenting (Comment)
 - add tab line plugin (bufferline)
 - treesitter (honestly just for Twilight right now)
+- colour-matched brackets
 
 ## Upcoming
 - add status line plugin (lualine or feline)
@@ -63,7 +64,6 @@ I want my IDE to:
 - port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background
-- colour-matched brackets
 - better diagnostics
 - linting
 - code formatting

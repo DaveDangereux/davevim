@@ -1,7 +1,7 @@
 local fn = vim.fn
 
 -------------------------------------------------------------------------------
--- Plugins
+-- General Plugins
 -------------------------------------------------------------------------------
 
 local plugins = {
@@ -43,7 +43,7 @@ local plugins = {
       require("plugins.comment").config()
     end
   },
-
+  
   -- Tab line
   {
     "akinsho/bufferline.nvim",
@@ -66,6 +66,10 @@ local plugins = {
     end
   },
 
+-------------------------------------------------------------------------------
+-- Treesitter and Friends
+-------------------------------------------------------------------------------
+
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
@@ -73,7 +77,11 @@ local plugins = {
     config = function()
       require("plugins.treesitter").config()
     end
-  }
+  },
+  -- Rainbow brackets
+  {
+    "p00f/nvim-ts-rainbow"
+  } 
 }
 
 -------------------------------------------------------------------------------
