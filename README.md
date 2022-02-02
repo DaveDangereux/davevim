@@ -44,10 +44,11 @@ I want my IDE to:
 - treesitter (honestly just for Twilight right now)
 - colour-matched brackets
 - treesitter playground / highlight group identifying solution (ongoing)
+- Twilight for Zen Mode (including hack to fix transparency issue)
 
 ## Upcoming
-- Twilight for Zen Mode
 - telescope with fzf
+- telescope media files plugin
 - add status line plugin (lualine or feline)
 - setup LSP (Language Server Protocol)
 - nvim-gps for breadcrumbs

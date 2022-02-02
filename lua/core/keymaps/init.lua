@@ -83,6 +83,13 @@ local bufdel_keymaps = {
   }
 }
 
+-- twilight
+local twilight_keymaps = {
+  normal_mode = {
+    ["<Leader>t"] = ":Twilight <CR>"
+  }
+}
+
 -------------------------------------------------------------------------------
 -- Exports
 -------------------------------------------------------------------------------
@@ -101,6 +108,10 @@ end
 
 M.bufdel = function()
   apply_keymaps(bufdel_keymaps)
+end
+
+M.twilight = function()
+  apply_keymaps(twilight_keymaps)
 end
 
 return M

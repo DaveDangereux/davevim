@@ -89,6 +89,17 @@ local plugins = {
   {
     "nvim-treesitter/playground"
     -- Config in plugins/treesitter.lua
+  },
+
+  -- Twilight
+  {
+    "folke/twilight.nvim",
+    config = function()
+      require("plugins.twilight").config()
+    end,
+    setup = function()
+      require("core.keymaps").twilight()
+    end
   }
 }
 
