@@ -3,18 +3,20 @@ local M = {}
 local settings = {
   defaults = {
     prompt_prefix = "  ", -- alternatively 
-    selection_caret = "  ", 
+    selection_caret = "  ",
     entry_prefix = "   ",
     dynamic_preview_title = true,
     path_display = { "smart" },
     sorting_strategy = "ascending",
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    layout_strategy = "horizontal",
     layout_config = {
       horizontal = {
+        width = 0.65,
+        height = 0.65,
         prompt_position = "top",
-        preview_width = 0.55,
-        results_width = 0.8
-      } 
+        preview_width = 0.65,
+      }
     },
     mappings = {
       n = {

@@ -5,7 +5,7 @@ local settings = {
 }
 
 M.config = function()
-  status_ok, bufdel = pcall(require, "bufdel")
+  local status_ok, bufdel = pcall(require, "bufdel")
   if not status_ok then
     print "Failed to load bufdel"
     return

@@ -1,29 +1,33 @@
 local options = {
-  -- tabs
-  tabstop = 2,                            -- insert this many spaces for <Tab> 
+  -- tabbing
+  tabstop = 2,                            -- insert this many spaces for <Tab>
   shiftwidth = 0,                         -- number of steps for (auto)indent, uses tabstop when 0
   expandtab = true,                       -- convert tabs to spaces
+
   -- word wrap
   wrap = false,
   linebreak = true,
   breakindent = true,
   showbreak = "  ",
+
+  -- indentation
+  -- autoindent = true,
+  -- smartindent = true,
+
   -- unsorted
   number = true,                          -- line numbers
   mouse = "a",                            -- full mouse functionality
   timeoutlen = 200,
-  termguicolors = true,                   -- enables 24-bit colour 
+  termguicolors = true,                   -- enables 24-bit colour
   showtabline = 2,                        -- always show tabs at top of screen
-  cursorline = true, 
+  cursorline = true,
   scrolloff = 8,                          -- minimal number of lines to keep above / below cursor
   sidescrolloff = 8,                      -- minimal number of lines to keep left / right of cursor
   cmdheight = 2,                          -- more space for messages
-  autoindent = true,
-  smartindent = true,
   splitbelow = true,
   splitright = true,
-  numberwidth = 4,
-  -- signcolumn = "yes"
+  numberwidth = 5,
+  signcolumn = "number"
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines

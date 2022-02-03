@@ -33,6 +33,19 @@ vim.g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 local settings = {
+  diagnostics = {
+    enable = true,
+    icons = {
+      error = "",
+      warning = "",
+      info = "",
+      hint = "",
+    }
+  },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true
+  },
   view = {
     mappings = {
       list = {
@@ -51,7 +64,7 @@ M.config = function()
     print "Failed to load nvim-tree"
     return
   end
- 
+
   nvimtree.setup(settings)
 end
 

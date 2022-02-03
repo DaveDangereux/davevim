@@ -9,7 +9,7 @@ M.config = function()
     return
   end
 
-  autopairs.setup(settings) 
-end  
+  autopairs.setup(settings)
+end
 
 return M
