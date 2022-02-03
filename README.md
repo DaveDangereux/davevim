@@ -1,11 +1,9 @@
 # Dave's Neovim IDE Config
 
 ## Overview
-
 When I try to describe the mind-shatteringly joyful (read: dangerously obsessive) activity of trying to create my own Neovim config to people, I find the most compelling analogy is that of a Jedi who has reached that point in their training whereupon they're tasked with making their own lightsaber.
 
 ## Rough Goals
-
 I want my IDE to:
 
 - have parity with VS Code as a baseline (and preferably exceed it)
@@ -15,13 +13,11 @@ I want my IDE to:
 - be beautiful
 
 ## Inspiration / Targets for Code Cannibalism
-
 - [Christian Chiarulli's Neovim Config](https://github.com/ChristianChiarulli/nvim)
 - [Lunarvim by Christian Chiarulli](https://github.com/LunarVim/LunarVim)
 - [NvChad](https://github.com/NvChad/NvChad)
 
 ## Reference Material
-
 - [Neovim Documentation](https://neovim.io/doc/user/)
 - [Christian Chiarulli's 'Neovim from Scratch' series on YouTube](https://youtube.com/playlist?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 - [Programming in Lua by Roberto Ierusalimschy](https://www.lua.org/pil/contents.html)
@@ -29,7 +25,6 @@ I want my IDE to:
 # To Do
 
 ## Completed
-
 - 'jk' shortcut for Escape
 - nice table and function format for keymaps and options
 - auto-install Packer and plugins on fresh installation
@@ -45,16 +40,18 @@ I want my IDE to:
 - colour-matched brackets
 - treesitter playground / highlight group identifying solution (ongoing)
 - Twilight for Zen Mode (including hack to fix transparency issue)
+- telescope with fzf
 
 ## Upcoming
-- telescope with fzf
-- telescope media files plugin
+- dashboard
 - add status line plugin (lualine or feline)
 - setup LSP (Language Server Protocol)
 - nvim-gps for breadcrumbs
 
 ## Unsorted
-
+- neoclip for better clipboard
+- see if we can get telescope bookmarks working
+- glow markdown preview
 - see if there's a fix for empty buffers hanging around
 - git diff tools
 - notifications
@@ -76,3 +73,6 @@ I want my IDE to:
 - shada file / change persistence after crash
 - F2 rename symbol
 - shortcut to see highlight group under cursor
+
+## Abandoned
+- telescope media files plugin (not possible on WSL yet?)

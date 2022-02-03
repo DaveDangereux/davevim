@@ -16,15 +16,22 @@ local keymaps = {
     ["<C-j>"] = "<C-w>j",
     ["<C-k>"] = "<C-w>k",
     ["<C-l>"] = "<C-w>l",
-    
+
     -- Resize with arrows
     ["<C-Up>"] = ":resize -2 <CR>",
     ["<C-Down>"] = ":resize +2 <CR>",
     ["<C-Left>"] = ":vertical resize +2 <CR>",
     ["<C-Right>"] = ":vertical resize -2 <CR>",
-     
+
+    -- Move text up and down
+    ["<A-j>"] = ":m .+1 <CR>==",
+    ["<A-k>"] = ":m .-2 <CR>==",
+
     -- Toggle word-wrap
-    ["<Leader>w"] = ":set wrap! <CR>"
+    ["<Leader>w"] = ":set wrap! <CR>",
+
+    -- Hide search highlighting
+    ["<Leader>n"] = ":noh <CR>"
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
@@ -34,10 +41,9 @@ local keymaps = {
     -- Stay in indent mode
     ["<"] = "<gv",
     [">"] = ">gv",
-
     -- Move text up and down
     ["<A-j>"] = ":m .+1 <CR>==",
-    ["<A-k>"] = ":m .-2 <CR>==",
+    ["<A-k>"] = ":m .-2 <CR>=="
     --["p"] = '"_dP' -- what does this do?
   },
   visual_block_mode = {
@@ -72,7 +78,7 @@ local zenmode_keymaps = {
 local bufferline_keymaps = {
   normal_mode = {
     ["<S-l>"] = ":BufferLineCycleNext <CR>",
-    ["<S-h>"] = ":BufferLineCyclePrev <CR>",
+    ["<S-h>"] = ":BufferLineCyclePrev <CR>"
   }
 }
 
@@ -87,6 +93,16 @@ local bufdel_keymaps = {
 local twilight_keymaps = {
   normal_mode = {
     ["<Leader>t"] = ":Twilight <CR>"
+  }
+}
+
+-- telescope
+local telescope_keymaps = {
+  normal_mode = {
+    ["<Leader>ff"] = ":lua require('telescope.builtin').find_files() <CR>",
+    ["<Leader>fg"] = ":lua require('telescope.builtin').live_grep() <CR>",
+    ["<Leader>fb"] = ":lua require('telescope.builtin').buffers() <CR>",
+    ["<Leader>fh"] = ":lua require('telescope.builtin').help_tags() <CR>"
   }
 }
 
@@ -112,6 +128,10 @@ end
 
 M.twilight = function()
   apply_keymaps(twilight_keymaps)
+end
+
+M.telescope = function()
+  apply_keymaps(telescope_keymaps)
 end
 
 return M

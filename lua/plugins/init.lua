@@ -1,10 +1,10 @@
 local fn = vim.fn
 
--------------------------------------------------------------------------------
--- General Plugins
--------------------------------------------------------------------------------
-
 local plugins = {
+  -------------------------------------
+  -- General Plugins
+  -------------------------------------
+
   -- Have Packer manage itself
   { "wbthomason/packer.nvim" },
 
@@ -66,9 +66,32 @@ local plugins = {
     end
   },
 
--------------------------------------------------------------------------------
--- Treesitter and Friends
--------------------------------------------------------------------------------
+  -------------------------------------
+  -- Telescope and Extensions
+  -------------------------------------
+
+  -- Telescope / finder 
+  {
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require("plugins.telescope").config()
+    end,
+    setup = function()
+      require("core.keymaps").telescope()
+    end
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make"
+  },
+  -- {
+  --   "dhruvmanila/telescope-bookmarks.nvim"  
+  -- },
+
+  -------------------------------------
+  -- Treesitter and Friends
+  -------------------------------------
 
   -- Treesitter
   {
@@ -104,7 +127,7 @@ local plugins = {
 }
 
 -------------------------------------------------------------------------------
--- Automagic Wizardry
+-- Automagic Wizardry - clones and installs Packer if not present
 -------------------------------------------------------------------------------
 
 local packer_bootstrapped = false

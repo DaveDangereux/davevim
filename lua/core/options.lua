@@ -17,6 +17,13 @@ local options = {
   cursorline = true, 
   scrolloff = 8,                          -- minimal number of lines to keep above / below cursor
   sidescrolloff = 8,                      -- minimal number of lines to keep left / right of cursor
+  cmdheight = 2,                          -- more space for messages
+  autoindent = true,
+  smartindent = true,
+  splitbelow = true,
+  splitright = true,
+  numberwidth = 4,
+  -- signcolumn = "yes"
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines
