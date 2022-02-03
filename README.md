@@ -41,20 +41,27 @@ I want my IDE to:
 - treesitter playground / highlight group identifying solution (ongoing)
 - Twilight for Zen Mode (including hack to fix transparency issue)
 - telescope with fzf
+- setup LSP (Language Server Protocol)
 
 ## Upcoming
-- dashboard
+- add some themes
+- fix closing buffers
 - add status line plugin (lualine or feline)
-- setup LSP (Language Server Protocol)
+- code completion (cmp)
+- code formatting
+- linting
+- notifications
 - nvim-gps for breadcrumbs
+- dashboard
 
 ## Unsorted
+- improve window pane management
+- resolve telescope vsplit / Ctrl-V paste clash
 - neoclip for better clipboard
 - see if we can get telescope bookmarks working
 - glow markdown preview
 - see if there's a fix for empty buffers hanging around
 - git diff tools
-- notifications
 - logging
 - terminal
 - lazy-loading
@@ -65,11 +72,8 @@ I want my IDE to:
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background
 - better diagnostics
-- linting
-- code formatting
 - TypeScript React snippets ala [dsznajder](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - find text in project
-- easy plugin adding / disabling
 - shada file / change persistence after crash
 - F2 rename symbol
 - shortcut to see highlight group under cursor

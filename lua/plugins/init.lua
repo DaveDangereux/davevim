@@ -14,7 +14,7 @@ local plugins = {
       require("plugins.autopairs").config()
     end
   },
- 
+
   -- File explorer
   { "kyazdani42/nvim-web-devicons" },
   { "kyazdani42/nvim-tree.lua",
@@ -35,7 +35,7 @@ local plugins = {
       require("core.keymaps").zenmode()
     end
   },
-  
+
   -- Comment
   {
     "numToStr/Comment.nvim",
@@ -43,7 +43,7 @@ local plugins = {
       require("plugins.comment").config()
     end
   },
-  
+
   -- Tab line
   {
     "akinsho/bufferline.nvim",
@@ -67,10 +67,27 @@ local plugins = {
   },
 
   -------------------------------------
+  -- LSP
+  -------------------------------------
+
+  -- Language server configuration
+  {
+    "neovim/nvim-lspconfig"
+  },
+
+  -- Easy language server installation
+  {
+    "williamboman/nvim-lsp-installer",
+    config = function()
+      require("plugins.lsp").config()
+    end
+  },
+
+  -------------------------------------
   -- Telescope and Extensions
   -------------------------------------
 
-  -- Telescope / finder 
+  -- Telescope / finder
   {
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
@@ -81,12 +98,14 @@ local plugins = {
       require("core.keymaps").telescope()
     end
   },
+
+  -- Fuzzy file finder for Telescope
   {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make"
   },
   -- {
-  --   "dhruvmanila/telescope-bookmarks.nvim"  
+  --   "dhruvmanila/telescope-bookmarks.nvim"
   -- },
 
   -------------------------------------
@@ -101,13 +120,13 @@ local plugins = {
       require("plugins.treesitter").config()
     end
   },
-  
+
   -- Rainbow brackets
   {
     "p00f/nvim-ts-rainbow"
     -- Config in plugins/treesitter.lua
   },
-  
+
   -- Playground
   {
     "nvim-treesitter/playground"
@@ -154,7 +173,7 @@ if fn.empty(fn.glob(packer_install_path)) > 0 then
   vim.cmd "packadd packer.nvim"
 end
 
--- Autocommand that syncs Packer whenever you save this file 
+-- Autocommand that syncs Packer whenever you save this file
 vim.cmd [[
   augroup packer_config
     autocmd!

@@ -28,7 +28,7 @@ local mode_name_adapters = {
 -- Apply keymaps
 -------------------------------------------------------------------------------
 
-M.apply_keymaps = function(keymaps)
+M.apply_keymaps = function(keymaps, bufnr)
   for mode_name, mode_keymaps in pairs(keymaps) do
     local mode = mode_name_adapters[mode_name]
 
@@ -41,7 +41,9 @@ M.apply_keymaps = function(keymaps)
         value = value[1]
       end
 
-      if value then
+      if bufnr then
+        vim.api.nvim_buf_set_keymap(bufnr, mode, key, value, options)
+      elseif value then
         vim.api.nvim_set_keymap(mode, key, value, options)
       else
         pcall(vim.api.nvim_del_keymap, mode, key)

@@ -28,10 +28,10 @@ local keymaps = {
     ["<A-k>"] = ":m .-2 <CR>==",
 
     -- Toggle word-wrap
-    ["<Leader>w"] = ":set wrap! <CR>",
+    ["<A-z>"] = ":set wrap! <CR>",
 
     -- Hide search highlighting
-    ["<Leader>n"] = ":noh <CR>"
+    ["<Leader>h"] = ":noh <CR>"
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
@@ -106,6 +106,24 @@ local telescope_keymaps = {
   }
 }
 
+-- LSP
+local lsp_keymaps = {
+  normal_mode = {
+    ["gD"] = ":lua vim.lsp.buf.declaration() <CR>",
+    ["gd"] = ":lua vim.lsp.buf.definition() <CR>",
+    ["K"] = ":lua vim.lsp.buf.hover() <CR>",
+    ["gI"] = ":lua vim.lsp.buf.implementation() <CR>",
+    ["<C-k>"] = ":lua vim.lsp.buf.signature_help() <CR>",
+    ["<Leader>rn"] = ":lua vim.lsp.buf.rename() <CR>",
+    ["gr"] = ":lua vim.lsp.buf.references() <CR>",
+    ["<Leader>ca"] = ":lua vim.lsp.buf.code_action() <CR>",
+    ["[d"] = ":lua vim.diagnostic.goto_prev({ border = 'rounded' }) <CR>",
+    ["]d"] = ":lua vim.diagnostic.goto_next({ border = 'rounded' }) <CR>",
+    ["gl"] = ":lua vim.diagnostic.open_float() <CR>",
+    ["<Leader>q"] = ":lua vim.diagnostic.setloclist() <CR>"
+  }
+}
+
 -------------------------------------------------------------------------------
 -- Exports
 -------------------------------------------------------------------------------
@@ -132,6 +150,11 @@ end
 
 M.telescope = function()
   apply_keymaps(telescope_keymaps)
+end
+
+M.lsp = function(bufnr)
+  apply_keymaps(lsp_keymaps, bufnr)
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 return M

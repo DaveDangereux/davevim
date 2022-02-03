@@ -12,10 +12,10 @@ local settings = {
     layout_strategy = "horizontal",
     layout_config = {
       horizontal = {
-        width = 0.65,
-        height = 0.65,
+        width = 0.85,
+        height = 0.85,
         prompt_position = "top",
-        preview_width = 0.65,
+        preview_width = 0.55,
       }
     },
     mappings = {
