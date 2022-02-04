@@ -57,12 +57,9 @@ local plugins = {
 
   -- Better buffer deletion
   {
-    "ojroques/nvim-bufdel",
-    config = function()
-      require("bufdel").setup({ quit = false })
-    end,
+    "moll/vim-bbye",
     setup = function()
-      require("core.keymaps").bufdel()
+      require("core.keymaps").bbye()
     end
   },
 
@@ -82,6 +79,14 @@ local plugins = {
       require("plugins.lsp").config()
     end
   },
+
+  -------------------------------------
+  -- Completion
+  -------------------------------------
+
+  -- {
+  --   "hrsh7th/nvim-cmp"
+  -- },
 
   -------------------------------------
   -- Telescope and Extensions

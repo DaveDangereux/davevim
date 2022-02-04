@@ -2,10 +2,10 @@ local M = {}
 
 local settings = {
   dimming = {
-    alpha = 0.25,
+    alpha = 0.3,
     color = { "Normal", "#ffffff" },
     -- Fully dim other windows when true
-    inactive = false,
+    inactive = true,
   },
   -- Lines to try and show around cursor
   context = 10,
@@ -19,7 +19,7 @@ local settings = {
     "if_statement",
   },
   exclude = {}, -- exclude these filetypes
-} 
+}
 
 --[[
 -- In order to get transparent backgrounds to work with dimmed
@@ -27,7 +27,7 @@ local settings = {
 -- I found it here:
 --
 -- - ~/.local/share/nvim/site/pack/packer/start/twilight.nvim/lua/twilight/
---   
+--
 -- In the function M.colors() before the vim.cmd line at the end, add:
 --
 -- local ok, hl = pcall(vim.api.nvim_get_hl_by_name, "Normal", true)

@@ -18,10 +18,10 @@ local keymaps = {
     ["<C-l>"] = "<C-w>l",
 
     -- Resize with arrows
-    ["<C-Up>"] = ":resize -2 <CR>",
-    ["<C-Down>"] = ":resize +2 <CR>",
-    ["<C-Left>"] = ":vertical resize +2 <CR>",
-    ["<C-Right>"] = ":vertical resize -2 <CR>",
+    ["<C-Up>"] = ":resize +2 <CR>",
+    ["<C-Down>"] = ":resize -2 <CR>",
+    ["<C-Left>"] = ":vertical resize -2 <CR>",
+    ["<C-Right>"] = ":vertical resize +2 <CR>",
 
     -- Move text up and down
     ["<A-j>"] = ":m .+1 <CR>==",
@@ -31,7 +31,17 @@ local keymaps = {
     ["<A-z>"] = ":set wrap! <CR>",
 
     -- Hide search highlighting
-    ["<Leader>h"] = ":noh <CR>"
+    ["<Leader>n"] = ":noh <CR>",
+
+    -- Splits
+    ["<Leader>v"] = ":vsplit <CR>",
+    ["<Leader>h"] = ":split <CR>",
+
+    -- Saving and quitting
+    ["<Leader>w"] = ":w <CR>",
+    ["<Leader>W"] = ":wa <CR>",
+    ["<Leader>c"] = ":clo <CR>",
+    ["<Leader>C"] = ":qa <CR>"
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
@@ -64,6 +74,7 @@ apply_keymaps(keymaps)
 local nvimtree_keymaps = {
   normal_mode = {
     ["<Leader>e"] = ":NvimTreeToggle <CR>"
+    -- See also lua/plugins/nvimtree.lua
   }
 }
 
@@ -83,9 +94,10 @@ local bufferline_keymaps = {
 }
 
 -- bufdel
-local bufdel_keymaps = {
+local bbye_keymaps = {
   normal_mode = {
-    ["<Leader>c"] = ":BufDel <CR>"
+    ["<Leader>x"] = ":Bdelete <CR>",
+    ["<Leader>X"] = ":bufdo :Bdelete <CR>"
   }
 }
 
@@ -113,7 +125,7 @@ local lsp_keymaps = {
     ["gd"] = ":lua vim.lsp.buf.definition() <CR>",
     ["K"] = ":lua vim.lsp.buf.hover() <CR>",
     ["gI"] = ":lua vim.lsp.buf.implementation() <CR>",
-    ["<C-k>"] = ":lua vim.lsp.buf.signature_help() <CR>",
+    -- ["<C-k>"] = ":lua vim.lsp.buf.signature_help() <CR>", -- is this redundant with hover?
     ["<Leader>rn"] = ":lua vim.lsp.buf.rename() <CR>",
     ["gr"] = ":lua vim.lsp.buf.references() <CR>",
     ["<Leader>ca"] = ":lua vim.lsp.buf.code_action() <CR>",
@@ -140,8 +152,8 @@ M.bufferline = function()
   apply_keymaps(bufferline_keymaps)
 end
 
-M.bufdel = function()
-  apply_keymaps(bufdel_keymaps)
+M.bbye = function()
+  apply_keymaps(bbye_keymaps)
 end
 
 M.twilight = function()
@@ -156,5 +168,16 @@ M.lsp = function(bufnr)
   apply_keymaps(lsp_keymaps, bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
+
+-------------------------------------------------------------------------------
+-- Autocommand to auto-source this file on save
+-------------------------------------------------------------------------------
+
+vim.cmd [[
+  augroup keymaps
+    autocmd!
+    autocmd BufWritePost *nvim/lua/core/keymaps/init.lua source <afile>
+  augroup end
+]]
 
 return M

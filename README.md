@@ -42,6 +42,7 @@ I want my IDE to:
 - Twilight for Zen Mode (including hack to fix transparency issue)
 - telescope with fzf
 - setup LSP (Language Server Protocol)
+- improve window pane management
 
 ## Upcoming
 - add some themes
@@ -55,7 +56,6 @@ I want my IDE to:
 - dashboard
 
 ## Unsorted
-- improve window pane management
 - resolve telescope vsplit / Ctrl-V paste clash
 - neoclip for better clipboard
 - see if we can get telescope bookmarks working
