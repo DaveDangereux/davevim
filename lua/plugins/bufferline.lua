@@ -2,6 +2,7 @@ local M = {}
 
 local settings = {
   options = {
+    numbers = "none",
     offsets = {
       { filetype = "NvimTree" }
     }
