@@ -1,3 +1,7 @@
+vim.cmd "colorscheme one"
+vim.cmd "highlight Normal guibg=none"
+vim.cmd "highlight SignColumn guibg=none"
+
 local options = {
   -- tabbing
   tabstop = 2,                            -- insert this many spaces for <Tab>
