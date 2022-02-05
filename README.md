@@ -46,11 +46,19 @@ I want my IDE to:
 - fix closing buffers
 - add status line plugin (lualine or feline)
 - F2 VS Code style symbol renaming
+- code completion (cmp)
+- learn shortcut for or otherwise improve line blanking (ccjk)
 
 ## Upcoming
-- code completion (cmp)
+- nvim-gps for breadcrumbs
 
 ## Unsorted
+- indent line shortcuts working in normal mode
+- fix issue with indentation
+- toggle diagnostic virtual text shortcut
+- zoom plugin
+- cursor blink / other strategy for communicating active (os) window 
+- learn shortcut for or otherwise improve new file creation 
 - add notifications to autocommands
 - possibly collect autocommands into single module
 - remap telescope close to match window close
@@ -62,7 +70,6 @@ I want my IDE to:
 - code formatting
 - linting
 - notifications
-- nvim-gps for breadcrumbs
 - dashboard
 - code folding
 - improve bufferline appearance and functionality

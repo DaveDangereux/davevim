@@ -15,7 +15,7 @@ return function()
   -----------------------------------------------------------------------------
 
   local config = {
-    virtual_text = true,
+    virtual_text = false,
     signs = {
       active = signs
     },

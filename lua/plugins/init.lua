@@ -119,12 +119,33 @@ local plugins = {
   },
 
   -----------------------------------------------------------------------------
+  -- Snippets
+  -----------------------------------------------------------------------------
+
+  -- Snippet engine
+  { "L3MON4D3/LuaSnip" },
+
+  -- Lots of snippets to start with
+  { "rafamadriz/friendly-snippets" },
+
+  -----------------------------------------------------------------------------
   -- Completion
   -----------------------------------------------------------------------------
 
-  -- {
-  --   "hrsh7th/nvim-cmp"
-  -- },
+  -- Completion plugin
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("plugins.cmp").config()
+    end
+  },
+
+  -- Completion sources
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-nvim-lua" },
+  { "saadparwaiz1/cmp_luasnip" },
+  { "hrsh7th/cmp-path" },
 
   -----------------------------------------------------------------------------
   -- Telescope and Extensions

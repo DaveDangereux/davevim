@@ -29,10 +29,11 @@ local options = {
   numberwidth = 5,
   signcolumn = "yes",
   ignorecase = true,                      -- ignore case while searching
-  smartcase = true                        -- resume search case sensitivity if term includes capitals
+  smartcase = true,                       -- resume search case sensitivity if term includes capitals
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines
+vim.opt.iskeyword:append "-"              -- treat "-" as part of a word
 
 for k, v in pairs(options) do
   vim.opt[k] = v
