@@ -35,6 +35,11 @@ local options = {
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines
 vim.opt.iskeyword:append "-"              -- treat "-" as part of a word
 
+-- This command makes the cursor blink and helps visually indicate whether the (terminal) window is active
+vim.cmd [[
+  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
+]]
+
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
@@ -46,4 +51,3 @@ vim.cmd [[
     autocmd BufWritePost *nvim/lua/core/options.lua source <afile>
   augroup end
 ]]
-

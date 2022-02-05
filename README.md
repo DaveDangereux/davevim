@@ -48,16 +48,19 @@ I want my IDE to:
 - F2 VS Code style symbol renaming
 - code completion (cmp)
 - learn shortcut for or otherwise improve line blanking (ccjk)
+- cursor blink setting to communicating active terminal window 
 
 ## Upcoming
-- nvim-gps for breadcrumbs
+- add some themes and sort colorscheme loading
 
 ## Unsorted
+- nvim-gps for breadcrumbs
+- add Calc completion source
+- disable completion for markdown
 - indent line shortcuts working in normal mode
 - fix issue with indentation
 - toggle diagnostic virtual text shortcut
 - zoom plugin
-- cursor blink / other strategy for communicating active (os) window 
 - learn shortcut for or otherwise improve new file creation 
 - add notifications to autocommands
 - possibly collect autocommands into single module
@@ -66,7 +69,6 @@ I want my IDE to:
 - get telescope to respect project root cd
 - git diff tools
 - style feline
-- add some themes
 - code formatting
 - linting
 - notifications
