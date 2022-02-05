@@ -56,6 +56,7 @@ I want my IDE to:
 - dashboard
 
 ## Unsorted
+- multi-cursor (select duplicates, extend cursor vertically, etc)
 - resolve telescope vsplit / Ctrl-V paste clash
 - neoclip for better clipboard
 - see if we can get telescope bookmarks working

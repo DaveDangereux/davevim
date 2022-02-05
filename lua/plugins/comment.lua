@@ -11,7 +11,6 @@ M.config = function()
   if not status_ok then
     print "Failed to load Comment"
     return
-
   end
 
   comment.setup(settings)

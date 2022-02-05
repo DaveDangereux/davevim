@@ -63,6 +63,14 @@ local plugins = {
     end
   },
 
+  -- Project management and root folder cd
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("plugins.project").config()
+    end
+  },
+
   -------------------------------------
   -- LSP
   -------------------------------------

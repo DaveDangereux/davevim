@@ -51,6 +51,7 @@ local keymaps = {
     -- Stay in indent mode
     ["<"] = "<gv",
     [">"] = ">gv",
+
     -- Move text up and down
     ["<A-j>"] = ":m .+1 <CR>==",
     ["<A-k>"] = ":m .-2 <CR>=="
@@ -93,7 +94,7 @@ local bufferline_keymaps = {
   }
 }
 
--- bufdel
+-- bbye
 local bbye_keymaps = {
   normal_mode = {
     ["<Leader>x"] = ":Bdelete <CR>",
@@ -126,7 +127,7 @@ local lsp_keymaps = {
     ["K"] = ":lua vim.lsp.buf.hover() <CR>",
     ["gI"] = ":lua vim.lsp.buf.implementation() <CR>",
     -- ["<C-k>"] = ":lua vim.lsp.buf.signature_help() <CR>", -- is this redundant with hover?
-    ["<Leader>rn"] = ":lua vim.lsp.buf.rename() <CR>",
+    -- ["<Leader>rn"] = ":lua vim.lsp.buf.rename() <CR>",
     ["gr"] = ":lua vim.lsp.buf.references() <CR>",
     ["<Leader>ca"] = ":lua vim.lsp.buf.code_action() <CR>",
     ["[d"] = ":lua vim.diagnostic.goto_prev({ border = 'rounded' }) <CR>",
