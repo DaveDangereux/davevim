@@ -119,6 +119,13 @@ local telescope_keymaps = {
   }
 }
 
+-- renamer
+local renamer_keymaps = {
+  normal_mode = {
+    ["<F2>"] = ":lua require('renamer').rename() <CR>"
+  }
+}
+
 -- LSP
 local lsp_keymaps = {
   normal_mode = {
@@ -165,10 +172,15 @@ M.telescope = function()
   apply_keymaps(telescope_keymaps)
 end
 
+M.renamer = function()
+  apply_keymaps(renamer_keymaps)
+end
+
 M.lsp = function(bufnr)
   apply_keymaps(lsp_keymaps, bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
+
 
 -------------------------------------------------------------------------------
 -- Autocommand to auto-source this file on save

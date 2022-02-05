@@ -45,9 +45,9 @@ I want my IDE to:
 - improve window pane management
 - fix closing buffers
 - add status line plugin (lualine or feline)
+- F2 VS Code style symbol renaming
 
 ## Upcoming
-- F2 VS Code style symbol renaming
 - git diff tools
 - style feline
 - add some themes
@@ -59,6 +59,7 @@ I want my IDE to:
 - dashboard
 
 ## Unsorted
+- improve bufferline appearance and functionality
 - multi-cursor (select duplicates, extend cursor vertically, etc)
 - resolve telescope vsplit / Ctrl-V paste clash
 - neoclip for better clipboard
