@@ -1,6 +1,6 @@
 local M = {}
 
-local settings = {}
+-- local settings = {}
 
 M.config = function()
   local status_ok, feline = pcall(require, "feline")

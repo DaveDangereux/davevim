@@ -27,7 +27,7 @@ local options = {
   splitbelow = true,
   splitright = true,
   numberwidth = 5,
-  signcolumn = "number"
+  signcolumn = "yes"
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines

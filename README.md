@@ -48,10 +48,10 @@ I want my IDE to:
 - F2 VS Code style symbol renaming
 
 ## Upcoming
+- code completion (cmp)
 - git diff tools
 - style feline
 - add some themes
-- code completion (cmp)
 - code formatting
 - linting
 - notifications
@@ -59,6 +59,7 @@ I want my IDE to:
 - dashboard
 
 ## Unsorted
+- code folding
 - improve bufferline appearance and functionality
 - multi-cursor (select duplicates, extend cursor vertically, etc)
 - resolve telescope vsplit / Ctrl-V paste clash

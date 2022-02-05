@@ -84,6 +84,15 @@ local plugins = {
     end
   },
 
+  -- Git signs
+  {
+    "lewis6991/gitsigns.nvim",
+    requires = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require("gitsigns").setup()
+    end
+  },
+
   -----------------------------------------------------------------------------
   -- Status line
   -----------------------------------------------------------------------------
