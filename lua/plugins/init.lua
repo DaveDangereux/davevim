@@ -93,10 +93,7 @@ local plugins = {
     end
   },
 
-  -----------------------------------------------------------------------------
   -- Status line
-  -----------------------------------------------------------------------------
-
   {
     "feline-nvim/feline.nvim",
     config = function()
@@ -150,9 +147,8 @@ local plugins = {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make"
   },
-  -- {
-  --   "dhruvmanila/telescope-bookmarks.nvim"
-  -- },
+
+  -- TODO add "dhruvmanila/telescope-bookmarks.nvim"
 
   -----------------------------------------------------------------------------
   -- Treesitter and Friends

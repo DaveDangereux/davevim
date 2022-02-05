@@ -23,11 +23,13 @@ local options = {
   cursorline = true,
   scrolloff = 8,                          -- minimal number of lines to keep above / below cursor
   sidescrolloff = 8,                      -- minimal number of lines to keep left / right of cursor
-  cmdheight = 2,                          -- more space for messages
+  cmdheight = 1,                          -- more space for messages
   splitbelow = true,
   splitright = true,
   numberwidth = 5,
-  signcolumn = "yes"
+  signcolumn = "yes",
+  ignorecase = true,                      -- ignore case while searching
+  smartcase = true                        -- resume search case sensitivity if term includes capitals
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines
@@ -35,3 +37,12 @@ vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+-- Autocommand to source this file on save
+vim.cmd [[
+  augroup options
+    autocmd!
+    autocmd BufWritePost *nvim/lua/core/options.lua source <afile>
+  augroup end
+]]
+

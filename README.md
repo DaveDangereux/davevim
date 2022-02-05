@@ -49,6 +49,13 @@ I want my IDE to:
 
 ## Upcoming
 - code completion (cmp)
+
+## Unsorted
+- add notifications to autocommands
+- possibly collect autocommands into single module
+- remap telescope close to match window close
+- style gitsigns
+- get telescope to respect project root cd
 - git diff tools
 - style feline
 - add some themes
@@ -57,8 +64,6 @@ I want my IDE to:
 - notifications
 - nvim-gps for breadcrumbs
 - dashboard
-
-## Unsorted
 - code folding
 - improve bufferline appearance and functionality
 - multi-cursor (select duplicates, extend cursor vertically, etc)
