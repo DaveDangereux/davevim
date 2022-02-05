@@ -43,11 +43,14 @@ I want my IDE to:
 - telescope with fzf
 - setup LSP (Language Server Protocol)
 - improve window pane management
-
-## Upcoming
-- add some themes
 - fix closing buffers
 - add status line plugin (lualine or feline)
+
+## Upcoming
+- F2 VS Code style symbol renaming
+- git diff tools
+- style feline
+- add some themes
 - code completion (cmp)
 - code formatting
 - linting
@@ -62,7 +65,6 @@ I want my IDE to:
 - see if we can get telescope bookmarks working
 - glow markdown preview
 - see if there's a fix for empty buffers hanging around
-- git diff tools
 - logging
 - terminal
 - lazy-loading

@@ -71,6 +71,12 @@ local plugins = {
     end
   },
 
+  {
+    "feline-nvim/feline.nvim",
+    config = function()
+      require("feline").setup()
+    end
+  },
   -------------------------------------
   -- LSP
   -------------------------------------
