@@ -19,8 +19,14 @@ local settings = {
       }
     },
     mappings = {
+      i = {
+        ["<Leader>v"] = "select_vertical",
+        ["<Leader>h"] = "select_horizontal"
+      },
       n = {
-        ["<C-c>"] = "close"
+        ["<C-c>"] = "close",
+        ["<Leader>v"] = "select_vertical",
+        ["<Leader>h"] = "select_horizontal"
       }
     }
   },
