@@ -6,7 +6,6 @@ if not config_status_ok then
   return
 end
 
-
 vim.g.nvim_tree_icons = {
   defult = "",
   symlink = "",
@@ -30,6 +29,7 @@ vim.g.nvim_tree_icons = {
 
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
+vim.g.nvim_tree_respect_buf_cwd = 1
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 local settings = {
@@ -42,6 +42,7 @@ local settings = {
       hint = "",
     }
   },
+  update_cwd = true,
   update_focused_file = {
     enable = true,
     update_cwd = true
