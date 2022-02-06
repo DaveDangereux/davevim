@@ -101,10 +101,19 @@ local plugins = {
     end
   },
 
+  -- Notifications
   {
     "rcarriga/nvim-notify",
     config = function()
       require("plugins.notify").config()
+    end
+  },
+
+  -- Colour preview
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
     end
   },
 

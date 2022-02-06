@@ -57,10 +57,13 @@ I want my IDE to:
 - improve bufferline appearance and functionality
 
 ## Upcoming
+- fix navigating completion popup menus
 - begin work on colour scheme
 
 ## Unsorted
-- fix bufferline selected tab background during extra whitespace diagnostic
+- change cursor highlight to invert / show text when solid
+- add reordering buffer shortcut
+- customise feline to show document title on inactive windows
 - nvim-gps for breadcrumbs
 - add Calc completion source
 - disable completion for markdown

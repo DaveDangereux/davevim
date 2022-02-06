@@ -23,6 +23,12 @@ local keymaps = {
     ["<C-Left>"] = ":vertical resize -2 <CR>",
     ["<C-Right>"] = ":vertical resize +2 <CR>",
 
+    -- Tab management
+    ["<CA-h>"] = ":tabprevious <CR>", -- gT
+    ["<CA-l>"] = ":tabnext <CR>", -- gt
+    ["<CA-t>"] = ":tabedit % <CR>", -- open current buffer in a new tab
+    ["<CA-x>"] = ":tabclose <CR>",
+
     -- Move text up and down
     ["<A-j>"] = ":m .+1 <CR>==",
     ["<A-k>"] = ":m .-2 <CR>==",
@@ -45,7 +51,13 @@ local keymaps = {
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
-    ["jk"] = "<Esc>"
+    ["jk"] = "<Esc>",
+
+    -- Better window navigation in insert mode
+    ["<C-h>"] = "<Esc><C-w>hi",
+    ["<C-j>"] = "<Esc><C-w>ji",
+    ["<C-k>"] = "<Esc><C-w>ki",
+    ["<C-l>"] = "<Esc><C-w>li",
   },
   visual_mode = {
     -- Stay in indent mode
