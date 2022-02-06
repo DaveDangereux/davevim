@@ -54,15 +54,16 @@ I want my IDE to:
 - fix popup menu height
 - notifications
 - remap telescope close to match window close
-
-## Upcoming
 - improve bufferline appearance and functionality
 
+## Upcoming
+- begin work on colour scheme
+
 ## Unsorted
+- fix bufferline selected tab background during extra whitespace diagnostic
 - nvim-gps for breadcrumbs
 - add Calc completion source
 - disable completion for markdown
-- indent line shortcuts working in normal mode
 - toggle diagnostic virtual text shortcut
 - zoom plugin
 - learn shortcut for or otherwise improve new file creation 
