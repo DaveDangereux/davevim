@@ -20,11 +20,13 @@ local settings = {
     },
     mappings = {
       i = {
+        ["<Leader>c"] = "close",
         ["<Leader>v"] = "select_vertical",
         ["<Leader>h"] = "select_horizontal"
       },
       n = {
         ["<C-c>"] = "close",
+        ["<Leader>c"] = "close",
         ["<Leader>v"] = "select_vertical",
         ["<Leader>h"] = "select_horizontal"
       }
@@ -50,6 +52,7 @@ M.config = function()
 
   telescope.setup(settings)
   telescope.load_extension("fzf")
+  telescope.load_extension("notify")
   -- telescope.load_extension("bookmarks")
 end
 

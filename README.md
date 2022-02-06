@@ -52,9 +52,11 @@ I want my IDE to:
 - add some themes and sort colorscheme loading
 - fix issue with indentation (clash between treesitter experimental indent and autopairs)
 - fix popup menu height
+- notifications
+- remap telescope close to match window close
 
 ## Upcoming
-- notifications
+- improve bufferline appearance and functionality
 
 ## Unsorted
 - nvim-gps for breadcrumbs
@@ -64,9 +66,8 @@ I want my IDE to:
 - toggle diagnostic virtual text shortcut
 - zoom plugin
 - learn shortcut for or otherwise improve new file creation 
-- add notifications to autocommands
+- add notifications to autocommands (to say that they've been applied)
 - possibly collect autocommands into single module
-- remap telescope close to match window close
 - style gitsigns
 - get telescope to respect project root cd
 - git diff tools
@@ -75,7 +76,6 @@ I want my IDE to:
 - linting
 - dashboard
 - code folding
-- improve bufferline appearance and functionality
 - multi-cursor (select duplicates, extend cursor vertically, etc)
 - resolve telescope vsplit / Ctrl-V paste clash
 - neoclip for better clipboard

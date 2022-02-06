@@ -101,6 +101,13 @@ local plugins = {
     end
   },
 
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("plugins.notify").config()
+    end
+  },
+
   -----------------------------------------------------------------------------
   -- Colour schemes
   -----------------------------------------------------------------------------
