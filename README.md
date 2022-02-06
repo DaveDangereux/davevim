@@ -49,16 +49,18 @@ I want my IDE to:
 - code completion (cmp)
 - learn shortcut for or otherwise improve line blanking (ccjk)
 - cursor blink setting to communicating active terminal window 
+- add some themes and sort colorscheme loading
+- fix issue with indentation (clash between treesitter experimental indent and autopairs)
+- fix popup menu height
 
 ## Upcoming
-- add some themes and sort colorscheme loading
+- notifications
 
 ## Unsorted
 - nvim-gps for breadcrumbs
 - add Calc completion source
 - disable completion for markdown
 - indent line shortcuts working in normal mode
-- fix issue with indentation
 - toggle diagnostic virtual text shortcut
 - zoom plugin
 - learn shortcut for or otherwise improve new file creation 
@@ -71,7 +73,6 @@ I want my IDE to:
 - style feline
 - code formatting
 - linting
-- notifications
 - dashboard
 - code folding
 - improve bufferline appearance and functionality

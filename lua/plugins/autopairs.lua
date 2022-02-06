@@ -1,6 +1,8 @@
 local M = {}
 
-local settings = {}
+local settings = {
+  check_ts = true
+}
 
 M.config = function()
   local status_ok, autopairs = pcall(require, "nvim-autopairs")

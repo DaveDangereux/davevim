@@ -17,7 +17,6 @@ local settings = {
     disable = { "" },
     additional_vim_regex_highlighting = true
   },
-  indent = { enable = true, disable = { "" }},
 
   -- ts-rainbow
   rainbow = {
@@ -34,7 +33,7 @@ local settings = {
     }
   },
 
-  -- playground 
+  -- playground
   playground = {
     enable = true
   }

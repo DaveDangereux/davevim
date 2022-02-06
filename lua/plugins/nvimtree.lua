@@ -32,6 +32,7 @@ vim.g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(
 vim.g.nvim_tree_respect_buf_cwd = 1
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
+
 local settings = {
   diagnostics = {
     enable = true,

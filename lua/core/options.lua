@@ -1,4 +1,4 @@
-vim.cmd "colorscheme one"
+vim.cmd "colorscheme tender"
 vim.cmd "highlight Normal guibg=none"
 vim.cmd "highlight SignColumn guibg=none"
 
@@ -34,6 +34,7 @@ local options = {
   signcolumn = "yes",
   ignorecase = true,                      -- ignore case while searching
   smartcase = true,                       -- resume search case sensitivity if term includes capitals
+  pumheight = 10,
 }
 
 vim.opt.whichwrap:append "<,>,[,],h,l"    -- enable cursor to wrap across lines
