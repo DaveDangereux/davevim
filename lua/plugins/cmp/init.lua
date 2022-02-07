@@ -1,4 +1,6 @@
 -------------------------------------------------------------------------------
+-- NOTES
+--
 -- First, a snippet engine must be set - we've installed Luasnip and followed
 -- the recommended implementation under the 'snippet' key.
 --
@@ -21,9 +23,9 @@ local luasnip_status_ok, luasnip = pcall(require, "luasnip")
 if not luasnip_status_ok then
   print "Failed to load luasnip"
   return
+else
+  require("luasnip/loaders/from_vscode").lazy_load()
 end
-
-require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -65,8 +67,8 @@ local settings = {
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    ["<CR>"] = cmp.mapping.confirm { select = true },
+    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- does this work?
+    ["<CR>"] = cmp.mapping.confirm { select = false },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
