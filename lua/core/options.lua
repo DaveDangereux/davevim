@@ -49,10 +49,10 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- Autocommand to source this file on save
+-- Autocommand to source this file on save (and reload bufferline config for correct buffer styling)
 vim.cmd [[
   augroup options
     autocmd!
-    autocmd BufWritePost *nvim/lua/core/options.lua source <afile>
+    autocmd BufWritePost *nvim/lua/core/options.lua source <afile> | lua require("plugins.bufferline").config()
   augroup end
 ]]

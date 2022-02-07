@@ -3,9 +3,6 @@ local M = {}
 local settings = {
   highlights = require("plugins.bufferline.highlights"),
   options = {
-    numbers = function()
-      return ""
-    end,
     close_command = "Bdelete! %d",
     right_mouse_command = "Bdelete! %d",
     left_mouse_command = "buffer %d",
