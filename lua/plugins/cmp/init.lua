@@ -97,7 +97,8 @@ local settings = {
     { name = "nvim_lsp"},                 -- LSP completion
     { name = "nvim_lua" },                -- vim.lsp.*
     { name = "luasnip" },                 -- snippet completion
-    { name = "path" }
+    { name = "path" },
+    { name = "calc" },
   }
 }
 
