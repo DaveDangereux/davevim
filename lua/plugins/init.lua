@@ -153,6 +153,10 @@ local plugins = {
 
   -- Lots of snippets to start with
   { "rafamadriz/friendly-snippets" },
+  {
+    "dsznajder/vscode-react-javascript-snippets",
+    run = "yarn install --frozen-lockfile && yarn compile"
+  },
 
   -----------------------------------------------------------------------------
   -- Completion

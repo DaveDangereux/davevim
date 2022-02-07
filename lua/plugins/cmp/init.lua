@@ -23,9 +23,9 @@ local luasnip_status_ok, luasnip = pcall(require, "luasnip")
 if not luasnip_status_ok then
   print "Failed to load luasnip"
   return
-else
-  require("luasnip/loaders/from_vscode").lazy_load()
 end
+
+require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -99,6 +99,10 @@ local settings = {
     { name = "luasnip" },                 -- snippet completion
     { name = "path" },
     { name = "calc" },
+  },
+  experimental = {
+    ghost_text = true,
+    native_menu = false
   }
 }
 
