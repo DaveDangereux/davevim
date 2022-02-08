@@ -53,6 +53,8 @@ end
 vim.cmd [[
   augroup options
     autocmd!
-    autocmd BufWritePost *nvim/lua/core/options.lua source <afile> | lua require("plugins.bufferline").config()
+    autocmd BufWritePost *nvim/lua/core/options.lua source <afile>
+    autocmd BufWritePost *nvim/lua/core/options.lua lua require("plugins.bufferline").config() 
+    autocmd BufWritePost *nvim/lua/core/options.lua lua require("plugins.feline").config() 
   augroup end
 ]]
