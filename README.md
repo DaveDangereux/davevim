@@ -55,10 +55,13 @@ I want my IDE to:
 - notifications
 - remap telescope close to match window close
 - improve bufferline appearance and functionality
+- fix navigating completion popup menus
 
 ## Upcoming
-- fix navigating completion popup menus
 - begin work on colour scheme
+- fix Illuminate blacklist
+- auto-rename tags please
+- alpha dashboard
 
 ## Unsorted
 - change cursor highlight to invert / show text when solid

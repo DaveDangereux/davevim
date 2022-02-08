@@ -133,9 +133,7 @@ local plugins = {
   -----------------------------------------------------------------------------
 
   -- Language server configuration
-  {
-    "neovim/nvim-lspconfig"
-  },
+  { "neovim/nvim-lspconfig" },
 
   -- Easy language server installation
   {
@@ -144,6 +142,10 @@ local plugins = {
       require("plugins.lsp").config()
     end
   },
+
+  -- JSON schema completion
+  { "b0o/SchemaStore.nvim" },
+
 
   -----------------------------------------------------------------------------
   -- Snippets
@@ -154,6 +156,8 @@ local plugins = {
 
   -- Lots of snippets to start with
   { "rafamadriz/friendly-snippets" },
+
+  -- TypeScript / React snippets
   {
     "dsznajder/vscode-react-javascript-snippets",
     run = "yarn install --frozen-lockfile && yarn compile"
