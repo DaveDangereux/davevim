@@ -126,6 +126,7 @@ local plugins = {
   { "gosukiwi/vim-atom-dark" },
   { "jacoborus/tender.vim" },
   { "rakr/vim-one" },
+  { "rebelot/kanagawa.nvim" },
 
   -----------------------------------------------------------------------------
   -- LSP
