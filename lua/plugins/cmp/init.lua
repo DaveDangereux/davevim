@@ -33,11 +33,12 @@ local check_backspace = function()
 end
 
 local source_names = {
-  nvim_lsp = "(LSP)",
-  path = "(Path)",
-  calc = "(Calc)",
-  luasnip = "(Snippet)",
-  buffer = "(Buffer)"
+  nvim_lsp = "[LSP]",
+  nvim_lua = "[vim.lsp]",
+  luasnip = "[Snippet]",
+  buffer = "[Buffer]",
+  path = "[Path]",
+  calc = "[Calc]",
 }
 
 local duplicates = {
@@ -93,10 +94,10 @@ local settings = {
     end, { "i", "s" })
   },
   sources = {
-    { name = "buffer" },                  -- Buffer variables
     { name = "nvim_lsp"},                 -- LSP completion
     { name = "nvim_lua" },                -- vim.lsp.*
     { name = "luasnip" },                 -- snippet completion
+    { name = "buffer" },                  -- Buffer variables
     { name = "path" },
     { name = "calc" },
   },
