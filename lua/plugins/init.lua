@@ -117,6 +117,13 @@ local plugins = {
     end
   },
 
+  {
+    "goolord/alpha-nvim",
+    requires = { "kyazdani42/nvim-web-devicons" },
+    config = function ()
+      require("plugins.alpha").config()
+    end
+  },
   -----------------------------------------------------------------------------
   -- Colour schemes
   -----------------------------------------------------------------------------

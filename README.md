@@ -52,24 +52,35 @@ I want my IDE to:
 - add some themes and sort colorscheme loading
 - fix issue with indentation (clash between treesitter experimental indent and autopairs)
 - fix popup menu height
+- project for dropping me in the right home folder
+- F2 rename symbol
 - notifications
 - remap telescope close to match window close
 - improve bufferline appearance and functionality
+- resolve telescope vsplit / Ctrl-V paste clash
 - fix navigating completion popup menus
-
-## Upcoming
-- begin work on colour scheme
+- TypeScript React snippets ala [dsznajder](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- add Calc completion source
+- fix Illuminate highlighting in markdown
 - fix Illuminate blacklist
-- auto-rename tags please
 - alpha dashboard
 
+
+## Upcoming
+- trouble / diagnostics menu
+- code formatting
+- linting
+- begin work on colour scheme
+- auto-rename tags please
+
 ## Unsorted
+- improve alpha dashboard
+- learn code folding / make shortcuts
 - git diff
 - change cursor highlight to invert / show text when solid
 - add reordering buffer shortcut
 - customise feline to show document title on inactive windows
 - nvim-gps for breadcrumbs
-- add Calc completion source
 - disable completion for markdown
 - toggle diagnostic virtual text shortcut
 - zoom plugin
@@ -80,12 +91,7 @@ I want my IDE to:
 - get telescope to respect project root cd
 - git diff tools
 - style feline
-- code formatting
-- linting
-- dashboard
-- code folding
 - multi-cursor (select duplicates, extend cursor vertically, etc)
-- resolve telescope vsplit / Ctrl-V paste clash
 - neoclip for better clipboard
 - see if we can get telescope bookmarks working
 - glow markdown preview
@@ -94,16 +100,13 @@ I want my IDE to:
 - terminal
 - lazy-loading
 - caching (impatient)
-- project for dropping me in the right home folder
 - add which-key and unify keymap config
 - port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background
 - better diagnostics
-- TypeScript React snippets ala [dsznajder](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - find text in project
 - shada file / change persistence after crash
-- F2 rename symbol
 - shortcut to see highlight group under cursor
 
 ## Abandoned
