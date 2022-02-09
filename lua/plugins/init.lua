@@ -146,6 +146,13 @@ local plugins = {
   -- JSON schema completion
   { "b0o/SchemaStore.nvim" },
 
+  -- Highlight other instances of word under cursor
+  {
+    "RRethy/vim-illuminate",
+    config = function()
+      require("plugins.illuminate").config()
+    end
+  },
 
   -----------------------------------------------------------------------------
   -- Snippets

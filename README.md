@@ -64,6 +64,7 @@ I want my IDE to:
 - alpha dashboard
 
 ## Unsorted
+- git diff
 - change cursor highlight to invert / show text when solid
 - add reordering buffer shortcut
 - customise feline to show document title on inactive windows

@@ -4,7 +4,19 @@
 
 local lsp_keymaps = require("core.keymaps").lsp
 
-local on_attach = function(_, bufnr)
+local function lsp_highlight_document(server)
+  if server.resolved_capabilities.document_highlight then
+    local status_ok, illuminate = pcall(require, "illuminate")
+    if not status_ok then
+      print "Failed to load illuminate in lsp-installer.lua"
+      return
+    end
+    illuminate.on_attach(server)
+  end
+end
+
+local on_attach = function(server, bufnr)
+  lsp_highlight_document(server)
   lsp_keymaps(bufnr)
 end
 
