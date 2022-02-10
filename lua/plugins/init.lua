@@ -124,6 +124,7 @@ local plugins = {
       require("plugins.alpha").config()
     end
   },
+
   -----------------------------------------------------------------------------
   -- Colour schemes
   -----------------------------------------------------------------------------
@@ -218,6 +219,9 @@ local plugins = {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make"
   },
+
+  -- File browser
+  { "nvim-telescope/telescope-file-browser.nvim" },
 
   -- TODO add "dhruvmanila/telescope-bookmarks.nvim"
 

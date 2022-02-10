@@ -128,6 +128,7 @@ local telescope_keymaps = {
     ["<Leader>fg"] = ":lua require('telescope.builtin').live_grep() <CR>",
     ["<Leader>fb"] = ":lua require('telescope.builtin').buffers() <CR>",
     ["<Leader>fh"] = ":lua require('telescope.builtin').help_tags() <CR>",
+    ["<Leader>fb"] = ":Telescope file_browser <CR>",
     ["<Leader>fn"] = ":Telescope notify <CR>"
   }
 }
