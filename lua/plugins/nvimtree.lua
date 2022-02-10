@@ -13,7 +13,7 @@ end
 -- },
 
 vim.g.nvim_tree_icons = {
-  defult = "",
+  default = "",
   symlink = "",
   git = {
     unstaged = "",
