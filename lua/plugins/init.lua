@@ -259,6 +259,14 @@ local plugins = {
     setup = function()
       require("core.keymaps").twilight()
     end
+  },
+
+  -- Autotag
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end
   }
 }
 
