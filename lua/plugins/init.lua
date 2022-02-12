@@ -15,6 +15,9 @@ local plugins = {
     end
   },
 
+  -- Shortcuts for bracketing
+  { "tpope/vim-surround" },
+
   -- File explorer
   { "kyazdani42/nvim-web-devicons" },
   { "kyazdani42/nvim-tree.lua",
