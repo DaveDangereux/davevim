@@ -158,6 +158,13 @@ local lsp_keymaps = {
   }
 }
 
+-- Trouble
+local trouble_keymaps = {
+  normal_mode = {
+    ["<Leader><S-t>"] = ":TroubleToggle <CR>"
+  }
+}
+
 -------------------------------------------------------------------------------
 -- Exports
 -------------------------------------------------------------------------------
@@ -190,11 +197,14 @@ M.renamer = function()
   apply_keymaps(renamer_keymaps)
 end
 
+M.trouble = function()
+  apply_keymaps(trouble_keymaps)
+end
+
 M.lsp = function(bufnr)
   apply_keymaps(lsp_keymaps, bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
-
 
 -------------------------------------------------------------------------------
 -- Autocommand to auto-source this file on save
