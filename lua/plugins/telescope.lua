@@ -16,26 +16,26 @@ local settings = {
         height = 0.85,
         prompt_position = "top",
         preview_width = 0.55,
-      }
+      },
     },
     mappings = {
       i = {
         ["<Leader>c"] = "close",
         ["<Leader>v"] = "select_vertical",
-        ["<Leader>h"] = "select_horizontal"
+        ["<Leader>h"] = "select_horizontal",
       },
       n = {
         ["<C-c>"] = "close",
         ["<Leader>c"] = "close",
         ["<Leader>v"] = "select_vertical",
-        ["<Leader>h"] = "select_horizontal"
-      }
-    }
+        ["<Leader>h"] = "select_horizontal",
+      },
+    },
   },
   pickers = {
     live_grep = {
-      only_sort_text = true
-    }
+      only_sort_text = true,
+    },
   },
   -- extensions = {
   --   bookmarks = {
@@ -47,7 +47,7 @@ local settings = {
 M.config = function()
   local status_ok, telescope = pcall(require, "telescope")
   if not status_ok then
-    print "Failed to load telescope"
+    print("Failed to load telescope")
   end
 
   telescope.setup(settings)

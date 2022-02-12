@@ -9,7 +9,7 @@ local settings = {
 M.config = function()
   local status_ok, comment = pcall(require, "Comment")
   if not status_ok then
-    print "Failed to load Comment"
+    print("Failed to load Comment")
     return
   end
 

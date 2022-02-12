@@ -47,7 +47,9 @@ local keymaps = {
     ["<Leader>w"] = ":w <CR>",
     ["<Leader>W"] = ":wa <CR>",
     ["<Leader>c"] = ":clo <CR>",
-    ["<Leader>C"] = ":qa <CR>"
+    ["<Leader>C"] = ":qa <CR>",
+
+    ["<Leader><S-f>"] = ":lua vim.lsp.buf.formatting_sync() <CR>",
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
@@ -66,15 +68,15 @@ local keymaps = {
 
     -- Move text up and down
     ["<A-j>"] = ":m .+1 <CR>==",
-    ["<A-k>"] = ":m .-2 <CR>=="
+    ["<A-k>"] = ":m .-2 <CR>==",
     --["p"] = '"_dP' -- what does this do?
   },
   visual_block_mode = {
     ["J"] = ":move '>+1 <CR>gv-gv",
     ["K"] = ":move '<-2 <CR>gv-gv",
     ["<A-j>"] = ":move '>+1<CR>gv-gv",
-    ["<A-k>"] = ":move '<-2<CR>gv-gv"
-  }
+    ["<A-k>"] = ":move '<-2<CR>gv-gv",
+  },
 }
 
 apply_keymaps(keymaps)
@@ -86,39 +88,39 @@ apply_keymaps(keymaps)
 -- nvimtree
 local nvimtree_keymaps = {
   normal_mode = {
-    ["<Leader>e"] = ":NvimTreeToggle <CR>"
+    ["<Leader>e"] = ":NvimTreeToggle <CR>",
     -- See also lua/plugins/nvimtree.lua
-  }
+  },
 }
 
 -- zen-mode
 local zenmode_keymaps = {
   normal_mode = {
-    ["<Leader>z"] = ":ZenMode <CR>"
-  }
+    ["<Leader>z"] = ":ZenMode <CR>",
+  },
 }
 
 -- bufferline
 local bufferline_keymaps = {
   normal_mode = {
     ["<S-l>"] = ":BufferLineCycleNext <CR>",
-    ["<S-h>"] = ":BufferLineCyclePrev <CR>"
-  }
+    ["<S-h>"] = ":BufferLineCyclePrev <CR>",
+  },
 }
 
 -- bbye
 local bbye_keymaps = {
   normal_mode = {
     ["<Leader>x"] = ":Bdelete <CR>",
-    ["<Leader>X"] = ":bufdo :Bdelete <CR>"
-  }
+    ["<Leader>X"] = ":bufdo :Bdelete <CR>",
+  },
 }
 
 -- twilight
 local twilight_keymaps = {
   normal_mode = {
-    ["<Leader>t"] = ":Twilight <CR>"
-  }
+    ["<Leader>t"] = ":Twilight <CR>",
+  },
 }
 
 -- telescope
@@ -129,15 +131,22 @@ local telescope_keymaps = {
     -- ["<Leader>fb"] = ":lua require('telescope.builtin').buffers() <CR>",
     ["<Leader>fh"] = ":lua require('telescope.builtin').help_tags() <CR>",
     ["<Leader>fb"] = ":Telescope file_browser <CR>",
-    ["<Leader>fn"] = ":Telescope notify <CR>"
-  }
+    ["<Leader>fn"] = ":Telescope notify <CR>",
+  },
 }
 
 -- renamer
 local renamer_keymaps = {
   normal_mode = {
-    ["<F2>"] = ":lua require('renamer').rename() <CR>"
-  }
+    ["<F2>"] = ":lua require('renamer').rename() <CR>",
+  },
+}
+
+-- Trouble
+local trouble_keymaps = {
+  normal_mode = {
+    ["<Leader><S-t>"] = ":TroubleToggle <CR>",
+  },
 }
 
 -- LSP
@@ -154,15 +163,8 @@ local lsp_keymaps = {
     ["[d"] = ":lua vim.diagnostic.goto_prev({ border = 'rounded' }) <CR>",
     ["]d"] = ":lua vim.diagnostic.goto_next({ border = 'rounded' }) <CR>",
     ["gl"] = ":lua vim.diagnostic.open_float() <CR>",
-    ["<Leader>q"] = ":lua vim.diagnostic.setloclist() <CR>"
-  }
-}
-
--- Trouble
-local trouble_keymaps = {
-  normal_mode = {
-    ["<Leader><S-t>"] = ":TroubleToggle <CR>"
-  }
+    ["<Leader>q"] = ":lua vim.diagnostic.setloclist() <CR>",
+  },
 }
 
 -------------------------------------------------------------------------------
@@ -203,18 +205,18 @@ end
 
 M.lsp = function(bufnr)
   apply_keymaps(lsp_keymaps, bufnr)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
 -------------------------------------------------------------------------------
 -- Autocommand to auto-source this file on save
 -------------------------------------------------------------------------------
 
-vim.cmd [[
+vim.cmd([[
   augroup keymaps
     autocmd!
     autocmd BufWritePost *nvim/lua/core/keymaps/init.lua source <afile>
   augroup end
-]]
+]])
 
 return M

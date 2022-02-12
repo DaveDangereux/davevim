@@ -36,269 +36,269 @@ local palette = {
 
 local text_style = {
   bold_italic = "bold,italic",
-  italic = "italic"
+  italic = "italic",
 }
 
 local highlights = {
--------------------------------------------------------------------------------
--- General
--------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+  -- General
+  -------------------------------------------------------------------------------
 
   fill = {
-      guifg = palette.disabled,
-      guibg = palette.disabled,
+    guifg = palette.disabled,
+    guibg = palette.disabled,
   },
 
--------------------------------------------------------------------------------
--- Tabs
--------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+  -- Tabs
+  -------------------------------------------------------------------------------
 
   tab_selected = {
-      guifg = palette.disabled, -- tabline_sel_bg
-      guibg = palette.selected_bg,
+    guifg = palette.disabled, -- tabline_sel_bg
+    guibg = palette.selected_bg,
   },
   tab_close = {
-      guifg = palette.test_fg,
-      guibg = palette.test_bg,
+    guifg = palette.test_fg,
+    guibg = palette.test_bg,
   },
   tab = {
-      guifg = palette.disabled,
-      guibg = palette.none,
+    guifg = palette.disabled,
+    guibg = palette.none,
   },
 
--------------------------------------------------------------------------------
--- Selected buffer
--------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+  -- Selected buffer
+  -------------------------------------------------------------------------------
 
   buffer_selected = {
-      guifg = palette.disabled, -- normal_fg,
-      guibg = palette.selected_bg,
-      gui = text_style.bold_italic
+    guifg = palette.disabled, -- normal_fg,
+    guibg = palette.selected_bg,
+    gui = text_style.bold_italic,
   },
   close_button_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
   },
   modified_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg,
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
   },
   separator_selected = {
-      guifg = palette.separator_fg,
-      guibg = palette.selected_bg,
+    guifg = palette.separator_fg,
+    guibg = palette.selected_bg,
   },
   diagnostic_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg,
-      gui = text_style.bold_italic
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
+    gui = text_style.bold_italic,
   },
   hint_selected = {
     guifg = palette.disabled,
     guibg = palette.selected_bg,
-    gui = text_style.bold_italic
+    gui = text_style.bold_italic,
   },
   hint_diagnostic_selected = {
     guifg = palette.disabled,
     guibg = palette.selected_bg,
-    gui = text_style.bold_italic
+    gui = text_style.bold_italic,
   },
   info_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg,
-      guisp = palette.disabled,
-      gui = text_style.bold_italic,
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
+    guisp = palette.disabled,
+    gui = text_style.bold_italic,
   },
   info_diagnostic_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg,
-      guisp = palette.disabled,
-      gui = text_style.bold_italic,
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
+    guisp = palette.disabled,
+    gui = text_style.bold_italic,
   },
   warning_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg,
-      guisp = palette.disabled,
-      gui = text_style.bold_italic,
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
+    guisp = palette.disabled,
+    gui = text_style.bold_italic,
   },
   warning_diagnostic_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg,
-      guisp = palette.disabled, -- warning_diagnostic_fg
-      gui = text_style.bold_italic,
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
+    guisp = palette.disabled, -- warning_diagnostic_fg
+    gui = text_style.bold_italic,
   },
   error_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg,
-      guisp = palette.disabled,
-      gui = text_style.bold_italic,
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
+    guisp = palette.disabled,
+    gui = text_style.bold_italic,
   },
   error_diagnostic_selected = {
-      guifg = palette.disabled,
-      guibg = palette.selected_bg,
-      guisp = palette.disabled,
-      gui = text_style.bold_italic,
+    guifg = palette.disabled,
+    guibg = palette.selected_bg,
+    guisp = palette.disabled,
+    gui = text_style.bold_italic,
   },
   indicator_selected = {
-      guifg = palette.disabled,
-      guibg = palette.disabled,
+    guifg = palette.disabled,
+    guibg = palette.disabled,
   },
   duplicate_selected = {
-      guifg = palette.duplicate_fg,
-      guibg = palette.selected_bg,
-      gui = text_style.italic,
+    guifg = palette.duplicate_fg,
+    guibg = palette.selected_bg,
+    gui = text_style.italic,
   },
   pick_selected = {
-      guifg = palette.disabled,
-      guibg = palette.disabled,
-      gui = text_style.bold_italic
+    guifg = palette.disabled,
+    guibg = palette.disabled,
+    gui = text_style.bold_italic,
   },
 
--------------------------------------------------------------------------------
--- Unselected buffer
--------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+  -- Unselected buffer
+  -------------------------------------------------------------------------------
 
   buffer = {
     guifg = palette.disabled,
     guibg = palette.unselected_bg,
   },
   background = {
-      guifg = palette.disabled,      -- this is the main foreground of inactive tabs
-      guibg = palette.unselected_bg, -- this is the main background of inactive tabs
+    guifg = palette.disabled, -- this is the main foreground of inactive tabs
+    guibg = palette.unselected_bg, -- this is the main background of inactive tabs
   },
   close_button = {
-      guifg = palette.disabled,
-      guibg = palette.unselected_bg,
+    guifg = palette.disabled,
+    guibg = palette.unselected_bg,
   },
   modified = {
-      guifg = palette.disabled,
-      guibg = palette.unselected_bg,
+    guifg = palette.disabled,
+    guibg = palette.unselected_bg,
   },
   separator = {
-      guifg = palette.separator_fg,
-      guibg = palette.unselected_bg,
+    guifg = palette.separator_fg,
+    guibg = palette.unselected_bg,
   },
   diagnostic = {
-      guifg = palette.disabled,
-      guibg = palette.unselected_bg,
+    guifg = palette.disabled,
+    guibg = palette.unselected_bg,
   },
   hint = {
     guifg = palette.dark_hint_fg,
     guibg = palette.unselected_bg,
-    gui = text_style.bold_italic
+    gui = text_style.bold_italic,
   },
   hint_diagnostic = {
     guifg = palette.dark_hint_fg,
     guibg = palette.unselected_bg,
-    gui = text_style.bold_italic
+    gui = text_style.bold_italic,
   },
   info = {
-      guifg = palette.dark_info_fg,
-      guibg = palette.unselected_bg,
-      guisp = palette.disabled,
+    guifg = palette.dark_info_fg,
+    guibg = palette.unselected_bg,
+    guisp = palette.disabled,
   },
   info_diagnostic = {
-      guifg = palette.dark_info_fg,
-      guibg = palette.unselected_bg,
-      guisp = palette.disabled,
+    guifg = palette.dark_info_fg,
+    guibg = palette.unselected_bg,
+    guisp = palette.disabled,
   },
   warning = {
-      guifg = palette.dark_warn_fg,
-      guibg = palette.unselected_bg,
-      guisp = palette.disabled,
+    guifg = palette.dark_warn_fg,
+    guibg = palette.unselected_bg,
+    guisp = palette.disabled,
   },
   warning_diagnostic = {
-      guifg = palette.dark_warn_fg,
-      guibg = palette.unselected_bg,
-      guisp = palette.disabled,
+    guifg = palette.dark_warn_fg,
+    guibg = palette.unselected_bg,
+    guisp = palette.disabled,
   },
   error = {
-      guifg = palette.dark_error_fg,
-      guibg = palette.unselected_bg,
-      guisp = palette.disabled
+    guifg = palette.dark_error_fg,
+    guibg = palette.unselected_bg,
+    guisp = palette.disabled,
   },
   error_diagnostic = {
-      guifg = palette.dark_error_fg,
-      guibg = palette.unselected_bg,
-      guisp = palette.disabled
+    guifg = palette.dark_error_fg,
+    guibg = palette.unselected_bg,
+    guisp = palette.disabled,
   },
   duplicate = {
-      guifg = palette.dark_duplicate_fg,
-      guibg = palette.unselected_bg,
-      gui = text_style.italic,
+    guifg = palette.dark_duplicate_fg,
+    guibg = palette.unselected_bg,
+    gui = text_style.italic,
   },
   pick = {
-      guifg = palette.disabled,
-      guibg = palette.unselected_bg,
-      gui = text_style.bold_italic
+    guifg = palette.disabled,
+    guibg = palette.unselected_bg,
+    gui = text_style.bold_italic,
   },
 
--------------------------------------------------------------------------------
--- Visible (background) buffer
--------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+  -- Visible (background) buffer
+  -------------------------------------------------------------------------------
 
   buffer_visible = {
-      guifg = palette.disabled,
-      guibg = palette.visible_bg,
+    guifg = palette.disabled,
+    guibg = palette.visible_bg,
   },
   close_button_visible = {
-      guifg = palette.disabled,
-      guibg = palette.visible_bg,
+    guifg = palette.disabled,
+    guibg = palette.visible_bg,
   },
   diagnostic_visible = {
-      guifg = palette.disabled,
-      guibg = palette.visible_bg,
+    guifg = palette.disabled,
+    guibg = palette.visible_bg,
   },
   hint_visible = {
     guifg = palette.dark_hint_fg,
     guibg = palette.visible_bg,
-    gui = text_style.bold_italic
+    gui = text_style.bold_italic,
   },
   hint_diagnostic_visible = {
     guifg = palette.dark_hint_fg,
     guibg = palette.visible_bg,
-    gui = text_style.bold_italic
+    gui = text_style.bold_italic,
   },
   info_visible = {
-      guifg = palette.dark_info_fg,
-      guibg = palette.visible_bg,
+    guifg = palette.dark_info_fg,
+    guibg = palette.visible_bg,
   },
   info_diagnostic_visible = {
-      guifg = palette.dark_info_fg,
-      guibg = palette.visible_bg,
+    guifg = palette.dark_info_fg,
+    guibg = palette.visible_bg,
   },
   warning_visible = {
-      guifg = palette.dark_warn_fg,
-      guibg = palette.visible_bg,
+    guifg = palette.dark_warn_fg,
+    guibg = palette.visible_bg,
   },
   warning_diagnostic_visible = {
-      guifg = palette.dark_warn_fg,
-      guibg = palette.visible_bg,
+    guifg = palette.dark_warn_fg,
+    guibg = palette.visible_bg,
   },
   error_visible = {
-      guifg = palette.dark_error_fg,
-      guibg = palette.visible_bg,
+    guifg = palette.dark_error_fg,
+    guibg = palette.visible_bg,
   },
   error_diagnostic_visible = {
-      guifg = palette.dark_error_fg,
-      guibg = palette.visible_bg,
+    guifg = palette.dark_error_fg,
+    guibg = palette.visible_bg,
   },
   modified_visible = {
-      guifg = palette.disabled,
-      guibg = palette.visible_bg,
+    guifg = palette.disabled,
+    guibg = palette.visible_bg,
   },
   separator_visible = {
-      guifg = palette.separator_fg,
-      guibg = palette.visible_bg,
+    guifg = palette.separator_fg,
+    guibg = palette.visible_bg,
   },
   duplicate_visible = {
-      guifg = palette.dark_duplicate_fg,
-      guibg = palette.visible_bg,
-      gui = text_style.italic,
+    guifg = palette.dark_duplicate_fg,
+    guibg = palette.visible_bg,
+    gui = text_style.italic,
   },
   pick_visible = {
-      guifg = palette.disabled,
-      guibg = palette.visible_bg,
-      gui = text_style.bold_italic
+    guifg = palette.disabled,
+    guibg = palette.visible_bg,
+    gui = text_style.bold_italic,
   },
 }
 

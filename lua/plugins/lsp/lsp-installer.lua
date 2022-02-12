@@ -8,7 +8,7 @@ local function lsp_highlight_document(server)
   if server.resolved_capabilities.document_highlight then
     local status_ok, illuminate = pcall(require, "illuminate")
     if not status_ok then
-      print "Failed to load illuminate in lsp-installer.lua"
+      print("Failed to load illuminate in lsp-installer.lua")
       return
     end
     illuminate.on_attach(server)
@@ -41,23 +41,23 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 return function()
   local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
   if not status_ok then
-    print "Failed to load lsp_installer"
+    print("Failed to load lsp_installer")
     return
   end
 
   local on_server_ready = function(server)
     local opts = {
       on_attach = on_attach,
-      capabilities = capabilities
+      capabilities = capabilities,
     }
 
     if server.name == "jsonls" then
-      local jsonls_opts = require "plugins.lsp.configs.jsonls"
+      local jsonls_opts = require("plugins.lsp.configs.jsonls")
       opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
     end
 
     if server.name == "sumneko_lua" then
-      local sumneko_opts = require "plugins.lsp.configs.sumneko_lua"
+      local sumneko_opts = require("plugins.lsp.configs.sumneko_lua")
       opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
     end
 

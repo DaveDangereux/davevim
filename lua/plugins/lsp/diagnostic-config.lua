@@ -7,7 +7,7 @@ return function()
     { name = "DiagnosticSignError", text = " " },
     { name = "DiagnosticSignWarn", text = " " },
     { name = "DiagnosticSignHint", text = " " },
-    { name = "DiagnosticSignInfo", text = " " }
+    { name = "DiagnosticSignInfo", text = " " },
   }
 
   -----------------------------------------------------------------------------
@@ -17,7 +17,7 @@ return function()
   local config = {
     virtual_text = false,
     signs = {
-      active = signs
+      active = signs,
     },
     update_in_insert = false,
     underline = true,
@@ -28,8 +28,8 @@ return function()
       border = "rounded",
       source = "always",
       header = "",
-      prefix = ""
-    }
+      prefix = "",
+    },
   }
 
   -----------------------------------------------------------------------------

@@ -15,7 +15,7 @@ local settings = {
   highlight = {
     enable = true,
     disable = { "" },
-    additional_vim_regex_highlighting = true
+    additional_vim_regex_highlighting = true,
   },
 
   -- ts-rainbow
@@ -23,26 +23,26 @@ local settings = {
     enable = true,
     colors = {
       -- Color test: { { { { { { { } } } } } } }
-      "#ffd700",                          -- Gold
-      "#da70d6",                          -- Orchid
-      "#87cefa",                          -- LightSkyBlue
-      "#fa8072",                          -- Salmon
-      "#7cf800",                          -- LawnGreen
-      "#ff8c00",                          -- DarkOrange
-      "#fff8dc"                           -- Cornsilk
-    }
+      "#ffd700", -- Gold
+      "#da70d6", -- Orchid
+      "#87cefa", -- LightSkyBlue
+      "#fa8072", -- Salmon
+      "#7cf800", -- LawnGreen
+      "#ff8c00", -- DarkOrange
+      "#fff8dc", -- Cornsilk
+    },
   },
 
   -- playground
   playground = {
-    enable = true
-  }
+    enable = true,
+  },
 }
 
 M.config = function()
   local status_ok, configs = pcall(require, "nvim-treesitter.configs")
   if not status_ok then
-    print "Failed to load treesitter.configs"
+    print("Failed to load treesitter.configs")
   end
 
   configs.setup(settings)

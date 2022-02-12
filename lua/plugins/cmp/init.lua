@@ -15,21 +15,21 @@ local M = {}
 
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
-  print "Failed to configure cmp"
-return
+  print("Failed to configure cmp")
+  return
 end
 
 local luasnip_status_ok, luasnip = pcall(require, "luasnip")
 if not luasnip_status_ok then
-  print "Failed to load luasnip"
+  print("Failed to load luasnip")
   return
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+  local col = vim.fn.col(".") - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
 local source_names = {
@@ -45,7 +45,7 @@ local duplicates = {
   buffer = 1,
   path = 1,
   nvim_lsp = 0,
-  luasnip = 1
+  luasnip = 1,
 }
 
 local duplicates_default = 0
@@ -54,7 +54,7 @@ local settings = {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
-    end
+    end,
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -63,13 +63,13 @@ local settings = {
       vim_item.menu = source_names[entry.source.name]
       vim_item.dup = duplicates[entry.source.name] or duplicates_default
       return vim_item
-    end
+    end,
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- does this work?
-    ["<CR>"] = cmp.mapping.confirm { select = false },
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -91,24 +91,24 @@ local settings = {
       else
         fallback()
       end
-    end, { "i", "s" })
+    end, { "i", "s" }),
   },
   sources = {
-    { name = "nvim_lsp"},                 -- LSP completion
-    { name = "nvim_lua" },                -- vim.lsp.*
-    { name = "luasnip" },                 -- snippet completion
-    { name = "buffer" },                  -- Buffer variables
+    { name = "nvim_lsp" }, -- LSP completion
+    { name = "nvim_lua" }, -- vim.lsp.*
+    { name = "luasnip" }, -- snippet completion
+    { name = "buffer" }, -- Buffer variables
     { name = "path" },
     { name = "calc" },
   },
   experimental = {
     ghost_text = true,
-    native_menu = false
-  }
+    native_menu = false,
+  },
 }
 
 M.config = function()
- cmp.setup(settings)
+  cmp.setup(settings)
 end
 
 return M

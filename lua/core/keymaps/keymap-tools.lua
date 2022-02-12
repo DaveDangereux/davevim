@@ -4,7 +4,7 @@ local M = {}
 -- Utility tables
 -------------------------------------------------------------------------------
 
-local generic_options_any = {noremap = true, silent = true}
+local generic_options_any = { noremap = true, silent = true }
 
 local generic_options = {
   normal_mode = generic_options_any,
@@ -12,7 +12,7 @@ local generic_options = {
   visual_mode = generic_options_any,
   visual_block_mode = generic_options_any,
   command_mode = generic_options_any,
-  term_mode = {silent = true}
+  term_mode = { silent = true },
 }
 
 local mode_name_adapters = {
@@ -21,7 +21,7 @@ local mode_name_adapters = {
   visual_mode = "v",
   visual_block_mode = "x",
   command_mode = "c",
-  term_mode = "t"
+  term_mode = "t",
 }
 
 -------------------------------------------------------------------------------

@@ -42,7 +42,7 @@ local settings = {
 M.config = function()
   local status_ok, twilight = pcall(require, "twilight")
   if not status_ok then
-    print "Failed to load twilight"
+    print("Failed to load twilight")
     return
   end
 
