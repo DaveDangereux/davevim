@@ -9,10 +9,11 @@ local plugins = {
   { "wbthomason/packer.nvim" },
 
   -- Auto brackets
-  { "windwp/nvim-autopairs",
+  {
+    "windwp/nvim-autopairs",
     config = function()
       require("plugins.autopairs").config()
-    end
+    end,
   },
 
   -- Shortcuts for bracketing
@@ -20,23 +21,25 @@ local plugins = {
 
   -- File explorer
   { "kyazdani42/nvim-web-devicons" },
-  { "kyazdani42/nvim-tree.lua",
+  {
+    "kyazdani42/nvim-tree.lua",
     config = function()
       require("plugins.nvimtree").config()
     end,
     setup = function()
       require("core.keymaps").nvimtree()
-    end
+    end,
   },
 
   -- Zen mode
-  { "folke/zen-mode.nvim",
+  {
+    "folke/zen-mode.nvim",
     config = function()
       require("plugins.zenmode").config()
     end,
     setup = function()
       require("core.keymaps").zenmode()
-    end
+    end,
   },
 
   -- Comment
@@ -44,7 +47,7 @@ local plugins = {
     "numToStr/Comment.nvim",
     config = function()
       require("plugins.comment").config()
-    end
+    end,
   },
 
   -- Tab line
@@ -55,7 +58,7 @@ local plugins = {
     end,
     setup = function()
       require("core.keymaps").bufferline()
-    end
+    end,
   },
 
   -- Better buffer deletion
@@ -63,7 +66,7 @@ local plugins = {
     "moll/vim-bbye",
     setup = function()
       require("core.keymaps").bbye()
-    end
+    end,
   },
 
   -- Project management and root folder cd
@@ -71,7 +74,7 @@ local plugins = {
     "ahmedkhalf/project.nvim",
     config = function()
       require("plugins.project").config()
-    end
+    end,
   },
 
   -- VS Code style symbol renaming
@@ -84,7 +87,7 @@ local plugins = {
     end,
     setup = function()
       require("core.keymaps").renamer()
-    end
+    end,
   },
 
   -- Git signs
@@ -93,7 +96,7 @@ local plugins = {
     requires = { { "nvim-lua/plenary.nvim" } },
     config = function()
       require("gitsigns").setup()
-    end
+    end,
   },
 
   -- Status line
@@ -101,7 +104,7 @@ local plugins = {
     "feline-nvim/feline.nvim",
     config = function()
       require("feline").setup()
-    end
+    end,
   },
 
   -- Notifications
@@ -109,7 +112,7 @@ local plugins = {
     "rcarriga/nvim-notify",
     config = function()
       require("plugins.notify").config()
-    end
+    end,
   },
 
   -- Colour preview
@@ -117,15 +120,15 @@ local plugins = {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()
-    end
+    end,
   },
 
   {
     "goolord/alpha-nvim",
     requires = { "kyazdani42/nvim-web-devicons" },
-    config = function ()
+    config = function()
       require("plugins.alpha").config()
-    end
+    end,
   },
 
   -----------------------------------------------------------------------------
@@ -151,7 +154,7 @@ local plugins = {
     "williamboman/nvim-lsp-installer",
     config = function()
       require("plugins.lsp").config()
-    end
+    end,
   },
 
   -- JSON schema completion
@@ -162,9 +165,10 @@ local plugins = {
     "RRethy/vim-illuminate",
     config = function()
       require("plugins.illuminate").config()
-    end
+    end,
   },
 
+  -- Diagnostics jump menu
   {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -173,7 +177,24 @@ local plugins = {
     end,
     setup = function()
       require("core.keymaps").trouble()
-    end
+    end,
+  },
+
+  -- Function signature help
+  {
+    "ray-x/lsp_signature.nvim",
+    config = function()
+      local settings = {}
+      require("lsp_signature").setup(settings)
+    end,
+  },
+
+  -- Formatting and linting
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("plugins.lsp.null-ls").config()
+    end,
   },
 
   -----------------------------------------------------------------------------
@@ -189,7 +210,7 @@ local plugins = {
   -- TypeScript / React snippets
   {
     "dsznajder/vscode-react-javascript-snippets",
-    run = "yarn install --frozen-lockfile && yarn compile"
+    run = "yarn install --frozen-lockfile && yarn compile",
   },
 
   -----------------------------------------------------------------------------
@@ -201,7 +222,7 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     config = function()
       require("plugins.cmp").config()
-    end
+    end,
   },
 
   -- Completion sources
@@ -225,13 +246,13 @@ local plugins = {
     end,
     setup = function()
       require("core.keymaps").telescope()
-    end
+    end,
   },
 
   -- Fuzzy file finder for Telescope
   {
     "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make"
+    run = "make",
   },
 
   -- File browser
@@ -249,18 +270,18 @@ local plugins = {
     run = ":TSUpdate",
     config = function()
       require("plugins.treesitter").config()
-    end
+    end,
   },
 
   -- Rainbow brackets
   {
-    "p00f/nvim-ts-rainbow"
+    "p00f/nvim-ts-rainbow",
     -- Config in plugins/treesitter.lua
   },
 
   -- Playground
   {
-    "nvim-treesitter/playground"
+    "nvim-treesitter/playground",
     -- Config in plugins/treesitter.lua
   },
 
@@ -272,7 +293,7 @@ local plugins = {
     end,
     setup = function()
       require("core.keymaps").twilight()
-    end
+    end,
   },
 
   -- Autotag
@@ -280,8 +301,8 @@ local plugins = {
     "windwp/nvim-ts-autotag",
     config = function()
       require("nvim-ts-autotag").setup()
-    end
-  }
+    end,
+  },
 }
 
 -------------------------------------------------------------------------------
@@ -291,34 +312,33 @@ local plugins = {
 local packer_bootstrapped = false
 
 -- Check to see if Packer exists
-local packer_install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+local packer_install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 -- If it doesn't, clone it from GitHub
 if fn.empty(fn.glob(packer_install_path)) > 0 then
   -- Remove the directory before cloning
   fn.delete(packer_install_path, "rf")
 
-  print "Cloning Packer..."
-  packer_bootstrapped =
-    fn.system {
+  print("Cloning Packer...")
+  packer_bootstrapped = fn.system({
     "git",
     "clone",
     "--depth",
     "1",
     "https://github.com/wbthomason/packer.nvim",
-    packer_install_path
-  }
+    packer_install_path,
+  })
 
-  vim.cmd "packadd packer.nvim"
+  vim.cmd("packadd packer.nvim")
 end
 
 -- Autocommand that syncs Packer whenever you save this file
-vim.cmd [[
+vim.cmd([[
   augroup packer_config
     autocmd!
     autocmd BufWritePost *nvim/lua/plugins/init.lua source <afile> | PackerSync
   augroup end
-]]
+]])
 
 -- Require Packer with a protected call
 local status_ok, packer = pcall(require, "packer")
@@ -328,40 +348,35 @@ if not status_ok then
 end
 
 -- Configure Packer
-packer.init {
+packer.init({
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end
+      return require("packer.util").float({ border = "rounded" })
+    end,
   },
   git = {
     clone_timeout = 300,
     subcommands = {
       -- This is more efficient than what Packer is using
       fetch = "fetch --no-tags --no-recurse-submodules --update-shallow --progress",
-    }
+    },
   },
   max_jobs = 50,
   auto_clean = true,
-  compile_on_sync = true
-}
+  compile_on_sync = true,
+})
 
 -- Load plugins
-local plugins_loaded, _ =
-  pcall(
-  function()
-    packer.startup(
-      function(use)
-        use(plugins)
-      end
-    )
+local plugins_loaded, _ = pcall(function()
+  packer.startup(function(use)
+    use(plugins)
+  end)
 
-    -- Automatically set up configuration after cloning packer.nvim
-    if packer_bootstrapped then
-      require("packer").sync()
-    end
+  -- Automatically set up configuration after cloning packer.nvim
+  if packer_bootstrapped then
+    require("packer").sync()
   end
-)
+end)
 if not plugins_loaded then
-  print "Problems detected while loading plugins"
+  print("Problems detected while loading plugins")
 end

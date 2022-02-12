@@ -24,7 +24,7 @@ I want my IDE to:
 
 # To Do
 
-## Completed
+## Completed (in no particular order)
 - 'jk' shortcut for Escape
 - nice table and function format for keymaps and options
 - auto-install Packer and plugins on fresh installation
@@ -41,6 +41,7 @@ I want my IDE to:
 - treesitter playground / highlight group identifying solution (ongoing)
 - Twilight for Zen Mode (including hack to fix transparency issue)
 - telescope with fzf
+- find text in project
 - setup LSP (Language Server Protocol)
 - improve window pane management
 - fix closing buffers
@@ -64,16 +65,16 @@ I want my IDE to:
 - fix Illuminate highlighting in markdown
 - fix Illuminate blacklist
 - alpha dashboard
-
+- auto-rename tags
+- trouble / diagnostics menu
 
 ## Upcoming
-- trouble / diagnostics menu
 - code formatting
 - linting
 - begin work on colour scheme
-- auto-rename tags please
 
 ## Unsorted
+- colour scheme cycling shortcut
 - improve alpha dashboard
 - learn code folding / make shortcuts
 - git diff
@@ -105,7 +106,6 @@ I want my IDE to:
 - toggle transparent background (to enjoy nice tmux background images)
 - custom colour scheme and ability to swap out for others while preserving transparent background
 - better diagnostics
-- find text in project
 - shada file / change persistence after crash
 - shortcut to see highlight group under cursor
 
