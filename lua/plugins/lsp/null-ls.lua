@@ -12,6 +12,10 @@ local diagnostics = null_ls.builtins.diagnostics
 local settings = {
   sources = {
     formatting.stylua,
+    formatting.prettier,
+    formatting.black,
+    diagnostics.eslint,
+    diagnostics.flake8,
   },
 }
 
