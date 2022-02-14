@@ -1,6 +1,4 @@
-vim.cmd("colorscheme tender")
-vim.cmd("highlight Normal guibg=none")
-vim.cmd("highlight SignColumn guibg=none")
+vim.cmd("colorscheme davedark")
 
 local options = {
   -- tabbing

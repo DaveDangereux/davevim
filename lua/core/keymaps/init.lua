@@ -50,6 +50,8 @@ local keymaps = {
     ["<Leader>C"] = ":qa <CR>",
 
     ["<Leader><S-f>"] = ":lua vim.lsp.buf.formatting_sync() <CR>",
+
+    ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]]
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
@@ -128,9 +130,9 @@ local telescope_keymaps = {
   normal_mode = {
     ["<Leader>ff"] = ":lua require('telescope.builtin').find_files() <CR>",
     ["<Leader>fg"] = ":lua require('telescope.builtin').live_grep() <CR>",
-    -- ["<Leader>fb"] = ":lua require('telescope.builtin').buffers() <CR>",
+    ["<Leader>fb"] = ":lua require('telescope.builtin').buffers() <CR>",
     ["<Leader>fh"] = ":lua require('telescope.builtin').help_tags() <CR>",
-    ["<Leader>fb"] = ":Telescope file_browser <CR>",
+    ["<Leader>fe"] = ":Telescope file_browser <CR>",
     ["<Leader>fn"] = ":Telescope notify <CR>",
   },
 }
@@ -147,6 +149,13 @@ local trouble_keymaps = {
   normal_mode = {
     ["<Leader><S-t>"] = ":TroubleToggle <CR>",
   },
+}
+
+-- Treesitter
+local treesitter_keymaps = {
+  normal_mode = {
+    ["<F7>"] = ":TSHighlightCapturesUnderCursor <CR>"
+  }
 }
 
 -- LSP
@@ -201,6 +210,10 @@ end
 
 M.trouble = function()
   apply_keymaps(trouble_keymaps)
+end
+
+M.treesitter = function()
+  apply_keymaps(treesitter_keymaps)
 end
 
 M.lsp = function(bufnr)

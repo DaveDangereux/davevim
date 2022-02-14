@@ -115,7 +115,7 @@ local plugins = {
     end,
   },
 
-  -- Colour preview
+  -- Color preview
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -132,15 +132,16 @@ local plugins = {
   },
 
   -----------------------------------------------------------------------------
-  -- Colour schemes
+  -- Color schemes
   -----------------------------------------------------------------------------
 
-  { "folke/tokyonight.nvim" },
-  { "tomasr/molokai" },
-  { "gosukiwi/vim-atom-dark" },
   { "jacoborus/tender.vim" },
   { "rakr/vim-one" },
-  { "rebelot/kanagawa.nvim" },
+  { "rafamadriz/neon" },
+  { "tomasiser/vim-code-dark" },
+  { "Mofiqul/vscode.nvim" },
+  { "marko-cerovac/material.nvim" },
+  { "bluz71/vim-nightfly-guicolors" },
 
   -----------------------------------------------------------------------------
   -- LSP
@@ -271,6 +272,9 @@ local plugins = {
     config = function()
       require("plugins.treesitter").config()
     end,
+    setup = function()
+      require("core.keymaps").treesitter()
+    end
   },
 
   -- Rainbow brackets
