@@ -159,6 +159,21 @@ local treesitter_keymaps = {
   }
 }
 
+-- GitSigns
+local gitsigns_keymaps = {
+  normal_mode = {
+    ["<Leader>gs"] = ":Gitsigns stage_hunk <CR>",
+    ["<Leader>gS"] = ":Gitsigns stage_buffer <CR>",
+    ["<Leader>gr"] = ":Gitsigns reset_hunk <CR>",
+    ["<Leader>gR"] = ":Gitsigns reset_buffer <CR>",
+    ["<Leader>gu"] = ":Gitsigns undo_stage_hunk <CR>",
+    ["<Leader>gp"] = ":Gitsigns preview_hunk <CR>",
+    ["<Leader>gb"] = ":Gitsigns blame_line <CR>",
+    ["<Leader>gt"] = ":Gitsigns toggle_blame_line <CR>",
+    ["<Leader>gd"] = ":Gitsigns diffthis <CR>",
+  }
+}
+
 -- LSP
 local lsp_keymaps = {
   normal_mode = {
@@ -215,6 +230,10 @@ end
 
 M.treesitter = function()
   apply_keymaps(treesitter_keymaps)
+end
+
+M.gitsigns = function(bufnr)
+  apply_keymaps(gitsigns_keymaps, bufnr)
 end
 
 M.lsp = function(bufnr)
