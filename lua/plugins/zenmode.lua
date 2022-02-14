@@ -12,13 +12,16 @@ local settings = {
     width = 0.55, -- width of the Zen window
     options = {
       signcolumn = "no", -- disable sign column
-      number = false, -- disable number column
+      number = true, -- disable number column
       cursorline = false,                  -- disable cursor line
     },
   },
   plugins = {
     tmux = { enabled = true },
   },
+  on_open = function()
+    vim.cmd("highlight ZenBg guibg=bg")
+  end,
 }
 
 M.config = function()

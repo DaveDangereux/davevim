@@ -2,6 +2,7 @@ return {
   none = "NONE",
   fg = "#9FAECA",
   bg = "#141A1F",
+  nvim_tree_bg = "#151C21",
 
   -- Test colors
   test_fg = "#FF00FF",
@@ -16,6 +17,7 @@ return {
   black = "#000000",
 
   -- Bluegreys
+  dark_blue_grey = "#20354B",
   blue_grey = "#2E4D6B",
   light_blue_grey = "#5974A5",
 
@@ -27,7 +29,7 @@ return {
   green = "#95D16A",
   cyan = "#45C2D3",
   blue = "#54B0FC",
-  mute_blue = "#5599DD",
+  -- blue = "#5599DD",
   purple = "#CC6BE9",
   hot_pink = "#FF007C",
 

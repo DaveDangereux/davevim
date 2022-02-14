@@ -14,13 +14,14 @@ local settings = {
   ignore_install = { "" },
   highlight = {
     enable = true,
-    disable = { "" },
+    disable = { "html" },
     additional_vim_regex_highlighting = true,
   },
 
   -- ts-rainbow
   rainbow = {
     enable = true,
+    disable = { "html" },
     colors = {
       -- Color test: { { { { { { { } } } } } } }
       "#ffd700", -- Gold

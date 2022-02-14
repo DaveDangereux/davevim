@@ -16,9 +16,12 @@ vim.o.termguicolors = true
 vim.g.colors_name = "davedark"
 
 local highlights = require("colorschemes.davedark.highlights")
+local feline = require("colorschemes.davedark.feline")
+
 
 local skeletons = {
-  highlights
+  highlights,
+  feline
 }
 
 for _, skeleton in ipairs(skeletons) do
