@@ -16,6 +16,7 @@ return {
   Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
   Search = { bg = c.blue_grey },
   SignColumn = { bg = config.transparent_background and c.none or c.bg },
+  Special = { fg = c.purple }, -- overrides TSInclude
   Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
   VertSplit = {
     fg = config.transparent_background and c.off_black or c.bg,
@@ -31,7 +32,7 @@ return {
   DiffRemoved = { fg = c.test_fg, bg = c.test_bg },
   DiffFile = { fg = c.test_fg, bg = c.test_bg },
   DiffIndexLine = { fg = c.test_fg, bg = c.test_bg },
-  DiffText = nil,
+  DiffText = { fg = c.test_fg, bg = c.test_bg },
   -- diffAdded = nil,
   -- diffRemoved = { fg = c.test_fg, bg = c.test_bg },
   -- diffFileId = { fg = c.test_fg, bg = c.test_bg },
@@ -52,8 +53,8 @@ return {
   FloatBorder = { fg = c.dark_grey, bg = c.off_black },
 
   -- Unsorted
-  Statement = { fg = c.purple },
-  Type = { fg = c.test_fg, bg = c.none },
+  Statement = { fg = c.purple, style = "NONE" },
+  Type = { fg = c.test_fg, bg = c.none, style = "NONE" },
   Identifier = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
   Constant = { bg = config.transparent_background and c.none or c.bg },
   Directory = { fg = c.mute_blue },
@@ -121,6 +122,18 @@ return {
   LspReferenceRead = { fg = c.illuminate_read, style = "bold,underline" },
   LspReferenceWrite = { fg = c.illuminate_write, style = "bold,underline" },
   LspReferenceText = { fg = c.illuminate_text, style = "bold,underline" },
+
+  ---------------------------------------------------------
+  -- Alpha
+  ---------------------------------------------------------
+  AlphaHeader1 = { fg = c.red },
+  AlphaHeader2 = { fg = c.orange },
+  AlphaHeader3 = { fg = c.yellow },
+  AlphaHeader4 = { fg = c.green },
+  AlphaHeader5 = { fg = c.blue },
+  AlphaHeader6 = { fg = c.purple },
+  AlphaButton = { fg = c.fg },
+  AlphaButtonShortcut = { fg = c.orange },
 
   ---------------------------------------------------------
   -- markdown
@@ -218,6 +231,7 @@ return {
   TSKeywordFunction = { fg = c.purple },
   TSKeywordOperator = { fg = c.fg },
   TSKeywordReturn = { fg = c.purple },
+  TSMethod = { fg = c.cyan },
   TSNone = { fg = c.fg },
   TSNumber = { fg = c.orange },
   TSOperator = { fg = c.fg },
@@ -248,7 +262,6 @@ return {
   TSRepeat = { fg = c.test_fg },
   TSFloat = { fg = c.test_fg },
   TSCharacter = { fg = c.test_fg },
-  TSMethod = { fg = c.test_fg },
   TSConstMacro = { fg = c.test_fg },
   TSFuncMacro = { fg = c.test_fg },
   TSParameterReference = { fg = c.test_fg },
@@ -287,7 +300,6 @@ return {
   StatusLineNC = { fg = c.test_fg, bg = c.test_bg },
   Folded = { fg = c.test_fg, bg = c.test_bg },
   FoldColumn = { fg = c.test_fg, bg = c.test_bg },
-  Special = { fg = c.test_fg, bg = c.test_bg },
   ColorColumn = { fg = c.test_fg, bg = c.test_bg },
   Underlined = { fg = c.test_fg, bg = c.test_bg },
   Ignore = { fg = c.test_fg, bg = c.test_bg },

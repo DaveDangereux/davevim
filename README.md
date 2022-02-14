@@ -1,7 +1,14 @@
 # Dave's Neovim IDE Config
 
 ## Overview
-When I try to describe the mind-shatteringly joyful (read: dangerously obsessive) activity of trying to create my own Neovim config to people, I find the most compelling analogy is that of a Jedi who has reached that point in their training whereupon they're tasked with making their own lightsaber.
+There comes a point in any Jedi's training where one must put down the borrowed lightsaber and build one for oneself.
+
+## Hacks
+Due to an issue compiling dsznajder/vscode-react-javascript-snippets outside of VS Code, I'm currently manually copying the generated snippets json from my VS Code extensions directory. I'm also using WSL, so the copy command looks like this:
+
+`cp /mnt/c/Users/Dave/.vscode/extensions/dsznajder.es7-react-js-snippets-4.3.2/lib/snippets/generated.json ~/.local/share/nvim/site/pack/packer/start/vscode-react-javascript-snippets/lib/snippets/generated.json`
+
+Obviously replace 'Dave' with your Windows username or otherwise adjust the paths to your system as appropriate.
 
 ## Rough Goals
 I want my IDE to:
@@ -67,47 +74,45 @@ I want my IDE to:
 - alpha dashboard
 - auto-rename tags
 - trouble / diagnostics menu
-
-## Upcoming
 - code formatting
 - linting
-- begin work on colour scheme
-
-## Unsorted
-- colour scheme cycling shortcut
 - improve alpha dashboard
-- learn code folding / make shortcuts
-- git diff
-- change cursor highlight to invert / show text when solid
-- add reordering buffer shortcut
-- customise feline to show document title on inactive windows
-- nvim-gps for breadcrumbs
-- disable completion for markdown
-- toggle diagnostic virtual text shortcut
-- zoom plugin
-- learn shortcut for or otherwise improve new file creation 
-- add notifications to autocommands (to say that they've been applied)
-- possibly collect autocommands into single module
+- begin work on colour scheme
+- port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
 - style gitsigns
+- change cursor highlight to invert / show text when solid
 - get telescope to respect project root cd
+- shortcut to see highlight group under cursor
+
+## Upcoming
+- disable completion for markdown
+
+## High priority
 - git diff tools
+- nvim-gps for breadcrumbs
+- shada file / change persistence after crash
 - style feline
-- multi-cursor (select duplicates, extend cursor vertically, etc)
-- neoclip for better clipboard
-- see if we can get telescope bookmarks working
-- glow markdown preview
-- see if there's a fix for empty buffers hanging around
-- logging
-- terminal
 - lazy-loading
 - caching (impatient)
 - add which-key and unify keymap config
-- port [The Best Theme](https://github.com/jankohlbach/the-best-theme) from VS Code
+
+## Low priority
+- colour scheme cycling shortcut
+- learn code folding / make shortcuts
+- logging
 - toggle transparent background (to enjoy nice tmux background images)
-- custom colour scheme and ability to swap out for others while preserving transparent background
-- better diagnostics
-- shada file / change persistence after crash
-- shortcut to see highlight group under cursor
+- add reordering buffer shortcut
+- customise feline to show document title on inactive windows
+- terminal
+- see if we can get telescope bookmarks working
+- glow markdown preview
+- toggle diagnostic virtual text shortcut
+- zoom plugin
+- add notifications to autocommands (to say that they've been applied)
+- possibly collect autocommands into single module
+- neoclip for better clipboard
+
+## Unsorted
 
 ## Abandoned
 - telescope media files plugin (not possible on WSL yet?)
