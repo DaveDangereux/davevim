@@ -1,5 +1,7 @@
 vim.cmd("colorscheme davedark")
 
+vim.cmd("set fillchars+=eob:\\ ")
+
 local options = {
   -- tabbing
   tabstop = 2, -- insert this many spaces for <Tab>
