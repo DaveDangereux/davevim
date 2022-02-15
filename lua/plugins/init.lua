@@ -106,8 +106,17 @@ local plugins = {
   {
     "feline-nvim/feline.nvim",
     config = function()
-      require("feline").setup()
+      require("plugins.feline").config()
     end,
+  },
+
+  -- Breadcrumbs for status line
+  {
+    "SmiteshP/nvim-gps",
+    requires = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("plugins.gps").config()
+    end
   },
 
   -- Notifications
