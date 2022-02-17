@@ -36,6 +36,7 @@ local options = {
   smartcase = true, -- resume search case sensitivity if term includes capitals
   pumheight = 10,
   fileencoding = "utf-8",
+  textwidth = 80,
 }
 
 vim.opt.whichwrap:append("<,>,[,],h,l") -- enable cursor to wrap across lines
