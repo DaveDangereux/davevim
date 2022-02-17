@@ -8,7 +8,7 @@ local settings = {
     inactive = true,
   },
   -- Lines to try and show around cursor
-  context = 10,
+  context = 15,
   -- Use treesitter for the filetype when available
   treesitter = true,
   -- Control the types of nodes that should always be fully expanded

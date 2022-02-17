@@ -9,7 +9,7 @@ end
 local settings = {
   window = {
     height = 0.9, -- height of the Zen window
-    width = 0.6, -- width of the Zen window
+    width = 0.55, -- width of the Zen window
     options = {
       signcolumn = "no", -- disable sign column
       number = false, -- disable number column
