@@ -83,26 +83,25 @@ I want my IDE to:
 - change cursor highlight to invert / show text when solid
 - get telescope to respect project root cd
 - shortcut to see highlight group under cursor
+- git diff tools
+- nvim-gps for breadcrumbs
+- style feline
+- toggle transparent background (to enjoy nice tmux background images)
+- customise feline to show document title on inactive windows
 
 ## Upcoming
 - disable completion for markdown
 
 ## High priority
-- git diff tools
-- nvim-gps for breadcrumbs
 - shada file / change persistence after crash
-- style feline
 - lazy-loading
 - caching (impatient)
 - add which-key and unify keymap config
 
 ## Low priority
-- colour scheme cycling shortcut
 - learn code folding / make shortcuts
 - logging
-- toggle transparent background (to enjoy nice tmux background images)
 - add reordering buffer shortcut
-- customise feline to show document title on inactive windows
 - terminal
 - see if we can get telescope bookmarks working
 - glow markdown preview
