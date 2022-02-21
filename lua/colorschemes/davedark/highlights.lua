@@ -32,7 +32,7 @@ return {
   DiffChange = { fg = c.orange, bg = config.transparent_background and c.none or c.bg },
   DiffDelete = { fg = c.red, bg = config.transparent_background and c.none or c.bg },
   DiffAdded = { fg = c.green },
-  DiffRemoved = { fg = c.test_fg, bg = c.test_bg },
+  DiffRemoved = { fg = c.error_red },
   DiffFile = { fg = c.test_fg, bg = c.test_bg },
   DiffIndexLine = { fg = c.test_fg, bg = c.test_bg },
   DiffText = { fg = c.test_fg, bg = c.test_bg },
