@@ -40,6 +40,7 @@ local options = {
 
 vim.opt.whichwrap:append("<,>,[,],h,l") -- enable cursor to wrap across lines
 vim.opt.iskeyword:append("-") -- treat "-" as part of a word
+vim.opt.shortmess:append("c")
 
 -- This command makes the cursor blink and helps visually indicate whether the (terminal) window is active
 vim.cmd([[
@@ -55,7 +56,7 @@ vim.cmd([[
   augroup options
     autocmd!
     autocmd BufWritePost *nvim/lua/core/options.lua source <afile>
-    autocmd BufWritePost *nvim/lua/core/options.lua lua require("plugins.bufferline").config() 
-    autocmd BufWritePost *nvim/lua/core/options.lua lua require("plugins.feline").config() 
+    autocmd BufWritePost *nvim/lua/core/options.lua lua require("plugins.bufferline").config()
+    autocmd BufWritePost *nvim/lua/core/options.lua lua require("plugins.feline").config()
   augroup end
 ]])

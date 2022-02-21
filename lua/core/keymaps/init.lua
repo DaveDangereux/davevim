@@ -42,7 +42,7 @@ local keymaps = {
     -- Splits
     ["<Leader>v"] = ":vsplit <CR>",
     ["<Leader>h"] = ":split <CR>",
-    ["<Leader>="] = "<C-w>= <CR>", -- resize all windows to equal size
+    ["<Leader>="] = "<C-w>=", -- resize all windows to equal size
 
     -- Saving and quitting
     ["<Leader>w"] = ":w <CR>",
