@@ -5,6 +5,8 @@ M.config = function()
   vim.cmd("highlight LspReferenceWrite gui=bold,underline guifg=#FF9999")
   vim.cmd("highlight LspReferenceText gui=bold,underline guifg=#FFFF99")
 
+  vim.g.Illuminate_delay = 1000
+
   vim.g.Illuminate_ftwhitelist = {
     "lua",
     "vim",

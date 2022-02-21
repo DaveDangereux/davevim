@@ -5,6 +5,7 @@ return {
   ---------------------------------------------------------
   -- General
   ---------------------------------------------------------
+  Boolean = { fg = c.orange },
   Comment = { fg = c.light_blue_grey },
   Cursor = { bg = c.blue },
   CursorLine = { bg = c.dark_blue_grey },
@@ -12,11 +13,13 @@ return {
   ErrorMsg = { fg = c.error_red, bg = config.transparent_background and c.none or c.bg, style = "bold" },
   LineNr = { fg = c.blue_grey },
   ModeMsg = { fg = c.fg },
-  NonText = { fg = c.black, bg = config.transparent_background and c.none or c.bg },
+  NonText = { fg = c.light_blue_grey, style = "none" },
   Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
   Search = { bg = c.blue_grey },
   SignColumn = { bg = config.transparent_background and c.none or c.bg },
   Special = { fg = c.purple }, -- overrides TSInclude
+  StatusLine = { fg = c.off_black },
+  StatusLineNC = { fg = c.off_black },
   Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
   VertSplit = {
     fg = config.transparent_background and c.off_black or c.bg,
@@ -56,7 +59,7 @@ return {
   Statement = { fg = c.purple, style = "NONE" },
   Type = { fg = c.test_fg, bg = c.none, style = "NONE" },
   Identifier = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
-  Constant = { bg = config.transparent_background and c.none or c.bg },
+  -- Constant = { bg = config.transparent_background and c.none or c.bg },
   Directory = { fg = c.blue },
   Delimiter = { fg = c.test_fg },
   Title = { fg = c.fg },
@@ -65,24 +68,26 @@ return {
   ---------------------------------------------------------
   -- nvim-tree
   ---------------------------------------------------------
-  NvimTreeFolderIcon = { fg = c.test_fg, bg = c.test_bg },
   NvimTreeIndentMarker = { fg = c.fg },
-  NvimTreeNormal = nil,
+  NvimTreeNormal = { bg = config.transparent_background and c.none or c.nvim_tree_bg },
   NvimTreeVertSplit = nil,
   NvimTreeFolderName = { fg = c.blue },
   NvimTreeOpenedFolderName = { fg = c.purple, style = "italic" },
-  NvimTreeImageFile = { fg = c.test_fg, bg = c.test_bg },
   NvimTreeSpecialFile = { fg = c.orange, style = "bold,italic" },
   NvimTreeGitStaged = { fg = c.green },
   NvimTreeCursorLine = nil,
   NvimTreeGitNew = { fg = c.green },
   NvimTreeGitDirty = { fg = c.orange },
-  NvimTreeGitDeleted = { fg = c.test_fg, bg = c.test_bg },
-  NvimTreeGitMerge = { fg = c.test_fg, bg = c.test_bg },
-  NvimTreeGitRenamed = { fg = c.test_fg, bg = c.test_bg },
-  NvimTreeSymlink = { fg = c.test_fg, bg = c.test_bg },
+  NvimTreeGitDeleted = { fg = c.error_red },
   NvimTreeRootFolder = { fg = c.fg, style = "bold" },
-  NvimTreeExecFile = { fg = c.test_fg, bg = c.test_bg },
+
+  -- nvim-tree (testing)
+  -- NvimTreeFolderIcon = { fg = c.test_fg, bg = c.test_bg },
+  -- NvimTreeImageFile = { fg = c.test_fg, bg = c.test_bg },
+  -- NvimTreeGitMerge = { fg = c.test_fg, bg = c.test_bg },
+  -- NvimTreeGitRenamed = { fg = c.test_fg, bg = c.test_bg },
+  -- NvimTreeSymlink = { fg = c.test_fg, bg = c.test_bg },
+  -- NvimTreeExecFile = { fg = c.test_fg, bg = c.test_bg },
 
   ---------------------------------------------------------
   -- Telescope

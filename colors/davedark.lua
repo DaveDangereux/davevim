@@ -9,9 +9,11 @@
 -- immediately see our changes take effect.
 
 package.loaded["colorschemes.davedark"] = nil
+package.loaded["colorschemes.davedark.bufferline"] = nil
 package.loaded["colorschemes.davedark.config"] = nil
-package.loaded["colorschemes.davedark.palette"] = nil
 package.loaded["colorschemes.davedark.highlights"] = nil
+package.loaded["colorschemes.davedark.palette"] = nil
+package.loaded["colorschemes.davedark.util"] = nil
 require("colorschemes.davedark")
 
 -- The following are just some resets for convenience while

@@ -1,6 +1,5 @@
 vim.cmd("colorscheme davedark")
-
-vim.cmd("set fillchars+=eob:\\ ")
+vim.cmd("set fillchars+=eob:\\ ") -- this gets rid of the ~ indicating non-text / end of buffer
 
 local options = {
   -- tabbing
