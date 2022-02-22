@@ -36,6 +36,8 @@ local options = {
   pumheight = 10,
   fileencoding = "utf-8",
   textwidth = 80,
+  hidden = true, -- the default, but insurance to prevent terminals being abandoned
+  showmode = false,
 }
 
 vim.opt.whichwrap:append("<,>,[,],h,l") -- enable cursor to wrap across lines

@@ -3,6 +3,7 @@ return {
   fg = "#9FAECA",
   bg = "#141A1F",
   nvim_tree_bg = "#151C21",
+  term_bg = "#101519",
 
   -- Test colors
   test_fg = "#FF00FF",

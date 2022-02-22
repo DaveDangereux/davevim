@@ -141,32 +141,10 @@ return {
   AlphaButtonShortcut = { fg = c.orange },
 
   ---------------------------------------------------------
-  -- markdown
+  -- toggleterm
   ---------------------------------------------------------
-  markdownBlockquote = { fg = c.test_fg, bg = c.test_bg },
-  markdownBold = { fg = c.yellow, style = "bold" },
-  markdownCode = { fg = c.green },
-  markdownCodeBlock = { fg = c.test_fg, bg = c.test_bg },
-  markdownCodeDelimiter = { fg = c.green },
-  markdownError = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
-  markdownH1 = { fg = c.purple },
-  markdownH2 = { fg = c.purple },
-  markdownH3 = { fg = c.purple },
-  markdownH4 = { fg = c.purple },
-  markdownH5 = { fg = c.purple },
-  markdownH6 = { fg = c.purple },
-  -- markdownHeadingDelimiter = { fg = c.blue }, -- links to Delimiter
-  markdownHeadingRule = { fg = c.test_fg, bg = c.test_bg },
-  markdownId = { fg = c.test_fg, bg = c.test_bg },
-  markdownIdDeclaration = { fg = c.test_fg, bg = c.test_bg },
-  markdownIdDelimiter = { fg = c.test_fg, bg = c.test_bg },
-  markdownLinkDelimiter = { fg = c.fg },
-  markdownItalic = { fg = c.test_fg, bg = c.test_bg },
-  markdownLinkText = { fg = c.blue, style = "underline" },
-  markdownListMarker = { fg = c.red },
-  markdownOrderedListMarker = { fg = c.test_fg, bg = c.test_bg },
-  markdownRule = { fg = c.test_fg, bg = c.test_bg },
-  markdownUrl = { fg = c.cyan },
+  ToggleTermBorder = { fg = c.cyan, bg = config.transparent_background and c.none or c.bg },
+  ToggleTermBg = { bg = config.transparent_background and c.none or c.term_bg },
 
   ---------------------------------------------------------
   -- LSP diagnostics
@@ -292,6 +270,34 @@ return {
   ---------------------------------------------------------
   -- TODO: Language-specific syntax highlighting
   ---------------------------------------------------------
+
+  ---------------------------------------------------------
+  -- markdown
+  ---------------------------------------------------------
+  markdownBlockquote = { fg = c.test_fg, bg = c.test_bg },
+  markdownBold = { fg = c.yellow, style = "bold" },
+  markdownCode = { fg = c.green },
+  markdownCodeBlock = { fg = c.test_fg, bg = c.test_bg },
+  markdownCodeDelimiter = { fg = c.green },
+  markdownError = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
+  markdownH1 = { fg = c.purple },
+  markdownH2 = { fg = c.purple },
+  markdownH3 = { fg = c.purple },
+  markdownH4 = { fg = c.purple },
+  markdownH5 = { fg = c.purple },
+  markdownH6 = { fg = c.purple },
+  -- markdownHeadingDelimiter = { fg = c.blue }, -- links to Delimiter
+  markdownHeadingRule = { fg = c.test_fg, bg = c.test_bg },
+  markdownId = { fg = c.test_fg, bg = c.test_bg },
+  markdownIdDeclaration = { fg = c.test_fg, bg = c.test_bg },
+  markdownIdDelimiter = { fg = c.test_fg, bg = c.test_bg },
+  markdownLinkDelimiter = { fg = c.fg },
+  markdownItalic = { fg = c.test_fg, bg = c.test_bg },
+  markdownLinkText = { fg = c.blue, style = "underline" },
+  markdownListMarker = { fg = c.red },
+  markdownOrderedListMarker = { fg = c.test_fg, bg = c.test_bg },
+  markdownRule = { fg = c.test_fg, bg = c.test_bg },
+  markdownUrl = { fg = c.cyan },
 
   ---------------------------------------------------------
   -- General (unprocessed)

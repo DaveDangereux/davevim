@@ -135,12 +135,21 @@ local plugins = {
     end,
   },
 
+  -- Dashboard
   {
     "goolord/alpha-nvim",
     requires = { "kyazdani42/nvim-web-devicons" },
     config = function()
       require("plugins.alpha").config()
     end,
+  },
+
+  -- Toggleterm
+  {
+    "akinsho/toggleterm.nvim",
+    config = function()
+      require("plugins.toggleterm").config()
+    end
   },
 
   -----------------------------------------------------------------------------
