@@ -47,13 +47,13 @@ return {
   -- GitSignsDelete = nil,
 
   -- Popup menu
-  Pmenu = { fg = c.fg, bg = c.off_black },
+  Pmenu = { fg = c.fg, bg = config.transparent_background and c.none or c.off_black },
   PmenuSel = { fg = c.silver, bg = c.bg },
   PmenuSbar = { bg = c.dark_grey },
   PmenuThumb = { bg = c.blue_grey },
 
   -- Float
-  FloatBorder = { fg = c.dark_grey, bg = c.off_black },
+  FloatBorder = { fg = c.cyan, bg = config.transparent_background and c.none or c.off_black },
 
   -- Unsorted
   Statement = { fg = c.purple, style = "NONE" },
@@ -152,8 +152,8 @@ return {
   -- Error
   DiagnosticSignError = { fg = c.error_red },
   DiagnosticUnderlineError = { style = "underline" },
+  DiagnosticFloatingError = { fg = c.error_red },
   -- Error (testing)
-  DiagnosticFloatingError = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsError = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsDefaultError = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsFloatingError = { fg = c.test_fg, bg = c.test_bg },
@@ -164,8 +164,8 @@ return {
   -- Warning
   DiagnosticSignWarn = { fg = c.orange },
   DiagnosticUnderlineWarn = { style = "underline" },
+  DiagnosticFloatingWarn = { fg = c.orange },
   -- Warning (testing)
-  DiagnosticFloatingWarn = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsWarning = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsDefaultWarning = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsFloatingWarning = { fg = c.test_fg, bg = c.test_bg },
@@ -174,10 +174,10 @@ return {
   LspDiagnosticsVirtualTextWarning = { fg = c.test_fg, bg = c.test_bg },
 
   -- Information
-  DiagnosticSignInfo = { fg = c.yellow },
-  DiagnosticUnderlineInfo = { bg = c.test_bg },
+  DiagnosticSignInfo = { fg = c.green },
+  DiagnosticUnderlineInfo = { style = "underline" },
+  DiagnosticFloatingInfo = { fg = c.green },
   -- Information (testing)
-  DiagnosticFloatingInfo = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsInformation = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsDefaultInformation = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsFloatingInformation = { fg = c.test_fg, bg = c.test_bg },
@@ -188,8 +188,8 @@ return {
   -- Hint
   DiagnosticSignHint = { fg = c.blue },
   DiagnosticUnderlineHint = { style = "underline" },
+  DiagnosticFloatingHint = { fg = c.blue },
   -- Hint (testing)
-  DiagnosticFloatingHint = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsHint = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsDefaultHint = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsFloatingHint = { fg = c.test_fg, bg = c.test_bg },
@@ -220,7 +220,7 @@ return {
   TSNumber = { fg = c.orange },
   TSOperator = { fg = c.fg },
   TSParameter = { fg = c.fg },
-  -- TSProperty = { fg = c.blue }, -- links to Identifier
+  TSProperty = { fg = c.blue },
   TSPunctBracket = { fg = c.purple },
   TSPunctDelimiter = { fg = c.fg },
   TSString = { fg = c.green },
@@ -286,7 +286,7 @@ return {
   markdownH4 = { fg = c.purple },
   markdownH5 = { fg = c.purple },
   markdownH6 = { fg = c.purple },
-  -- markdownHeadingDelimiter = { fg = c.blue }, -- links to Delimiter
+  markdownHeadingDelimiter = { fg = c.blue },
   markdownHeadingRule = { fg = c.test_fg, bg = c.test_bg },
   markdownId = { fg = c.test_fg, bg = c.test_bg },
   markdownIdDeclaration = { fg = c.test_fg, bg = c.test_bg },
