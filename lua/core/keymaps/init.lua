@@ -80,6 +80,9 @@ local keymaps = {
     ["<A-j>"] = ":move '>+1<CR>gv-gv",
     ["<A-k>"] = ":move '<-2<CR>gv-gv",
   },
+  term_mode = {
+    ["<Esc>"] = "<C-\\><C-n>"
+  }
 }
 
 apply_keymaps(keymaps)
