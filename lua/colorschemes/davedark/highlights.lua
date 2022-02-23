@@ -10,6 +10,7 @@ return {
   Cursor = { bg = c.blue },
   CursorLine = { bg = c.dark_blue_grey },
   CursorLineNr = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
+  Error = { bg = c.none, style = "underline" },
   ErrorMsg = { fg = c.error_red, bg = config.transparent_background and c.none or c.bg, style = "bold" },
   LineNr = { fg = c.blue_grey },
   ModeMsg = { fg = c.fg },
@@ -200,13 +201,13 @@ return {
   ---------------------------------------------------------
   -- Treesitter
   ---------------------------------------------------------
-  TSBoolean = { fg = c.orange },
+  TSBoolean = { fg = c.cyan },
   TSComment = { fg = c.light_blue_grey },
   TSConditional = { fg = c.red },
   TSConstant = { fg = c.red },
   TSConstBuiltin = { fg = c.orange },
   TSConstructor = { fg = c.yellow },
-  TSError = { fg = c.fg }, -- should this be something a bit more obvious?
+  -- TSError = { fg = c.fg, bg = c.bg }, -- should this be something a bit more obvious?
   TSField = { fg = c.red },
   TSFuncBuiltin = { fg = c.cyan },
   TSFunction = { fg = c.cyan },
@@ -241,7 +242,7 @@ return {
   TSAnnotation = { fg = c.test_fg },
   TSAttribute = { fg = c.test_fg },
   TSException = { fg = c.test_fg },
-  TSLabel = { fg = c.test_fg },
+  TSLabel = { fg = c.red },
   TSNamespace = { fg = c.test_fg },
   TSRepeat = { fg = c.test_fg },
   TSFloat = { fg = c.test_fg },
@@ -270,6 +271,12 @@ return {
   ---------------------------------------------------------
   -- TODO: Language-specific syntax highlighting
   ---------------------------------------------------------
+
+  ---------------------------------------------------------
+  -- jsonc
+  ---------------------------------------------------------
+  -- jsoncLineComment = { fg = c.red },
+  -- jsonTSLabel = { fg = nil },
 
   ---------------------------------------------------------
   -- markdown
