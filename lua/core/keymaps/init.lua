@@ -140,6 +140,7 @@ local telescope_keymaps = {
     ["<Leader>fe"] = ":Telescope file_browser <CR>",
     ["<Leader>fn"] = ":Telescope notify <CR>",
     ["<Leader>fp"] = ":Telescope projects <CR>",
+    ["<Leader>fc"] = ":Telescope current_buffer_fuzzy_find <CR>"
   },
 }
 
