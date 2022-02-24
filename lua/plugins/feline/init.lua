@@ -49,7 +49,8 @@ M.config = function()
     disable = {
       filetypes = {
         "NvimTree",
-        "alpha"
+        "alpha",
+        "qf"
       }
     }
   })
