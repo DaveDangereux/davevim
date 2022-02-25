@@ -1,7 +1,10 @@
 # Basic Vim Commands
 
-### Quickfix
+### Surround
+cs{original bracket}{new bracket}
+                Replace bracket
 
+### Quickfix
 :copen          Open the quickfix window
 :ccl            Close it
 :cw             Open iti f there are "errors", close it otherwise
