@@ -5,28 +5,33 @@ return {
   ---------------------------------------------------------
   -- General
   ---------------------------------------------------------
-  Boolean = { fg = c.orange },
-  Comment = { fg = c.light_blue_grey },
+
+  -- UI
   Cursor = { bg = c.blue },
   CursorLine = { bg = c.dark_blue_grey },
   CursorLineNr = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
-  Error = { bg = c.none, style = "underline" },
-  ErrorMsg = { fg = c.error_red, bg = config.transparent_background and c.none or c.bg, style = "bold" },
   LineNr = { fg = c.blue_grey },
+  ErrorMsg = { fg = c.error_red, bg = config.transparent_background and c.none or c.bg, style = "bold" },
   ModeMsg = { fg = c.fg },
   NonText = { fg = c.light_blue_grey, style = "none" },
   Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
   Search = { bg = c.blue_grey },
   SignColumn = { bg = config.transparent_background and c.none or c.bg },
-  Special = { fg = c.purple }, -- overrides TSInclude
   StatusLine = { fg = c.off_black },
   StatusLineNC = { fg = c.off_black },
-  Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
   VertSplit = {
     fg = config.transparent_background and c.off_black or c.bg,
     bg = config.transparent_background and c.off_black or c.bg,
   },
   Visual = { bg = c.blue_grey },
+
+  -- Basic syntax highlighting
+  Boolean = { fg = c.orange },
+  Comment = { fg = c.light_blue_grey },
+  Error = { bg = c.none, style = "underline" },
+  MatchParen = { bg = c.blue_grey },
+  Special = { fg = c.purple }, -- overrides TSInclude
+  Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
 
   -- Diff
   DiffAdd = { fg = c.test_fg, bg = config.transparent_background and c.none or c.bg }, -- does this do anything?
@@ -58,10 +63,10 @@ return {
 
   -- Unsorted
   Statement = { fg = c.purple, style = "NONE" },
-  Type = { fg = c.test_fg, bg = c.none, style = "NONE" },
+  Type = { fg = c.none, bg = c.none, style = "NONE" }, -- affects table brackets
   Identifier = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
   -- Constant = { bg = config.transparent_background and c.none or c.bg },
-  Directory = { fg = c.blue },
+  directory = { fg = c.blue },
   Delimiter = { fg = c.test_fg },
   Title = { fg = c.fg },
   -- PreProc = { fg = c.test_fg, bg = c.test_bg },
@@ -151,9 +156,11 @@ return {
   -- LSP diagnostics
   ---------------------------------------------------------
   -- Error
+  DiagnosticError = { fg = c.error_red },
   DiagnosticSignError = { fg = c.error_red },
   DiagnosticUnderlineError = { style = "underline" },
   DiagnosticFloatingError = { fg = c.error_red },
+  DiagnosticVirtualTextError = { fg = c.light_blue_grey },
   -- Error (testing)
   LspDiagnosticsError = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsDefaultError = { fg = c.test_fg, bg = c.test_bg },
@@ -163,9 +170,11 @@ return {
   LspDiagnosticsVirtualTextError = { fg = c.test_fg, bg = c.test_bg },
 
   -- Warning
+  DiagnosticWarn = { fg = c.orange },
   DiagnosticSignWarn = { fg = c.orange },
   DiagnosticUnderlineWarn = { style = "underline" },
   DiagnosticFloatingWarn = { fg = c.orange },
+  DiagnosticVirtualTextWarn = { fg = c.light_blue_grey },
   -- Warning (testing)
   LspDiagnosticsWarning = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsDefaultWarning = { fg = c.test_fg, bg = c.test_bg },
@@ -175,9 +184,11 @@ return {
   LspDiagnosticsVirtualTextWarning = { fg = c.test_fg, bg = c.test_bg },
 
   -- Information
+  DiagnosticInfo = { fg = c.green },
   DiagnosticSignInfo = { fg = c.green },
   DiagnosticUnderlineInfo = { style = "underline" },
   DiagnosticFloatingInfo = { fg = c.green },
+  DiagnosticVirtualTextInfo = { fg = c.light_blue_grey },
   -- Information (testing)
   LspDiagnosticsInformation = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsDefaultInformation = { fg = c.test_fg, bg = c.test_bg },
@@ -187,9 +198,11 @@ return {
   LspDiagnosticsVirtualTextInformation = { fg = c.test_fg, bg = c.test_bg },
 
   -- Hint
+  DiagnosticHint = { fg = c.blue },
   DiagnosticSignHint = { fg = c.blue },
   DiagnosticUnderlineHint = { style = "underline" },
   DiagnosticFloatingHint = { fg = c.blue },
+  DiagnosticVirtualTextHint = { fg = c.light_blue_grey },
   -- Hint (testing)
   LspDiagnosticsHint = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsDefaultHint = { fg = c.test_fg, bg = c.test_bg },
@@ -220,7 +233,7 @@ return {
   TSNone = { fg = c.fg },
   TSNumber = { fg = c.orange },
   TSOperator = { fg = c.fg },
-  TSParameter = { fg = c.fg },
+  TSParameter = { fg = c.orange },
   TSProperty = { fg = c.blue },
   TSPunctBracket = { fg = c.purple },
   TSPunctDelimiter = { fg = c.fg },
@@ -284,7 +297,7 @@ return {
   markdownBlockquote = { fg = c.test_fg, bg = c.test_bg },
   markdownBold = { fg = c.yellow, style = "bold" },
   markdownCode = { fg = c.green },
-  markdownCodeBlock = { fg = c.test_fg, bg = c.test_bg },
+  -- markdownCodeBlock = { fg = c.test_fg, bg = c.test_bg },
   markdownCodeDelimiter = { fg = c.green },
   markdownError = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
   markdownH1 = { fg = c.purple },
