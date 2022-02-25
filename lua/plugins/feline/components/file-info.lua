@@ -1,7 +1,12 @@
 local icons = require("plugins.feline.icons")
 
 return {
-  provider = "file_info",
+  provider = {
+    name = "file_info",
+    opts = {
+      type = "unique"
+    }
+  },
   hl = "FelineFileInfo",
   left_sep = {
     str = " ",
