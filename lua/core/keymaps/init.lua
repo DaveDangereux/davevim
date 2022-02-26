@@ -81,7 +81,12 @@ local keymaps = {
     ["<A-k>"] = ":move '<-2<CR>gv-gv",
   },
   term_mode = {
-    ["<Esc>"] = "<C-\\><C-n>"
+    ["<Esc>"] = "<C-\\><C-n>",
+    ["jk"] = "<C-\\><C-n>",
+    ["<C-h>"] = [[<C-\><C-n><C-W>h]],
+    ["<C-j>"] = [[<C-\><C-n><C-W>j]],
+    ["<C-k>"] = [[<C-\><C-n><C-W>k]],
+    ["<C-l>"] = [[<C-\><C-n><C-W>l]],
   }
 }
 
@@ -165,6 +170,16 @@ local treesitter_keymaps = {
   }
 }
 
+-- Toggleterm
+local toggleterm_keymaps = {
+  normal_mode = {
+    ["<Leader>?"] = ":ToggleTermToggleAll <CR>"
+  },
+  term_mode = {
+    ["<Leader>?"] = [[<C-\><C-n> :ToggleTermToggleAll <CR>]]
+  }
+}
+
 -- GitSigns
 local gitsigns_keymaps = {
   normal_mode = {
@@ -236,6 +251,10 @@ end
 
 M.treesitter = function()
   apply_keymaps(treesitter_keymaps)
+end
+
+M.toggleterm = function()
+  apply_keymaps(toggleterm_keymaps)
 end
 
 M.gitsigns = function(bufnr)

@@ -149,6 +149,9 @@ local plugins = {
     "akinsho/toggleterm.nvim",
     config = function()
       require("plugins.toggleterm").config()
+    end,
+    setup = function()
+      require("core.keymaps").toggleterm()
     end
   },
 

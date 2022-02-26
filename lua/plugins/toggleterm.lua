@@ -1,15 +1,22 @@
 local M = {}
 
 local settings = {
-  open_mapping = "<Leader>`",
-  direction = "float",
-  float_opts = {
-    border = "curved",
-    highlights = {
-      border = "ToggleTermBorder",
-      background = "ToggleTermBg",
-    }
-  }
+  size = function(term)
+    if term.direction == "horizontal" then
+      return 12
+    elseif term.direction == "vertical" then
+      return vim.o.columns * 0.3
+    end
+  end,
+  open_mapping = "<Leader>/",
+  direction = "vertical",
+  -- float_opts = {
+  --   border = "curved",
+  --   highlights = {
+  --     border = "ToggleTermBorder",
+  --     background = "ToggleTermBg",
+  --   }
+  -- }
 }
 
 M.config = function()

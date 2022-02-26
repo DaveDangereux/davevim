@@ -50,7 +50,8 @@ M.config = function()
       filetypes = {
         "NvimTree",
         "alpha",
-        "qf"
+        "qf",
+        "toggleterm",
       }
     }
   })
