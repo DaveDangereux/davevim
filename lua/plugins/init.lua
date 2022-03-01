@@ -262,6 +262,57 @@ local plugins = {
   { "hrsh7th/cmp-calc" },
 
   -----------------------------------------------------------------------------
+  -- Treesitter and Friends
+  -----------------------------------------------------------------------------
+
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = function()
+      require("plugins.treesitter").config()
+    end,
+    setup = function()
+      require("core.keymaps").treesitter()
+    end
+  },
+
+  -- Rainbow brackets
+  {
+    "p00f/nvim-ts-rainbow",
+    requires = { { "nvim-treesitter/nvim-treesitter" }},
+    -- Config in plugins/treesitter.lua
+  },
+
+  -- Playground
+  {
+    "nvim-treesitter/playground",
+    requires = { { "nvim-treesitter/nvim-treesitter" }},
+    -- Config in plugins/treesitter.lua
+  },
+
+  -- Twilight
+  {
+    "folke/twilight.nvim",
+    requires = { { "nvim-treesitter/nvim-treesitter" }},
+    config = function()
+      require("plugins.twilight").config()
+    end,
+    setup = function()
+      require("core.keymaps").twilight()
+    end,
+  },
+
+  -- Autotag
+  {
+    "windwp/nvim-ts-autotag",
+    requires = { { "nvim-treesitter/nvim-treesitter" }},
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+
+  -----------------------------------------------------------------------------
   -- Telescope and Extensions
   -----------------------------------------------------------------------------
 
@@ -286,54 +337,8 @@ local plugins = {
   -- File browser
   { "nvim-telescope/telescope-file-browser.nvim" },
 
-  -- TODO add "dhruvmanila/telescope-bookmarks.nvim"
-
-  -----------------------------------------------------------------------------
-  -- Treesitter and Friends
-  -----------------------------------------------------------------------------
-
-  -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function()
-      require("plugins.treesitter").config()
-    end,
-    setup = function()
-      require("core.keymaps").treesitter()
-    end
-  },
-
-  -- Rainbow brackets
-  {
-    "p00f/nvim-ts-rainbow",
-    -- Config in plugins/treesitter.lua
-  },
-
-  -- Playground
-  {
-    "nvim-treesitter/playground",
-    -- Config in plugins/treesitter.lua
-  },
-
-  -- Twilight
-  {
-    "folke/twilight.nvim",
-    config = function()
-      require("plugins.twilight").config()
-    end,
-    setup = function()
-      require("core.keymaps").twilight()
-    end,
-  },
-
-  -- Autotag
-  {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  },
+  -- Bookmare browser
+  { "dhruvmanila/telescope-bookmarks.nvim" },
 }
 
 -------------------------------------------------------------------------------

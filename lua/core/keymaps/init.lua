@@ -173,10 +173,10 @@ local treesitter_keymaps = {
 -- Toggleterm
 local toggleterm_keymaps = {
   normal_mode = {
-    ["<Leader>?"] = ":ToggleTermToggleAll <CR>"
+    ["<Leader>~"] = ":ToggleTermToggleAll <CR>"
   },
   term_mode = {
-    ["<Leader>?"] = [[<C-\><C-n> :ToggleTermToggleAll <CR>]]
+    ["<Leader>~"] = [[<C-\><C-n> :ToggleTermToggleAll <CR>]]
   }
 }
 

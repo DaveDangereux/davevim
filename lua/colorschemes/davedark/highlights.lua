@@ -28,7 +28,8 @@ return {
   -- Basic syntax highlighting
   Boolean = { fg = c.orange },
   Comment = { fg = c.light_blue_grey },
-  Error = { bg = c.none, style = "underline" },
+  Error = { bg = c.none, style = "undercurl", special = c.error_red },
+  Folded = { fg = c.fg, bg = c.dark_grey },
   MatchParen = { bg = c.blue_grey },
   Special = { fg = c.purple }, -- overrides TSInclude
   Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
@@ -158,7 +159,7 @@ return {
   -- Error
   DiagnosticError = { fg = c.error_red },
   DiagnosticSignError = { fg = c.error_red },
-  DiagnosticUnderlineError = { style = "underline" },
+  DiagnosticUnderlineError = { style = "undercurl", special = c.error_red },
   DiagnosticFloatingError = { fg = c.error_red },
   DiagnosticVirtualTextError = { fg = c.light_blue_grey },
   -- Error (testing)
@@ -172,7 +173,7 @@ return {
   -- Warning
   DiagnosticWarn = { fg = c.orange },
   DiagnosticSignWarn = { fg = c.orange },
-  DiagnosticUnderlineWarn = { style = "underline" },
+  DiagnosticUnderlineWarn = { style = "undercurl", special = c.orange },
   DiagnosticFloatingWarn = { fg = c.orange },
   DiagnosticVirtualTextWarn = { fg = c.light_blue_grey },
   -- Warning (testing)
@@ -186,7 +187,7 @@ return {
   -- Information
   DiagnosticInfo = { fg = c.green },
   DiagnosticSignInfo = { fg = c.green },
-  DiagnosticUnderlineInfo = { style = "underline" },
+  DiagnosticUnderlineInfo = { style = "undercurl", special = c.green },
   DiagnosticFloatingInfo = { fg = c.green },
   DiagnosticVirtualTextInfo = { fg = c.light_blue_grey },
   -- Information (testing)
@@ -200,7 +201,7 @@ return {
   -- Hint
   DiagnosticHint = { fg = c.blue },
   DiagnosticSignHint = { fg = c.blue },
-  DiagnosticUnderlineHint = { style = "underline" },
+  DiagnosticUnderlineHint = { style = "undercurl", special = c.blue },
   DiagnosticFloatingHint = { fg = c.blue },
   DiagnosticVirtualTextHint = { fg = c.light_blue_grey },
   -- Hint (testing)
