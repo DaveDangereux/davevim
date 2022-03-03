@@ -158,6 +158,13 @@ local plugins = {
   -- Recognise json with comments
   { "neoclide/jsonc.vim" },
 
+  -- Enable working with protected files without sudo-ing
+  { "lambdalisue/suda.vim",
+    config = function()
+      require("plugins.suda").config()
+    end
+  },
+
   -----------------------------------------------------------------------------
   -- Color schemes
   -----------------------------------------------------------------------------
