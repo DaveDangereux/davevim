@@ -38,12 +38,18 @@ vim.g.nvim_tree_root_folder_modifier = table.concat({ ":t:gs?$?/..", string.rep(
 vim.g.nvim_tree_respect_buf_cwd = 1
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_disable_window_picker = 1
 vim.g.nvim_tree_special_files = { ["README.md"] = 1 }
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 local settings = {
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false
+      }
+    }
+  },
   diagnostics = {
     enable = true,
     icons = {

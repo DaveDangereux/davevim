@@ -8,6 +8,7 @@ There comes a point in any Jedi's training where one must put down the borrowed 
 - node / npm (for language server installation)
 - ripgrep (for Telescope)
 - ttf-joypixels (for emoji on Linux)
+- rust (to cargo install stylua)
 
 ## Hacks
 Due to an issue compiling dsznajder/vscode-react-javascript-snippets outside of VS Code, I'm currently manually copying the generated snippets json from my VS Code extensions directory. I'm also using WSL, so the copy command looks like this:
