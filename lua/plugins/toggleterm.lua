@@ -9,14 +9,14 @@ local settings = {
     end
   end,
   open_mapping = "<Leader>#",
-  direction = "vertical",
-  -- float_opts = {
-  --   border = "curved",
-  --   highlights = {
-  --     border = "ToggleTermBorder",
-  --     background = "ToggleTermBg",
-  --   }
-  -- }
+  direction = "float",
+  float_opts = {
+    border = "curved",
+    highlights = {
+      border = "ToggleTermBorder",
+      background = "ToggleTermBg",
+    }
+  }
 }
 
 M.config = function()
