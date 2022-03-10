@@ -64,6 +64,9 @@ local settings = {
     enable = true,
     update_cwd = true,
   },
+  git = {
+    ignore = false
+  },
   view = {
     mappings = {
       list = {
