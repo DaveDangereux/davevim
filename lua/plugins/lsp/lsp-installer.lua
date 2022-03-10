@@ -71,6 +71,11 @@ local on_server_ready = function(server)
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
+  if server.name == "emmet_ls" then
+    local emmet_ls_opts = require("plugins.lsp.configs.emmet_ls")
+    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+  end
+
   server:setup(opts)
 end
 
