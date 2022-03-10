@@ -131,9 +131,9 @@ return {
   ---------------------------------------------------------
   -- Illuminate
   ---------------------------------------------------------
-  LspReferenceRead = { fg = c.illuminate_read, style = "bold,underline" },
-  LspReferenceWrite = { fg = c.illuminate_write, style = "bold,underline" },
-  LspReferenceText = { fg = c.illuminate_text, style = "bold,underline" },
+  LspReferenceRead = { fg = c.illuminate_read, style = "bold" },
+  LspReferenceWrite = { fg = c.illuminate_write, style = "bold" },
+  LspReferenceText = { fg = c.illuminate_text, style = "bold" },
 
   ---------------------------------------------------------
   -- Alpha

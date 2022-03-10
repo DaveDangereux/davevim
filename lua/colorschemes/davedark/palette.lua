@@ -35,7 +35,7 @@ return {
   hot_pink = "#FF007C",
 
   -- Illuminate
-  illuminate_read = "#99FF99",
-  illuminate_write = "#FF9999",
-  illuminate_text = "#FFFF99",
+  illuminate_read = "#11FF11",
+  illuminate_write = "#FF1111",
+  illuminate_text = "#FFFF11",
 }
