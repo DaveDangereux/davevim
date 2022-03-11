@@ -165,6 +165,14 @@ local plugins = {
     end
   },
 
+  -- Destroy all buffers that aren't open in windows or tabs
+  {
+    "artnez/vim-wipeout",
+    setup = function()
+      require("core.keymaps").wipeout()
+    end
+  },
+
   -----------------------------------------------------------------------------
   -- Color schemes
   -----------------------------------------------------------------------------

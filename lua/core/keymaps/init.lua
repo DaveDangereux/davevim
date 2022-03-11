@@ -181,6 +181,13 @@ local toggleterm_keymaps = {
   }
 }
 
+local wipeout_keymaps = {
+  normal_mode = {
+    ["<Leader>o"] = ":Wipeout <CR>",
+    ["<Leader><S-o>"] = ":only <CR> :Wipeout <CR>"
+  }
+}
+
 -- GitSigns
 local gitsigns_keymaps = {
   normal_mode = {
@@ -256,6 +263,10 @@ end
 
 M.toggleterm = function()
   apply_keymaps(toggleterm_keymaps)
+end
+
+M.wipeout = function()
+  apply_keymaps(wipeout_keymaps)
 end
 
 M.gitsigns = function(bufnr)
