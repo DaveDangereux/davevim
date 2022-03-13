@@ -227,8 +227,7 @@ local plugins = {
   {
     "ray-x/lsp_signature.nvim",
     config = function()
-      local settings = {}
-      require("lsp_signature").setup(settings)
+      require("plugins.lsp.lsp-signature").config()
     end,
   },
 

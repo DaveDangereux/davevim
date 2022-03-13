@@ -213,6 +213,11 @@ return {
   LspDiagnosticsVirtualTextHint = { fg = c.test_fg, bg = c.test_bg },
 
   ---------------------------------------------------------
+  -- lsp_signature
+  ---------------------------------------------------------
+  LspSignatureActiveParameter = { fg = nil, bg = nil, style = "bold,underline" },
+
+  ---------------------------------------------------------
   -- Treesitter
   ---------------------------------------------------------
   TSBoolean = { fg = c.cyan },
