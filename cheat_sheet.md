@@ -1,5 +1,18 @@
 # Basic Vim Commands
 
+### Git
+]c              Next hunk
+[c              Previous hunk
+Leader gs       Stage hunk
+Leader gS       Stage buffer
+Leader gr       Reset hunk
+Leader gR       Reset buffer
+Leader gu       Undo stage hunk
+Leader gr       Preview hunk
+Leader gb       Blame line
+Leader gt       Toggle blame line
+Leader gd       Diffthis
+
 ### Surround
 cs{original bracket}{new bracket}
                 Replace bracket
