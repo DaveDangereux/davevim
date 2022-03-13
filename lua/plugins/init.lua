@@ -99,7 +99,7 @@ local plugins = {
     config = function()
       require("plugins.gitsigns").config()
     end,
-    event = "BufRead"
+    event = "BufRead",
   },
 
   -- Status line
@@ -116,7 +116,7 @@ local plugins = {
     requires = "nvim-treesitter/nvim-treesitter",
     config = function()
       require("plugins.gps").config()
-    end
+    end,
   },
 
   -- Notifications
@@ -152,17 +152,18 @@ local plugins = {
     end,
     setup = function()
       require("core.keymaps").toggleterm()
-    end
+    end,
   },
 
   -- Recognise json with comments
   { "neoclide/jsonc.vim" },
 
   -- Enable working with protected files without sudo-ing
-  { "lambdalisue/suda.vim",
+  {
+    "lambdalisue/suda.vim",
     config = function()
       require("plugins.suda").config()
-    end
+    end,
   },
 
   -- Destroy all buffers that aren't open in windows or tabs
@@ -170,7 +171,7 @@ local plugins = {
     "artnez/vim-wipeout",
     setup = function()
       require("core.keymaps").wipeout()
-    end
+    end,
   },
 
   -----------------------------------------------------------------------------
@@ -288,27 +289,27 @@ local plugins = {
     end,
     setup = function()
       require("core.keymaps").treesitter()
-    end
+    end,
   },
 
   -- Rainbow brackets
   {
     "p00f/nvim-ts-rainbow",
-    requires = { { "nvim-treesitter/nvim-treesitter" }},
+    requires = { { "nvim-treesitter/nvim-treesitter" } },
     -- Config in plugins/treesitter.lua
   },
 
   -- Playground
   {
     "nvim-treesitter/playground",
-    requires = { { "nvim-treesitter/nvim-treesitter" }},
+    requires = { { "nvim-treesitter/nvim-treesitter" } },
     -- Config in plugins/treesitter.lua
   },
 
   -- Twilight
   {
     "folke/twilight.nvim",
-    requires = { { "nvim-treesitter/nvim-treesitter" }},
+    requires = { { "nvim-treesitter/nvim-treesitter" } },
     config = function()
       require("plugins.twilight").config()
     end,
@@ -320,7 +321,7 @@ local plugins = {
   -- Autotag
   {
     "windwp/nvim-ts-autotag",
-    requires = { { "nvim-treesitter/nvim-treesitter" }},
+    requires = { { "nvim-treesitter/nvim-treesitter" } },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
