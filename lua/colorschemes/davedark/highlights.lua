@@ -63,12 +63,12 @@ return {
   FloatBorder = { fg = c.cyan, bg = config.transparent_background and c.none or c.off_black },
 
   -- Unsorted
-  Statement = { fg = c.purple, style = "NONE" },
+  Statement = { fg = c.purple, style = "NONE" }, -- affects html tags in php
   Type = { fg = c.none, bg = c.none, style = "NONE" }, -- affects table brackets
   Identifier = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
   -- Constant = { bg = config.transparent_background and c.none or c.bg },
   directory = { fg = c.blue },
-  Delimiter = { fg = c.test_fg },
+  Delimiter = { fg = c.none, bg = c.none }, -- seems to highlight parentheses under cursor
   Title = { fg = c.fg },
   -- PreProc = { fg = c.test_fg, bg = c.test_bg },
 
@@ -288,8 +288,33 @@ return {
   TSEnvironmentName = { fg = c.test_fg },
 
   ---------------------------------------------------------
-  -- TODO: Language-specific syntax highlighting
+  -- html
   ---------------------------------------------------------
+
+  htmlArg = { fg = c.orange },
+  htmlComment = { fg = c.blue },
+  htmlString = { fg = c.green },
+  htmlTag = { fg = c.fg },
+  htmlTagName = { fg = c.red },
+  htmlTSTag = { fg = c.red },
+  htmlTSTagDelimiter = { fg = c.fg },
+
+  ---------------------------------------------------------
+  -- php
+  ---------------------------------------------------------
+  phpIdentifier = { fg = c.red },
+  phpRegion = { fg = c.red },
+  phpStringDouble = { fg = c.green },
+  phpStructure = { fg = c.purple },
+  phpVarSelector = { fg = c.red },
+
+  -- treesitter php highlights
+  phpTSConditional = { fg = c.purple },
+  phpTSKeyword = { fg = c.cyan }, -- echo should be cyan, $ should be red
+  phpTSProperty = { fg = c.red },
+  phpTSPunctBracket = { fg = c.error_red },
+  phpTSRepeat = { fg = c.purple },
+  phpTSVariableBuiltin = { fg = c.red },
 
   ---------------------------------------------------------
   -- jsonc
