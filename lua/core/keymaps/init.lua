@@ -27,7 +27,7 @@ local keymaps = {
     ["<CA-h>"] = ":tabprevious <CR>", -- gT
     ["<CA-l>"] = ":tabnext <CR>", -- gt
     ["<CA-t>"] = ":tabedit % <CR>", -- open current buffer in a new tab
-    ["<CA-x>"] = ":tabclose <CR>",
+    ["<CA-w>"] = ":tabclose <CR>",
 
     -- Move text up and down
     ["<A-j>"] = ":m .+1 <CR>==",
@@ -177,7 +177,7 @@ local toggleterm_keymaps = {
   },
   term_mode = {
     ["<Leader>~"] = [[<C-\><C-n> :ToggleTermToggleAll <CR>]],
-    ["<C-l>"] = "clear <CR>"
+    -- ["<Leader>l"] = "clear <CR>"
   }
 }
 
