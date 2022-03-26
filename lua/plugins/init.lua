@@ -187,6 +187,12 @@ local plugins = {
   { "bluz71/vim-nightfly-guicolors" },
 
   -----------------------------------------------------------------------------
+  -- Syntax
+  -----------------------------------------------------------------------------
+  { "StanAngeloff/php.vim" },
+  { "nelsyeung/twig.vim" },
+
+  -----------------------------------------------------------------------------
   -- LSP
   -----------------------------------------------------------------------------
 
@@ -255,6 +261,9 @@ local plugins = {
     "dsznajder/vscode-react-javascript-snippets",
     run = "yarn install --frozen-lockfile && yarn compile",
   },
+
+  -- Symfony and Twig snippets
+  { "https://github.com/nalabdou/Symfony-code-snippets" },
 
   -----------------------------------------------------------------------------
   -- Completion

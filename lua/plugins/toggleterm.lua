@@ -5,11 +5,11 @@ local settings = {
     if term.direction == "horizontal" then
       return 12
     elseif term.direction == "vertical" then
-      return vim.o.columns * 0.3
+      return vim.o.columns * 0.5
     end
   end,
   open_mapping = "<Leader>#",
-  direction = "float",
+  direction = "vertical",
   float_opts = {
     border = "curved",
     highlights = {
