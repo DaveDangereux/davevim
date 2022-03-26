@@ -63,9 +63,9 @@ return {
   FloatBorder = { fg = c.cyan, bg = config.transparent_background and c.none or c.off_black },
 
   -- Unsorted
-  Statement = { fg = c.purple, style = "NONE" }, -- affects html tags in php
+  Statement = { fg = c.none, style = "NONE" }, -- affects html tags in php
   Type = { fg = c.none, bg = c.none, style = "NONE" }, -- affects table brackets
-  Identifier = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
+  Identifier = { fg = c.fg, bg = config.transparent_background and c.none or c.bg }, -- affects <> html tag brackets
   -- Constant = { bg = config.transparent_background and c.none or c.bg },
   directory = { fg = c.blue },
   Delimiter = { fg = c.none, bg = c.none }, -- seems to highlight parentheses under cursor
@@ -215,44 +215,44 @@ return {
   ---------------------------------------------------------
   -- lsp_signature
   ---------------------------------------------------------
-  LspSignatureActiveParameter = { fg = nil, bg = nil, style = "bold,underline" },
+  LspSignatureActiveParameter = { fg = c.blue, style = "bold" },
 
   ---------------------------------------------------------
   -- Treesitter
   ---------------------------------------------------------
   TSBoolean = { fg = c.cyan },
   TSComment = { fg = c.light_blue_grey },
-  TSConditional = { fg = c.red },
+  TSConditional = { fg = c.none },
   TSConstant = { fg = c.red },
   TSConstBuiltin = { fg = c.orange },
-  TSConstructor = { fg = c.yellow },
-  -- TSError = { fg = c.fg, bg = c.bg }, -- should this be something a bit more obvious?
+  TSConstructor = { fg = c.none },
+  TSError = { fg = c.fg, bg = c.bg }, -- should this be something a bit more obvious?
   TSField = { fg = c.red },
   TSFuncBuiltin = { fg = c.cyan },
-  TSFunction = { fg = c.cyan },
-  TSInclude = { fg = c.purple },
-  TSKeyword = { fg = c.purple },
-  TSKeywordFunction = { fg = c.purple },
-  TSKeywordOperator = { fg = c.fg },
-  TSKeywordReturn = { fg = c.purple },
+  TSFunction = { fg = c.none },
+  TSInclude = { fg = c.none },
+  TSKeyword = { fg = c.none, bg = c.none },
+  TSKeywordFunction = { fg = c.none },
+  TSKeywordOperator = { fg = c.none },
+  TSKeywordReturn = { fg = c.none },
   TSMethod = { fg = c.cyan },
   TSNone = { fg = c.fg },
   TSNumber = { fg = c.orange },
   TSOperator = { fg = c.fg },
-  TSParameter = { fg = c.orange },
+  TSParameter = { fg = c.none },
   TSProperty = { fg = c.blue },
-  TSPunctBracket = { fg = c.purple },
+  TSPunctBracket = { fg = c.none },
   TSPunctDelimiter = { fg = c.fg },
   TSString = { fg = c.green },
-  TSTag = { fg = c.red, style = "NONE" },
+  TSTag = { fg = c.none, style = "NONE" },
   TSTagAttribute = { fg = c.orange, style = "NONE" },
   TSTagDelimiter = { fg = c.fg },
   -- TSText = { fg = c.test_fg },
   -- TSTitle = { fg = c.fg },
-  TSTypeBuiltin = { fg = c.cyan },
-  TSType = { fg = c.orange },
+  TSTypeBuiltin = { fg = c.none },
+  TSType = { fg = c.none },
   TSURI = { fg = c.green, style = "underline" },
-  TSVariable = { fg = c.red },
+  TSVariable = { fg = c.none },
   -- TSWarning = { fg = c.test_fg, bg = c.test_bg },
 
   ---------------------------------------------------------
@@ -293,28 +293,113 @@ return {
 
   htmlArg = { fg = c.orange },
   htmlComment = { fg = c.blue },
+  htmlSpecialTagName = { fg = c.red },
   htmlString = { fg = c.green },
   htmlTag = { fg = c.fg },
+  htmlTagN = { fg = c.fg },
   htmlTagName = { fg = c.red },
   htmlTSTag = { fg = c.red },
   htmlTSTagDelimiter = { fg = c.fg },
 
   ---------------------------------------------------------
+  -- JavaScript
+  ---------------------------------------------------------
+  javascriptReserved = { fg = c.purple },
+  javascriptTSConstructor = { fg = c.red },
+  javascriptTSKeywordReturn = { fg = c.purple },
+  javascriptTSMethod = { fg = c.blue },
+  javascriptTSProperty = { fg = c.fg },
+  javascriptTSVariable = { fg = c.yellow },
+  javascriptTSVariableBuiltin = { fg = c.red },
+
+  ---------------------------------------------------------
+  -- TypeScript
+  ---------------------------------------------------------
+  typescriptBlock = { fg = c.none },
+  typescriptDefault = { fg = c.red },
+  typescriptDestructureVariable = { fg = c.orange },
+  typescriptIdentifierName = { fg = c.red },
+  typescriptInterfaceKeyword = { fg = c.purple },
+  typescriptObjectType = { fg = c.blue },
+  typescriptStatementKeyword = { fg = c.purple },
+  typescriptTernaryOperator = { fg = c.fg },
+  typescriptVariable = { fg = c.purple },
+  typescriptVariableDeclaration = { fg = c.blue },
+  tsTSInclude = { fg = c.purple },
+
+  ---------------------------------------------------------
+  -- tsx
+  ---------------------------------------------------------
+
+  tsxTag = { fg = c.yellow },
+  tsxTagName = { fg = c.yellow },
+  -- tsxTSConstructor = { fg = c.red },
+  tsxTSTag = { fg = c.yellow },
+  tsxTSKeyword = { fg = c.purple },
+  tsxTSParameter = { fg = c.fg },
+  tsxTSProperty = { fg = c.fg },
+  tsxTSTypeBuiltin = { fg = c.cyan },
+  tsxTSVariable = { fg = c.none },
+  tsxTSFunction = { fg = c.blue },
+
+  ---------------------------------------------------------
+  -- python
+  ---------------------------------------------------------
+  pythonConditional = { fg = c.purple },
+  pythonException = { fg = c.purple },
+  pythonExceptions = { fg = c.cyan },
+  pythonInclude = { fg = c.purple },
+  pythonTSConstBuiltin = { fg = c.red },
+  pythonTSInclude = { fg = c.purple },
+  pythonTSKeyword = { fg = c.purple },
+  pythonTSKeywordFunction = { fg = c.purple },
+  pythonTSKeywordReturn = { fg = c.purple },
+  pythonTSType = { fg = c.rolling_stone },
+  pythonTSParameter = { fg = c.orange },
+
+  ---------------------------------------------------------
   -- php
   ---------------------------------------------------------
+  phpClass = { fg = c.yellow },
+  phpClassExtends = { fg = c.green },
+  phpDefine = { fg = c.cyan },
   phpIdentifier = { fg = c.red },
-  phpRegion = { fg = c.red },
+  phpInclude = { fg = c.purple },
+  phpRegion = { fg = c.fg },
+  phpStorageClass = { fg = c.purple },
   phpStringDouble = { fg = c.green },
   phpStructure = { fg = c.purple },
+  -- phpUseAlias = { fg = c.fg },
+  phpUseClass = { fg = c.yellow },
+  phpKeyword = { fg = c.purple },
   phpVarSelector = { fg = c.red },
 
   -- treesitter php highlights
-  phpTSConditional = { fg = c.purple },
-  phpTSKeyword = { fg = c.cyan }, -- echo should be cyan, $ should be red
+  -- unsorted
   phpTSProperty = { fg = c.red },
-  phpTSPunctBracket = { fg = c.error_red },
-  phpTSRepeat = { fg = c.purple },
+  phpTSType = { fg = c.none },
   phpTSVariableBuiltin = { fg = c.red },
+  -- included
+  phpTSKeyword = { fg = c.purple }, -- public
+  phpTSKeywordFunction = { fg = c.purple },
+  phpTSNamespace = { fg = c.yellow },
+  phpTSParameter = { fg = c.fg },
+  phpTSPunctBracket = { fg = c.error_red },
+  -- excluded
+  phpTSConditional = { fg = c.none },
+  phpTSRepeat = { fg = c.none },
+
+  ---------------------------------------------------------
+  -- lua
+  ---------------------------------------------------------
+  luaTSConditional = { fg = c.purple },
+  luaTSFunction = { fg = c.blue },
+  luaTSKeyword = { fg = c.purple },
+  luaTSKeywordFunction = { fg = c.purple },
+  luaTSKeywordReturn = { fg = c.purple },
+  luaTSParameter = { fg = c.fg },
+  luaTSRepeat = { fg = c.purple },
+  luaTSVariable = { fg = c.red },
 
   ---------------------------------------------------------
   -- jsonc
@@ -327,9 +412,9 @@ return {
   ---------------------------------------------------------
   markdownBlockquote = { fg = c.test_fg, bg = c.test_bg },
   markdownBold = { fg = c.yellow, style = "bold" },
-  markdownCode = { fg = c.green },
+  markdownCode = { fg = c.fg, bg = c.dark_blue_grey },
   -- markdownCodeBlock = { fg = c.test_fg, bg = c.test_bg },
-  markdownCodeDelimiter = { fg = c.green },
+  markdownCodeDelimiter = { fg = c.dark_blue_grey, bg = c.dark_blue_grey },
   markdownError = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
   markdownH1 = { fg = c.purple },
   markdownH2 = { fg = c.purple },
@@ -343,7 +428,7 @@ return {
   markdownIdDeclaration = { fg = c.test_fg, bg = c.test_bg },
   markdownIdDelimiter = { fg = c.test_fg, bg = c.test_bg },
   markdownLinkDelimiter = { fg = c.fg },
-  markdownItalic = { fg = c.test_fg, bg = c.test_bg },
+  -- markdownItalic = { fg = c.test_fg, bg = c.test_bg },
   markdownLinkText = { fg = c.blue, style = "underline" },
   markdownListMarker = { fg = c.red },
   markdownOrderedListMarker = { fg = c.test_fg, bg = c.test_bg },
