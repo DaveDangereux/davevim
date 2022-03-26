@@ -38,4 +38,13 @@ return {
   illuminate_read = "#11FF11",
   illuminate_write = "#FF1111",
   illuminate_text = "#FFFF11",
+
+  -- Brackets / indents
+  indent1 = "#ffd700",
+  indent2 = "#da70d6",
+  indent3 = "#87cefa",
+  indent4 = "#fa8072",
+  indent5 = "#7cf800",
+  indent6 = "#ff8c00",
+  indent7 = "#fff8dc",
 }

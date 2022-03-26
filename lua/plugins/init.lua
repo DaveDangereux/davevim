@@ -174,6 +174,14 @@ local plugins = {
     end,
   },
 
+  -- Visualise indentation
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("plugins.indent_blankline").setup()
+    end,
+  },
+
   -----------------------------------------------------------------------------
   -- Color schemes
   -----------------------------------------------------------------------------

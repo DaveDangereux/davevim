@@ -154,6 +154,17 @@ return {
   ToggleTermBg = { bg = config.transparent_background and c.none or c.term_bg },
 
   ---------------------------------------------------------
+  -- indent-blankline
+  ---------------------------------------------------------
+  IndentBlanklineIndent1 = { fg = c.indent1 },
+  IndentBlanklineIndent2 = { fg = c.indent2 },
+  IndentBlanklineIndent3 = { fg = c.indent3 },
+  IndentBlanklineIndent4 = { fg = c.indent4 },
+  IndentBlanklineIndent5 = { fg = c.indent5 },
+  IndentBlanklineIndent6 = { fg = c.indent6 },
+  IndentBlanklineIndent7 = { fg = c.indent7 },
+
+  ---------------------------------------------------------
   -- LSP diagnostics
   ---------------------------------------------------------
   -- Error
