@@ -38,11 +38,12 @@ local function lsp_highlight_document(server)
 end
 
 local on_attach = function(server, bufnr)
-  if server.name == "tsserver" then
     -- By disabling the formatting functionality of the server, we avoid
     -- having to select between multiple formatting options, essentially
     -- defaulting to our preferred formatter (prettier via null-ls in
     -- this case)
+
+  if server.name == "html" or server.name == "tsserver" then
     server.resolved_capabilities.document_formatting = false
   end
 
