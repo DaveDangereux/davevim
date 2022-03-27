@@ -23,8 +23,6 @@ local plugins = {
   { "kyazdani42/nvim-web-devicons" },
   {
     "kyazdani42/nvim-tree.lua",
-    -- Remove this when a further commit following 'fix: auto open on tab' has been made
-    -- commit="3f4ed9b6c2598ab8304186486a05ae7a328b8d49",
     config = function()
       require("plugins.nvimtree").config()
     end,
