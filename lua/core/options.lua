@@ -29,7 +29,7 @@ local options = {
   cmdheight = 1, -- more space for messages
   splitbelow = true,
   splitright = true,
-  numberwidth = 5,
+  numberwidth = 3,
   signcolumn = "yes",
   ignorecase = true, -- ignore case while searching
   smartcase = true, -- resume search case sensitivity if term includes capitals
@@ -38,11 +38,13 @@ local options = {
   textwidth = 80,
   hidden = true, -- the default, but insurance to prevent terminals being abandoned
   showmode = false,
+  foldcolumn = "1",
 }
 
 vim.opt.whichwrap:append("<,>,[,],h,l") -- enable cursor to wrap across lines
 vim.opt.iskeyword:append("-") -- treat "-" as part of a word
 vim.opt.shortmess:append("c")
+vim.opt.fillchars:append("foldopen:🞃, foldsep:▏, foldclose:🞂")
 
 -- This command makes the cursor blink and helps visually indicate whether the (terminal) window is active
 vim.cmd([[
@@ -52,6 +54,14 @@ vim.cmd([[
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.cmd([[
+  augroup views
+    autocmd!
+    autocmd BufWinLeave *.* mkview
+    autocmd BufWinEnter *.* silent loadview
+  augroup end
+]])
 
 -- Autocommand to source this file on save (and reload bufferline config for correct buffer styling)
 vim.cmd([[

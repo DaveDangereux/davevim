@@ -12,6 +12,7 @@ return {
   CursorLineNr = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
   LineNr = { fg = c.blue_grey },
   ErrorMsg = { fg = c.error_red, bg = config.transparent_background and c.none or c.bg, style = "bold" },
+  FoldColumn = { fg = c.blue_grey, bg = config.transparent_background and c.none or c.bg },
   ModeMsg = { fg = c.fg },
   NonText = { fg = c.light_blue_grey, style = "none" },
   Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
