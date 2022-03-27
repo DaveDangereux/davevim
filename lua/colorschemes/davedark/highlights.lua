@@ -330,16 +330,21 @@ return {
   javascriptTSProperty = { fg = c.fg },
   javascriptTSVariable = { fg = c.yellow },
   javascriptTSVariableBuiltin = { fg = c.red },
+  jsAsyncKeyword = { fg = c.purple },
+  jsForAwait = { fg = c.purple },
+  jsFuncBlock = { fg = c.none },
   jsFuncCall = { fg = c.blue },
   jsFunction = { fg = c.purple },
   jsFunctionKey = { fg = c.blue },
   jsGlobalObjects = { fg = c.red },
+  jsObject = { fg = c.red },
   jsObjectFuncName = { fg = c.blue },
   jsObjectProp = { fg = c.red },
   jsReturn = { fg = c.purple },
   jsString = { fg = c.green },
   jsStorageClass = { fg = c.purple },
   jsThis = { fg = c.red },
+  jsVariableDef = { fg = c.orange },
 
   ---------------------------------------------------------
   -- TypeScript
