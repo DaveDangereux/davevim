@@ -3,6 +3,7 @@ local M = {}
 local function highlight(group, properties)
   local bg = properties.bg == nil and "" or "guibg=" .. properties.bg
   local fg = properties.fg == nil and "" or "guifg=" .. properties.fg
+  local cfg = properties.cfg == nil and "" or "ctermfg=" .. properties.cfg
   local style = properties.style == nil and "" or "gui=" .. properties.style
   local special = properties.special == nil and "" or "guisp=" .. properties.special
 
@@ -11,6 +12,7 @@ local function highlight(group, properties)
     group,
     bg,
     fg,
+    cfg,
     style,
     special,
   }, " ")

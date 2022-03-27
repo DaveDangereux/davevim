@@ -30,8 +30,9 @@ return {
   Comment = { fg = c.light_blue_grey },
   Error = { bg = c.none, style = "undercurl", special = c.error_red },
   Folded = { fg = c.fg, bg = c.dark_grey },
+  Include = { fg = c.none },
   MatchParen = { bg = c.blue_grey },
-  Special = { fg = c.purple }, -- overrides TSInclude
+  Special = { fg = c.none, cfg = c.none }, -- overrides TSInclude
   Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
 
   -- Diff
@@ -235,7 +236,7 @@ return {
   TSComment = { fg = c.light_blue_grey },
   TSConditional = { fg = c.none },
   TSConstant = { fg = c.red },
-  TSConstBuiltin = { fg = c.orange },
+  TSConstBuiltin = { fg = c.none },
   TSConstructor = { fg = c.none },
   TSError = { fg = c.fg, bg = c.bg }, -- should this be something a bit more obvious?
   TSField = { fg = c.red },
@@ -249,7 +250,7 @@ return {
   TSMethod = { fg = c.cyan },
   TSNone = { fg = c.fg },
   TSNumber = { fg = c.orange },
-  TSOperator = { fg = c.fg },
+  TSOperator = { fg = c.none },
   TSParameter = { fg = c.none },
   TSProperty = { fg = c.blue },
   TSPunctBracket = { fg = c.none },
@@ -283,7 +284,7 @@ return {
   TSVariableBuiltin = { fg = c.test_fg },
   TSSymbol = { fg = c.test_fg },
   TSTextReference = { fg = c.test_fg },
-  TSPunctSpecial = { fg = c.test_fg },
+  TSPunctSpecial = { fg = c.none },
   TSStringRegex = { fg = c.test_fg },
   TSStringEscape = { fg = c.test_fg },
   TSEmphasis = { style = "italic" },
@@ -306,15 +307,21 @@ return {
   htmlComment = { fg = c.blue },
   htmlSpecialTagName = { fg = c.red },
   htmlString = { fg = c.green },
-  htmlTag = { fg = c.fg },
+  htmlTag = { fg = c.orange },
   htmlTagN = { fg = c.fg },
   htmlTagName = { fg = c.red },
   htmlTSTag = { fg = c.red },
   htmlTSTagDelimiter = { fg = c.fg },
 
   ---------------------------------------------------------
+  -- css
+  ---------------------------------------------------------
+  cssClassName = { fg = c.orange },
+
+  ---------------------------------------------------------
   -- JavaScript
   ---------------------------------------------------------
+  javascript = { fg = c.red },
   javascriptReserved = { fg = c.purple },
   javascriptTSConstructor = { fg = c.red },
   javascriptTSKeywordReturn = { fg = c.purple },
@@ -322,21 +329,43 @@ return {
   javascriptTSProperty = { fg = c.fg },
   javascriptTSVariable = { fg = c.yellow },
   javascriptTSVariableBuiltin = { fg = c.red },
+  jsFuncCall = { fg = c.blue },
+  jsFunction = { fg = c.purple },
+  jsFunctionKey = { fg = c.blue },
+  jsGlobalObjects = { fg = c.red },
+  jsObjectFuncName = { fg = c.blue },
+  jsObjectProp = { fg = c.red },
+  jsReturn = { fg = c.purple },
+  jsString = { fg = c.green },
+  jsStorageClass = { fg = c.purple },
+  jsThis = { fg = c.red },
 
   ---------------------------------------------------------
   -- TypeScript
   ---------------------------------------------------------
-  typescriptBlock = { fg = c.none },
+  typescriptAliasDeclaration = { fg = c.yellow },
+  typescriptArrowFunc = { fg = c.purple },
+  typescriptArrowFuncDef = { fg = c.fg },
+  typescriptBinaryOp = { fg = c.cyan },
+  -- typescriptBlock = { fg = c.none },
+  typescriptCall = { fg = c.fg },
+  typescriptCastKeyword = { fg = c.fg },
+  typescriptConditional = { fg = c.purple },
   typescriptDefault = { fg = c.red },
   typescriptDestructureVariable = { fg = c.orange },
   typescriptIdentifierName = { fg = c.red },
+  typescriptImport = { fg = c.purple },
   typescriptInterfaceKeyword = { fg = c.purple },
+  typescriptInterfaceName = { fg = c.yellow },
+  typescriptMemberOptionality = { fg = c.cyan },
   typescriptObjectType = { fg = c.blue },
+  typescriptPredefinedType = { fg = c.cyan },
   typescriptStatementKeyword = { fg = c.purple },
   typescriptTernaryOperator = { fg = c.fg },
+  typescriptTypeReference = { fg = c.yellow },
   typescriptVariable = { fg = c.purple },
-  typescriptVariableDeclaration = { fg = c.blue },
-  tsTSInclude = { fg = c.purple },
+  typescriptVariableDeclaration = { fg = c.orange },
+  -- tsTSInclude = { fg = c.purple },
 
   ---------------------------------------------------------
   -- tsx
@@ -347,9 +376,9 @@ return {
   -- tsxTSConstructor = { fg = c.red },
   tsxTSTag = { fg = c.yellow },
   tsxTSKeyword = { fg = c.purple },
-  tsxTSParameter = { fg = c.fg },
+  tsxTSParameter = { fg = c.none },
   tsxTSProperty = { fg = c.fg },
-  tsxTSTypeBuiltin = { fg = c.cyan },
+  tsxTSTypeBuiltin = { fg = c.none },
   tsxTSVariable = { fg = c.none },
   tsxTSFunction = { fg = c.blue },
 
