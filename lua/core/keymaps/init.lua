@@ -50,8 +50,19 @@ local keymaps = {
     ["<Leader>c"] = ":clo <CR>",
     ["<Leader>C"] = ":qa <CR>",
 
+    -- Formatting
     ["<Leader><S-f>"] = ":lua vim.lsp.buf.formatting_sync() <CR>",
 
+    -- Open a Quickfix window for the last search
+    ["<Leader>/"] = ":execute 'vimgrep /'.@/.'/g %' <CR>:copen <CR>",
+
+    -- Substitute shortcut
+    ["<Leader>s"] = ":%s/",
+
+    -- Split line (sister to [J]oin lines)
+    ["S"] = "i<CR><Esc>k$",
+
+    -- Reveal highlighting under cursor
     ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]]
   },
   insert_mode = {
@@ -73,12 +84,18 @@ local keymaps = {
     ["<A-j>"] = ":m .+1 <CR>==",
     ["<A-k>"] = ":m .-2 <CR>==",
     --["p"] = '"_dP' -- what does this do?
+
+    -- Substitute shortcut
+    ["<Leader>s"] = ":s/",
   },
   visual_block_mode = {
     ["J"] = ":move '>+1 <CR>gv-gv",
     ["K"] = ":move '<-2 <CR>gv-gv",
     ["<A-j>"] = ":move '>+1<CR>gv-gv",
     ["<A-k>"] = ":move '<-2<CR>gv-gv",
+
+    -- Substitute shortcut
+    ["<Leader>s"] = ":s/",
   },
   term_mode = {
     ["<Esc>"] = "<C-\\><C-n>",
