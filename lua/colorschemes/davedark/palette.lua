@@ -47,4 +47,23 @@ return {
   indent5 = "#7cf800",
   indent6 = "#ff8c00",
   indent7 = "#fff8dc",
+
+  -- Neon colours
+  neon_orange = "#ffad2a",
+  neon_red = "#f8877f",
+  neon_yellow = "#f8fc46",
+  neon_green = "#77e68a",
+  olive_green = "#00c87a",
+  neon_blue = "#3cbefc",
+  neon_violet = "#9d64e2",
+  neon_pink = "#fb83b3",
+  lilac = "#f447d1",
+
+  -- Pastel colours
+  pastel_green = "#a7e8c8",
+  pastel_orange = "#f8b6a8",
+  pastel_yellow = "#fdffb4",
+  pastel_pink = "#f7c2d6",
+  pastel_violet = "#c3bbec",
+  pastel_blue = "#c3effc",
 }

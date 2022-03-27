@@ -38,7 +38,7 @@ local options = {
   textwidth = 80,
   hidden = true, -- the default, but insurance to prevent terminals being abandoned
   showmode = false,
-  foldcolumn = "1",
+  foldcolumn = "2",
 }
 
 vim.opt.whichwrap:append("<,>,[,],h,l") -- enable cursor to wrap across lines
@@ -54,14 +54,6 @@ vim.cmd([[
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
-vim.cmd([[
-  augroup views
-    autocmd!
-    autocmd BufWinLeave *.* mkview
-    autocmd BufWinEnter *.* silent loadview
-  augroup end
-]])
 
 -- Autocommand to source this file on save (and reload bufferline config for correct buffer styling)
 vim.cmd([[

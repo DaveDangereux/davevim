@@ -176,12 +176,23 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require("plugins.indent_blankline").setup()
+      require("plugins.indent_blankline").config()
     end,
   },
 
   -- Lots of syntax highlighting improvements
   { "sheerun/vim-polyglot" },
+
+  -- Automated saving and restoring of views
+  { "vim-scripts/restore_view.vim" },
+
+  -- Highlight interesting words
+  {
+    "lfv89/vim-interestingwords",
+    config = function()
+      require("plugins.interesting_words").config()
+    end,
+  },
 
   -----------------------------------------------------------------------------
   -- Color schemes

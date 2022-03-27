@@ -19,7 +19,6 @@ local settings = {
     -- "checkhealth",
   },
   char = "",
-  -- show_first_indent_level = false,
   show_current_context = true,
   context_char = "▏",
   context_highlight_list = {
@@ -33,7 +32,7 @@ local settings = {
   },
 }
 
-M.setup = function()
+M.config = function()
   local status_ok, indent_blankline = pcall(require, "indent_blankline")
   if not status_ok then
     print "Failed to configure indent-blankline"
