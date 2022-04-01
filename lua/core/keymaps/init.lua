@@ -51,7 +51,7 @@ local keymaps = {
     ["<Leader>C"] = ":qa <CR>",
 
     -- Formatting
-    ["<Leader><S-f>"] = ":lua vim.lsp.buf.formatting_sync() <CR>",
+    ["<Leader><S-f>"] = ":lua vim.lsp.buf.formatting_sync(nil, 3000) <CR>",
 
     -- Open a Quickfix window for the last search
     ["<Leader>/"] = ":execute 'vimgrep /'.@/.'/g %' <CR>:copen <CR>",
