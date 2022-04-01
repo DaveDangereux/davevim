@@ -63,7 +63,10 @@ local keymaps = {
     ["S"] = "i<CR><Esc>k$",
 
     -- Reveal highlighting under cursor
-    ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]]
+    ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]],
+
+    -- Useful folders
+    ["<Leader><S-n>"] = ":NvimTreeOpen <CR> :cd ~/web-dev/notes/ <CR>",
   },
   insert_mode = {
     -- 'jk' for quitting insert mode
@@ -104,7 +107,7 @@ local keymaps = {
     ["<C-j>"] = [[<C-\><C-n><C-W>j]],
     ["<C-k>"] = [[<C-\><C-n><C-W>k]],
     ["<C-l>"] = [[<C-\><C-n><C-W>l]],
-  }
+  },
 }
 
 apply_keymaps(keymaps)
@@ -162,7 +165,7 @@ local telescope_keymaps = {
     ["<Leader>fe"] = ":Telescope file_browser <CR>",
     ["<Leader>fn"] = ":Telescope notify <CR>",
     ["<Leader>fp"] = ":Telescope projects <CR>",
-    ["<Leader>fc"] = ":Telescope current_buffer_fuzzy_find <CR>"
+    ["<Leader>fc"] = ":Telescope current_buffer_fuzzy_find <CR>",
   },
 }
 
@@ -183,8 +186,8 @@ local trouble_keymaps = {
 -- Treesitter
 local treesitter_keymaps = {
   normal_mode = {
-    ["<F7>"] = ":TSHighlightCapturesUnderCursor <CR>"
-  }
+    ["<F7>"] = ":TSHighlightCapturesUnderCursor <CR>",
+  },
 }
 
 -- Toggleterm
@@ -195,21 +198,21 @@ local toggleterm_keymaps = {
   term_mode = {
     ["<Leader>~"] = [[<C-\><C-n> :ToggleTermToggleAll <CR>]],
     -- ["<Leader>l"] = "clear <CR>"
-  }
+  },
 }
 
 local wipeout_keymaps = {
   normal_mode = {
     ["<Leader>o"] = ":Wipeout <CR>",
-    ["<Leader><S-o>"] = ":only <CR> :Wipeout <CR>"
-  }
+    ["<Leader><S-o>"] = ":only <CR> :Wipeout <CR>",
+  },
 }
 
 -- GitSigns
 local gitsigns_keymaps = {
   normal_mode = {
-    ["]c"] = { "&diff ? ']c' : '<cmd>Gitsigns next_hunk <CR>'", {expr=true} },
-    ["[c"] = { "&diff ? ']c' : '<cmd>Gitsigns prev_hunk <CR>'", {expr=true} },
+    ["]c"] = { "&diff ? ']c' : '<cmd>Gitsigns next_hunk <CR>'", { expr = true } },
+    ["[c"] = { "&diff ? ']c' : '<cmd>Gitsigns prev_hunk <CR>'", { expr = true } },
     ["<Leader>gs"] = ":Gitsigns stage_hunk <CR>",
     ["<Leader>gS"] = ":Gitsigns stage_buffer <CR>",
     ["<Leader>gr"] = ":Gitsigns reset_hunk <CR>",
@@ -219,7 +222,7 @@ local gitsigns_keymaps = {
     ["<Leader>gb"] = ":Gitsigns blame_line <CR>",
     ["<Leader>gt"] = ":Gitsigns toggle_blame_line <CR>",
     ["<Leader>gd"] = ":Gitsigns diffthis <CR>",
-  }
+  },
 }
 
 -- LSP
