@@ -233,7 +233,7 @@ return {
   ---------------------------------------------------------
   -- Treesitter
   ---------------------------------------------------------
-  TSBoolean = { fg = c.cyan },
+  TSBoolean = { fg = c.none },
   TSComment = { fg = c.light_blue_grey },
   TSConditional = { fg = c.none },
   TSConstant = { fg = c.red },
@@ -276,7 +276,7 @@ return {
   TSException = { fg = c.test_fg },
   TSLabel = { fg = c.red },
   TSNamespace = { fg = c.test_fg },
-  TSRepeat = { fg = c.test_fg },
+  TSRepeat = { fg = c.none },
   TSFloat = { fg = c.test_fg },
   TSCharacter = { fg = c.test_fg },
   TSConstMacro = { fg = c.test_fg },
@@ -306,11 +306,13 @@ return {
 
   htmlArg = { fg = c.orange },
   htmlComment = { fg = c.blue },
+  htmlLink = { fg = c.fg, style = "none" },
   htmlSpecialTagName = { fg = c.red },
   htmlString = { fg = c.green },
-  htmlTag = { fg = c.orange },
+  htmlTag = { fg = c.none },
   htmlTagN = { fg = c.fg },
   htmlTagName = { fg = c.red },
+  htmlTitle = { style = "none" },
   htmlTSTag = { fg = c.red },
   htmlTSTagDelimiter = { fg = c.fg },
 
@@ -331,6 +333,7 @@ return {
   javascriptTSVariable = { fg = c.yellow },
   javascriptTSVariableBuiltin = { fg = c.red },
   jsAsyncKeyword = { fg = c.purple },
+  jsConditional = { fg = c.purple },
   jsForAwait = { fg = c.purple },
   jsFuncBlock = { fg = c.none },
   jsFuncCall = { fg = c.blue },
@@ -340,11 +343,12 @@ return {
   jsObject = { fg = c.red },
   jsObjectFuncName = { fg = c.blue },
   jsObjectProp = { fg = c.red },
+  jsOperator = { fg = c.cyan },
   jsReturn = { fg = c.purple },
   jsString = { fg = c.green },
   jsStorageClass = { fg = c.purple },
   jsThis = { fg = c.red },
-  jsVariableDef = { fg = c.orange },
+  jsVariableDef = { fg = c.orange }, -- can't differentiate constants and variables
 
   ---------------------------------------------------------
   -- TypeScript
@@ -366,11 +370,18 @@ return {
   typescriptMemberOptionality = { fg = c.cyan },
   typescriptObjectType = { fg = c.blue },
   typescriptPredefinedType = { fg = c.cyan },
+  typescriptRepeat = { fg = c.purple },
   typescriptStatementKeyword = { fg = c.purple },
   typescriptTernaryOperator = { fg = c.fg },
   typescriptTypeReference = { fg = c.yellow },
   typescriptVariable = { fg = c.purple },
   typescriptVariableDeclaration = { fg = c.orange },
+
+  typescriptTSBoolean = { fg = c.orange },
+  typescriptTSFunction = { fg = c.blue },
+  typescriptTSMethod = { fg = c.blue },
+  typescriptTSVariable = { fg = c.none },
+  typescriptTSVariableBuiltin = { fg = c.red },
   -- tsTSInclude = { fg = c.purple },
 
   ---------------------------------------------------------

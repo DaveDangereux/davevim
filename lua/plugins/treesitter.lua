@@ -21,7 +21,7 @@ local settings = {
   -- ts-rainbow
   rainbow = {
     enable = true,
-    disable = { "html" },
+    extended_mode = false;
     colors = {
       -- Color test: { { { { { { { } } } } } } }
       "#ffd700", -- Gold
