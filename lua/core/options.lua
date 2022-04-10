@@ -26,7 +26,6 @@ local options = {
   cursorline = true,
   scrolloff = 8, -- minimal number of lines to keep above / below cursor
   sidescrolloff = 8, -- minimal number of lines to keep left / right of cursor
-  cmdheight = 1, -- more space for messages
   splitbelow = true,
   splitright = true,
   numberwidth = 3,
@@ -39,6 +38,8 @@ local options = {
   hidden = true, -- the default, but insurance to prevent terminals being abandoned
   showmode = false,
   foldcolumn = "2",
+  cmdheight = 2, -- helps avoid 'Press Enter' messages when working in a narrow window
+  clipboard = "unnamedplus", -- yank to system clipboard via xcopy
 }
 
 vim.opt.whichwrap:append("<,>,[,],h,l") -- enable cursor to wrap across lines
