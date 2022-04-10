@@ -33,7 +33,6 @@ vim.g.nvim_tree_icons = {
   },
 }
 
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_root_folder_modifier = table.concat({ ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" })
 vim.g.nvim_tree_respect_buf_cwd = 1
 vim.g.nvim_tree_git_hl = 1
@@ -77,6 +76,11 @@ local settings = {
       },
     },
   },
+  renderer = {
+    indent_markers = {
+      enable = true,
+    }
+  }
 }
 
 M.config = function()
