@@ -15,12 +15,12 @@ return function()
   -----------------------------------------------------------------------------
 
   local config = {
-    virtual_text = true,
+    virtual_text = false,
     signs = {
       active = signs,
     },
     update_in_insert = false,
-    underline = true,
+    underline = false,
     severity_sort = true,
     float = {
       focusable = true,

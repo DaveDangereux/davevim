@@ -16,7 +16,7 @@ local settings = {
     formatting.prettier,
     formatting.black,
     diagnostics.eslint_d,
-    diagnostics.flake8,
+    -- diagnostics.flake8,
     diagnostics.twigcs,
   },
 }
