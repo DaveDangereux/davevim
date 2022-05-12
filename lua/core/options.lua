@@ -34,12 +34,12 @@ local options = {
   smartcase = true, -- resume search case sensitivity if term includes capitals
   pumheight = 10,
   fileencoding = "utf-8",
-  textwidth = 80,
   hidden = true, -- the default, but insurance to prevent terminals being abandoned
   showmode = false,
   foldcolumn = "2",
   cmdheight = 2, -- helps avoid 'Press Enter' messages when working in a narrow window
   clipboard = "unnamedplus", -- yank to system clipboard via xcopy
+  laststatus = 3,
 }
 
 vim.opt.whichwrap:append("<,>,[,],h,l") -- enable cursor to wrap across lines

@@ -23,6 +23,7 @@ return {
     bg = config.transparent_background and c.off_black or c.bg,
   },
   Visual = { bg = c.blue_grey },
+  WinSeparator = { fg = c.off_black, bg = c.none },
 
   ---------------------------------------------------------
   -- Basic syntax highlighting
