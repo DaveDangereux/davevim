@@ -12,7 +12,7 @@ return {
   TSConstBuiltin = { fg = c.none },
   TSConstructor = { fg = c.none },
   TSError = { fg = c.fg, bg = c.bg }, -- should this be something a bit more obvious?
-  TSField = { fg = c.red },
+  TSField = { fg = c.none },
   TSFuncBuiltin = { fg = c.cyan },
   TSFunction = { fg = c.blue }, -- any reason not to use this?
   TSInclude = { fg = c.none },
@@ -20,6 +20,7 @@ return {
   TSKeywordFunction = { fg = c.none },
   TSKeywordOperator = { fg = c.none },
   TSKeywordReturn = { fg = c.none },
+  TSLiteral = { fg = c.none },
   TSMethod = { fg = c.none },
   TSNone = { fg = c.fg },
   TSNumber = { fg = c.orange },
@@ -54,7 +55,7 @@ return {
   TSConstMacro = { fg = c.test_fg },
   TSFuncMacro = { fg = c.test_fg },
   TSParameterReference = { fg = c.test_fg },
-  TSVariableBuiltin = { fg = c.test_fg },
+  TSVariableBuiltin = { fg = c.none },
   TSSymbol = { fg = c.test_fg },
   TSTextReference = { fg = c.test_fg },
   TSPunctSpecial = { fg = c.none },
@@ -64,7 +65,6 @@ return {
   TSUnderline = { style = "underline" },
   TSNote = { fg = c.test_fg, style = "bold" },
   TSDanger = { fg = c.test_fg, style = "bold" },
-  TSLiteral = { fg = c.test_fg },
   TSMath = { fg = c.test_fg },
   TSStructure = { fg = c.test_fg },
   TSStrong = { fg = c.none, style = "none" },

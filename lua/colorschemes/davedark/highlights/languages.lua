@@ -82,6 +82,7 @@ return {
   ---------------------------------------------------------
   typescriptAliasDeclaration = { fg = c.yellow },
   typescriptArrowFunc = { fg = c.purple },
+  typescriptArrowFuncArg = { fg = c.fg },
   typescriptArrowFuncDef = { fg = c.fg },
   typescriptBinaryOp = { fg = c.cyan },
   -- typescriptBlock = { fg = c.none },
@@ -122,27 +123,45 @@ return {
   -- tsxTSConstructor = { fg = c.red },
   tsxTSTag = { fg = c.yellow },
   tsxTSKeyword = { fg = c.purple },
+  tsxTSMethod = { fg = c.blue },
   tsxTSParameter = { fg = c.none },
-  tsxTSProperty = { fg = c.fg },
+  tsxTSProperty = { fg = c.red },
   tsxTSTypeBuiltin = { fg = c.none },
-  tsxTSVariable = { fg = c.none },
+  tsxTSVariable = { fg = c.none }, -- no differentiation between constants and variables
   tsxTSFunction = { fg = c.blue },
 
   ---------------------------------------------------------
   -- python
   ---------------------------------------------------------
+  pythonClass = { fg = c.yellow },
+  pythonClassVar = { fg = c.red },
   pythonConditional = { fg = c.purple },
   pythonException = { fg = c.purple },
   pythonExceptions = { fg = c.cyan },
   pythonInclude = { fg = c.purple },
   pythonString = { fg = c.green },
+
+  -- pythonTSConstructor = { fg = c.yellow },
   pythonTSConstBuiltin = { fg = c.red },
+  pythonTSConstructor = { fg = c.yellow },
+  pythonTSException = { fg = c.purple },
+  pythonTSField = { fg = c.red },
   pythonTSInclude = { fg = c.purple },
   pythonTSKeyword = { fg = c.purple },
   pythonTSKeywordFunction = { fg = c.purple },
   pythonTSKeywordReturn = { fg = c.purple },
-  pythonTSType = { fg = c.rolling_stone },
-  pythonTSParameter = { fg = c.orange },
+  pythonTSMethod = { fg = c.blue },
+  pythonTSParameter = { fg = c.fg },
+  pythonTSRepeat = { fg = c.purple },
+  pythonTSType = { fg = c.yellow },
+  pythonTSVariable = { fg = c.red },
+
+  ---------------------------------------------------------
+  -- Django
+  ---------------------------------------------------------
+  djangoStatement = { fg = c.purple },
+  djangoTagBlock = { fg = c.yellow },
+  djangoVarBlock = { fg = c.green },
 
   ---------------------------------------------------------
   -- php
@@ -226,6 +245,8 @@ return {
   markdownTSTitle = { fg = c.red },
   markdownTSPunctSpecial = { fg = c.red },
   markdownTSTextReference = { fg = c.fg },
+
+  mkdCode = { fg = c.green },
 
   ---------------------------------------------------------
   -- Vue.js
