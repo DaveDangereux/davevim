@@ -8,15 +8,20 @@ end
 
 local settings = {
   window = {
-    height = 0.9, -- height of the Zen window
-    width = 0.55, -- width of the Zen window
+    height = 0.7,
+    width = 0.55,
     options = {
-      number = true, -- disable number column
-      cursorline = false,                  -- disable cursor line
+      number = true,
+      cursorline = false,
     },
   },
   plugins = {
+    twilight = { enabled = false },
     tmux = { enabled = true },
+    kitty = {
+      enabled = true,
+      font = "18",
+    },
   },
   on_open = function()
     vim.cmd("highlight ZenBg guibg=bg")

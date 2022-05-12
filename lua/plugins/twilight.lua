@@ -2,7 +2,7 @@ local M = {}
 
 local settings = {
   dimming = {
-    alpha = 0.3,
+    alpha = 0.6,
     color = { "Normal", "#ffffff" },
     -- Fully dim other windows when true
     inactive = true,
