@@ -131,6 +131,14 @@ return {
   tsxTSFunction = { fg = c.blue },
 
   ---------------------------------------------------------
+  -- RegEx
+  ---------------------------------------------------------
+  regexTSConstant = { fg = c.orange },
+  regexTSPunctBracket = { fg = c.cyan },
+  regexTSStringEscape = { fg = c.cyan },
+  regexTSStringRegex = { fg = c.cyan },
+
+  ---------------------------------------------------------
   -- python
   ---------------------------------------------------------
   pythonClass = { fg = c.yellow },
@@ -149,10 +157,12 @@ return {
   pythonTSInclude = { fg = c.purple },
   pythonTSKeyword = { fg = c.purple },
   pythonTSKeywordFunction = { fg = c.purple },
+  pythonTSKeywordOperator = { fg = c.purple },
   pythonTSKeywordReturn = { fg = c.purple },
   pythonTSMethod = { fg = c.blue },
   pythonTSParameter = { fg = c.fg },
   pythonTSRepeat = { fg = c.purple },
+  pythonTSStringEscape = { fg = c.cyan },
   pythonTSType = { fg = c.yellow },
   pythonTSVariable = { fg = c.red },
 
