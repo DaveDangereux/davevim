@@ -20,7 +20,7 @@ local settings = {
     tmux = { enabled = true },
     kitty = {
       enabled = true,
-      font = "18",
+      font = "16",
     },
   },
   on_open = function()
