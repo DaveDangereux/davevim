@@ -8,20 +8,22 @@ end
 
 local settings = {
   window = {
-    height = 0.7,
-    width = 0.55,
+    height = 0.85,
+    width = 80,
     options = {
-      number = true,
+      signcolumn = "no",
+      number = false,
       cursorline = false,
     },
   },
   plugins = {
     twilight = { enabled = false },
-    tmux = { enabled = true },
-    kitty = {
-      enabled = true,
-      font = "16",
-    },
+    gitsigns = { enabled = true },
+    tmux = { enabled = false },
+    -- kitty = {
+    --   enabled = true,
+    --   font = "16",
+    -- },
   },
   on_open = function()
     vim.cmd("highlight ZenBg guibg=bg")
