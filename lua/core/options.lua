@@ -1,6 +1,3 @@
-vim.cmd("colorscheme davedark")
-vim.cmd("set fillchars+=eob:\\ ") -- this gets rid of the ~ indicating non-text / end of buffer
-
 local options = {
   -- tabbing
   tabstop = 2, -- insert this many spaces for <Tab>
@@ -13,17 +10,21 @@ local options = {
   breakindent = true,
   showbreak = "  ",
 
+  -- line breaking
+  paste = false,
+
   -- indentation
   -- autoindent = true,
   -- smartindent = true,
 
   -- unsorted
   number = true, -- line numbers
+  relativenumber = false, -- useful for jumping but I like to refer to line numbers
   mouse = "a", -- full mouse functionality
   timeoutlen = 200,
   termguicolors = true, -- enables 24-bit colour
   showtabline = 2, -- always show tabs at top of screen
-  cursorline = true,
+  cursorline = false, -- gets confusing when cancelling out of Visual mode
   scrolloff = 8, -- minimal number of lines to keep above / below cursor
   sidescrolloff = 8, -- minimal number of lines to keep left / right of cursor
   splitbelow = true,
@@ -42,12 +43,25 @@ local options = {
   laststatus = 3,
 }
 
-vim.opt.whichwrap:append("<,>,[,],h,l") -- enable cursor to wrap across lines
-vim.opt.iskeyword:append("-") -- treat "-" as part of a word
+-- Set colour scheme
+vim.cmd("colorscheme davedark")
+
+-- Gets rid of the ~ indicating non-text / end of buffer
+vim.cmd("set fillchars+=eob:\\ ")
+
+-- Enable cursor to wrap across lines
+vim.opt.whichwrap:append("<,>,[,],h,l")
+
+-- Treat "-" as part of a word
+vim.opt.iskeyword:append("-")
+
+-- Don't give ins-completion-menu messages (whatever they are?)
 vim.opt.shortmess:append("c")
+
+-- Change fold symbols
 vim.opt.fillchars:append("foldopen:🞃, foldsep:▏, foldclose:🞂")
 
--- This command makes the cursor blink and helps visually indicate whether the (terminal) window is active
+-- Make the cursor blink to visually indicate whether the window is active
 vim.cmd([[
   set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 ]])
