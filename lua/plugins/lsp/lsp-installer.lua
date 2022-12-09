@@ -26,8 +26,21 @@
 -- Prepare on_attach
 local lsp_keymaps = require("core.keymaps").lsp
 
-local function lsp_highlight_document(server)
-  if server.resolved_capabilities.document_highlight then
+local on_attach = function(server, bufnr)
+    -- By disabling the formatting functionality of the server, we avoid having
+    -- to select between multiple formatting options, essentially defaulting to
+    -- our preferred formatter (prettier via null-ls in this case)
+
+  if server.name == "html" or server.name == "tsserver" then
+    server.server_capabilities.document_formatting = false
+  end
+
+  if server.server_capabilities.documentSymbolProvider then
+    local navic = require('nvim-navic')
+    navic.attach(server, bufnr)
+  end
+
+  if server.server_capabilities.document_highlight then
     local status_ok, illuminate = pcall(require, "illuminate")
     if not status_ok then
       print("Failed to load illuminate in lsp-installer.lua")
@@ -35,18 +48,7 @@ local function lsp_highlight_document(server)
     end
     illuminate.on_attach(server)
   end
-end
 
-local on_attach = function(server, bufnr)
-    -- By disabling the formatting functionality of the server, we avoid having
-    -- to select between multiple formatting options, essentially defaulting to
-    -- our preferred formatter (prettier via null-ls in this case)
-
-  if server.name == "html" or server.name == "tsserver" then
-    server.resolved_capabilities.document_formatting = false
-  end
-
-  lsp_highlight_document(server)
   lsp_keymaps(bufnr)
 end
 

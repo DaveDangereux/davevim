@@ -108,12 +108,12 @@ local plugins = {
     end,
   },
 
-  -- Breadcrumbs for status line
+  -- Improved breadcrumbs for status line
   {
-    "SmiteshP/nvim-gps",
-    requires = "nvim-treesitter/nvim-treesitter",
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
     config = function()
-      require("plugins.gps").config()
+      require("plugins.navic").config()
     end,
   },
 
