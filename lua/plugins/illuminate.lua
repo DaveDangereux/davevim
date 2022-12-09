@@ -1,9 +1,17 @@
 local M = {}
 
-M.config = function()
-  vim.g.Illuminate_delay = 1000
-
-  vim.g.Illuminate_ftwhitelist = {
+local settings = {
+  providers = {
+    'lsp',
+    'treesitter',
+    'regex',
+  },
+  delay = 1000,
+  filetypes_denylist = {
+    'markdown',
+    'NvimTree',
+  },
+  filetypes_allowlist = {
     "lua",
     "vim",
     "python",
@@ -11,7 +19,17 @@ M.config = function()
     "javascriptreact",
     "typescript",
     "typescriptreact",
-  }
+  },
+  under_cursor = true,
+}
+
+M.config = function()
+  local status_ok, illuminate = pcall(require, "illuminate")
+  if not status_ok then
+    print "Failed to configure illuminate"
+  end
+
+  illuminate.configure(settings)
 end
 
 return M
