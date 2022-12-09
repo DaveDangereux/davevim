@@ -1,5 +1,3 @@
-local fn = vim.fn
-
 local plugins = {
   -----------------------------------------------------------------------------
   -- General Plugins
@@ -26,9 +24,6 @@ local plugins = {
     config = function()
       require("plugins.nvimtree").config()
     end,
-    setup = function()
-      require("core.keymaps").nvimtree()
-    end,
   },
 
   -- Zen mode
@@ -36,9 +31,6 @@ local plugins = {
     "folke/zen-mode.nvim",
     config = function()
       require("plugins.zenmode").config()
-    end,
-    setup = function()
-      require("core.keymaps").zenmode()
     end,
   },
 
@@ -50,24 +42,19 @@ local plugins = {
     end,
   },
 
+  -- Fix jsx / tsx commenting
+  { "JoosepAlviste/nvim-ts-context-commentstring" },
+
   -- Tab line
   {
     "akinsho/bufferline.nvim",
     config = function()
       require("plugins.bufferline").config()
     end,
-    setup = function()
-      require("core.keymaps").bufferline()
-    end,
   },
 
   -- Better buffer deletion
-  {
-    "moll/vim-bbye",
-    setup = function()
-      require("core.keymaps").bbye()
-    end,
-  },
+  { "moll/vim-bbye" },
 
   -- Project management and root folder cd
   {
@@ -85,9 +72,6 @@ local plugins = {
     config = function()
       require("renamer").setup()
     end,
-    setup = function()
-      require("core.keymaps").renamer()
-    end,
   },
 
   -- Git
@@ -96,6 +80,9 @@ local plugins = {
     requires = { { "nvim-lua/plenary.nvim" } },
     config = function()
       require("plugins.gitsigns").config()
+    end,
+    setup = function()
+      require("core.keymaps").gitsigns()
     end,
     event = "BufRead",
   },
@@ -148,9 +135,6 @@ local plugins = {
     config = function()
       require("plugins.toggleterm").config()
     end,
-    setup = function()
-      require("core.keymaps").toggleterm()
-    end,
   },
 
   -- Recognise json with comments
@@ -165,12 +149,7 @@ local plugins = {
   },
 
   -- Destroy all buffers that aren't open in windows or tabs
-  {
-    "artnez/vim-wipeout",
-    setup = function()
-      require("core.keymaps").wipeout()
-    end,
-  },
+  { "artnez/vim-wipeout" },
 
   -- Visualise indentation
   {
@@ -195,18 +174,6 @@ local plugins = {
   },
 
   -----------------------------------------------------------------------------
-  -- Color schemes
-  -----------------------------------------------------------------------------
-
-  { "jacoborus/tender.vim" },
-  { "rakr/vim-one" },
-  { "rafamadriz/neon" },
-  { "tomasiser/vim-code-dark" },
-  { "Mofiqul/vscode.nvim" },
-  { "marko-cerovac/material.nvim" },
-  { "bluz71/vim-nightfly-guicolors" },
-
-  -----------------------------------------------------------------------------
   -- LSP
   -----------------------------------------------------------------------------
 
@@ -220,9 +187,6 @@ local plugins = {
       require("plugins.lsp").config()
     end,
   },
-
-  -- JSON schema completion
-  { "b0o/SchemaStore.nvim" },
 
   -- Highlight other instances of word under cursor
   {
@@ -238,9 +202,6 @@ local plugins = {
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require("plugins.trouble").config()
-    end,
-    setup = function()
-      require("core.keymaps").trouble()
     end,
   },
 
@@ -259,6 +220,9 @@ local plugins = {
       require("plugins.lsp.null-ls").config()
     end,
   },
+
+  -- Ruby Signature syntax highlighting
+  { "pocke/rbs.vim" },
 
   -----------------------------------------------------------------------------
   -- Snippets
@@ -299,6 +263,9 @@ local plugins = {
   { "hrsh7th/cmp-path" },
   { "hrsh7th/cmp-calc" },
 
+  -- JSON schema completion
+  { "b0o/SchemaStore.nvim" },
+
   -----------------------------------------------------------------------------
   -- Treesitter and Friends
   -----------------------------------------------------------------------------
@@ -310,9 +277,6 @@ local plugins = {
     config = function()
       require("plugins.treesitter").config()
     end,
-    setup = function()
-      require("core.keymaps").treesitter()
-    end,
   },
 
   -- Rainbow brackets
@@ -320,25 +284,6 @@ local plugins = {
     "p00f/nvim-ts-rainbow",
     requires = { { "nvim-treesitter/nvim-treesitter" } },
     -- Config in plugins/treesitter.lua
-  },
-
-  -- Playground
-  {
-    "nvim-treesitter/playground",
-    requires = { { "nvim-treesitter/nvim-treesitter" } },
-    -- Config in plugins/treesitter.lua
-  },
-
-  -- Twilight
-  {
-    "folke/twilight.nvim",
-    requires = { { "nvim-treesitter/nvim-treesitter" } },
-    config = function()
-      require("plugins.twilight").config()
-    end,
-    setup = function()
-      require("core.keymaps").twilight()
-    end,
   },
 
   -- Autotag
@@ -361,9 +306,6 @@ local plugins = {
     config = function()
       require("plugins.telescope").config()
     end,
-    setup = function()
-      require("core.keymaps").telescope()
-    end,
   },
 
   -- Fuzzy file finder for Telescope
@@ -375,7 +317,7 @@ local plugins = {
   -- File browser
   { "nvim-telescope/telescope-file-browser.nvim" },
 
-  -- Bookmare browser
+  -- Bookmark browser
   { "dhruvmanila/telescope-bookmarks.nvim" },
 }
 
@@ -383,6 +325,7 @@ local plugins = {
 -- Automagic Wizardry - clones and installs Packer if not present
 -------------------------------------------------------------------------------
 
+local fn = vim.fn
 local packer_bootstrapped = false
 
 -- Check to see if Packer exists
