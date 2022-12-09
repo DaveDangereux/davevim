@@ -6,48 +6,65 @@ if not config_status_ok then
   return
 end
 
--- git = {
---   unstaged = "✗",
---   staged = "S",
---   untracked = "U",
--- },
-
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "✓",
-    unmerged = "",
-    renamed = "➜",
-    deleted = "",
-    untracked = "★",
-    ignored = "◌",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-  },
-}
-
-vim.g.nvim_tree_root_folder_modifier = table.concat({ ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" })
-vim.g.nvim_tree_respect_buf_cwd = 1
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_special_files = { ["README.md"] = 1 }
-
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 local settings = {
-  actions = {
-    open_file = {
-      window_picker = {
-        enable = false
-      }
-    }
+  respect_buf_cwd = false,
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+        { key = "h", cb = tree_cb("close_node") },
+        { key = "v", cb = tree_cb("vsplit") },
+        { key = "C", cb = tree_cb("cd") },
+      },
+    },
+    float = {
+      enable = true,
+        open_win_config = {
+          relative = "editor",
+          border = "rounded",
+          width = 30,
+          height = 25,
+          row = 1,
+          col = 1,
+        },
+    },
+  },
+  renderer = {
+    highlight_git = true,
+    highlight_opened_files = "all",
+    indent_markers = {
+      enable = true,
+    },
+    icons = {
+      glyphs = {
+        default = "",
+        symlink = "",
+        git = {
+          unstaged = "",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          deleted = "",
+          untracked = "★",
+          ignored = "◌",
+        },
+        folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+        },
+      },
+    },
+    root_folder_label = table.concat({ ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }),
+  },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
   },
   diagnostics = {
     enable = true,
@@ -58,29 +75,20 @@ local settings = {
       hint = "",
     },
   },
-  update_cwd = true,
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
+  filters = {
+    dotfiles = true,
   },
   git = {
-    ignore = false
+    ignore = true,
   },
-  view = {
-    mappings = {
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-        { key = "h", cb = tree_cb("close_node") },
-        { key = "v", cb = tree_cb("vsplit") },
-        { key = "C", cb = tree_cb("cd") },
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false,
       },
     },
   },
-  renderer = {
-    indent_markers = {
-      enable = true,
-    }
-  }
+  update_cwd = true,
 }
 
 M.config = function()
