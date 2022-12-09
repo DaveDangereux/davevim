@@ -6,18 +6,29 @@ if not status_ok then
   return
 end
 
+local code_actions = null_ls.builtins.code_actions
+local completion = null_ls.builtins.completion
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 local settings = {
   sources = {
+    code_actions.eslint,
+    completion.luasnip.with({
+      filetypes = { "lua" },
+    }),
     formatting.stylua,
-    formatting.eslint_d,
-    formatting.prettier,
+    formatting.eslint,
+    -- TODO: Reference a default config for prettier
+    formatting.prettier.with({
+        disabled_filetypes = { "markdown" }
+      }),
     formatting.black,
-    diagnostics.eslint_d,
+    formatting.stylelint,
+    -- diagnostics.eslint_d, -- same for this
     -- diagnostics.flake8,
     diagnostics.twigcs,
+    diagnostics.stylelint,
   },
 }
 
