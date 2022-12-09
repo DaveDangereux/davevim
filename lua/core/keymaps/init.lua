@@ -2,15 +2,20 @@ local M = {}
 
 local apply_keymaps = require("core.keymaps.keymap-tools").apply_keymaps
 
--------------------------------------------------------------------------------
--- Core keymaps
--------------------------------------------------------------------------------
-
 -- Remap space as leader key
 vim.g.mapleader = " "
 
 local keymaps = {
+
+  -----------------------------------------------------------------------------
+  -- NORMAL MODE
+  -----------------------------------------------------------------------------
+
   normal_mode = {
+    ---------------------------------------------------------------------------
+    -- Vim
+    ---------------------------------------------------------------------------
+
     -- Better window movement
     ["<C-h>"] = "<C-w>h",
     ["<C-j>"] = "<C-w>j",
@@ -51,7 +56,7 @@ local keymaps = {
     ["<Leader>C"] = ":qa <CR>",
 
     -- Formatting
-    ["<Leader><S-f>"] = ":lua vim.lsp.buf.formatting_sync(nil, 3000) <CR>",
+    ["<Leader><S-f>"] = ":lua vim.lsp.buf.format({ async = true }) <CR>",
 
     -- Open a Quickfix window for the last search
     ["<Leader>/"] = ":execute 'vimgrep /'.@/.'/g %' <CR>:copen <CR>",
@@ -67,7 +72,95 @@ local keymaps = {
 
     -- Useful folders
     ["<Leader><S-n>"] = ":NvimTreeOpen <CR> :cd ~/web-dev/notes/ <CR>",
+    ["<Leader><S-s>"] = ":NvimTreeOpen <CR> :cd ~/.config/nvim/ <CR>",
+
+    -- Quickfix list
+    ["<Leader>q"] = ":copen <CR>",
+    ["]q"] = ":cnext <CR>",
+    ["[q"] = ":cprev <CR>",
+
+    -- Centralised page motion
+    ["<C-d>"] = "<C-d>zz",
+    ["<C-u>"] = "<C-u>zz",
+
+    -- Centralised searching
+    ["n"] = "nzzzv",
+    ["N"] = "Nzzzv",
+
+    ---------------------------------------------------------------------------
+    -- NvimTree
+    ---------------------------------------------------------------------------
+    ["<Leader>e"] = ":NvimTreeToggle <CR>",
+    ["<Leader><S-e>"] = ":NvimTreeFocus <CR>",
+
+    ---------------------------------------------------------------------------
+    -- ZenMode
+    ---------------------------------------------------------------------------
+    ["<Leader>z"] = ":ZenMode <CR>",
+
+    ---------------------------------------------------------------------------
+    -- BufferLine
+    ---------------------------------------------------------------------------
+    ["<S-l>"] = ":BufferLineCycleNext <CR>",
+    ["<S-h>"] = ":BufferLineCyclePrev <CR>",
+
+    ---------------------------------------------------------------------------
+    -- bbye
+    ---------------------------------------------------------------------------
+    ["<Leader>x"] = ":Bdelete <CR>",
+    ["<Leader>X"] = ":bufdo :Bdelete <CR>",
+
+    ---------------------------------------------------------------------------
+    -- Telescope
+    ---------------------------------------------------------------------------
+    ["<Leader>ff"] = ":lua require('telescope.builtin').find_files() <CR>",
+    ["<Leader>fg"] = ":lua require('telescope.builtin').live_grep() <CR>",
+    ["<Leader>fb"] = ":lua require('telescope.builtin').buffers() <CR>",
+    ["<Leader>fh"] = ":lua require('telescope.builtin').help_tags() <CR>",
+    ["<Leader>fr"] = ":lua require('telescope.builtin').oldfiles() <CR>",
+    ["<Leader>fe"] = ":Telescope file_browser <CR>",
+    ["<Leader>fn"] = ":Telescope notify <CR>",
+    ["<Leader>fp"] = ":Telescope projects <CR>",
+    ["<Leader>fc"] = ":Telescope current_buffer_fuzzy_find <CR>",
+
+    ---------------------------------------------------------------------------
+    -- Renamer
+    ---------------------------------------------------------------------------
+    ["<F2>"] = ":lua require('renamer').rename() <CR>",
+
+    ---------------------------------------------------------------------------
+    -- Trouble
+    ---------------------------------------------------------------------------
+    ["<Leader>T"] = ":TroubleToggle <CR>",
+
+    ---------------------------------------------------------------------------
+    -- Treesitter
+    ---------------------------------------------------------------------------
+    ["<F7>"] = ":TSHighlightCapturesUnderCursor <CR>",
+
+    ---------------------------------------------------------------------------
+    -- Toggleterm (see also Term Mode)
+    ---------------------------------------------------------------------------
+    ["<Leader>#"] = ":ToggleTerm direction=vertical <CR>",
+    ["<Leader>t"] = ":ToggleTerm direction=float <CR>",
+    ["<Leader>~"] = ":ToggleTermToggleAll <CR>",
+
+    ---------------------------------------------------------------------------
+    -- Wipeout
+    ---------------------------------------------------------------------------
+    ["<Leader>o"] = ":Wipeout <CR>",
+    ["<Leader><S-o>"] = ":only <CR> :Wipeout <CR>",
+
+    ---------------------------------------------------------------------------
+    -- Illuminate
+    ---------------------------------------------------------------------------
+    ["<Leader>i"] = ":IlluminateToggle <CR>",
   },
+
+  -----------------------------------------------------------------------------
+  -- INSERT MODE
+  -----------------------------------------------------------------------------
+
   insert_mode = {
     -- 'jk' for quitting insert mode
     ["jk"] = "<Esc>",
@@ -78,7 +171,15 @@ local keymaps = {
     ["<C-k>"] = "<Esc><C-w>ki",
     ["<C-l>"] = "<Esc><C-w>li",
   },
+
+  -----------------------------------------------------------------------------
+  -- VISUAL MODE
+  -----------------------------------------------------------------------------
+
   visual_mode = {
+    ---------------------------------------------------------------------------
+    -- Vim
+    ---------------------------------------------------------------------------
     -- Stay in indent mode
     ["<"] = "<gv",
     [">"] = ">gv",
@@ -90,8 +191,19 @@ local keymaps = {
 
     -- Substitute shortcut
     ["<Leader>s"] = ":s/",
+
+    -- Space-paste without losing contents of paste register
+    ["<Leader>p"] = '"_dP',
   },
+
+  -----------------------------------------------------------------------------
+  -- VISUAL BLOCK MODE
+  -----------------------------------------------------------------------------
+
   visual_block_mode = {
+    ---------------------------------------------------------------------------
+    -- Vim
+    ---------------------------------------------------------------------------
     ["J"] = ":move '>+1 <CR>gv-gv",
     ["K"] = ":move '<-2 <CR>gv-gv",
     ["<A-j>"] = ":move '>+1<CR>gv-gv",
@@ -99,114 +211,41 @@ local keymaps = {
 
     -- Substitute shortcut
     ["<Leader>s"] = ":s/",
+
+    -- Space-paste without losing contents of paste register
+    ["<Leader>p"] = '"_dP',
   },
+
+  -----------------------------------------------------------------------------
+  -- TERM MODE
+  -----------------------------------------------------------------------------
+
   term_mode = {
+    ---------------------------------------------------------------------------
+    -- Vim
+    ---------------------------------------------------------------------------
     ["<Esc>"] = "<C-\\><C-n>",
     ["jk"] = "<C-\\><C-n>",
     ["<C-h>"] = [[<C-\><C-n><C-W>h]],
     ["<C-j>"] = [[<C-\><C-n><C-W>j]],
     ["<C-k>"] = [[<C-\><C-n><C-W>k]],
     ["<C-l>"] = [[<C-\><C-n><C-W>l]],
+
+    ---------------------------------------------------------------------------
+    -- Toggleterm (see also Normal Mode)
+    ---------------------------------------------------------------------------
+    ["<Leader>~"] = [[<C-\><C-n> :ToggleTermToggleAll <CR>]],
+    ["<Leader>#"] = [[<C-\><C-n> :clo <CR>]],
+    ["<Leader>c"] = [[<C-\><C-n> :clo <CR>]],
+    ["<Leader>t"] = [[<C-\><C-n> :clo <CR>]],
   },
 }
 
 apply_keymaps(keymaps)
 
 -------------------------------------------------------------------------------
--- Plugin-specific keymaps
+-- Buffer Specific Keymaps
 -------------------------------------------------------------------------------
-
--- nvimtree
-local nvimtree_keymaps = {
-  normal_mode = {
-    ["<Leader>e"] = ":NvimTreeToggle <CR>",
-    -- See also lua/plugins/nvimtree.lua
-  },
-}
-
--- zen-mode
-local zenmode_keymaps = {
-  normal_mode = {
-    ["<Leader>z"] = ":ZenMode <CR>",
-  },
-}
-
--- bufferline
-local bufferline_keymaps = {
-  normal_mode = {
-    ["<S-l>"] = ":BufferLineCycleNext <CR>",
-    ["<S-h>"] = ":BufferLineCyclePrev <CR>",
-  },
-}
-
--- bbye
-local bbye_keymaps = {
-  normal_mode = {
-    ["<Leader>x"] = ":Bdelete <CR>",
-    ["<Leader>X"] = ":bufdo :Bdelete <CR>",
-  },
-}
-
--- twilight
-local twilight_keymaps = {
-  normal_mode = {
-    ["<Leader>t"] = ":Twilight <CR>",
-  },
-}
-
--- telescope
-local telescope_keymaps = {
-  normal_mode = {
-    ["<Leader>ff"] = ":lua require('telescope.builtin').find_files() <CR>",
-    ["<Leader>fg"] = ":lua require('telescope.builtin').live_grep() <CR>",
-    ["<Leader>fb"] = ":lua require('telescope.builtin').buffers() <CR>",
-    ["<Leader>fh"] = ":lua require('telescope.builtin').help_tags() <CR>",
-    ["<Leader>fr"] = ":lua require('telescope.builtin').oldfiles() <CR>",
-    ["<Leader>fe"] = ":Telescope file_browser <CR>",
-    ["<Leader>fn"] = ":Telescope notify <CR>",
-    ["<Leader>fp"] = ":Telescope projects <CR>",
-    ["<Leader>fc"] = ":Telescope current_buffer_fuzzy_find <CR>",
-  },
-}
-
--- renamer
-local renamer_keymaps = {
-  normal_mode = {
-    ["<F2>"] = ":lua require('renamer').rename() <CR>",
-  },
-}
-
--- Trouble
-local trouble_keymaps = {
-  normal_mode = {
-    ["<Leader><S-t>"] = ":TroubleToggle <CR>",
-  },
-}
-
--- Treesitter
-local treesitter_keymaps = {
-  normal_mode = {
-    ["<F7>"] = ":TSHighlightCapturesUnderCursor <CR>",
-  },
-}
-
--- Toggleterm
-local toggleterm_keymaps = {
-  normal_mode = {
-    ["<Leader>~"] = ":ToggleTermToggleAll <CR>",
-  },
-  term_mode = {
-    ["<Leader>~"] = [[<C-\><C-n> :ToggleTermToggleAll <CR>]],
-    -- ["<Leader>l"] = "clear <CR>"
-  },
-}
-
-local wipeout_keymaps = {
-  normal_mode = {
-    ["<Leader>o"] = ":Wipeout <CR>",
-    ["<Leader><S-o>"] = ":only <CR> :Wipeout <CR>",
-  },
-}
 
 -- GitSigns
 local gitsigns_keymaps = {
@@ -220,7 +259,7 @@ local gitsigns_keymaps = {
     ["<Leader>gu"] = ":Gitsigns undo_stage_hunk <CR>",
     ["<Leader>gp"] = ":Gitsigns preview_hunk <CR>",
     ["<Leader>gb"] = ":Gitsigns blame_line <CR>",
-    ["<Leader>gt"] = ":Gitsigns toggle_blame_line <CR>",
+    ["<Leader>gt"] = ":Gitsigns toggle_current_line_blame <CR>",
     ["<Leader>gd"] = ":Gitsigns diffthis <CR>",
   },
 }
@@ -235,61 +274,17 @@ local lsp_keymaps = {
     -- ["<C-k>"] = ":lua vim.lsp.buf.signature_help() <CR>", -- is this redundant with hover?
     -- ["<Leader>rn"] = ":lua vim.lsp.buf.rename() <CR>",
     ["gr"] = ":lua vim.lsp.buf.references() <CR>",
-    ["<Leader>ca"] = ":lua vim.lsp.buf.code_action() <CR>",
+    ["<Leader>a"] = ":lua vim.lsp.buf.code_action() <CR>",
     ["[d"] = ":lua vim.diagnostic.goto_prev({ border = 'rounded' }) <CR>",
     ["]d"] = ":lua vim.diagnostic.goto_next({ border = 'rounded' }) <CR>",
     ["gl"] = ":lua vim.diagnostic.open_float() <CR>",
-    ["<Leader>q"] = ":lua vim.diagnostic.setloclist() <CR>",
+    -- ["<Leader>q"] = ":lua vim.diagnostic.setqflist() <CR>",
   },
 }
 
 -------------------------------------------------------------------------------
 -- Exports
 -------------------------------------------------------------------------------
-
-M.nvimtree = function()
-  apply_keymaps(nvimtree_keymaps)
-end
-
-M.zenmode = function()
-  apply_keymaps(zenmode_keymaps)
-end
-
-M.bufferline = function()
-  apply_keymaps(bufferline_keymaps)
-end
-
-M.bbye = function()
-  apply_keymaps(bbye_keymaps)
-end
-
-M.twilight = function()
-  apply_keymaps(twilight_keymaps)
-end
-
-M.telescope = function()
-  apply_keymaps(telescope_keymaps)
-end
-
-M.renamer = function()
-  apply_keymaps(renamer_keymaps)
-end
-
-M.trouble = function()
-  apply_keymaps(trouble_keymaps)
-end
-
-M.treesitter = function()
-  apply_keymaps(treesitter_keymaps)
-end
-
-M.toggleterm = function()
-  apply_keymaps(toggleterm_keymaps)
-end
-
-M.wipeout = function()
-  apply_keymaps(wipeout_keymaps)
-end
 
 M.gitsigns = function(bufnr)
   apply_keymaps(gitsigns_keymaps, bufnr)
