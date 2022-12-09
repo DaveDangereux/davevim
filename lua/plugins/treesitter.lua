@@ -9,8 +9,53 @@ local M = {}
 
 local settings = {
   -- treesitter
-  ensure_installed = "all",
-  sync_install = false,
+  ensure_installed = {
+    "bash",
+    "c_sharp",
+    "comment",
+    "cpp",
+    "css",
+    "diff",
+    "dockerfile",
+    "elixir",
+    "git_rebase",
+    "gitcommit",
+    "gitignore",
+    "graphql",
+    "haskell",
+    "html",
+    "http",
+    "java",
+    "javascript",
+    "jsdoc",
+    "json",
+    "json5",
+    "kotlin",
+    "lua",
+    "make",
+    "markdown",
+    "markdown_inline",
+    "php",
+    "phpdoc",
+    "prisma",
+    "python",
+    "regex",
+    "ruby",
+    "rust",
+    "scss",
+    "solidity",
+    "sql",
+    "svelte",
+    "swift",
+    "toml",
+    "tsx",
+    "twig",
+    "typescript",
+    "vim",
+    "vue",
+    "yaml",
+  },
+  sync_install = true,
   ignore_install = { "" },
   highlight = {
     enable = true,
@@ -34,9 +79,10 @@ local settings = {
     },
   },
 
-  -- playground
-  playground = {
+  -- context-commentstring
+  context_commentstring = {
     enable = true,
+    enable_autocmd = false,
   },
 }
 
