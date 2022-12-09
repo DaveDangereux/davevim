@@ -11,13 +11,13 @@ return {
     return string.format(" %s ", get_mode_options().text)
   end,
   hl = function()
-   return mode_options[vi_mode_utils.get_vim_mode()].hl
+    return mode_options[vi_mode_utils.get_vim_mode()].hl
   end,
   right_sep = {
     str = icons.slant_left_2,
     hl = function()
       return mode_options[vi_mode_utils.get_vim_mode()].right_sep_hl
-    end
+    end,
   },
-  priority = 3
+  priority = 3,
 }

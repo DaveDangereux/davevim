@@ -1,3 +1,11 @@
+-- OP
+-- REPLACE
+-- V-REPLACE
+-- ENTER
+-- MORE
+-- SHELL
+-- NONE
+
 return {
   NORMAL = {
     text = "NORMAL",
@@ -43,6 +51,11 @@ return {
     text = "TERMINAL",
     hl = "FelineModeTerm",
     right_sep_hl = "FelineModeTermSep"
+  },
+  REPLACE = {
+    text = "REPLACE",
+    hl = "FelineModeReplace",
+    right_sep_hl = "FelineModeReplaceSep"
   },
   DEFAULT = {
     text = "UNKNOWN MODE",
