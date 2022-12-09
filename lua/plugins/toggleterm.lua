@@ -8,8 +8,9 @@ local settings = {
       return vim.o.columns * 0.33
     end
   end,
-  open_mapping = "<Leader>#",
+  -- open_mapping = "<Leader>#",
   direction = "vertical",
+  -- direction = "float",
   float_opts = {
     border = "curved",
     highlights = {
