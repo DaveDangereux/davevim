@@ -33,8 +33,8 @@ local check_backspace = function()
 end
 
 local source_names = {
-  nvim_lsp = "[LSP]",
   nvim_lua = "[vim.lsp]",
+  nvim_lsp = "[LSP]",
   luasnip = "[Snippet]",
   buffer = "[Buffer]",
   path = "[Path]",
@@ -93,13 +93,14 @@ local settings = {
       end
     end, { "i", "s" }),
   },
+  -- Reorder these to change the order in the popup menu
   sources = {
-    { name = "nvim_lsp" }, -- LSP completion
     { name = "nvim_lua" }, -- vim.lsp.*
+    { name = "nvim_lsp" }, -- LSP completion
     { name = "luasnip" }, -- snippet completion
-    { name = "buffer" }, -- Buffer variables
     { name = "path" },
     { name = "calc" },
+    { name = "buffer" }, -- Buffer variables
   },
   experimental = {
     ghost_text = true,
