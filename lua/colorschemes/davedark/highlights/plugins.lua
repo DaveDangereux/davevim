@@ -61,9 +61,9 @@ return {
   ---------------------------------------------------------
   -- Illuminate
   ---------------------------------------------------------
-  LspReferenceRead = { fg = c.illuminate_read, style = "bold" },
-  LspReferenceWrite = { fg = c.illuminate_write, style = "bold" },
-  LspReferenceText = { fg = c.illuminate_text, style = "bold" },
+  IlluminatedWordText = { fg = c.illuminate_text, style = "bold" },
+  IlluminatedWordRead = { fg = c.illuminate_read, style = "bold" },
+  IlluminatedWordWrite = { fg = c.illuminate_write, style = "bold" },
 
   ---------------------------------------------------------
   -- Alpha
@@ -98,4 +98,17 @@ return {
   -- lsp_signature
   ---------------------------------------------------------
   LspSignatureActiveParameter = { fg = c.blue, style = "bold" },
+
+  ---------------------------------------------------------
+  -- lspconfig
+  ---------------------------------------------------------
+  LspInfoTitle = { fg = c.yellow, style = "bold" },
+
+  ---------------------------------------------------------
+  -- gitsigns
+  ---------------------------------------------------------
+
+  GitSignsUntracked = { fg = c.blue },
+  GitSignsUntrackedNr = { fg = c.blue },
+  GitSignsUntrackedLn = { fg = c.blue },
 }

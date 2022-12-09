@@ -30,7 +30,6 @@ return {
   green = "#95D16A",
   cyan = "#45C2D3",
   blue = "#54B0FC",
-  -- blue = "#5599DD",
   purple = "#CC6BE9",
   hot_pink = "#FF007C",
 

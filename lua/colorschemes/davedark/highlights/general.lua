@@ -5,6 +5,7 @@ return {
   ---------------------------------------------------------
   -- UI
   ---------------------------------------------------------
+  Constant = { fg = c.none },
   Cursor = { bg = c.blue },
   CursorLine = { bg = c.dark_blue_grey },
   CursorLineNr = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
@@ -30,14 +31,14 @@ return {
   ---------------------------------------------------------
   Boolean = { fg = c.orange },
   Comment = { fg = c.light_blue_grey, style="italic" },
-  Error = { bg = c.none, style = "undercurl", special = c.error_red },
+  Error = { fg = c.error_red, bg = c.none, special = c.error_red }, -- may want to be white with underline
   Folded = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
   Function = { fg = c.none },
   Identifier = { fg = c.none },
   Include = { fg = c.none },
   MatchParen = { bg = c.blue_grey },
   Special = { fg = c.none, cfg = c.none }, -- overrides TSInclude
-  String = { fg = c.green },
+  String = { fg = c.green }, -- may conflict with TSString
   Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
 
   ---------------------------------------------------------

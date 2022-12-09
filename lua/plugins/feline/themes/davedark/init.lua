@@ -18,6 +18,8 @@ local colorscheme = {
   FelineModeCommandSep = { fg = c.dark_blue_grey, bg = c.light_blue },
   FelineModeConfirm = { fg = c.off_black, bg = c.red },
   FelineModeConfirmSep = { fg = c.dark_blue_grey, bg = c.red },
+  FelineModeReplace = { fg = c.off_black, bg = c.red },
+  FelineModeReplaceSep = { fg = c.dark_blue_grey, bg = c.red },
   FelineModeTerm = { fg = c.off_black, bg = c.purple },
   FelineModeTermSep = { fg = c.dark_blue_grey, bg = c.purple },
 

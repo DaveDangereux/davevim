@@ -16,23 +16,33 @@ return {
   htmlTagN = { fg = c.fg },
   htmlTagName = { fg = c.red },
   htmlTitle = { style = "NONE" },
+
   htmlTSTag = { fg = c.red },
   htmlTSTagDelimiter = { fg = c.fg },
 
   ---------------------------------------------------------
   -- css
   ---------------------------------------------------------
+  -- cssAtRule = { fg = c.purple },
   cssClassName = { fg = c.orange },
   cssCommonAttr = { fg = c.fg },
   cssFlexibleBoxAttr = { fg = c.fg },
-  cssFontAttr = { fg = c.fg },
+  cssFontAttr = { fg = c.orange },
+  cssFunctionName = { fg = c.blue },
   cssObjectAttr = { fg = c.fg },
+  cssPageProp = { fg = c.red },
   cssPositioningAttr = { fg = c.fg },
+  cssPseudoClassId = { fg = c.orange },
   cssStringQ = { fg = c.green },
   cssTagName = { fg = c.red },
-  cssUnitDecorators = { fg = c.purple },
+  cssUIProp = { fg = c.red },
+  cssUnitDecorators = { fg = c.orange },
+  cssValueAngle = { fg = c.orange },
   cssValueLength = { fg = c.orange },
   cssValueNumber = { fg = c.orange },
+  cssValueTime = { fg = c.orange },
+
+  cssTSKeyword = { fg = c.purple },
 
   ---------------------------------------------------------
   -- sass / scss
@@ -42,18 +52,26 @@ return {
   scssImport = { fg = c.purple },
 
   ---------------------------------------------------------
+  -- less
+  ---------------------------------------------------------
+
+  lessAmpersand = { fg = c.orange },
+  lessClass = { fg = c.orange },
+  lessCssAttribute = { fg = c.red },
+  lessFunction = { fg = c.blue },
+  lessInclude = { fg = c.purple },
+  lessVariable = { fg = c.red },
+
+  ---------------------------------------------------------
   -- JavaScript
   ---------------------------------------------------------
   javascript = { fg = c.red },
   javascriptReserved = { fg = c.purple },
-  javascriptTSConstructor = { fg = c.none },
-  javascriptTSKeywordReturn = { fg = c.purple },
-  javascriptTSMethod = { fg = c.blue },
-  javascriptTSProperty = { fg = c.none },
-  -- javascriptTSVariable = { fg = c.orange },
-  javascriptTSVariableBuiltin = { fg = c.red },
   jsArrowFunction = { fg = c.purple }, -- turns the parentheses purple as well as the arrow
   jsAsyncKeyword = { fg = c.purple },
+  jsCatch = { fg = c.purple },
+  jsClassDefinition = { fg = c.yellow },
+  jsClassKeyword = { fg = c.purple },
   jsConditional = { fg = c.purple },
   jsExport = { fg = c.purple },
   jsExportDefault = { fg = c.red },
@@ -75,7 +93,15 @@ return {
   jsString = { fg = c.green },
   jsStorageClass = { fg = c.purple },
   jsThis = { fg = c.red },
+  jsTry = { fg = c.purple },
   jsVariableDef = { fg = c.orange }, -- can't differentiate constants and variables
+
+  javascriptTSConstructor = { fg = c.none },
+  javascriptTSKeywordReturn = { fg = c.purple },
+  javascriptTSMethod = { fg = c.blue },
+  javascriptTSProperty = { fg = c.none },
+  -- javascriptTSVariable = { fg = c.orange },
+  javascriptTSVariableBuiltin = { fg = c.red },
 
   ---------------------------------------------------------
   -- TypeScript
@@ -92,10 +118,12 @@ return {
   typescriptDefault = { fg = c.red },
   typescriptDestructureVariable = { fg = c.orange },
   typescriptExport = { fg = c.purple },
+  typescriptFuncKeyword = { fg = c.purple },
   typescriptIdentifierName = { fg = c.red },
   typescriptImport = { fg = c.purple },
   typescriptInterfaceKeyword = { fg = c.purple },
   typescriptInterfaceName = { fg = c.yellow },
+  typescriptKeywordOp = { fg = c.purple },
   typescriptMemberOptionality = { fg = c.cyan },
   typescriptObjectType = { fg = c.blue },
   typescriptPredefinedType = { fg = c.cyan },
@@ -115,13 +143,33 @@ return {
   -- tsTSInclude = { fg = c.purple },
 
   ---------------------------------------------------------
+  -- jsx
+  ---------------------------------------------------------
+
+  jsxAttrib = { fg = c.orange },
+  jsxComponentName = { fg = c.yellow },
+  jsxString = { fg = c.green },
+  jsxTag = { fg = c.yellow },
+  jsxTagName = { fg = c.red },
+
+  jsxTSTag = { fg = c.yellow },
+  jsxTSKeyword = { fg = c.purple },
+  jsxTSMethod = { fg = c.blue },
+  jsxTSParameter = { fg = c.none },
+  jsxTSProperty = { fg = c.red },
+  jsxTSTypeBuiltin = { fg = c.none },
+  jsxTSVariable = { fg = c.none }, -- no differentiation between constants and variables
+  jsxTSFunction = { fg = c.blue },
+  
+  ---------------------------------------------------------
   -- tsx
   ---------------------------------------------------------
 
   tsxTag = { fg = c.yellow },
   tsxTagName = { fg = c.yellow },
+
   -- tsxTSConstructor = { fg = c.red },
-  tsxTSTag = { fg = c.yellow },
+  -- tsxTSTag = { fg = c.yellow },
   tsxTSKeyword = { fg = c.purple },
   tsxTSMethod = { fg = c.blue },
   tsxTSParameter = { fg = c.none },
@@ -146,6 +194,7 @@ return {
   pythonConditional = { fg = c.purple },
   pythonException = { fg = c.purple },
   pythonExceptions = { fg = c.cyan },
+  pythonFloat = { fg = c.orange },
   pythonInclude = { fg = c.purple },
   pythonString = { fg = c.green },
 
@@ -190,24 +239,31 @@ return {
   phpKeyword = { fg = c.purple },
   phpVarSelector = { fg = c.red },
 
-  -- treesitter php highlights
-  -- unsorted
   phpTSProperty = { fg = c.red },
   phpTSType = { fg = c.none },
   phpTSVariableBuiltin = { fg = c.red },
-  -- included
   phpTSKeyword = { fg = c.purple }, -- public
   phpTSKeywordFunction = { fg = c.purple },
   phpTSNamespace = { fg = c.yellow },
   phpTSParameter = { fg = c.fg },
   phpTSPunctBracket = { fg = c.error_red },
-  -- excluded
   phpTSConditional = { fg = c.none },
   phpTSRepeat = { fg = c.none },
 
   ---------------------------------------------------------
   -- lua
   ---------------------------------------------------------
+  luaCond = { fg = c.purple },
+  luaElse = { fg = c.purple },
+  luaErrHand = { fg = c.blue },
+  luaFuncCall = { fg = c.blue },
+  luaFuncKeyword = { fg = c.purple },
+  luaFuncName = { fg = c.blue },
+  luaLocal = { fg = c.purple },
+  luaNumber = { fg = c.orange },
+  luaRepeat = { fg = c.purple },
+  luaSpecialValue = { fg = c.blue },
+  luaStatement = { fg = c.purple },
   luaString = { fg = c.green },
   luaTSConditional = { fg = c.purple },
   luaTSFunction = { fg = c.blue },
@@ -227,6 +283,9 @@ return {
   ---------------------------------------------------------
   -- markdown
   ---------------------------------------------------------
+  mkdHeading = { fg = c.red },
+
+  -- The default highlight name seems to have switched to mkd
   markdownBlockquote = { fg = c.test_fg, bg = c.test_bg },
   markdownBold = { fg = c.yellow, style = "bold" },
   markdownCode = { fg = c.fg, bg = c.dark_blue_grey },

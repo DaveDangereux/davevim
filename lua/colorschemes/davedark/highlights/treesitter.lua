@@ -13,6 +13,7 @@ return {
   TSConstructor = { fg = c.none },
   TSError = { fg = c.fg, bg = c.bg }, -- should this be something a bit more obvious?
   TSField = { fg = c.none },
+  TSFloat = { fg = c.none },
   TSFuncBuiltin = { fg = c.cyan },
   TSFunction = { fg = c.blue }, -- any reason not to use this?
   TSInclude = { fg = c.none },
@@ -34,6 +35,7 @@ return {
   TSTagAttribute = { fg = c.orange, style = "NONE" },
   TSTagDelimiter = { fg = c.fg },
   TSText = { fg = c.none },
+  TSTextReference = { fg = c.none }, -- messes with markdown []'s
   -- TSTitle = { fg = c.fg },
   TSTypeBuiltin = { fg = c.none },
   TSType = { fg = c.none },
@@ -50,14 +52,12 @@ return {
   TSLabel = { fg = c.red },
   TSNamespace = { fg = c.test_fg },
   TSRepeat = { fg = c.none },
-  TSFloat = { fg = c.test_fg },
   TSCharacter = { fg = c.test_fg },
   TSConstMacro = { fg = c.test_fg },
   TSFuncMacro = { fg = c.test_fg },
   TSParameterReference = { fg = c.test_fg },
   TSVariableBuiltin = { fg = c.none },
   TSSymbol = { fg = c.test_fg },
-  TSTextReference = { fg = c.test_fg },
   TSPunctSpecial = { fg = c.none },
   TSStringRegex = { fg = c.test_fg },
   TSStringEscape = { fg = c.test_fg },

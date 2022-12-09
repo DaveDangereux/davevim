@@ -211,8 +211,8 @@ local wipeout_keymaps = {
 -- GitSigns
 local gitsigns_keymaps = {
   normal_mode = {
-    ["]c"] = { "&diff ? ']c' : '<cmd>Gitsigns next_hunk <CR>'", { expr = true } },
-    ["[c"] = { "&diff ? ']c' : '<cmd>Gitsigns prev_hunk <CR>'", { expr = true } },
+    ["]c"] = [[ "&diff ? ']c' : '<cmd>Gitsigns next_hunk <CR>'", { expr = true } ]],
+    ["[c"] = [[ "&diff ? ']c' : '<cmd>Gitsigns prev_hunk <CR>'", { expr = true } ]],
     ["<Leader>gs"] = ":Gitsigns stage_hunk <CR>",
     ["<Leader>gS"] = ":Gitsigns stage_buffer <CR>",
     ["<Leader>gr"] = ":Gitsigns reset_hunk <CR>",
