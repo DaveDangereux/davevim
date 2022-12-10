@@ -14,6 +14,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local settings = {
   sources = {
     code_actions.eslint,
+    code_actions.gitsigns,
     completion.luasnip.with({
       filetypes = { "lua" },
     }),

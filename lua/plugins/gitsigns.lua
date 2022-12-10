@@ -10,8 +10,7 @@ local settings = {
     -- TODO: Different symbol for untracked?
     untracked = { hl = "GitSignsUntracked", text = "┃", numhl = "GitSignsUntrackedNr", linehl = "GitSignsUntrackedLn" },
   },
-  current_line_blame = true,
-  current_line_blame_formatter = "<author>, <author_time:%d-%m-%Y> - <summary>",
+  current_line_blame = false,
   on_attach = function(bufnr)
     require("core.keymaps").gitsigns(bufnr)
   end,

@@ -250,15 +250,17 @@ apply_keymaps(keymaps)
 -- GitSigns
 local gitsigns_keymaps = {
   normal_mode = {
-    ["]c"] = [[ "&diff ? ']c' : '<cmd>Gitsigns next_hunk <CR>'", { expr = true } ]],
-    ["[c"] = [[ "&diff ? ']c' : '<cmd>Gitsigns prev_hunk <CR>'", { expr = true } ]],
+    -- ["]h"] = [[ "&diff ? ']c' : '<cmd>Gitsigns next_hunk <CR>'", { expr = true } ]],
+    -- ["[h"] = [[ "&diff ? ']c' : '<cmd>Gitsigns prev_hunk <CR>'", { expr = true } ]],
+    ["]g"] = ":Gitsigns next_hunk <CR>",
+    ["[g"] = ":Gitsigns prev_hunk <CR>",
     ["<Leader>gs"] = ":Gitsigns stage_hunk <CR>",
-    ["<Leader>gS"] = ":Gitsigns stage_buffer <CR>",
+    ["<Leader>GS"] = ":Gitsigns stage_buffer <CR>",
     ["<Leader>gr"] = ":Gitsigns reset_hunk <CR>",
-    ["<Leader>gR"] = ":Gitsigns reset_buffer <CR>",
+    ["<Leader>GR"] = ":Gitsigns reset_buffer <CR>",
     ["<Leader>gu"] = ":Gitsigns undo_stage_hunk <CR>",
     ["<Leader>gp"] = ":Gitsigns preview_hunk <CR>",
-    ["<Leader>gb"] = ":Gitsigns blame_line <CR>",
+    -- ["<Leader>gb"] = ":Gitsigns blame_line <CR>",
     ["<Leader>gt"] = ":Gitsigns toggle_current_line_blame <CR>",
     ["<Leader>gd"] = ":Gitsigns diffthis <CR>",
   },
