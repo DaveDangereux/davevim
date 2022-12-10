@@ -173,6 +173,14 @@ local plugins = {
     end,
   },
 
+  -- Better looking folds
+  {
+    "anuvyklack/pretty-fold.nvim",
+    config = function()
+      require("plugins.pretty_fold").config()
+    end
+  },
+
   -----------------------------------------------------------------------------
   -- LSP
   -----------------------------------------------------------------------------

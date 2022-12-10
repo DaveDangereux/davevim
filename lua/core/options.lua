@@ -59,7 +59,7 @@ vim.opt.iskeyword:append("-")
 vim.opt.shortmess:append("c")
 
 -- Change fold symbols
-vim.opt.fillchars:append("foldopen:🞃, foldsep:▏, foldclose:🞂")
+vim.opt.fillchars:append("foldopen:🞃, foldsep:│, foldclose:🞂")
 
 -- Make the cursor blink to visually indicate whether the window is active
 vim.cmd([[

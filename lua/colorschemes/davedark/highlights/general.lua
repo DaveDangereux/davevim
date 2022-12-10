@@ -11,7 +11,6 @@ return {
   CursorLineNr = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
   LineNr = { fg = c.blue_grey },
   ErrorMsg = { fg = c.error_red, bg = config.transparent_background and c.none or c.bg, style = "bold" },
-  FoldColumn = { fg = c.blue_grey, bg = config.transparent_background and c.none or c.bg },
   ModeMsg = { fg = c.fg },
   NonText = { fg = c.light_blue_grey, style = "NONE" },
   Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
@@ -30,9 +29,10 @@ return {
   -- Basic syntax highlighting
   ---------------------------------------------------------
   Boolean = { fg = c.orange },
-  Comment = { fg = c.light_blue_grey, style="italic" },
+  Comment = { fg = c.light_blue_grey, style = "italic" },
   Error = { fg = c.error_red, bg = c.none, special = c.error_red }, -- may want to be white with underline
-  Folded = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
+  FoldColumn = { fg = c.blue_grey, bg = config.transparent_background and c.none or c.bg },
+  Folded = { fg = c.light_blue_grey, bg = c.dark_grey, style = "italic" },
   Function = { fg = c.none },
   Identifier = { fg = c.none },
   Include = { fg = c.none },
