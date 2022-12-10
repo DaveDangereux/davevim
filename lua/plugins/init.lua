@@ -178,7 +178,7 @@ local plugins = {
     "anuvyklack/pretty-fold.nvim",
     config = function()
       require("plugins.pretty_fold").config()
-    end
+    end,
   },
 
   -----------------------------------------------------------------------------
@@ -301,6 +301,12 @@ local plugins = {
     config = function()
       require("nvim-ts-autotag").setup()
     end,
+  },
+
+  -- Playground (required for TSHighlightCapturesUnderCursor)
+  {
+    "nvim-treesitter/playground",
+    requires = { { "nvim-treesitter/nvim-treesitter" } },
   },
 
   -----------------------------------------------------------------------------

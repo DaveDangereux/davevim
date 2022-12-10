@@ -39,6 +39,7 @@ local settings = {
     "phpdoc",
     "prisma",
     "python",
+    "query",
     "regex",
     "ruby",
     "rust",
@@ -77,6 +78,11 @@ local settings = {
       "#ff8c00", -- DarkOrange
       "#fff8dc", -- Cornsilk
     },
+  },
+
+  -- playground (required for TSHighlightCapturesUnderCursor)
+  playground = {
+    enable = true,
   },
 
   -- context-commentstring
