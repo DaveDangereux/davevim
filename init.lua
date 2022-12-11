@@ -3,6 +3,6 @@ if vim.g.vscode then
   return
 end
 
-require("config.options")
-require("config.keymaps")
-require("config")
+require("plugins")
+require("core.options")
+require("core.keymaps")
