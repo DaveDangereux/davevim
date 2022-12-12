@@ -19,7 +19,7 @@ return {
   NvimTreeRootFolder = { fg = c.fg, style = "bold" },
 
   -- nvim-tree (testing)
-  -- NvimTreeFolderIcon = { fg = c.test_fg, bg = c.test_bg },
+  NvimTreeFolderIcon = { fg = c.folder_grey, bg = c.none },
   -- NvimTreeImageFile = { fg = c.test_fg, bg = c.test_bg },
   -- NvimTreeGitMerge = { fg = c.test_fg, bg = c.test_bg },
   -- NvimTreeGitRenamed = { fg = c.test_fg, bg = c.test_bg },
@@ -49,9 +49,9 @@ return {
   NotifyINFOIcon = { fg = c.green },
   NotifyINFOTitle = { fg = c.green },
   NotifyINFOBody = { fg = c.fg },
-  NotifyDEBUGBorder = { fg = c.hot_pink },
-  NotifyDEBUGIcon = { fg = c.hot_pink },
-  NotifyDEBUGTitle = { fg = c.hot_pink },
+  NotifyDEBUGBorder = { fg = c.pink },
+  NotifyDEBUGIcon = { fg = c.pink },
+  NotifyDEBUGTitle = { fg = c.pink },
   NotifyDEBUGBody = { fg = c.fg },
   NotifyTRACEBorder = { fg = c.purple },
   NotifyTRACEIcon = { fg = c.purple },
@@ -107,8 +107,40 @@ return {
   ---------------------------------------------------------
   -- gitsigns
   ---------------------------------------------------------
-
   GitSignsUntracked = { fg = c.blue },
   GitSignsUntrackedNr = { fg = c.blue },
   GitSignsUntrackedLn = { fg = c.blue },
+
+  ---------------------------------------------------------
+  -- cmp
+  ---------------------------------------------------------
+  CmpItemAbbrMatch = { fg = c.yellow, style="bold" },
+  CmpItemAbbrMatchFuzzy = { fg = c.orange, style="bold" },
+  CmpItemKind = { fg = c.off_black, bg = c.white },
+  CmpItemKindClass = { fg = c.off_black, bg = c.green },
+  CmpItemKindColor = { fg = c.off_black, bg = c.cyan },
+  CmpItemKindConstant = { fg = c.off_black, bg = c.purple },
+  CmpItemKindConstructor = { fg = c.off_black, bg = c.blue },
+  CmpItemKindEnum = { fg = c.off_black, bg = c.violet },
+  CmpItemKindEnumMember = { fg = c.off_black, bg = c.cyan },
+  CmpItemKindEvent = { fg = c.off_black, bg = c.violet },
+  CmpItemKindField = { fg = c.off_black, bg = c.cyan },
+  CmpItemKindFile = { fg = c.off_black, bg = c.blue },
+  CmpItemKindFolder = { fg = c.off_black, bg = c.blue },
+  CmpItemKindFunction = { fg = c.off_black, bg = c.blue },
+  CmpItemKindInterface = { fg = c.off_black, bg = c.green },
+  CmpItemKindKeyword = { fg = c.off_black, bg = c.violet },
+  CmpItemKindMethod = { fg = c.off_black, bg = c.blue },
+  CmpItemKindModule = { fg = c.off_black, bg = c.green },
+  CmpItemKindOperator = { fg = c.off_black, bg = c.violet },
+  CmpItemKindProperty = { fg = c.off_black, bg = c.cyan },
+  CmpItemKindReference = { fg = c.off_black, bg = c.cyan },
+  CmpItemKindSnippet = { fg = c.off_black, bg = c.green },
+  CmpItemKindStruct = { fg = c.off_black, bg = c.green },
+  CmpItemKindText = { fg = c.off_black, bg = c.light_blue_grey },
+  CmpItemKindTypeParameter = { fg = c.off_black, bg = c.green },
+  CmpItemKindUnit = { fg = c.off_black, bg = c.cyan },
+  CmpItemKindValue = { fg = c.off_black, bg = c.cyan },
+  CmpItemKindVariable = { fg = c.off_black, bg = c.cyan },
+  CmpItemMenu = { fg = c.light_blue_grey, style = "italic" },
 }

@@ -1,5 +1,8 @@
 local M = {}
 
+local c = require("colorschemes.davedark.palette")
+local config = require("colorschemes.davedark.config")
+
 local status_ok, zenmode = pcall(require, "zen-mode")
 if not status_ok then
   print("Failed to require zen-mode")
@@ -8,8 +11,8 @@ end
 
 local settings = {
   window = {
-    height = 0.85,
-    width = 80,
+    height = 0.9,
+    width = 90,
     options = {
       signcolumn = "no",
       number = false,
@@ -17,16 +20,17 @@ local settings = {
     },
   },
   plugins = {
-    twilight = { enabled = false },
     gitsigns = { enabled = true },
     tmux = { enabled = false },
-    -- kitty = {
-    --   enabled = true,
-    --   font = "16",
-    -- },
   },
+  -- ZenMode seems to use the popup menu background, so this is a workaround
   on_open = function()
-    vim.cmd("highlight ZenBg guibg=bg")
+    local bg = config.transparent_background and c.none or c.bg
+    vim.cmd("highlight Pmenu guibg=" .. bg)
+  end,
+  on_close = function()
+    local pmenu_bg = config.pmenu_transparent_background and c.none or c.pmenu_bg
+    vim.cmd("highlight Pmenu guibg=" .. pmenu_bg)
   end,
 }
 

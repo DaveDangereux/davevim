@@ -35,5 +35,5 @@ return {
   blue = "#1292FB",
   dark_blue = "#3B4261",
   purple = "#CC6BE9",
-  hot_pink = "#FF007C",
+  pink = "#FF007C",
 }

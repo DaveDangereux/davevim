@@ -14,7 +14,7 @@ return {
   ModeMsg = { fg = c.fg },
   NonText = { fg = c.light_blue_grey, style = "NONE" },
   Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
-  Search = { bg = c.blue_grey },
+  Search = { fg = c.none, bg = c.blue_grey, style = "bold" },
   SignColumn = { bg = config.transparent_background and c.none or c.bg },
   StatusLine = { fg = c.off_black },
   StatusLineNC = { fg = c.off_black },
@@ -44,28 +44,19 @@ return {
   ---------------------------------------------------------
   -- Diff
   ---------------------------------------------------------
-  DiffAdd = { fg = c.test_fg, bg = config.transparent_background and c.none or c.bg }, -- does this do anything?
+  DiffAdd = { fg = c.green, bg = config.transparent_background and c.none or c.bg }, -- does this do anything?
   DiffChange = { fg = c.orange, bg = config.transparent_background and c.none or c.bg },
   DiffDelete = { fg = c.red, bg = config.transparent_background and c.none or c.bg },
   DiffAdded = { fg = c.green },
-  DiffRemoved = { fg = c.error_red },
+  DiffRemoved = { fg = c.red },
   DiffFile = { fg = c.test_fg, bg = c.test_bg },
   DiffIndexLine = { fg = c.test_fg, bg = c.test_bg },
   DiffText = { fg = c.test_fg, bg = c.test_bg },
-  -- diffAdded = nil,
-  -- diffRemoved = { fg = c.test_fg, bg = c.test_bg },
-  -- diffFileId = { fg = c.test_fg, bg = c.test_bg },
-  -- diffFile = { fg = c.test_fg, bg = c.test_bg },
-  -- diffNewFile = { fg = c.test_fg, bg = c.test_bg },
-  -- diffOldFile = { fg = c.test_fg, bg = c.test_bg },
-  -- GitSignsAdd = nil,
-  -- GitSignsChange = nil,
-  -- GitSignsDelete = nil,
 
   ---------------------------------------------------------
   -- Popup menu
   ---------------------------------------------------------
-  Pmenu = { fg = c.fg, bg = config.transparent_background and c.none or c.off_black },
+  Pmenu = { fg = c.fg, bg = config.pmenu_transparent_background and c.none or c.pmenu_bg },
   PmenuSel = { fg = c.silver, bg = c.bg },
   PmenuSbar = { bg = c.dark_grey },
   PmenuThumb = { bg = c.blue_grey },
@@ -158,4 +149,10 @@ return {
   -- WhichKeyGroup = { fg = c.test_fg, bg = c.test_bg },
   -- WhichKeyDesc = { fg = c.test_fg, bg = c.test_bg },
   -- WhichKeyFloat = { fg = c.test_fg, bg = c.test_bg },
+  -- diffAdded = nil,
+  -- diffRemoved = { fg = c.test_fg, bg = c.test_bg },
+  -- diffFileId = { fg = c.test_fg, bg = c.test_bg },
+  -- diffFile = { fg = c.test_fg, bg = c.test_bg },
+  -- diffNewFile = { fg = c.test_fg, bg = c.test_bg },
+  -- diffOldFile = { fg = c.test_fg, bg = c.test_bg },
 }

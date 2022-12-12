@@ -4,22 +4,24 @@ return {
   bg = "#141A1F",
   nvim_tree_bg = "#151C21",
   term_bg = "#101519",
+  pmenu_bg = "#0D1114", --off_black
 
   -- Test colors
   test_fg = "#FF00FF",
   test_bg = "#FFFF00",
 
   -- Greys
-  white = "#FFFFFF",
-  silver = "#CCCCCC",
-  rolling_stone = "#787A7B",
-  dark_grey = "#19232D",
-  off_black = "#0D1114",
   black = "#000000",
+  off_black = "#0D1114",
+  dark_grey = "#19232D",
+  rolling_stone = "#787A7B",
+  silver = "#CCCCCC",
+  white = "#FFFFFF",
 
   -- Bluegreys
   dark_blue_grey = "#20354B",
   blue_grey = "#2E4D6B",
+  folder_grey = "#90a4ae",
   light_blue_grey = "#5974A5",
 
   -- Rainbow
@@ -31,7 +33,7 @@ return {
   cyan = "#45C2D3",
   blue = "#54B0FC",
   purple = "#CC6BE9",
-  hot_pink = "#FF007C",
+  pink = "#FF007C",
 
   -- Illuminate
   illuminate_read = "#11FF11",
@@ -48,8 +50,8 @@ return {
   indent7 = "#fff8dc",
 
   -- Neon colours
-  neon_orange = "#ffad2a",
   neon_red = "#f8877f",
+  neon_orange = "#ffad2a",
   neon_yellow = "#f8fc46",
   neon_green = "#77e68a",
   olive_green = "#00c87a",
