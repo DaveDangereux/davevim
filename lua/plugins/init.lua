@@ -95,15 +95,6 @@ local plugins = {
     end,
   },
 
-  -- Improved breadcrumbs for status line
-  {
-    "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig",
-    config = function()
-      require("plugins.navic").config()
-    end,
-  },
-
   -- Notifications
   {
     "rcarriga/nvim-notify",
@@ -191,7 +182,7 @@ local plugins = {
   -- LSP
   -----------------------------------------------------------------------------
 
-  -- Easy language server installation
+  -- Easy language server, dap, linter and formatter installation
   {
     "williamboman/mason.nvim",
     config = function()
@@ -203,6 +194,25 @@ local plugins = {
 
   -- Language server configuration
   { "neovim/nvim-lspconfig" },
+
+  -- Formatting and linting
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("plugins.lsp.null-ls").config()
+    end,
+  },
+
+  { "jayp0521/mason-null-ls.nvim" },
+
+  -- Improved breadcrumbs for status line
+  {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.navic").config()
+    end,
+  },
 
   -- TypeScript auto-update imports on file rename
   { "jose-elias-alvarez/typescript.nvim" },
@@ -235,16 +245,6 @@ local plugins = {
       -- require("lsp_signature").setup({ hint_enable = false })
     end,
   },
-
-  -- Formatting and linting
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      require("plugins.lsp.null-ls").config()
-    end,
-  },
-
-  { "jayp0521/mason-null-ls.nvim" },
 
   -----------------------------------------------------------------------------
   -- Snippets
