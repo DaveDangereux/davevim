@@ -242,8 +242,6 @@ apply_keymaps(keymaps)
 -- GitSigns
 local gitsigns_keymaps = {
   normal_mode = {
-    -- ["]h"] = [[ "&diff ? ']c' : '<cmd>Gitsigns next_hunk <CR>'", { expr = true } ]],
-    -- ["[h"] = [[ "&diff ? ']c' : '<cmd>Gitsigns prev_hunk <CR>'", { expr = true } ]],
     ["]g"] = ":Gitsigns next_hunk <CR>",
     ["[g"] = ":Gitsigns prev_hunk <CR>",
     ["<Leader>gs"] = ":Gitsigns stage_hunk <CR>",
