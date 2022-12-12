@@ -43,10 +43,9 @@ M.config = function()
     -- Load custom keymaps for the buffer
     require("core.keymaps").lsp(bufnr)
 
-    -- Load custom keymaps for TypeScript plugin
-    if client.name == "tsserver" then
-      -- TODO: Add custom Typescript keymaps
-    end
+    -- TODO: Load custom keymaps for TypeScript plugin
+    -- if client.name == "tsserver" then
+    -- end
   end
 
   local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -65,6 +64,14 @@ M.config = function()
       })
     end,
 
+    ["tsserver"] = function()
+      typescript.setup({
+        server = {
+          capabilities = capabilities,
+          on_attach = on_attach,
+        },
+      })
+    end,
     --------------------------------------------------------------------------
     -- emmet_ls
     --------------------------------------------------------------------------
@@ -139,13 +146,6 @@ M.config = function()
         },
       })
     end,
-  })
-
-  typescript.setup({
-    server = {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    },
   })
 
   require("plugins.lsp.diagnostic-config")()
