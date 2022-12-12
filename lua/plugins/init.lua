@@ -370,7 +370,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*nvim/lua/plugins/init.lua",
   callback = function()
     vim.cmd("source", "<afile>")
-    require("packer").sync()
+    vim.cmd("PackerSync")
   end,
   group = vim.api.nvim_create_augroup("packer_config", { clear = true }),
 })
@@ -390,7 +390,7 @@ packer.init({
     end,
   },
   git = {
-    clone_timeout = 300,
+    clone_timeout = 30,
     subcommands = {
       -- This is more efficient than what Packer is using
       fetch = "fetch --no-tags --no-recurse-submodules --update-shallow --progress",
