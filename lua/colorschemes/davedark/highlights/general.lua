@@ -36,7 +36,7 @@ return {
   Function = { fg = c.none },
   Identifier = { fg = c.none },
   Include = { fg = c.none },
-  MatchParen = { bg = c.blue_grey },
+  MatchParen = { bg = c.dark_blue_grey, style = "bold" },
   Special = { fg = c.none, cfg = c.none }, -- overrides TSInclude
   String = { fg = c.green }, -- may conflict with TSString
   Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
