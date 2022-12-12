@@ -15,7 +15,6 @@ local keymaps = {
     ---------------------------------------------------------------------------
     -- Vim
     ---------------------------------------------------------------------------
-
     -- Better window movement
     ["<C-h>"] = "<C-w>h",
     ["<C-j>"] = "<C-w>j",
@@ -89,7 +88,7 @@ local keymaps = {
 
     -- Prevent x from copying to a register
     ["x"] = '"_x',
- 
+
     ---------------------------------------------------------------------------
     -- NvimTree
     ---------------------------------------------------------------------------
@@ -265,7 +264,7 @@ local gitsigns_keymaps = {
     ["<Leader>GR"] = ":Gitsigns reset_buffer <CR>",
     ["<Leader>gu"] = ":Gitsigns undo_stage_hunk <CR>",
     ["<Leader>gp"] = ":Gitsigns preview_hunk <CR>",
-    -- ["<Leader>gb"] = ":Gitsigns blame_line <CR>",
+    ["<Leader>GP"] = ":Gitsigns preview_hunk_inline <CR>",
     ["<Leader>gt"] = ":Gitsigns toggle_current_line_blame <CR>",
     ["<Leader>gd"] = ":Gitsigns diffthis <CR>",
   },
@@ -278,14 +277,11 @@ local lsp_keymaps = {
     ["gd"] = ":lua vim.lsp.buf.definition() <CR>",
     ["K"] = ":lua vim.lsp.buf.hover() <CR>",
     ["gI"] = ":lua vim.lsp.buf.implementation() <CR>",
-    -- ["<C-k>"] = ":lua vim.lsp.buf.signature_help() <CR>", -- is this redundant with hover?
-    -- ["<Leader>rn"] = ":lua vim.lsp.buf.rename() <CR>",
     ["gr"] = ":lua vim.lsp.buf.references() <CR>",
     ["<Leader>a"] = ":lua vim.lsp.buf.code_action() <CR>",
     ["[d"] = ":lua vim.diagnostic.goto_prev({ border = 'rounded' }) <CR>",
     ["]d"] = ":lua vim.diagnostic.goto_next({ border = 'rounded' }) <CR>",
     ["gl"] = ":lua vim.diagnostic.open_float() <CR>",
-    -- ["<Leader>q"] = ":lua vim.diagnostic.setqflist() <CR>",
   },
 }
 

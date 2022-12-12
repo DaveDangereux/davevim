@@ -25,13 +25,6 @@ M.apply_keymaps = function(keymaps, bufnr)
     term_mode = "t",
   }
 
-  -- Our keymap table is structured:
-  -- keymaps = {
-  --   mode = {
-  --     key = mapping
-  --   }
-  -- }
-
   for mode_name, mode_keymaps in pairs(keymaps) do
     for lhs, rhs in pairs(mode_keymaps) do
       local mode = mode_name_adapters[mode_name]
@@ -44,8 +37,10 @@ M.apply_keymaps = function(keymaps, bufnr)
       end
 
       if bufnr then
-        vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, options)
-      elseif rhs then
+        options.buffer = bufnr
+      end
+
+      if rhs then
         vim.keymap.set(mode, lhs, rhs, options)
       else
         pcall(vim.api.nvim_del_keymap, mode, lhs)
