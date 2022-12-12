@@ -138,7 +138,7 @@ local keymaps = {
     ["<F7>"] = ":TSHighlightCapturesUnderCursor <CR>",
 
     ---------------------------------------------------------------------------
-    -- Toggleterm (see also Term Mode)
+    -- Toggleterm
     ---------------------------------------------------------------------------
     ["<Leader>#"] = ":ToggleTerm direction=vertical <CR>",
     ["<Leader>t"] = ":ToggleTerm direction=float <CR>",
@@ -229,14 +229,7 @@ local keymaps = {
     ["<C-j>"] = [[<C-\><C-n><C-W>j]],
     ["<C-k>"] = [[<C-\><C-n><C-W>k]],
     ["<C-l>"] = [[<C-\><C-n><C-W>l]],
-
-    ---------------------------------------------------------------------------
-    -- Toggleterm (see also Normal Mode)
-    ---------------------------------------------------------------------------
-    ["<Leader>~"] = [[<C-\><C-n> :ToggleTermToggleAll <CR>]],
-    ["<Leader>#"] = [[<C-\><C-n> :clo <CR>]],
-    ["<Leader>c"] = [[<C-\><C-n> :clo <CR>]],
-    ["<Leader>t"] = [[<C-\><C-n> :clo <CR>]],
+    ["<C-w>"] = [[<C-\><C-n> :clo <CR>]],
   },
 }
 
@@ -284,7 +277,7 @@ local lsp_keymaps = {
 }
 
 -------------------------------------------------------------------------------
--- Exports
+-- Exports for on_attach functions
 -------------------------------------------------------------------------------
 
 M.gitsigns = function(bufnr)
