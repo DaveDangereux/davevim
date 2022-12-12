@@ -18,32 +18,10 @@ local palette = {
   disabled = nil,
 }
 
--- This diagnostic palette can show us whether we've definitely
--- got control of all the bufferline highlights or not.
--- local palette = {
---   selected_bg = "#FF0000",
---   unselected_bg = "#FF0000",
---   visible_bg = "#FF0000",
---   fill_fg = "#FF0000",
---   black = "#FF0000",
---   none = "#FF0000",
---   test_fg = "#FF0000",
---   test_bg = "#FF0000",
---   test_sg = "#FF0000",
---   test_alt = "#FF0000",
---   disabled = "#FF0000",
--- }
-
-local text_style = {
-  bold_italic = "bold,italic",
-  italic = "italic",
-}
-
 local highlights = {
   -------------------------------------------------------------------------------
   -- General
   -------------------------------------------------------------------------------
-
   fill = {
     fg = palette.disabled,
     bg = palette.disabled,
@@ -52,7 +30,6 @@ local highlights = {
   -------------------------------------------------------------------------------
   -- Tabs
   -------------------------------------------------------------------------------
-
   tab_selected = {
     fg = palette.disabled, -- tabline_sel_bg
     bg = palette.selected_bg,
@@ -69,7 +46,6 @@ local highlights = {
   -------------------------------------------------------------------------------
   -- Selected buffer
   -------------------------------------------------------------------------------
-
   buffer_selected = {
     fg = palette.disabled, -- normal_fg,
     bg = palette.selected_bg,
@@ -156,7 +132,6 @@ local highlights = {
   -------------------------------------------------------------------------------
   -- Unselected buffer
   -------------------------------------------------------------------------------
-
   buffer = {
     fg = palette.disabled,
     bg = palette.unselected_bg,
@@ -235,7 +210,6 @@ local highlights = {
   -------------------------------------------------------------------------------
   -- Visible (background) buffer
   -------------------------------------------------------------------------------
-
   buffer_visible = {
     fg = palette.disabled,
     bg = palette.visible_bg,
