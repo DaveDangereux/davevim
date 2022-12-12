@@ -53,6 +53,8 @@ M.config = function()
   mason.setup()
   mason_lspconfig.setup({ automatic_installation = true })
   mason_null_ls.setup({ automatic_installation = true })
+  require("plugins.lsp.diagnostic-config")()
+
   mason_lspconfig.setup_handlers({
     --------------------------------------------------------------------------
     -- Generic handler
@@ -72,33 +74,10 @@ M.config = function()
         },
       })
     end,
-    --------------------------------------------------------------------------
-    -- emmet_ls
-    --------------------------------------------------------------------------
-
-    ["emmet_ls"] = function(server_name)
-      require("lspconfig")[server_name].setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        cmd = { "ls_emmet", "--stdio" },
-        filetypes = {
-          "html",
-          "css",
-          "scss",
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-          "php",
-          "twig",
-        },
-      })
-    end,
 
     --------------------------------------------------------------------------
     -- sumneko_lua
     --------------------------------------------------------------------------
-
     ["sumneko_lua"] = function(server_name)
       require("lspconfig")[server_name].setup({
         capabilities = capabilities,
@@ -125,7 +104,6 @@ M.config = function()
     --------------------------------------------------------------------------
     -- jsonls
     --------------------------------------------------------------------------
-
     ["jsonls"] = function(server_name)
       require("lspconfig")[server_name].setup({
         capabilities = capabilities,
@@ -147,8 +125,6 @@ M.config = function()
       })
     end,
   })
-
-  require("plugins.lsp.diagnostic-config")()
 end
 
 return M
