@@ -9,7 +9,10 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 local settings = {
-  respect_buf_cwd = false,
+  auto_reload_on_write = true,
+  disable_netrw = true,
+  sync_root_with_cwd = true,
+  respect_buf_cwd = true,
   view = {
     adaptive_size = true,
     mappings = {
@@ -17,24 +20,23 @@ local settings = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
         { key = "h", cb = tree_cb("close_node") },
         { key = "v", cb = tree_cb("vsplit") },
-        { key = "C", cb = tree_cb("cd") },
       },
     },
     float = {
       enable = true,
-        open_win_config = {
-          relative = "editor",
-          border = "rounded",
-          width = 30,
-          height = 25,
-          row = 1,
-          col = 1,
-        },
+      open_win_config = {
+        relative = "editor",
+        border = "rounded",
+        width = 30,
+        height = 26,
+        row = 1,
+        col = 1,
+      },
     },
   },
   renderer = {
     highlight_git = true,
-    highlight_opened_files = "all",
+    highlight_opened_files = "none",
     indent_markers = {
       enable = true,
     },
@@ -64,7 +66,7 @@ local settings = {
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_root = true,
   },
   diagnostics = {
     enable = true,
@@ -74,6 +76,7 @@ local settings = {
       info = "",
       hint = "",
     },
+    show_on_dirs = true,
   },
   filters = {
     dotfiles = true,
@@ -82,11 +85,15 @@ local settings = {
     ignore = true,
   },
   actions = {
+    use_system_clipboard = true,
     open_file = {
       window_picker = {
         enable = false,
       },
     },
+  },
+  live_filter = {
+    always_show_folders = false,
   },
   update_cwd = true,
 }

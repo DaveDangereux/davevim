@@ -69,10 +69,6 @@ local keymaps = {
     -- Reveal highlighting under cursor
     ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]],
 
-    -- Useful folders
-    ["<Leader><S-n>"] = ":NvimTreeOpen <CR> :cd ~/web-dev/notes/ <CR>",
-    ["<Leader><S-s>"] = ":NvimTreeOpen <CR> :cd ~/.config/nvim/ <CR>",
-
     -- Quickfix list
     ["<Leader>q"] = ":copen <CR>",
     ["]q"] = ":cnext <CR>",
@@ -94,6 +90,10 @@ local keymaps = {
     ---------------------------------------------------------------------------
     ["<Leader>e"] = ":NvimTreeToggle <CR>",
     ["<Leader><S-e>"] = ":NvimTreeFocus <CR>",
+
+    -- Useful folders
+    ["<Leader><S-n>"] = ":NvimTreeOpen <CR> :cd ~/web-dev/notes/ <CR>",
+    ["<Leader><S-s>"] = ":NvimTreeOpen <CR> :cd ~/.config/nvim/ <CR>",
 
     ---------------------------------------------------------------------------
     -- ZenMode

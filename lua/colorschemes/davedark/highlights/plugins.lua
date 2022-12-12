@@ -9,7 +9,7 @@ return {
   NvimTreeNormal = { bg = config.transparent_background and c.none or c.nvim_tree_bg },
   NvimTreeVertSplit = nil,
   NvimTreeFolderName = { fg = c.blue },
-  NvimTreeOpenedFolderName = { fg = c.purple, style = "italic" },
+  NvimTreeOpenedFolderName = { fg = c.blue },
   NvimTreeSpecialFile = { fg = c.orange, style = "bold,italic" },
   NvimTreeGitStaged = { fg = c.green },
   NvimTreeCursorLine = nil,
