@@ -3,8 +3,13 @@ local mode_options = require("plugins.feline.components.vim-mode.mode-options")
 local icons = require("plugins.feline.icons")
 
 local get_mode_options = function()
+  if not mode_options[vi_mode_utils.get_vim_mode()] then
+    print("Unsupported vim mode: " .. vi_mode_utils.get_vim_mode())
+    return
+  end
   return mode_options[vi_mode_utils.get_vim_mode()] or mode_options["DEFAULT"]
 end
+
 
 return {
   provider = function()
