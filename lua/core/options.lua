@@ -19,7 +19,7 @@ local options = {
 
   -- unsorted
   number = true, -- line numbers
-  relativenumber = false, -- useful for jumping but I like to refer to line numbers
+  relativenumber = true, -- useful for jumping but I like to refer to line numbers
   mouse = "a", -- full mouse functionality
   timeoutlen = 200,
   termguicolors = true, -- enables 24-bit colour
