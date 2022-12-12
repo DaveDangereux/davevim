@@ -162,6 +162,9 @@ local plugins = {
   -- Lots of syntax highlighting improvements
   { "sheerun/vim-polyglot" },
 
+  -- Ruby Signature syntax highlighting
+  { "pocke/rbs.vim" },
+
   -- Automated saving and restoring of views
   { "vim-scripts/restore_view.vim" },
 
@@ -238,9 +241,6 @@ local plugins = {
   },
 
   { "jayp0521/mason-null-ls.nvim" },
-
-  -- Ruby Signature syntax highlighting
-  { "pocke/rbs.vim" },
 
   -----------------------------------------------------------------------------
   -- Snippets
