@@ -7,12 +7,13 @@ M.config = function()
     return
   end
 
-  local header_piece1 = "██████╗░░█████╗░██╗░░░██╗███████╗██╗░░░██╗██╗███╗░░░███╗"
-  local header_piece2 = "██╔══██╗██╔══██╗██║░░░██║██╔════╝██║░░░██║██║████╗░████║"
-  local header_piece3 = "██║░░██║███████║╚██╗░██╔╝█████╗░░╚██╗░██╔╝██║██╔████╔██║"
-  local header_piece4 = "██║░░██║██╔══██║░╚████╔╝░██╔══╝░░░╚████╔╝░██║██║╚██╔╝██║"
-  local header_piece5 = "██████╔╝██║░░██║░░╚██╔╝░░███████╗░░╚██╔╝░░██║██║░╚═╝░██║"
-  local header_piece6 = "╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚══════╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝"
+
+  local header_piece1 = "██████╗   █████╗  ██╗   ██╗ ███████╗ ██╗   ██╗ ██╗ ███╗   ███╗"
+  local header_piece2 = "██╔══██╗ ██╔══██╗ ██║   ██║ ██╔════╝ ██║   ██║ ██║ ████╗ ████║"
+  local header_piece3 = "██║  ██║ ███████║ ╚██╗ ██╔╝ █████╗   ╚██╗ ██╔╝ ██║ ██╔████╔██║"
+  local header_piece4 = "██║  ██║ ██╔══██║  ╚████╔╝  ██╔══╝    ╚████╔╝  ██║ ██║╚██╔╝██║"
+  local header_piece5 = "██████╔╝ ██║  ██║   ╚██╔╝   ███████╗   ╚██╔╝   ██║ ██║ ╚═╝ ██║"
+  local header_piece6 = "╚═════╝  ╚═╝  ╚═╝    ╚═╝    ╚══════╝    ╚═╝    ╚═╝ ╚═╝     ╚═╝"
 
   local header1 = { type = "text", val = header_piece1, opts = { position = "center", hl = "AlphaHeader1", }, }
   local header2 = { type = "text", val = header_piece2, opts = { position = "center", hl = "AlphaHeader2", }, }
