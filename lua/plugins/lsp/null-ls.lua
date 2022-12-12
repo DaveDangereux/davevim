@@ -27,6 +27,7 @@ local settings = {
     formatting.stylelint,
     diagnostics.twigcs,
     diagnostics.stylelint,
+    require("typescript.extensions.null-ls.code-actions"),
   },
 }
 

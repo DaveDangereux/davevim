@@ -128,11 +128,6 @@ local keymaps = {
     ["<Leader>fq"] = ":Telescope quickfix <CR>",
 
     ---------------------------------------------------------------------------
-    -- Renamer
-    ---------------------------------------------------------------------------
-    ["<F2>"] = ":lua require('renamer').rename() <CR>",
-
-    ---------------------------------------------------------------------------
     -- Trouble
     ---------------------------------------------------------------------------
     ["<Leader>T"] = ":TroubleToggle <CR>",
@@ -273,15 +268,18 @@ local gitsigns_keymaps = {
 -- LSP
 local lsp_keymaps = {
   normal_mode = {
-    ["gD"] = ":lua vim.lsp.buf.declaration() <CR>",
-    ["gd"] = ":lua vim.lsp.buf.definition() <CR>",
-    ["K"] = ":lua vim.lsp.buf.hover() <CR>",
-    ["gI"] = ":lua vim.lsp.buf.implementation() <CR>",
-    ["gr"] = ":lua vim.lsp.buf.references() <CR>",
-    ["<Leader>a"] = ":lua vim.lsp.buf.code_action() <CR>",
-    ["[d"] = ":lua vim.diagnostic.goto_prev({ border = 'rounded' }) <CR>",
-    ["]d"] = ":lua vim.diagnostic.goto_next({ border = 'rounded' }) <CR>",
-    ["gl"] = ":lua vim.diagnostic.open_float() <CR>",
+    ["gl"] = ":Lspsaga show_line_diagnostics <CR>",
+    ["[e"] = ":Lspsaga diagnostic_jump_prev <CR>",
+    ["]e"] = ":Lspsaga diagnostic_jump_next <CR>",
+    ["gd"] = ":Lspsaga peek_definition <CR>",
+    -- ["gr"] = ":lua vim.lsp.buf.references() <CR>",
+    ["gr"] = ":Lspsaga lsp_finder <CR>",
+    ["K"] = ":Lspsaga hover_doc <CR>",
+    ["<Leader>a"] = ":Lspsaga code_action <CR>",
+    ["GD"] = ":lua vim.lsp.buf.declaration() <CR>",
+    ["gi"] = ":lua vim.lsp.buf.implementation() <CR>",
+    ["go"] = ":LSoutlineToggle <CR>",
+    ["<F2>"] = ":Lspsaga rename <CR>",
   },
 }
 

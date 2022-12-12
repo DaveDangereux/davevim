@@ -64,16 +64,6 @@ local plugins = {
     end,
   },
 
-  -- VS Code style symbol renaming
-  {
-    "filipdutescu/renamer.nvim",
-    branch = "master",
-    requires = { { "nvim-lua/plenary.nvim" } },
-    config = function()
-      require("renamer").setup()
-    end,
-  },
-
   -- Git
   {
     "lewis6991/gitsigns.nvim",
@@ -204,6 +194,15 @@ local plugins = {
   },
 
   { "jayp0521/mason-null-ls.nvim" },
+
+  -- Enhanced UI for LSP experience
+  {
+    "glepnir/lspsaga.nvim",
+    config = function()
+      require("plugins.lsp.lspsaga").config()
+    end,
+    branch = "main",
+  },
 
   -- Improved breadcrumbs for status line
   {
