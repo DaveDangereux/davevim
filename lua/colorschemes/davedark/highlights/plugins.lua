@@ -114,8 +114,8 @@ return {
   ---------------------------------------------------------
   -- cmp
   ---------------------------------------------------------
-  CmpItemAbbrMatch = { fg = c.yellow, style="bold" },
-  CmpItemAbbrMatchFuzzy = { fg = c.orange, style="bold" },
+  CmpItemAbbrMatch = { fg = c.yellow, style = "bold" },
+  CmpItemAbbrMatchFuzzy = { fg = c.orange, style = "bold" },
   CmpItemKind = { fg = c.off_black, bg = c.white },
   CmpItemKindClass = { fg = c.off_black, bg = c.green },
   CmpItemKindColor = { fg = c.off_black, bg = c.cyan },

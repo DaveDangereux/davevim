@@ -124,25 +124,6 @@ local settings = {
       kind.dup = duplicates[entry.source.name] or duplicates_default
       return kind
     end,
-
-    -- format = require("lspkind").cmp_format({
-    --   mode = "text_symbol",
-    --   menu = {
-    --     nvim_lua = "[vim.lsp]",
-    --     nvim_lsp = "[LSP]",
-    --     luasnip = "[Snippet]",
-    --     buffer = "[Buffer]",
-    --     path = "[Path]",
-    --     calc = "[Calc]",
-    --   },
-    --   maxwidth = 50,
-    --   ellipsis_char = "...",
-    --   before = function(entry, vim_item)
-    --     -- vim_item.menu = source_names[entry.source.name]
-    --     vim_item.dup = duplicates[entry.source.name] or duplicates_default
-    --     return vim_item
-    --   end,
-    -- }),
   },
 }
 
