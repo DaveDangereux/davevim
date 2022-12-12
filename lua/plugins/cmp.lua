@@ -23,6 +23,19 @@ if not luasnip_status_ok then
   return
 end
 
+local lspkind_status_ok, lspkind = pcall(require, "lspkind")
+if not lspkind_status_ok then
+  print("Failed to require lspkind")
+  return
+end
+
+local cmp_autopairs_status_ok, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not cmp_autopairs_status_ok then
+  print("Failed to require nvim-autopairs.completion.cmp")
+  return
+end
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -30,42 +43,11 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
-local source_names = {
-  nvim_lua = "[vim.lsp]",
-  nvim_lsp = "[LSP]",
-  luasnip = "[Snippet]",
-  buffer = "[Buffer]",
-  path = "[Path]",
-  calc = "[Calc]",
-}
-
-local duplicates = {
-  buffer = 1,
-  path = 1,
-  nvim_lsp = 0,
-  luasnip = 1,
-}
-
-local duplicates_default = 0
-
 local settings = {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
-  },
-  formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = require("lspkind").cmp_format({
-      mode = "symbol",
-      maxwidth = 50,
-      ellipsis_char = "...",
-      before = function(entry, vim_item)
-        vim_item.menu = source_names[entry.source.name]
-        vim_item.dup = duplicates[entry.source.name] or duplicates_default
-        return vim_item
-      end,
-    }),
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -109,6 +91,58 @@ local settings = {
   experimental = {
     ghost_text = true,
     native_menu = false,
+  },
+  window = {
+    completion = {
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+      col_offset = -3,
+      side_padding = 0,
+    },
+  },
+  formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      local source_names = {
+        nvim_lua = "vim.lsp",
+        nvim_lsp = "LSP",
+        luasnip = "Luasnip",
+        buffer = "Buffer",
+        path = "Path",
+        calc = "Calc",
+      }
+      local duplicates = {
+        buffer = 1,
+        path = 1,
+        nvim_lsp = 0,
+        luasnip = 1,
+      }
+      local duplicates_default = 0
+      local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+      local strings = vim.split(kind.kind, "%s", { trimempty = true })
+      kind.kind = " " .. strings[1] .. " "
+      kind.menu = "    (" .. strings[2] .. ", " .. source_names[entry.source.name] .. ")"
+      kind.dup = duplicates[entry.source.name] or duplicates_default
+      return kind
+    end,
+
+    -- format = require("lspkind").cmp_format({
+    --   mode = "text_symbol",
+    --   menu = {
+    --     nvim_lua = "[vim.lsp]",
+    --     nvim_lsp = "[LSP]",
+    --     luasnip = "[Snippet]",
+    --     buffer = "[Buffer]",
+    --     path = "[Path]",
+    --     calc = "[Calc]",
+    --   },
+    --   maxwidth = 50,
+    --   ellipsis_char = "...",
+    --   before = function(entry, vim_item)
+    --     -- vim_item.menu = source_names[entry.source.name]
+    --     vim_item.dup = duplicates[entry.source.name] or duplicates_default
+    --     return vim_item
+    --   end,
+    -- }),
   },
 }
 

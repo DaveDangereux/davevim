@@ -2,6 +2,10 @@ local M = {}
 
 local settings = {
   check_ts = true,
+  ts_config = {
+    lua = { "string" },
+    javascript = { "template_string" },
+  },
 }
 
 M.config = function()
