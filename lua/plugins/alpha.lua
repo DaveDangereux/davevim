@@ -7,20 +7,21 @@ M.config = function()
     return
   end
 
+  local header_pieces = {
+    "██████╗   █████╗  ██╗   ██╗ ███████╗ ██╗   ██╗ ██╗ ███╗   ███╗",
+    "██╔══██╗ ██╔══██╗ ██║   ██║ ██╔════╝ ██║   ██║ ██║ ████╗ ████║",
+    "██║  ██║ ███████║ ╚██╗ ██╔╝ █████╗   ╚██╗ ██╔╝ ██║ ██╔████╔██║",
+    "██║  ██║ ██╔══██║  ╚████╔╝  ██╔══╝    ╚████╔╝  ██║ ██║╚██╔╝██║",
+    "██████╔╝ ██║  ██║   ╚██╔╝   ███████╗   ╚██╔╝   ██║ ██║ ╚═╝ ██║",
+    "╚═════╝  ╚═╝  ╚═╝    ╚═╝    ╚══════╝    ╚═╝    ╚═╝ ╚═╝     ╚═╝",
+  }
 
-  local header_piece1 = "██████╗   █████╗  ██╗   ██╗ ███████╗ ██╗   ██╗ ██╗ ███╗   ███╗"
-  local header_piece2 = "██╔══██╗ ██╔══██╗ ██║   ██║ ██╔════╝ ██║   ██║ ██║ ████╗ ████║"
-  local header_piece3 = "██║  ██║ ███████║ ╚██╗ ██╔╝ █████╗   ╚██╗ ██╔╝ ██║ ██╔████╔██║"
-  local header_piece4 = "██║  ██║ ██╔══██║  ╚████╔╝  ██╔══╝    ╚████╔╝  ██║ ██║╚██╔╝██║"
-  local header_piece5 = "██████╔╝ ██║  ██║   ╚██╔╝   ███████╗   ╚██╔╝   ██║ ██║ ╚═╝ ██║"
-  local header_piece6 = "╚═════╝  ╚═╝  ╚═╝    ╚═╝    ╚══════╝    ╚═╝    ╚═╝ ╚═╝     ╚═╝"
-
-  local header1 = { type = "text", val = header_piece1, opts = { position = "center", hl = "AlphaHeader1", }, }
-  local header2 = { type = "text", val = header_piece2, opts = { position = "center", hl = "AlphaHeader2", }, }
-  local header3 = { type = "text", val = header_piece3, opts = { position = "center", hl = "AlphaHeader3", }, }
-  local header4 = { type = "text", val = header_piece4, opts = { position = "center", hl = "AlphaHeader4", }, }
-  local header5 = { type = "text", val = header_piece5, opts = { position = "center", hl = "AlphaHeader5", }, }
-  local header6 = { type = "text", val = header_piece6, opts = { position = "center", hl = "AlphaHeader6", }, }
+  local header1 = { type = "text", val = header_pieces[1], opts = { position = "center", hl = "AlphaHeader1" } }
+  local header2 = { type = "text", val = header_pieces[2], opts = { position = "center", hl = "AlphaHeader2" } }
+  local header3 = { type = "text", val = header_pieces[3], opts = { position = "center", hl = "AlphaHeader3" } }
+  local header4 = { type = "text", val = header_pieces[4], opts = { position = "center", hl = "AlphaHeader4" } }
+  local header5 = { type = "text", val = header_pieces[5], opts = { position = "center", hl = "AlphaHeader5" } }
+  local header6 = { type = "text", val = header_pieces[6], opts = { position = "center", hl = "AlphaHeader6" } }
 
   local function button(sc, txt, keybind)
     local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
@@ -53,22 +54,17 @@ M.config = function()
   local buttons = {
     type = "group",
     val = {
-      -- ⏱️
-      button("e", "📂 > Explore", ":Telescope file_browser <CR>"),
+      button("e", "📂 > Explore", ":NvimTreeOpen <CR>"),
       button("p", "🌳 > Projects", ":Telescope projects <CR>"),
       button("r", "⏰ > Recently opened", ":Telescope oldfiles <CR>"),
-      button("f", "🔎 > Find file", ":cd $HOME | Telescope find_files <CR>"),
+      button("f", "🔎 > Find file", ":Telescope find_files <CR>"),
       button("g", "📜 > Find text", ":Telescope live_grep <CR>"),
       button("q", "🚪 > Quit", ":q <CR>"),
-      -- button( "LDR b", "   Buffers" , ":Telescope buffers<CR>"),
-      -- button( "MRK V", "   Options" , ":execute 'normal! `V'<CR>"),
-      -- button( "MRK P", "   Plugins" , ":execute 'normal! `P'<CR>"),
     },
     opts = {
       spacing = 1,
     },
   }
-
   local opts = {
     layout = {
       { type = "padding", val = 5 },
