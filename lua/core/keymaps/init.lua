@@ -1,6 +1,6 @@
 local M = {}
 
-local apply_keymaps = require("core.keymaps.keymap-tools").apply_keymaps
+local apply_keymaps = require("core.keymaps.utils").apply_keymaps
 
 -- Remap space as leader key
 vim.g.mapleader = " "
