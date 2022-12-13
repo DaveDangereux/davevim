@@ -1,6 +1,6 @@
 local M = {}
 
-local apply_keymaps = require("core.keymaps.utils").apply_keymaps
+local utils = require("core.keymaps.utils")
 
 -- Remap space as leader key
 vim.g.mapleader = " "
@@ -114,8 +114,26 @@ local keymaps = {
     ---------------------------------------------------------------------------
     -- bbye
     ---------------------------------------------------------------------------
-    ["<Leader>x"] = ":Bdelete <CR>",
-    ["<Leader>X"] = ":bufdo :Bdelete <CR>",
+    ["<Leader>X"] = function()
+      vim.cmd("SessionManager save_current_session")
+      vim.cmd("bufdo :Bdelete")
+      vim.cmd("silent! only")
+      vim.cmd("Alpha")
+      vim.cmd("echo")
+    end,
+    ["<Leader>x"] = function()
+      if utils.get_total_buffers() == 1 then
+        vim.cmd("SessionManager save_current_session")
+        vim.cmd("Bdelete")
+        vim.cmd("silent! only")
+        vim.cmd("Alpha")
+        vim.cmd("echo")
+      elseif vim.bo.filetype == "alpha" then
+        return
+      else
+        vim.cmd("Bdelete")
+      end
+    end,
 
     ---------------------------------------------------------------------------
     -- Telescope
@@ -241,7 +259,7 @@ local keymaps = {
   },
 }
 
-apply_keymaps(keymaps)
+utils.apply_keymaps(keymaps)
 
 -------------------------------------------------------------------------------
 -- Buffer Specific Keymaps
@@ -287,11 +305,11 @@ local lsp_keymaps = {
 -------------------------------------------------------------------------------
 
 M.gitsigns = function(bufnr)
-  apply_keymaps(gitsigns_keymaps, bufnr)
+  utils.apply_keymaps(gitsigns_keymaps, bufnr)
 end
 
 M.lsp = function(bufnr)
-  apply_keymaps(lsp_keymaps, bufnr)
+  utils.apply_keymaps(lsp_keymaps, bufnr)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 

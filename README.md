@@ -4,7 +4,6 @@
 - collate autocommands into a single file
 - fix packer sync issues (half of updates fail to pull)
 - add debugger
-- have the alpha dashboard display when there are no open buffers
 
 ## External Dependencies
 - unzip (for Mason)

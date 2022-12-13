@@ -49,4 +49,15 @@ M.apply_keymaps = function(keymaps, bufnr)
   end
 end
 
+M.get_total_buffers = function()
+  local total_buffers = 0
+  for buffer = 1, vim.fn.bufnr("$") do
+    local is_listed = vim.fn.buflisted(buffer) == 1
+    if is_listed then
+      total_buffers = total_buffers + 1
+    end
+  end
+  return total_buffers
+end
+
 return M

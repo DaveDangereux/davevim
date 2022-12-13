@@ -171,6 +171,14 @@ local plugins = {
   -- Use lazygit
   { "kdheepak/lazygit.nvim" },
 
+  -- Session management
+  {
+    "Shatur/neovim-session-manager",
+    config = function()
+      require("plugins.session").config()
+    end,
+  },
+
   -----------------------------------------------------------------------------
   -- LSP
   -----------------------------------------------------------------------------
