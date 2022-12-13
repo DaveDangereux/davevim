@@ -82,8 +82,9 @@ local keymaps = {
     ["n"] = "nzzzv",
     ["N"] = "Nzzzv",
 
-    -- Prevent x from copying to a register
-    ["x"] = '"_x',
+    -- Easier jumplist navigation
+    ["<A-h>"] = "<C-o>",
+    ["<A-l>"] = "<C-i>",
 
     ---------------------------------------------------------------------------
     -- NvimTree
