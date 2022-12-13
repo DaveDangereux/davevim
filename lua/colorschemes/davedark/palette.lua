@@ -5,6 +5,7 @@ return {
   nvim_tree_bg = "#151C21",
   term_bg = "#101519",
   pmenu_bg = "#0D1114", --off_black
+  float_border = "#F0C36F",
 
   -- Test colors
   test_fg = "#FF00FF",

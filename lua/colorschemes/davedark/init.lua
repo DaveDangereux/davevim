@@ -1,5 +1,3 @@
-local util = require("colorschemes.davedark.util")
-
 local general = require("colorschemes.davedark.highlights.general")
 local languages = require("colorschemes.davedark.highlights.languages")
 local lsp = require("colorschemes.davedark.highlights.lsp")
@@ -37,5 +35,7 @@ local skeletons = {
 }
 
 for _, skeleton in ipairs(skeletons) do
-  util.initialise(skeleton)
+  for group, opts in pairs(skeleton) do
+    vim.api.nvim_set_hl(0, group, opts)
+  end
 end

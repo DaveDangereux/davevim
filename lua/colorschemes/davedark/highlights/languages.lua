@@ -7,15 +7,15 @@ return {
   ---------------------------------------------------------
 
   htmlArg = { fg = c.orange },
-  htmlBold = { fg = c.fg, style = "NONE" },
-  htmlComment = { fg = c.light_blue_grey, style = "italic" },
-  htmlLink = { fg = c.fg, style = "NONE" },
+  htmlBold = { fg = c.fg }, -- remove style?
+  htmlComment = { fg = c.light_blue_grey, italic = true },
+  htmlLink = { fg = c.fg }, -- remove style?
   htmlSpecialTagName = { fg = c.red },
   htmlString = { fg = c.green },
   htmlTag = { fg = c.none },
   htmlTagN = { fg = c.fg },
   htmlTagName = { fg = c.red },
-  htmlTitle = { style = "NONE" },
+  htmlTitle = { }, -- remove style?
 
   htmlTSTag = { fg = c.red },
   htmlTSTagDelimiter = { fg = c.fg },
@@ -160,7 +160,7 @@ return {
   jsxTSTypeBuiltin = { fg = c.none },
   jsxTSVariable = { fg = c.none }, -- no differentiation between constants and variables
   jsxTSFunction = { fg = c.blue },
-  
+
   ---------------------------------------------------------
   -- tsx
   ---------------------------------------------------------
@@ -287,7 +287,7 @@ return {
 
   -- The default highlight name seems to have switched to mkd
   markdownBlockquote = { fg = c.test_fg, bg = c.test_bg },
-  markdownBold = { fg = c.yellow, style = "bold" },
+  markdownBold = { fg = c.yellow, bold = true },
   markdownCode = { fg = c.fg, bg = c.dark_blue_grey },
   -- markdownCodeBlock = { fg = c.test_fg, bg = c.test_bg },
   markdownCodeDelimiter = { fg = c.dark_blue_grey, bg = c.dark_blue_grey },
@@ -305,7 +305,7 @@ return {
   markdownIdDelimiter = { fg = c.test_fg, bg = c.test_bg },
   markdownLinkDelimiter = { fg = c.fg },
   -- markdownItalic = { fg = c.test_fg, bg = c.test_bg },
-  markdownLinkText = { fg = c.blue, style = "underline" },
+  markdownLinkText = { fg = c.blue, underline = true },
   markdownListMarker = { fg = c.red },
   markdownOrderedListMarker = { fg = c.test_fg, bg = c.test_bg },
   markdownRule = { fg = c.test_fg, bg = c.test_bg },

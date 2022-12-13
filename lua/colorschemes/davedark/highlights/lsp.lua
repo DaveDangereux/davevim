@@ -6,7 +6,7 @@ return {
   ---------------------------------------------------------
   DiagnosticError = { fg = c.error_red },
   DiagnosticSignError = { fg = c.error_red },
-  DiagnosticUnderlineError = { style = "undercurl", special = c.error_red },
+  DiagnosticUnderlineError = { undercurl = true, sp = c.error_red },
   DiagnosticFloatingError = { fg = c.error_red },
   DiagnosticVirtualTextError = { fg = c.light_blue_grey },
   ---------------------------------------------------------
@@ -16,7 +16,7 @@ return {
   LspDiagnosticsDefaultError = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsFloatingError = { fg = c.test_fg, bg = c.test_bg },
   LspDiagnosticsSignError = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsUnderlineError = { fg = c.test_fg, bg = c.test_bg, style = "underline" },
+  LspDiagnosticsUnderlineError = { fg = c.test_fg, bg = c.test_bg, underline = true },
   LspDiagnosticsVirtualTextError = { fg = c.test_fg, bg = c.test_bg },
 
   ---------------------------------------------------------
@@ -24,7 +24,7 @@ return {
   ---------------------------------------------------------
   DiagnosticWarn = { fg = c.orange },
   DiagnosticSignWarn = { fg = c.orange },
-  DiagnosticUnderlineWarn = { style = "undercurl", special = c.orange },
+  DiagnosticUnderlineWarn = { undercurl = true, sp = c.orange },
   DiagnosticFloatingWarn = { fg = c.orange },
   DiagnosticVirtualTextWarn = { fg = c.light_blue_grey },
   ---------------------------------------------------------
@@ -42,7 +42,7 @@ return {
   ---------------------------------------------------------
   DiagnosticInfo = { fg = c.green },
   DiagnosticSignInfo = { fg = c.green },
-  DiagnosticUnderlineInfo = { style = "undercurl", special = c.green },
+  DiagnosticUnderlineInfo = { undercurl = true, sp = c.green },
   DiagnosticFloatingInfo = { fg = c.green },
   DiagnosticVirtualTextInfo = { fg = c.light_blue_grey },
   ---------------------------------------------------------
@@ -60,7 +60,7 @@ return {
   ---------------------------------------------------------
   DiagnosticHint = { fg = c.blue },
   DiagnosticSignHint = { fg = c.blue },
-  DiagnosticUnderlineHint = { style = "undercurl", special = c.blue },
+  DiagnosticUnderlineHint = { undercurl = true, sp = c.blue },
   DiagnosticFloatingHint = { fg = c.blue },
   DiagnosticVirtualTextHint = { fg = c.light_blue_grey },
   ---------------------------------------------------------

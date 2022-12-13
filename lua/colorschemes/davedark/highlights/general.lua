@@ -10,14 +10,14 @@ return {
   CursorLine = { bg = c.dark_blue_grey },
   CursorLineNr = { fg = c.blue, bg = config.transparent_background and c.none or c.bg },
   LineNr = { fg = c.blue_grey },
-  ErrorMsg = { fg = c.error_red, bg = config.transparent_background and c.none or c.bg, style = "bold" },
+  ErrorMsg = { fg = c.error_red, bg = config.transparent_background and c.none or c.bg, bold = true },
   ModeMsg = { fg = c.fg },
-  NonText = { fg = c.light_blue_grey, style = "NONE" },
+  NonText = { fg = c.light_blue_grey }, -- remove style?
   Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
-  Search = { fg = c.none, bg = c.blue_grey, style = "bold" },
+  Search = { fg = c.none, bg = c.blue_grey, bold = true },
   SignColumn = { bg = config.transparent_background and c.none or c.bg },
-  StatusLine = { fg = c.off_black },
-  StatusLineNC = { fg = c.off_black },
+  StatusLine = nil, -- these seem to cause carets to appear when set
+  StatusLineNC = nil, -- these seem to cause carets to appear when set
   VertSplit = {
     fg = config.transparent_background and c.off_black or c.bg,
     bg = config.transparent_background and c.off_black or c.bg,
@@ -29,17 +29,17 @@ return {
   -- Basic syntax highlighting
   ---------------------------------------------------------
   Boolean = { fg = c.orange },
-  Comment = { fg = c.light_blue_grey, style = "italic" },
+  Comment = { fg = c.light_blue_grey, italic = true },
   Error = { fg = c.error_red, bg = c.none, special = c.error_red }, -- may want to be white with underline
   FoldColumn = { fg = c.blue_grey, bg = config.transparent_background and c.none or c.bg },
-  Folded = { fg = c.light_blue_grey, bg = c.dark_grey, style = "italic" },
+  Folded = { fg = c.light_blue_grey, bg = c.dark_grey, italic = true },
   Function = { fg = c.none },
   Identifier = { fg = c.none },
   Include = { fg = c.none },
-  MatchParen = { bg = c.dark_blue_grey, style = "bold" },
-  Special = { fg = c.none, cfg = c.none }, -- overrides TSInclude
+  MatchParen = { bg = c.dark_blue_grey, bold = true },
+  Special = { fg = c.none }, -- overrides TSInclude
   String = { fg = c.green }, -- may conflict with TSString
-  Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, style = "bold" }, -- doesn't affect the fg?
+  Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, bold = true }, -- doesn't affect the fg?
 
   ---------------------------------------------------------
   -- Diff
@@ -64,17 +64,17 @@ return {
   ---------------------------------------------------------
   -- Float
   ---------------------------------------------------------
-  FloatBorder = { fg = c.cyan, bg = config.transparent_background and c.none or c.off_black },
+  FloatBorder = { fg = c.float_border, bg = config.transparent_background and c.none or c.off_black },
 
   ---------------------------------------------------------
   -- Unsorted
   ---------------------------------------------------------
-  Statement = { fg = c.none, style = "NONE" }, -- affects html tags in php
-  Type = { fg = c.none, bg = c.none, style = "NONE" }, -- affects table brackets
+  Statement = { fg = c.none }, -- remove style?
+  Type = { fg = c.none, bg = c.none }, -- remove style? affects table brackets
   -- Constant = { bg = config.transparent_background and c.none or c.bg },
   directory = { fg = c.blue },
   Delimiter = { fg = c.none, bg = c.none }, -- seems to highlight parentheses under cursor
-  Title = { fg = c.fg, style = "NONE" },
+  Title = { fg = c.fg }, -- remove style?
   -- PreProc = { fg = c.test_fg, bg = c.test_bg },
 
   ---------------------------------------------------------

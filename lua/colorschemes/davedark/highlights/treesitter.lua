@@ -31,15 +31,15 @@ return {
   TSPunctBracket = { fg = c.none },
   TSPunctDelimiter = { fg = c.fg },
   TSString = { fg = c.none },
-  TSTag = { fg = c.none, style = "NONE" },
-  TSTagAttribute = { fg = c.orange, style = "NONE" },
+  TSTag = { fg = c.none }, -- remove style?
+  TSTagAttribute = { fg = c.orange }, -- remove style?
   TSTagDelimiter = { fg = c.fg },
   TSText = { fg = c.none },
   TSTextReference = { fg = c.none }, -- messes with markdown []'s
   -- TSTitle = { fg = c.fg },
   TSTypeBuiltin = { fg = c.none },
   TSType = { fg = c.none },
-  TSURI = { fg = c.green, style = "underline" },
+  TSURI = { fg = c.green, underline = true },
   TSVariable = { fg = c.none },
   -- TSWarning = { fg = c.test_fg, bg = c.test_bg },
 
@@ -61,13 +61,13 @@ return {
   TSPunctSpecial = { fg = c.none },
   TSStringRegex = { fg = c.test_fg },
   TSStringEscape = { fg = c.test_fg },
-  TSEmphasis = { style = "italic" },
-  TSUnderline = { style = "underline" },
-  TSNote = { fg = c.test_fg, style = "bold" },
-  TSDanger = { fg = c.test_fg, style = "bold" },
+  TSEmphasis = { italic = true },
+  TSUnderline = { underline = true },
+  TSNote = { fg = c.test_fg, bold = true },
+  TSDanger = { fg = c.test_fg, bold = true },
   TSMath = { fg = c.test_fg },
   TSStructure = { fg = c.test_fg },
-  TSStrong = { fg = c.none, style = "none" },
+  TSStrong = { fg = c.none }, -- remove style?
   TSQueryLinterError = { fg = c.test_fg },
   TSEnvironment = { fg = c.test_fg },
   TSEnvironmentName = { fg = c.test_fg },
