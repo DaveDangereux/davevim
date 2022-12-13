@@ -20,15 +20,20 @@ local settings = {
     },
     mappings = {
       i = {
-        ["<Leader>c"] = "close",
-        ["<Leader>v"] = "select_vertical",
-        ["<Leader>h"] = "select_horizontal",
+        ["<C-c>"] = "close",
+        ["<C-w>"] = "close",
+        ["<C-v>"] = "select_vertical",
+        ["<C-h>"] = "select_horizontal",
       },
       n = {
         ["<C-c>"] = "close",
+        ["<C-w>"] = "close",
         ["<Leader>c"] = "close",
+        ["q"] = "close",
         ["<Leader>v"] = "select_vertical",
         ["<Leader>h"] = "select_horizontal",
+        ["<C-v>"] = "select_vertical",
+        ["<C-h>"] = "select_horizontal",
       },
     },
   },

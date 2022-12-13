@@ -117,7 +117,7 @@ local keymaps = {
     -- Telescope
     ---------------------------------------------------------------------------
     ["<Leader>fb"] = ":Telescope buffers <CR>",
-    ["<Leader>fc"] = ":Telescope current_buffer_fuzzy_find <CR>",
+    ["<Leader>f/"] = ":Telescope current_buffer_fuzzy_find <CR>",
     ["<Leader>fe"] = ":Telescope file_browser <CR>",
     ["<Leader>ff"] = ":Telescope find_files <CR>",
     ["<Leader>fs"] = ":Telescope grep_string <CR>",
