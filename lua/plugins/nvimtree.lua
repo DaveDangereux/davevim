@@ -1,13 +1,5 @@
 local M = {}
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  print("Failed to require nvim-tree.config")
-  return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 local settings = {
   auto_reload_on_write = true,
   disable_netrw = true,
@@ -17,9 +9,14 @@ local settings = {
     adaptive_size = true,
     mappings = {
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-        { key = "h", cb = tree_cb("close_node") },
-        { key = "v", cb = tree_cb("vsplit") },
+        { key = { "l", "<CR>", "o" }, action = "edit" },
+        { key = "h", action = "close_node" },
+        { key = "v", action = "vsplit" },
+        { key = "L", action = "expand_all" },
+        { key = "H", action = "collapse_all" },
+        { key = "M", action = "bulk_move" },
+        { key = "?", action = "toggle_help" },
+        { key = "K", action = "toggle_file_info" },
       },
     },
     float = {
