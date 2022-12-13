@@ -1,10 +1,8 @@
 # Dave's Neovim IDE Config
 
 ## Todo
-- add a config system to centralise common variables
 - collate autocommands into a single file
 - fix packer sync issues (half of updates fail to pull)
-- add git plugin similar to lazygit
 - add debugger
 - have the alpha dashboard display when there are no open buffers
 

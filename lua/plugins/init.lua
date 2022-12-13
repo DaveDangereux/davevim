@@ -168,6 +168,9 @@ local plugins = {
   -- Editable quickfix window
   { "stefandtw/quickfix-reflector.vim" },
 
+  -- Use lazygit
+  { "kdheepak/lazygit.nvim" },
+
   -----------------------------------------------------------------------------
   -- LSP
   -----------------------------------------------------------------------------
