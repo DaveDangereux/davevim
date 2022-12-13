@@ -2,10 +2,15 @@ local M = {}
 
 local settings = {
   border_style = "rounded",
+  preview_lines_above = 3,
+  max_preview_lines = 30,
   code_action_lightbulb = {
     enable = false,
     sign = false,
     virtual_text = false,
+  },
+  finder_action_keys = {
+    vsplit = "<Leader>v",
   },
   definition_action_keys = {
     edit = "<CR>",
