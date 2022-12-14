@@ -1,5 +1,4 @@
 local c = require("colorschemes.davedark.palette")
-local config = require("config")
 
 return {
   ---------------------------------------------------------
@@ -283,39 +282,10 @@ return {
   ---------------------------------------------------------
   -- markdown
   ---------------------------------------------------------
-  mkdHeading = { fg = c.red },
-
   -- The default highlight name seems to have switched to mkd
-  markdownBlockquote = { fg = c.test_fg, bg = c.test_bg },
-  markdownBold = { fg = c.yellow, bold = true },
-  markdownCode = { fg = c.fg, bg = c.dark_blue_grey },
-  -- markdownCodeBlock = { fg = c.test_fg, bg = c.test_bg },
-  markdownCodeDelimiter = { fg = c.dark_blue_grey, bg = c.dark_blue_grey },
-  markdownError = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
-  markdownH1 = { fg = c.purple },
-  markdownH2 = { fg = c.purple },
-  markdownH3 = { fg = c.purple },
-  markdownH4 = { fg = c.purple },
-  markdownH5 = { fg = c.purple },
-  markdownH6 = { fg = c.purple },
-  markdownHeadingDelimiter = { fg = c.blue },
-  markdownHeadingRule = { fg = c.test_fg, bg = c.test_bg },
-  markdownId = { fg = c.test_fg, bg = c.test_bg },
-  markdownIdDeclaration = { fg = c.test_fg, bg = c.test_bg },
-  markdownIdDelimiter = { fg = c.test_fg, bg = c.test_bg },
-  markdownLinkDelimiter = { fg = c.fg },
-  -- markdownItalic = { fg = c.test_fg, bg = c.test_bg },
-  markdownLinkText = { fg = c.blue, underline = true },
-  markdownListMarker = { fg = c.red },
-  markdownOrderedListMarker = { fg = c.test_fg, bg = c.test_bg },
-  markdownRule = { fg = c.test_fg, bg = c.test_bg },
-  markdownUrl = { fg = c.cyan },
-
-  markdownTSTitle = { fg = c.red },
-  markdownTSPunctSpecial = { fg = c.red },
-  markdownTSTextReference = { fg = c.fg },
-
   mkdCode = { fg = c.green },
+  mkdHeading = { fg = c.red },
+  mkdLineBreak = { link = "Normal" }, -- was linked to visual mode, creating ugly tabs
 
   ---------------------------------------------------------
   -- Vue.js
