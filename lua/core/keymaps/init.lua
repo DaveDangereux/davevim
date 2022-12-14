@@ -150,8 +150,9 @@ local keymaps = {
     ["<Leader>fp"] = ":Telescope projects <CR>",
     ["<Leader>fq"] = ":Telescope quickfix <CR>",
     ["<Leader>ft"] = ":Telescope resume <CR>",
-    ["<Leader>;"] = ":Telescope command_history <CR>",
+    ["<Leader>f;"] = ":Telescope command_history <CR>",
     ["<Leader>fx"] = ":Telescope registers <CR>",
+    ["<Leader>fc"] = ":Telescope highlights <CR>",
 
     ---------------------------------------------------------------------------
     -- Trouble
