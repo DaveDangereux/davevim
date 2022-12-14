@@ -17,6 +17,13 @@ local settings = {
         { key = "M", action = "bulk_move" },
         { key = "?", action = "toggle_help" },
         { key = "K", action = "toggle_file_info" },
+        { key = ".", action = "toggle_dotfiles" },
+        { key = "C", action = "cd" },
+        { key = "gc", action = "toggle_git_clean" },
+        { key = "i", action = "toggle_dotfiles" },
+        { key = "]g", action = "next_git_item" },
+        { key = "[g", action = "prev_git_item" },
+
       },
     },
     float = {
