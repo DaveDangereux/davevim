@@ -36,6 +36,7 @@ return {
   Function = { fg = c.none },
   Identifier = { fg = c.none },
   Include = { fg = c.none },
+  Macro = { fg = c.none },
   MatchParen = { bg = c.dark_blue_grey, bold = true },
   Special = { fg = c.none }, -- overrides TSInclude
   String = { fg = c.green }, -- may conflict with TSString
