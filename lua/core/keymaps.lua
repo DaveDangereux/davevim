@@ -1,6 +1,6 @@
 local M = {}
 
-local utils = require("core.keymaps.utils")
+local utils = require("core.utils")
 
 -- Remap space as leader key
 vim.g.mapleader = " "
@@ -313,16 +313,5 @@ M.lsp = function(bufnr)
   utils.apply_keymaps(lsp_keymaps, bufnr)
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
-
--------------------------------------------------------------------------------
--- Autocommand to auto-source this file on save
--------------------------------------------------------------------------------
-
-vim.cmd([[
-  augroup keymaps
-    autocmd!
-    autocmd BufWritePost *nvim/lua/core/keymaps/init.lua source <afile>
-  augroup end
-]])
 
 return M

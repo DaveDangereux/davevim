@@ -68,16 +68,7 @@ vim.cmd([[
   set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 ]])
 
+-- Apply options
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
--- Autocommand to source this file on save (and reload bufferline config for correct buffer styling)
-vim.cmd([[
-  augroup options
-    autocmd!
-    autocmd BufWritePost *nvim/lua/core/options.lua source <afile>
-    autocmd BufWritePost *nvim/lua/core/options.lua lua require("plugins.bufferline").config()
-    autocmd BufWritePost *nvim/lua/core/options.lua lua require("plugins.feline").config()
-  augroup end
-]])

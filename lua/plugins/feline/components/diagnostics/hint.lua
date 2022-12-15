@@ -1,9 +1,9 @@
-local util = require("plugins.feline.util")
+local utils = require("plugins.feline.utils")
 local icons = require("plugins.feline.icons")
 
 return {
   provider = function()
-    return util.diag_count("hint")
+    return utils.diag_count("hint")
   end,
   hl = "FelineDiagHint",
   icon = "",

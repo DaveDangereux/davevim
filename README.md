@@ -1,10 +1,9 @@
 # Dave's Neovim IDE Config
 
 ## Todo
-- collate autocommands into a single file
 - add autocommand to save on quit with config toggle
+- centralise palettes
 - fix markdown indent new line after list item glitch
-- improve colorscheme source-on-save autocommand
 - add debugger
 - update absolute directory paths with platform-independent variables
 

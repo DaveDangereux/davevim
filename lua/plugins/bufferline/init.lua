@@ -45,6 +45,9 @@ local settings = {
 }
 
 M.config = function()
+  -- Refresh highlights cache in case we're reloading after making changes
+  package.loaded["bufferline.highlights"] = nil
+
   local status_ok, bufferline = pcall(require, "bufferline")
   if not status_ok then
     print("Failed to require bufferline")

@@ -60,4 +60,13 @@ M.get_total_buffers = function()
   return total_buffers
 end
 
+M.get_keys = function(t)
+  local keys = {}
+  for key in pairs(t) do
+    table.insert(keys, key)
+  end
+  table.sort(keys)
+  print(vim.inspect(keys))
+end
+
 return M

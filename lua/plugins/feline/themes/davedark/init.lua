@@ -1,7 +1,6 @@
-local load_colorscheme = require("plugins.feline.util").load_colorscheme
 local c = require("plugins.feline.themes.davedark.palette")
 
-local colorscheme = {
+local highlights = {
   StatusLine = { fg = c.off_black },
   StatusLineNC = { fg = c.off_black },
 
@@ -64,4 +63,6 @@ local colorscheme = {
   FelineInactiveFileTypeSep = { fg = c.off_black, bg = c.dark_blue_grey },
 }
 
-load_colorscheme(colorscheme)
+for group, opts in pairs(highlights) do
+  vim.api.nvim_set_hl(0, group, opts)
+end
