@@ -55,8 +55,9 @@ M.config = function()
     type = "group",
     val = {
       button("e", "📂 > Explore", ":NvimTreeOpen <CR>"),
-      button("w", "💽 > Previous session", ':SessionManager load_last_session<CR>'),
+      button("w", "💽 > Previous session", ":SessionManager load_last_session<CR>"),
       button("d", "💻 > Directory session", ":SessionManager load_current_dir_session<CR>"),
+      button("t", "🍒 > Todo", ":TodoTelescope<CR>"),
       button("p", "🌳 > Projects", ":Telescope projects <CR>"),
       button("r", "⏰ > Recently opened", ":Telescope oldfiles <CR>"),
       button("f", "🔎 > Find file", ":Telescope find_files <CR>"),

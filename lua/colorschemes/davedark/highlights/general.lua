@@ -40,7 +40,7 @@ return {
   MatchParen = { bg = c.dark_blue_grey, bold = true },
   Special = { fg = c.none }, -- overrides TSInclude
   String = { fg = c.green }, -- may conflict with TSString
-  Todo = { fg = c.red, bg = config.transparent_background and c.none or c.bg, bold = true }, -- doesn't affect the fg?
+  Todo = { fg = c.none, bg = config.transparent_background and c.none or c.bg }, -- doesn't affect the fg?
 
   ---------------------------------------------------------
   -- Diff

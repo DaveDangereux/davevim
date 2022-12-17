@@ -40,10 +40,10 @@ return {
   ---------------------------------------------------------
   -- Information
   ---------------------------------------------------------
-  DiagnosticInfo = { fg = c.green },
-  DiagnosticSignInfo = { fg = c.green },
-  DiagnosticUnderlineInfo = { undercurl = true, sp = c.green },
-  DiagnosticFloatingInfo = { fg = c.green },
+  DiagnosticInfo = { fg = c.blue },
+  DiagnosticSignInfo = { fg = c.blue },
+  DiagnosticUnderlineInfo = { undercurl = true, sp = c.blue },
+  DiagnosticFloatingInfo = { fg = c.blue },
   DiagnosticVirtualTextInfo = { fg = c.light_blue_grey },
   ---------------------------------------------------------
   -- Information (testing)
@@ -58,10 +58,10 @@ return {
   ---------------------------------------------------------
   -- Hint
   ---------------------------------------------------------
-  DiagnosticHint = { fg = c.blue },
-  DiagnosticSignHint = { fg = c.blue },
-  DiagnosticUnderlineHint = { sp = c.blue },
-  DiagnosticFloatingHint = { fg = c.blue },
+  DiagnosticHint = { fg = c.green },
+  DiagnosticSignHint = { fg = c.green },
+  DiagnosticUnderlineHint = { sp = c.green },
+  DiagnosticFloatingHint = { fg = c.green },
   DiagnosticVirtualTextHint = { fg = c.light_blue_grey },
   ---------------------------------------------------------
   -- Hint (testing)

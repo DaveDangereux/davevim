@@ -42,14 +42,14 @@ local highlights = {
   FelineDiagError = { fg = c.off_black, bg = c.dark_red },
   FelineDiagWarnSep = { fg = c.dark_orange, bg = c.dark_red },
   FelineDiagWarn = { fg = c.off_black, bg = c.dark_orange },
-  FelineDiagInfoSep = { fg = c.dark_green, bg = c.dark_orange },
-  FelineDiagInfo = { fg = c.off_black, bg = c.dark_green },
-  FelineDiagHintSep = { fg = c.sky_blue, bg = c.dark_green },
-  FelineDiagHint = { fg = c.off_black, bg = c.sky_blue },
+  FelineDiagInfoSep = { fg = c.sky_blue, bg = c.dark_orange },
+  FelineDiagInfo = { fg = c.off_black, bg = c.sky_blue },
+  FelineDiagHintSep = { fg = c.dark_green, bg = c.sky_blue },
+  FelineDiagHint = { fg = c.off_black, bg = c.dark_green },
   -- FelineDiagHintSepRight = { fg = c.dark_blue_grey, bg = c.blue },
 
   -- file-type
-  FelineFileTypeSep = { fg = c.dark_blue_grey, bg = c.sky_blue },
+  FelineFileTypeSep = { fg = c.dark_blue_grey, bg = c.dark_green },
   FelineFileType = { bg = c.dark_blue_grey },
 
   -- file-format

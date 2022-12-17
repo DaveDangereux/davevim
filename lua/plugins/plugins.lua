@@ -179,6 +179,13 @@ return {
     end,
   },
 
+  -- Todo highlight and search
+  {
+    "folke/todo-comments.nvim",
+    config = function()
+      require("plugins.todocomments").config()
+    end,
+  },
   -- TODO: Add debugger
   -- TODO: Add undotree
 
