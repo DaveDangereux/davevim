@@ -1,4 +1,5 @@
 local config = require("user_config")
+local utils = require("core.utils")
 
 -------------------------------------------------------------------------------
 -- Reload this file on save
@@ -6,7 +7,8 @@ local config = require("user_config")
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*nvim/lua/core/autocommands.lua",
   callback = function()
-    vim.cmd("source", "<afile>")
+    utils.clear_packages_recursively("core.autocommands")
+    require("core.autocommands")
   end,
   group = vim.api.nvim_create_augroup("autocommands", { clear = true }),
 })
@@ -19,7 +21,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function()
     package.loaded["user_config"] = nil
     package.loaded["core.options"] = nil
-    vim.cmd("source", "<afile>")
     require("core.options")
     -- TODO: Make sure this works for all configured modules
   end,
@@ -33,18 +34,19 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*nvim/lua/core/utils.lua",
   callback = function()
     package.loaded["core.utils"] = nil
-    vim.cmd("source", "<afile>")
   end,
   group = vim.api.nvim_create_augroup("utils", { clear = true }),
 })
 
 ------------------------------------------------------------------------------
--- Sync Packer when plugins file is saved
+-- Sync Packer when plugin files are saved
 ------------------------------------------------------------------------------
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*nvim/lua/plugins/**",
   callback = function()
-    vim.cmd("source", "<afile>")
+    utils.clear_packages_recursively("plugins")
+    utils.clear_packages_recursively("load_packer")
+    require("load_packer")
     vim.cmd("PackerSync")
   end,
   group = vim.api.nvim_create_augroup("plugins", { clear = true }),

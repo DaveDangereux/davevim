@@ -103,16 +103,37 @@ M.refresh_package_highlights = function()
   -- TODO: Reload gitsigns highlights
 end
 
-M.clear_packages_recursively = function(package_name)
-  local target_package_names = {}
+M.get_packages_recursively = function(query_string)
+  local package_names = {}
 
-  for key in pairs(package.loaded) do
-    if key:find("^" .. package_name) then
-      table.insert(target_package_names, key)
+  -- The package.loaded table uses package names as keys
+  for package_name in pairs(package.loaded) do
+    if package_name:find("^" .. query_string) then
+      table.insert(package_names, package_name)
     end
   end
 
-  for _, pkg in pairs(target_package_names) do
+  table.sort(package_names)
+  return package_names
+end
+
+M.print_packages_recursively = function(query_string)
+  local package_names = M.get_packages_recursively(query_string)
+
+  local total_packages = 0
+
+  for _, pkg in ipairs(package_names) do
+    print(pkg)
+    total_packages = total_packages + 1
+  end
+
+  print(total_packages .. " total packages")
+end
+
+M.clear_packages_recursively = function(query_string)
+  local package_names = M.get_packages_recursively(query_string)
+
+  for _, pkg in ipairs(package_names) do
     package.loaded[pkg] = nil
   end
 end
