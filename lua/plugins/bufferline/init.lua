@@ -7,6 +7,10 @@ local settings = {
     right_mouse_command = "Bdelete! %d",
     left_mouse_command = "buffer %d",
     diagnostics = "nvim_lsp",
+    diagnostics_indicator = function(count, level)
+      local icon = level:match("error") and " " or " "
+      return " " .. icon .. count
+    end,
     offsets = {
       { filetype = "NvimTree" },
     },
