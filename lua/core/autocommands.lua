@@ -16,8 +16,10 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*nvim/lua/config.lua",
   callback = function()
     package.loaded["config"] = nil
+    package.loaded["core.options"] = nil
     vim.cmd("source", "<afile>")
-    -- TODO: Make sure this works properly
+    require("core.options")
+    -- TODO: Make sure this works for all configured modules
   end,
   group = vim.api.nvim_create_augroup("config", { clear = true }),
 })
@@ -59,7 +61,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 ------------------------------------------------------------------------------
 -- Reload options on save
--- (and reload bufferline config for correct buffer styling)
 ------------------------------------------------------------------------------
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*nvim/lua/core/options.lua",
