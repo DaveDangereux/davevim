@@ -4,3 +4,5 @@ return {
   transparent_background = true,
   pmenu_transparent_background = true,
 }
+
+-- TODO: Default config for fallback?
