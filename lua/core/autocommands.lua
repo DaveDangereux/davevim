@@ -1,3 +1,18 @@
+local config = require("config")
+
+-------------------------------------------------------------------------------
+-- Format on save
+-------------------------------------------------------------------------------
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "<buffer>",
+  callback = function()
+    if config.format_on_save then
+      vim.lsp.buf.format()
+    end
+  end,
+  group = vim.api.nvim_create_augroup("formatting", { clear = true }),
+})
+
 -------------------------------------------------------------------------------
 -- Reload this file on save
 -------------------------------------------------------------------------------
@@ -7,6 +22,19 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.cmd("source", "<afile>")
   end,
   group = vim.api.nvim_create_augroup("autocommands", { clear = true }),
+})
+
+-------------------------------------------------------------------------------
+-- Reload config on save
+-------------------------------------------------------------------------------
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*nvim/lua/config.lua",
+  callback = function()
+    package.loaded["config"] = nil
+    vim.cmd("source", "<afile>")
+    -- TODO: Make sure this works properly
+  end,
+  group = vim.api.nvim_create_augroup("config", { clear = true }),
 })
 
 -------------------------------------------------------------------------------
@@ -30,7 +58,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.cmd("source", "<afile>")
     vim.cmd("PackerSync")
   end,
-  group = vim.api.nvim_create_augroup("packer_config", { clear = true }),
+  group = vim.api.nvim_create_augroup("plugins", { clear = true }),
 })
 
 -------------------------------------------------------------------------------
@@ -75,5 +103,5 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function()
     require("plugins.feline").config()
   end,
-  group = vim.api.nvim_create_augroup("feline_commands", { clear = true }),
+  group = vim.api.nvim_create_augroup("feline", { clear = true }),
 })
