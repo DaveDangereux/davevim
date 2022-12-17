@@ -1,4 +1,4 @@
-local c = require("colorschemes.davedark.palette")
+local c = require("colorschemes.davedark.palette").c
 local config = require("config")
 
 return {

@@ -1,4 +1,4 @@
-local c = require("plugins.feline.themes.davedark.palette")
+local c = require("colorschemes.davedark.palette").c
 
 local highlights = {
   StatusLine = { fg = c.off_black },
@@ -13,8 +13,8 @@ local highlights = {
   FelineModeInsertSep = { fg = c.dark_blue_grey, bg = c.red },
   FelineModeVisual = { fg = c.off_black, bg = c.yellow },
   FelineModeVisualSep = { fg = c.dark_blue_grey, bg = c.yellow },
-  FelineModeCommand = { fg = c.off_black, bg = c.light_blue },
-  FelineModeCommandSep = { fg = c.dark_blue_grey, bg = c.light_blue },
+  FelineModeCommand = { fg = c.off_black, bg = c.blue },
+  FelineModeCommandSep = { fg = c.dark_blue_grey, bg = c.blue },
   FelineModeConfirm = { fg = c.off_black, bg = c.red },
   FelineModeConfirmSep = { fg = c.dark_blue_grey, bg = c.red },
   FelineModeReplace = { fg = c.off_black, bg = c.red },
@@ -44,12 +44,12 @@ local highlights = {
   FelineDiagWarn = { fg = c.off_black, bg = c.dark_orange },
   FelineDiagInfoSep = { fg = c.dark_green, bg = c.dark_orange },
   FelineDiagInfo = { fg = c.off_black, bg = c.dark_green },
-  FelineDiagHintSep = { fg = c.blue, bg = c.dark_green },
-  FelineDiagHint = { fg = c.off_black, bg = c.blue },
+  FelineDiagHintSep = { fg = c.sky_blue, bg = c.dark_green },
+  FelineDiagHint = { fg = c.off_black, bg = c.sky_blue },
   -- FelineDiagHintSepRight = { fg = c.dark_blue_grey, bg = c.blue },
 
   -- file-type
-  FelineFileTypeSep = { fg = c.dark_blue_grey, bg = c.blue },
+  FelineFileTypeSep = { fg = c.dark_blue_grey, bg = c.sky_blue },
   FelineFileType = { bg = c.dark_blue_grey },
 
   -- file-format

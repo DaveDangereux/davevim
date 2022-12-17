@@ -1,4 +1,4 @@
-local c = require("colorschemes.davedark.palette")
+local c = require("colorschemes.davedark.palette").c
 local config = require("config")
 
 return {
@@ -50,9 +50,9 @@ return {
   DiffDelete = { fg = c.red, bg = config.transparent_background and c.none or c.bg },
   DiffAdded = { fg = c.green },
   DiffRemoved = { fg = c.red },
-  DiffFile = { fg = c.test_fg, bg = c.test_bg },
-  DiffIndexLine = { fg = c.test_fg, bg = c.test_bg },
-  DiffText = { fg = c.test_fg, bg = c.test_bg },
+  DiffFile = { fg = c.test_pink, bg = c.test_yellow },
+  DiffIndexLine = { fg = c.test_pink, bg = c.test_yellow },
+  DiffText = { fg = c.test_pink, bg = c.test_yellow },
 
   ---------------------------------------------------------
   -- Popup menu

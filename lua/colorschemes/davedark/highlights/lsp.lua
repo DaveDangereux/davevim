@@ -1,4 +1,4 @@
-local c = require("colorschemes.davedark.palette")
+local c = require("colorschemes.davedark.palette").c
 
 return {
   ---------------------------------------------------------
@@ -12,12 +12,12 @@ return {
   ---------------------------------------------------------
   -- Error (testing)
   ---------------------------------------------------------
-  LspDiagnosticsError = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsDefaultError = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsFloatingError = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsSignError = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsUnderlineError = { fg = c.test_fg, bg = c.test_bg, underline = true },
-  LspDiagnosticsVirtualTextError = { fg = c.test_fg, bg = c.test_bg },
+  LspDiagnosticsError = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsDefaultError = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsFloatingError = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsSignError = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsUnderlineError = { fg = c.test_pink, bg = c.test_yellow, underline = true },
+  LspDiagnosticsVirtualTextError = { fg = c.test_pink, bg = c.test_yellow },
 
   ---------------------------------------------------------
   -- Warning
@@ -30,12 +30,12 @@ return {
   ---------------------------------------------------------
   -- Warning (testing)
   ---------------------------------------------------------
-  LspDiagnosticsWarning = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsDefaultWarning = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsFloatingWarning = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsSignWarning = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsUnderlineWarning = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsVirtualTextWarning = { fg = c.test_fg, bg = c.test_bg },
+  LspDiagnosticsWarning = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsDefaultWarning = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsFloatingWarning = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsSignWarning = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsUnderlineWarning = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsVirtualTextWarning = { fg = c.test_pink, bg = c.test_yellow },
 
   ---------------------------------------------------------
   -- Information
@@ -48,12 +48,12 @@ return {
   ---------------------------------------------------------
   -- Information (testing)
   ---------------------------------------------------------
-  LspDiagnosticsInformation = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsDefaultInformation = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsFloatingInformation = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsSignInformation = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsUnderlineInformation = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsVirtualTextInformation = { fg = c.test_fg, bg = c.test_bg },
+  LspDiagnosticsInformation = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsDefaultInformation = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsFloatingInformation = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsSignInformation = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsUnderlineInformation = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsVirtualTextInformation = { fg = c.test_pink, bg = c.test_yellow },
 
   ---------------------------------------------------------
   -- Hint
@@ -66,10 +66,10 @@ return {
   ---------------------------------------------------------
   -- Hint (testing)
   ---------------------------------------------------------
-  LspDiagnosticsHint = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsDefaultHint = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsFloatingHint = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsSignHint = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsUnderlineHint = { fg = c.test_fg, bg = c.test_bg },
-  LspDiagnosticsVirtualTextHint = { fg = c.test_fg, bg = c.test_bg },
+  LspDiagnosticsHint = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsDefaultHint = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsFloatingHint = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsSignHint = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsUnderlineHint = { fg = c.test_pink, bg = c.test_yellow },
+  LspDiagnosticsVirtualTextHint = { fg = c.test_pink, bg = c.test_yellow },
 }

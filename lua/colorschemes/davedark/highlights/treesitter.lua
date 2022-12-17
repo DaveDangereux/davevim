@@ -1,5 +1,4 @@
-local c = require("colorschemes.davedark.palette")
--- local config = require("config")
+local c = require("colorschemes.davedark.palette").c
 
 return {
   ---------------------------------------------------------
@@ -46,29 +45,29 @@ return {
   ---------------------------------------------------------
   -- Treesitter (unprocessed)
   ---------------------------------------------------------
-  TSAnnotation = { fg = c.test_fg },
-  TSAttribute = { fg = c.test_fg },
-  TSException = { fg = c.test_fg },
+  TSAnnotation = { fg = c.test_pink },
+  TSAttribute = { fg = c.test_pink },
+  TSException = { fg = c.test_pink },
   TSLabel = { fg = c.red },
-  TSNamespace = { fg = c.test_fg },
+  TSNamespace = { fg = c.test_pink },
   TSRepeat = { fg = c.none },
-  TSCharacter = { fg = c.test_fg },
-  TSConstMacro = { fg = c.test_fg },
-  TSFuncMacro = { fg = c.test_fg },
-  TSParameterReference = { fg = c.test_fg },
+  TSCharacter = { fg = c.test_pink },
+  TSConstMacro = { fg = c.test_pink },
+  TSFuncMacro = { fg = c.test_pink },
+  TSParameterReference = { fg = c.test_pink },
   TSVariableBuiltin = { fg = c.none },
-  TSSymbol = { fg = c.test_fg },
+  TSSymbol = { fg = c.test_pink },
   TSPunctSpecial = { fg = c.none },
-  TSStringRegex = { fg = c.test_fg },
-  TSStringEscape = { fg = c.test_fg },
+  TSStringRegex = { fg = c.test_pink },
+  TSStringEscape = { fg = c.test_pink },
   TSEmphasis = { italic = true },
   TSUnderline = { underline = true },
-  TSNote = { fg = c.test_fg, bold = true },
-  TSDanger = { fg = c.test_fg, bold = true },
-  TSMath = { fg = c.test_fg },
-  TSStructure = { fg = c.test_fg },
+  TSNote = { fg = c.test_pink, bold = true },
+  TSDanger = { fg = c.test_pink, bold = true },
+  TSMath = { fg = c.test_pink },
+  TSStructure = { fg = c.test_pink },
   TSStrong = { fg = c.none }, -- remove style?
-  TSQueryLinterError = { fg = c.test_fg },
-  TSEnvironment = { fg = c.test_fg },
-  TSEnvironmentName = { fg = c.test_fg },
+  TSQueryLinterError = { fg = c.test_pink },
+  TSEnvironment = { fg = c.test_pink },
+  TSEnvironmentName = { fg = c.test_pink },
 }

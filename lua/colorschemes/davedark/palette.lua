@@ -1,5 +1,8 @@
-return {
-  none = "NONE",
+local M = {}
+
+M.c = {
+  none = "none",
+  disabled = nil,
   fg = "#9FAECA",
   bg = "#141A1F",
   nvim_tree_bg = "#151C21",
@@ -8,12 +11,15 @@ return {
   float_border = "#F0C36F",
 
   -- Test colors
-  test_fg = "#FF00FF",
-  test_bg = "#FFFF00",
+  test_pink = "#FF00FF",
+  test_yellow = "#FFFF00",
+  test_green = "#00FF00",
+  test_cyan = "#00FFFF",
 
   -- Greys
   black = "#000000",
   off_black = "#0D1114",
+  grey = "#303030",
   dark_grey = "#19232D",
   rolling_stone = "#787A7B",
   silver = "#CCCCCC",
@@ -35,6 +41,22 @@ return {
   blue = "#54B0FC",
   purple = "#CC6BE9",
   pink = "#FF007C",
+
+  -- Feline
+  sky_blue = "#1292FB",
+  dark_red = "#E72333",
+  dark_orange = "#D27A27",
+  dark_green = "#73C23B",
+  dark_blue = "#3B4261",
+
+  -- Bufferline
+  tab_blue_grey = "#343E78",
+  duplicate_selected_fg_blue = "#24ADFF",
+  dark_error_red = "#762920",
+  dark_warn_yellow = "#775C1C",
+  dark_hint_green = "#515D2F",
+  dark_info_blue = "#405453",
+  dark_duplicate_fg = "#156799",
 
   -- Illuminate
   illuminate_read = "#11FF11",
@@ -69,3 +91,5 @@ return {
   pastel_violet = "#c3bbec",
   pastel_blue = "#c3effc",
 }
+
+return M
