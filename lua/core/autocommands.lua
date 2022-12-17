@@ -105,3 +105,22 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
   group = vim.api.nvim_create_augroup("feline", { clear = true }),
 })
+
+-------------------------------------------------------------------------------
+-- Reload colorizer on save
+-------------------------------------------------------------------------------
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  callback = function()
+    package.loaded["colorizer"] = nil
+    local colorizer_status_ok, colorizer = pcall(require, "colorizer")
+    if not colorizer_status_ok then
+      print("Failed to require colorizer")
+      return
+    end
+    colorizer.setup()
+    -- TODO: Make this apply to all buffers
+    vim.cmd("ColorizerAttachToBuffer")
+  end,
+  group = vim.api.nvim_create_augroup("colorizer", { clear = true }),
+})
