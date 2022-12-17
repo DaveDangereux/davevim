@@ -1,39 +1,10 @@
 local M = {}
 
+local utils = require("core.utils")
+
 M.config = function()
   -- Refresh cache in case we're reloading after making changes
-  local packages = {
-    "plugins.feline",
-    "plugins.feline.utils",
-    "plugins.feline.components",
-    "plugins.feline.components.default",
-    "plugins.feline.components.vim-mode",
-    "plugins.feline.components.vim-mode.mode-options",
-    "plugins.feline.components.git-branch",
-    "plugins.feline.components.file-info",
-    "plugins.feline.components.git-diff",
-    "plugins.feline.components.git-diff.added",
-    "plugins.feline.components.git-diff.changed",
-    "plugins.feline.components.git-diff.removed",
-    "plugins.feline.components.diagnostics",
-    "plugins.feline.components.diagnostics.error",
-    "plugins.feline.components.diagnostics.warn",
-    "plugins.feline.components.diagnostics.info",
-    "plugins.feline.components.diagnostics.hint",
-    "plugins.feline.components.file-type",
-    "plugins.feline.components.file-format",
-    "plugins.feline.components.file-encoding",
-    "plugins.feline.components.position",
-    "plugins.feline.components.line-percentage",
-    "plugins.feline.components.navic",
-    "plugins.feline.components.inactive-file-info",
-    "plugins.feline.themes.davedark",
-    "plugins.feline.themes.davedark.palette",
-  }
-
-  for _, pkg in pairs(packages) do
-    package.loaded[pkg] = nil
-  end
+  utils.clear_packages_recursively("plugins.feline")
 
   require("plugins.feline.themes.davedark")
 

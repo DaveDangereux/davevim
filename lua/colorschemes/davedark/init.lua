@@ -1,15 +1,7 @@
--- Refresh cache in case we're reloading after making changes
-local packages = {
-  "colorschemes.davedark.highlights.general",
-  "colorschemes.davedark.highlights.languages",
-  "colorschemes.davedark.highlights.lsp",
-  "colorschemes.davedark.highlights.plugins",
-  "colorschemes.davedark.highlights.treesitter",
-}
+local utils = require("core.utils")
 
-for _, pkg in pairs(packages) do
-  package.loaded[pkg] = nil
-end
+-- Refresh cache in case we're reloading after making changes
+utils.clear_packages_recursively("colorschemes.davedark")
 
 local general = require("colorschemes.davedark.highlights.general")
 local languages = require("colorschemes.davedark.highlights.languages")

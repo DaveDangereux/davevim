@@ -69,4 +69,18 @@ M.get_keys = function(t)
   print(vim.inspect(keys))
 end
 
+M.clear_packages_recursively = function(package_name)
+  local target_package_names = {}
+
+  for key in pairs(package.loaded) do
+    if key:find("^" .. package_name) then
+      table.insert(target_package_names, key)
+    end
+  end
+
+  for _, pkg in pairs(target_package_names) do
+    package.loaded[pkg] = nil
+  end
+end
+
 return M
