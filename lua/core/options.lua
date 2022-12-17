@@ -1,3 +1,5 @@
+local config = require("config")
+
 local options = {
   -- tabbing
   tabstop = 2, -- insert this many spaces for <Tab>
@@ -25,7 +27,6 @@ local options = {
   -- search
   ignorecase = true, -- ignore case while searching
   smartcase = true, -- resume search case sensitivity if term includes capitals
-  hlsearch = false, -- get rid of annoying search highlight
   incsearch = true, -- enable
 
   -- ui
@@ -58,8 +59,13 @@ local options = {
   clipboard = "unnamedplus", -- yank to system clipboard via xcopy
 }
 
+-- Apply options
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
+
 -- Set colour scheme
-vim.cmd("colorscheme davedark")
+vim.cmd("colorscheme " .. config.colorscheme)
 
 -- Treat "-" as part of a word
 vim.opt.iskeyword:append("-")
@@ -77,8 +83,3 @@ vim.opt.shortmess:append("c")
 vim.cmd([[
   set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 ]])
-
--- Apply options
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
