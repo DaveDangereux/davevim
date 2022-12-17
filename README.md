@@ -1,5 +1,10 @@
 # Dave's Neovim IDE Config
 
+## Recommendations
+
+- terminal: Kitty (Linux) / Windows Terminal (Windows)
+- font: FantasqueSansMono Nerd Font Mono
+
 ## External Dependencies
 
 Mason:
