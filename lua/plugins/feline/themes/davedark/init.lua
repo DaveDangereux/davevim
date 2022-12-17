@@ -21,6 +21,8 @@ local highlights = {
   FelineModeReplaceSep = { fg = c.dark_blue_grey, bg = c.red },
   FelineModeTerm = { fg = c.off_black, bg = c.purple },
   FelineModeTermSep = { fg = c.dark_blue_grey, bg = c.purple },
+  FelineModeOperatorPending = { fg = c.dark_blue_grey, bg = c.cyan },
+  FelineModeOperatorPendingSep = { fg = c.dark_blue_grey, bg = c.purple },
 
   -- file-info / git-branch
   FelineFileInfo = { fg = c.fg, bg = c.dark_blue_grey },
