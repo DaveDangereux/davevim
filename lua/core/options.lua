@@ -51,6 +51,9 @@ local options = {
   pumheight = 10,
   completeopt = "menu,menuone,noselect",
 
+  -- persistent undo
+  undofile = true,
+
   -- unsorted
   mouse = "a", -- full mouse functionality
   timeoutlen = 200,

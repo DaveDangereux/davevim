@@ -90,6 +90,9 @@ local keymaps = {
     ["<Leader>lg"] = ":LazyGit <CR>",
     ["<Leader>LG"] = ":LazyGitConfig <CR>",
 
+    -- Undotree
+    ["<Leader>u"] = ":UndotreeToggle <CR>",
+
     --------------------------------------------------------------------------
     -- NvimTree
     --------------------------------------------------------------------------

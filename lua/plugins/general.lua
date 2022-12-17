@@ -186,6 +186,13 @@ return {
   -- Display buffer colours with :ColorSwatchGenerate
   { "cocopon/colorswatch.vim" },
 
+  -- Better undo history
+  {
+    "mbbill/undotree",
+    config = function()
+      require("config.undotree").config()
+    end,
+  },
+
   -- TODO: Add debugger
-  -- TODO: Add undotree
 }
