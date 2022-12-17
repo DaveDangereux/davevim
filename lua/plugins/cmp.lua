@@ -83,11 +83,14 @@ local settings = {
   sources = {
     { name = "nvim_lua" }, -- vim.lsp.*
     { name = "nvim_lsp" }, -- LSP completion
-    { name = "luasnip" }, -- snippet completion
+    { name = "luasnip", keyword_length = 3 }, -- snippet completion
     { name = "buffer" }, -- Buffer variables
     { name = "path" },
     { name = "calc" },
   },
+  -- sorting = {
+  --   priority_weight = 2
+  -- },
   experimental = {
     ghost_text = true,
     native_menu = false,
