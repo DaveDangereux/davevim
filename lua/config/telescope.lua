@@ -42,13 +42,6 @@ local settings = {
       only_sort_text = true,
     },
   },
-  extensions = {
-    bookmarks = {
-      selected_browser = "chrome",
-      url_open_command = "xdg-open 2>/dev/null",
-      full_path = false,
-    },
-  },
 }
 
 M.config = function()
@@ -60,9 +53,7 @@ M.config = function()
   telescope.setup(settings)
   telescope.load_extension("fzf")
   telescope.load_extension("notify")
-  telescope.load_extension("file_browser")
   telescope.load_extension("projects")
-  telescope.load_extension("bookmarks")
 end
 
 return M

@@ -13,10 +13,4 @@ return {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   },
-
-  -- File browser
-  { "nvim-telescope/telescope-file-browser.nvim" },
-
-  -- Bookmark browser
-  { "dhruvmanila/telescope-bookmarks.nvim" },
 }
