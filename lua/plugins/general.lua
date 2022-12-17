@@ -183,6 +183,9 @@ return {
     end,
   },
 
+  -- Display buffer colours with :ColorSwatchGenerate
+  { "cocopon/colorswatch.vim" },
+
   -- TODO: Add debugger
   -- TODO: Add undotree
 }
