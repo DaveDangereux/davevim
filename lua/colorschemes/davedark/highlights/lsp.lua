@@ -60,7 +60,7 @@ return {
   ---------------------------------------------------------
   DiagnosticHint = { fg = c.blue },
   DiagnosticSignHint = { fg = c.blue },
-  DiagnosticUnderlineHint = { undercurl = true, sp = c.blue },
+  DiagnosticUnderlineHint = { sp = c.blue },
   DiagnosticFloatingHint = { fg = c.blue },
   DiagnosticVirtualTextHint = { fg = c.light_blue_grey },
   ---------------------------------------------------------
