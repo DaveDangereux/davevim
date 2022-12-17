@@ -2,7 +2,7 @@ local c = require("plugins.feline.themes.davedark.palette")
 
 local highlights = {
   StatusLine = { fg = c.off_black },
-  StatusLineNC = { fg = c.off_black },
+  StatusLineNC = { fg = c.off_black, bold = true },
 
   -- vim-mode
   FelineModeDefault = { fg = c.fg, bg = c.off_black },
