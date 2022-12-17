@@ -1,3 +1,5 @@
+local config = require("user_config")
+
 -------------------------------------------------------------------------------
 -- Reload this file on save
 -------------------------------------------------------------------------------
@@ -13,9 +15,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 -- Reload config on save
 -------------------------------------------------------------------------------
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "*nvim/lua/config.lua",
+  pattern = "*nvim/lua/user_config.lua",
   callback = function()
-    package.loaded["config"] = nil
+    package.loaded["user_config"] = nil
     package.loaded["core.options"] = nil
     vim.cmd("source", "<afile>")
     require("core.options")
@@ -40,7 +42,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 -- Sync Packer when plugins file is saved
 ------------------------------------------------------------------------------
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "*nvim/lua/plugins/plugins.lua",
+  pattern = "*nvim/lua/plugins/**",
   callback = function()
     vim.cmd("source", "<afile>")
     vim.cmd("PackerSync")
@@ -87,7 +89,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*nvim/lua/plugins/feline/**",
   callback = function()
-    require("plugins.feline").config()
+    require("config.feline").config()
   end,
   group = vim.api.nvim_create_augroup("feline", { clear = true }),
 })

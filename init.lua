@@ -6,7 +6,7 @@ if vim.g.vscode then
   return
 end
 
-require("plugins")
+require("load_packer")
 require("core.options")
 require("core.keymaps")
 require("core.autocommands")
