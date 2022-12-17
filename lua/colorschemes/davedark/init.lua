@@ -33,29 +33,4 @@ for _, highlights in ipairs(highlight_modules) do
   end
 end
 
--- Refresh devicon highlights
-package.loaded["nvim-web-devicons"] = nil
-
--- Refresh feline config
-local feline_refresh = function()
-  local feline_config_status_ok, feline_config = pcall(require, "plugins.feline")
-  if not feline_config_status_ok then
-    print("Failed to require plugins.feline")
-    return
-  end
-  feline_config.config()
-end
-
-feline_refresh()
-
--- Refresh bufferline config
-local bufferline_refresh = function()
-  local bufferline_config_status_ok, bufferline_config = pcall(require, "plugins.bufferline")
-  if not bufferline_config_status_ok then
-    print("Failed to require plugins.bufferline")
-    return
-  end
-  bufferline_config.config()
-end
-
-bufferline_refresh()
+utils.refresh_package_highlights()

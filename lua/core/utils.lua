@@ -69,6 +69,40 @@ M.get_keys = function(t)
   print(vim.inspect(keys))
 end
 
+M.refresh_package_highlights = function()
+  -- We're putting these config requires in functions so we can return out of
+  -- them if the package or its config isn't available
+
+  -- Refresh devicon highlights
+  package.loaded["nvim-web-devicons"] = nil
+
+  -- Refresh feline config
+  local feline_refresh = function()
+    local feline_config_status_ok, feline_config = pcall(require, "plugins.feline")
+    if not feline_config_status_ok then
+      print("Failed to require plugins.feline")
+      return
+    end
+    feline_config.config()
+  end
+
+  -- Refresh bufferline config
+  local bufferline_refresh = function()
+    local bufferline_config_status_ok, bufferline_config = pcall(require, "plugins.bufferline")
+    if not bufferline_config_status_ok then
+      print("Failed to require plugins.bufferline")
+      return
+    end
+    bufferline_config.config()
+  end
+
+  bufferline_refresh()
+  feline_refresh()
+
+  -- TODO: Reload rainbow brackets (via treesitter?) on colorscheme change
+  -- TODO: Reload gitsigns highlights
+end
+
 M.clear_packages_recursively = function(package_name)
   local target_package_names = {}
 
