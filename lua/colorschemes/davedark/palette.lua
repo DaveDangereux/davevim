@@ -1,11 +1,6 @@
-local M = {}
-
-M.c = {
+local palette = {
   none = "none",
   disabled = nil,
-  fg = "#9FAECA",
-  bg = "#141A1F",
-  nvim_tree_bg = "#151C21",
   term_bg = "#101519",
   pmenu_bg = "#0D1114", --off_black
   float_border = "#F0C36F",
@@ -19,9 +14,12 @@ M.c = {
   -- Greys
   black = "#000000",
   off_black = "#0D1114",
-  grey = "#303030",
+  darkest_grey = "#141A1F",
+  darker_grey = "#151C21",
   dark_grey = "#19232D",
+  grey = "#303030",
   rolling_stone = "#787A7B",
+  light_grey = "#9FAECA",
   silver = "#CCCCCC",
   white = "#FFFFFF",
 
@@ -92,4 +90,16 @@ M.c = {
   pastel_blue = "#c3effc",
 }
 
-return M
+local elements = {
+  fg = palette.light_grey,
+  bg = palette.darkest_grey,
+  nvim_tree_bg = palette.darkest_grey,
+  navic_fg = palette.white,
+  navic_bg = palette.off_black,
+}
+
+for element, colour in pairs(elements) do
+  palette[element] = colour
+end
+
+return palette

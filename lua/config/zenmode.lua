@@ -1,6 +1,6 @@
 local M = {}
 
-local c = require("colorschemes.davedark.palette").c
+local c = require("colorschemes.davedark.palette")
 local config = require("user_config")
 
 local status_ok, zenmode = pcall(require, "zen-mode")

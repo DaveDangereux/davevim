@@ -1,4 +1,4 @@
-local c = require("colorschemes.davedark.palette").c
+local c = require("colorschemes.davedark.palette")
 local config = require("user_config")
 
 return {
@@ -40,7 +40,7 @@ return {
   Float = { link = "Number" },
   FoldColumn = { fg = c.blue_grey, bg = config.transparent_background and c.none or c.bg },
   Folded = { fg = c.light_blue_grey, bg = c.dark_grey, italic = true },
-  Function = { fg = c.none },
+  Function = { fg = c.blue },
   Identifier = { fg = c.none },
   Include = { fg = c.none },
   Label = { fg = c.red },

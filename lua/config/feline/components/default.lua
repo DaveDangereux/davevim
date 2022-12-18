@@ -1,4 +1,4 @@
 return {
   provider = "",
-  hl = "FelineModeDefault"
+  hl = "FelineModeDefault",
 }

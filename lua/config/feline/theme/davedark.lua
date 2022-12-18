@@ -1,12 +1,12 @@
-local c = require("colorschemes.davedark.palette").c
+local c = require("colorschemes.davedark.palette")
 
 local highlights = {
-  StatusLine = { fg = c.off_black },
-  StatusLineNC = { fg = c.off_black, bold = true },
+  StatusLine = { fg = c.test_green, bg = c.none }, -- bg seems important
+  StatusLineNC = { fg = c.test_green, bg = c.test_green, bold = true },
 
   -- vim-mode
   FelineModeDefault = { fg = c.fg, bg = c.off_black },
-  FelineModeDefaultSep = { fg = c.dark_blue_grey, bg = c.off_black },
+  FelineModeDefaultSep = { fg = c.test_green, bg = c.test_green },
   FelineModeNormal = { fg = c.off_black, bg = c.green },
   FelineModeNormalSep = { fg = c.dark_blue_grey, bg = c.green },
   FelineModeInsert = { fg = c.off_black, bg = c.red },
@@ -34,11 +34,10 @@ local highlights = {
   FelineDiffRemoved = { fg = c.red, bg = c.off_black },
 
   -- gps
-  FelineGps = { fg = c.off_black, bg = c.silver },
-  FelineGpsSep = { fg = c.silver, bg = c.off_black },
+  FelineNavicSep = { fg = c.navic_bg, bg = c.off_black },
 
   -- diagnostics
-  FelineDiagErrorSep = { fg = c.dark_red, bg = c.silver },
+  FelineDiagErrorSep = { fg = c.dark_red, bg = c.navic_bg },
   FelineDiagError = { fg = c.off_black, bg = c.dark_red },
   FelineDiagWarnSep = { fg = c.dark_orange, bg = c.dark_red },
   FelineDiagWarn = { fg = c.off_black, bg = c.dark_orange },

@@ -1,13 +1,14 @@
-local c = require("colorschemes.davedark.palette").c
+local c = require("colorschemes.davedark.palette")
 local config = require("user_config")
 
 return {
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- nvim-tree
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   NvimTreeIndentMarker = { fg = c.fg },
   NvimTreeNormal = { bg = config.transparent_background and c.none or c.nvim_tree_bg },
   NvimTreeVertSplit = nil,
+  NvimTreeFolderIcon = { fg = c.folder_grey, bg = c.none },
   NvimTreeFolderName = { fg = c.blue },
   NvimTreeOpenedFolderName = { fg = c.blue },
   NvimTreeSpecialFile = { fg = c.orange, bold = true, italic = true },
@@ -19,24 +20,23 @@ return {
   NvimTreeRootFolder = { fg = c.fg, bold = true },
 
   -- nvim-tree (testing)
-  NvimTreeFolderIcon = { fg = c.folder_grey, bg = c.none },
-  -- NvimTreeImageFile = { fg = c.test_fg, bg = c.test_bg },
-  -- NvimTreeGitMerge = { fg = c.test_fg, bg = c.test_bg },
-  -- NvimTreeGitRenamed = { fg = c.test_fg, bg = c.test_bg },
-  -- NvimTreeSymlink = { fg = c.test_fg, bg = c.test_bg },
-  -- NvimTreeExecFile = { fg = c.test_fg, bg = c.test_bg },
+  NvimTreeImageFile = { fg = c.test_green },
+  NvimTreeGitMerge = { fg = c.test_green },
+  NvimTreeGitRenamed = { fg = c.test_green },
+  NvimTreeSymlink = { fg = c.test_green },
+  NvimTreeExecFile = { fg = c.test_green },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- Telescope
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   TelescopeSelection = { fg = c.cyan },
   TelescopeMatching = { fg = c.none, bold = true },
   TelescopeBorder = { fg = c.float_border, bg = config.transparent_background and c.none or c.bg },
   TelescopePromptPrefix = { fg = c.purple },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- Notify
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   NotifyERRORBorder = { fg = c.error_red },
   NotifyERRORIcon = { fg = c.error_red },
   NotifyERRORTitle = { fg = c.error_red },
@@ -58,16 +58,16 @@ return {
   NotifyTRACETitle = { fg = c.purple },
   NotifyTRACEBody = { fg = c.fg },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- Illuminate
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   IlluminatedWordText = { fg = c.illuminate_text, bold = true },
   IlluminatedWordRead = { fg = c.illuminate_read, bold = true },
   IlluminatedWordWrite = { fg = c.illuminate_write, bold = true },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- Alpha
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   AlphaHeader1 = { fg = c.red },
   AlphaHeader2 = { fg = c.orange },
   AlphaHeader3 = { fg = c.yellow },
@@ -77,15 +77,15 @@ return {
   AlphaButton = { fg = c.fg },
   AlphaButtonShortcut = { fg = c.orange },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- toggleterm
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   ToggleTermBorder = { fg = c.float_border, bg = config.transparent_background and c.none or c.bg },
   ToggleTermBg = { bg = config.transparent_background and c.none or c.term_bg },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- indent-blankline
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   IndentBlanklineIndent1 = { fg = c.indent1 },
   IndentBlanklineIndent2 = { fg = c.indent2 },
   IndentBlanklineIndent3 = { fg = c.indent3 },
@@ -94,19 +94,19 @@ return {
   IndentBlanklineIndent6 = { fg = c.indent6 },
   IndentBlanklineIndent7 = { fg = c.indent7 },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- lsp_signature
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   LspSignatureActiveParameter = { fg = c.blue, bold = true },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- lspconfig
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   LspInfoTitle = { fg = c.yellow, bold = true },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   -- gitsigns
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   GitSignsUntracked = { fg = c.blue },
   GitSignsUntrackedNr = { fg = c.blue },
   GitSignsUntrackedLn = { fg = c.blue },
@@ -116,9 +116,41 @@ return {
   -----------------------------------------------------------------------------
   SymbolsOutlineConnector = { fg = c.blue_grey },
 
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
+  -- navic
+  -----------------------------------------------------------------------------
+  NavicText = { fg = c.navic_fg, bg = c.navic_bg },
+  NavicSeparator = { fg = c.navic_fg, bg = c.navic_bg },
+  NavicIconsBoolean = { fg = c.orange, bg = c.navic_bg },
+  NavicIconsConstant = { fg = c.red, bg = c.navic_bg },
+  NavicIconsFunction = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsNumber = { fg = c.orange, bg = c.navic_bg },
+  NavicIconsFile = { fg = c.green, bg = c.navic_bg },
+  NavicIconsModule = { fg = c.navic_fg, bg = c.navic_bg },
+  NavicIconsNamespace = { fg = c.navic_fg, bg = c.navic_bg },
+  NavicIconsPackage = { fg = c.navic_fg, bg = c.navic_bg },
+  NavicIconsClass = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsMethod = { fg = c.none, bg = c.navic_bg },
+  NavicIconsProperty = { fg = c.none, bg = c.navic_bg },
+  NavicIconsField = { fg = c.red, bg = c.navic_bg },
+  NavicIconsConstructor = { fg = c.navic_fg, bg = c.navic_bg },
+  NavicIconsEnum = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsInterface = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsVariable = { fg = c.red, bg = c.navic_bg },
+  NavicIconsString = { fg = c.green, bg = c.navic_bg },
+  NavicIconsArray = { fg = c.red, bg = c.navic_bg },
+  NavicIconsObject = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsKey = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsNull = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsEnumMember = { fg = c.red, bg = c.navic_bg },
+  NavicIconsStruct = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsEvent = { fg = c.blue, bg = c.navic_bg },
+  NavicIconsOperator = { fg = c.none, bg = c.navic_bg },
+  NavicIconsTypeParameter = { fg = c.none, bg = c.navic_bg },
+
+  -----------------------------------------------------------------------------
   -- cmp
-  ---------------------------------------------------------
+  -----------------------------------------------------------------------------
   CmpItemAbbrMatch = { fg = c.yellow, bold = true },
   CmpItemAbbrMatchFuzzy = { fg = c.orange, bold = true },
   CmpItemKind = { fg = c.off_black, bg = c.white },

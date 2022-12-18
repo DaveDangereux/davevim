@@ -3,14 +3,26 @@ local icons = require("config.feline.icons")
 
 return {
   provider = function()
-    return navic.is_available() and navic.get_location() ~= "" and string.format(" %s ", navic.get_location()) or ""
+    -- This horrible hack is to prevent weird brown boxes from appearing next
+    -- to navic. Not sure who's to blame - navic or vim
+    package.loaded["colorschemes.davedark.palette"] = nil
+    local c = require("colorschemes.davedark.palette")
+    vim.cmd("hi StatusComponent_D0D0D0_1F1F23_NONE guibg=" .. c.navic_bg)
+    return navic.is_available() and navic.get_location() ~= "" and string.format(" %s", navic.get_location()) or ""
   end,
-  hl = "FelineGps",
   left_sep = {
     str = icons.left_filled,
-    hl = "FelineGpsSep",
+    hl = "FelineNavicSep",
     always_visible = true,
+  },
+  right_sep = {
+    str = " ",
+    hl = "NavicText",
+    always_visible = false,
   },
   truncate_hide = true,
   priority = -2,
+  padding = {
+    col = 0,
+  },
 }
