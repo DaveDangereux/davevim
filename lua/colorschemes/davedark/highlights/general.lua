@@ -81,7 +81,7 @@ return {
   Pmenu = { fg = c.fg, bg = config.pmenu_transparent_background and c.none or c.pmenu_bg },
   PmenuSel = { fg = c.silver, bg = c.bg },
   PmenuSbar = { bg = c.dark_grey },
-  PmenuThumb = { bg = c.blue_grey },
+  PmenuThumb = { bg = c.float_border },
 
   ---------------------------------------------------------
   -- Float

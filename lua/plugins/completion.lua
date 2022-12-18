@@ -17,6 +17,7 @@ return {
   { "saadparwaiz1/cmp_luasnip" },
   { "hrsh7th/cmp-path" },
   { "hrsh7th/cmp-calc" },
+  { "hrsh7th/cmp-cmdline" },
 
   -- JSON schema completion
   { "b0o/SchemaStore.nvim" },
