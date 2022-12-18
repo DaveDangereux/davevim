@@ -6,16 +6,22 @@ local settings = {
     selection_caret = "  ",
     entry_prefix = "   ",
     dynamic_preview_title = true,
+    results_title = "",
     path_display = { "smart" },
     sorting_strategy = "ascending",
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    layout_strategy = "horizontal",
+    layout_strategy = "vertical",
     layout_config = {
       horizontal = {
         width = 0.85,
         height = 0.85,
         prompt_position = "top",
         preview_width = 0.55,
+      },
+      vertical = {
+        height = 0.85,
+        mirror = true,
+        prompt_position = "top",
       },
     },
     mappings = {

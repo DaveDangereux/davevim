@@ -58,6 +58,7 @@ M.config = function()
         "alpha",
         "qf",
         "toggleterm",
+        "TelescopePrompt",
       },
     },
   })
