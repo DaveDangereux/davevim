@@ -297,7 +297,7 @@ local lsp_keymaps = {
     ["<Leader>a"] = ":Lspsaga code_action <CR>",
     ["GD"] = ":lua vim.lsp.buf.declaration() <CR>",
     ["gi"] = ":lua vim.lsp.buf.implementation() <CR>",
-    ["go"] = ":LSoutlineToggle <CR>",
+    ["go"] = ":SymbolsOutline <CR>",
     ["<F2>"] = ":Lspsaga rename <CR>",
   },
 }

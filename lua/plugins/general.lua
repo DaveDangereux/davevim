@@ -194,5 +194,12 @@ return {
     end,
   },
 
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("config.symbols_outline").config()
+    end,
+  },
+
   -- TODO: Add debugger
 }
