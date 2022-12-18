@@ -138,4 +138,8 @@ M.clear_packages_recursively = function(query_string)
   end
 end
 
+M.get_buffer_filetype = function()
+  print(vim.bo.filetype)
+end
+
 return M
