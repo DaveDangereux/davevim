@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
--- Includes configs for
+-- Includes configs for:
 -- - treesitter
 -- - ts-rainbow
 -- - playground
+-- - context-commentstring
 -------------------------------------------------------------------------------
 
 local M = {}
 
 local settings = {
-  -- treesitter
   ensure_installed = {
     "bash",
     "c_sharp",
@@ -56,7 +56,7 @@ local settings = {
     "vue",
     "yaml",
   },
-  sync_install = true,
+  sync_install = false,
   ignore_install = { "" },
   highlight = {
     enable = true,

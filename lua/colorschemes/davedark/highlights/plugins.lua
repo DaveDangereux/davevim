@@ -30,7 +30,7 @@ return {
   -- Telescope
   ---------------------------------------------------------
   TelescopeSelection = { fg = c.cyan },
-  TelescopeMatching = { fg = c.yellow, bold = true },
+  TelescopeMatching = { fg = c.none, bold = true },
   TelescopeBorder = { fg = c.float_border, bg = config.transparent_background and c.none or c.bg },
   TelescopePromptPrefix = { fg = c.purple },
 
@@ -154,78 +154,78 @@ return {
   -- finder
   LspSagaLspFinderBorder = { fg = c.float_border },
   LspSagaAutoPreview = { fg = c.float_border },
-  LspSagaFinderSelection = { fg = '#89d957', bold = true },
-  TargetFileName = { fg = '#d1d4cf' },
-  FinderParam = { fg = '#CBA6F7', bg = '#392a52', bold = true },
-  FinderVirtText = { fg = '#c95942' },
-  DefinitionsIcon = { fg = '#e3e346' },
-  Definitions = { fg = '#CBA6F7', bold = true },
-  DefinitionCount = { link = 'Title' },
-  ReferencesIcon = { fg = '#e3e346' },
-  References = { fg = '#CBA6F7', bold = true },
-  ReferencesCount = { link = 'Title' },
-  ImplementsIcon = { fg = '#e3e346' },
-  Implements = { fg = '#CBA6F7', bold = true },
-  ImplementsCount = { link = 'Title' },
+  LspSagaFinderSelection = { fg = "#89d957", bold = true },
+  TargetFileName = { fg = "#d1d4cf" },
+  FinderParam = { fg = "#CBA6F7", bg = "#392a52", bold = true },
+  FinderVirtText = { fg = "#c95942" },
+  DefinitionsIcon = { fg = "#e3e346" },
+  Definitions = { fg = "#CBA6F7", bold = true },
+  DefinitionCount = { link = "Title" },
+  ReferencesIcon = { fg = "#e3e346" },
+  References = { fg = "#CBA6F7", bold = true },
+  ReferencesCount = { link = "Title" },
+  ImplementsIcon = { fg = "#e3e346" },
+  Implements = { fg = "#CBA6F7", bold = true },
+  ImplementsCount = { link = "Title" },
 
   -- finder spinner
   FinderSpinnerBorder = { fg = c.float_border },
-  FinderSpinnerTitle = { fg = '#b33076', bold = true },
-  FinderSpinner = { fg = '#b33076', bold = true },
-  FinderPreviewSearch = { link = 'Search' },
+  FinderSpinnerTitle = { fg = "#b33076", bold = true },
+  FinderSpinner = { fg = "#b33076", bold = true },
+  FinderPreviewSearch = { link = "Search" },
 
   -- definition
-  DefinitionBorder = { fg = '#b3deef' },
-  DefinitionArrow = { fg = '#ad475f' },
-  DefinitionSearch = { link = 'Search' },
-  DefinitionFile = { bg = '#151838' },
+  DefinitionBorder = { fg = "#b3deef" },
+  DefinitionArrow = { fg = "#ad475f" },
+  DefinitionSearch = { link = "Search" },
+  DefinitionFile = { bg = "#151838" },
 
   -- hover
   LspSagaHoverBorder = { fg = c.float_border },
-  LspSagaHoverTrunCateLine = { link = 'LspSagaHoverBorder' },
+  LspSagaHoverTrunCateLine = { link = "LspSagaHoverBorder" },
 
   -- rename
   LspSagaRenameBorder = { fg = c.float_border },
-  LspSagaRenameMatch = { link = 'Search' },
+  LspSagaRenameMatch = { link = "Search" },
 
   -- diagnostic
-  LspSagaDiagnosticSource = { link = 'Comment' },
-  LspSagaDiagnosticError = { link = 'DiagnosticError' },
-  LspSagaDiagnosticWarn = { link = 'DiagnosticWarn' },
-  LspSagaDiagnosticInfo = { link = 'DiagnosticInfo' },
-  LspSagaDiagnosticHint = { link = 'DiagnosticHint' },
-  LspSagaErrorTrunCateLine = { link = 'DiagnosticError' },
-  LspSagaWarnTrunCateLine = { link = 'DiagnosticWarn' },
-  LspSagaInfoTrunCateLine = { link = 'DiagnosticInfo' },
-  LspSagaHintTrunCateLine = { link = 'DiagnosticHint' },
+  LspSagaDiagnosticSource = { link = "Comment" },
+  LspSagaDiagnosticError = { link = "DiagnosticError" },
+  LspSagaDiagnosticWarn = { link = "DiagnosticWarn" },
+  LspSagaDiagnosticInfo = { link = "DiagnosticInfo" },
+  LspSagaDiagnosticHint = { link = "DiagnosticHint" },
+  LspSagaErrorTrunCateLine = { link = "DiagnosticError" },
+  LspSagaWarnTrunCateLine = { link = "DiagnosticWarn" },
+  LspSagaInfoTrunCateLine = { link = "DiagnosticInfo" },
+  LspSagaHintTrunCateLine = { link = "DiagnosticHint" },
   LspSagaDiagnosticBorder = { fg = c.float_border },
-  LspSagaDiagnosticHeader = { fg = '#afd700' },
-  DiagnosticQuickFix = { fg = '#4dd158', bold = true },
-  DiagnosticMap = { fg = '#cf80ce' },
-  DiagnosticLineCol = { fg = '#73797e' },
-  LspSagaDiagnosticTruncateLine = { link = 'LspSagaDiagnosticBorder' },
-  ColInLineDiagnostic = { link = 'Comment' },
+  LspSagaDiagnosticHeader = { fg = "#afd700" },
+  DiagnosticQuickFix = { fg = "#4dd158", bold = true },
+  DiagnosticMap = { fg = "#cf80ce" },
+  DiagnosticLineCol = { fg = "#73797e" },
+  LspSagaDiagnosticTruncateLine = { link = "LspSagaDiagnosticBorder" },
+  ColInLineDiagnostic = { link = "Comment" },
 
   -- signature help
-  LspSagaSignatureHelpBorder = { fg = '#98be65' },
-  LspSagaShTrunCateLine = { link = 'LspSagaSignatureHelpBorder' },
+  LspSagaSignatureHelpBorder = { fg = "#98be65" },
+  LspSagaShTrunCateLine = { link = "LspSagaSignatureHelpBorder" },
 
   -- lightbulb
-  LspSagaLightBulb = { link = 'DiagnosticSignHint' },
+  LspSagaLightBulb = { link = "DiagnosticSignHint" },
 
   -- shadow
-  SagaShadow = { fg = 'black' },
+  SagaShadow = { fg = "black" },
 
   -- float
-  LspSagaBorderTitle = { link = 'String' },
+  LspSagaBorderTitle = { link = "String" },
 
   -- outline
-  LSOutlinePreviewBorder = { fg = '#52ad70' },
-  OutlineIndentEvn = { fg = '#c955ae' },
-  OutlineIndentOdd = { fg = '#b8733e' },
-  OutlineFoldPrefix = { fg = '#bf4537' },
-  OutlineDetail = { fg = '#73797e' },
+  LSOutlinePreviewBorder = { fg = "#52ad70" },
+  OutlineIndentEvn = { fg = "#c955ae" },
+  OutlineIndentOdd = { fg = "#b8733e" },
+  OutlineFoldPrefix = { fg = "#bf4537" },
+  OutlineDetail = { fg = "#73797e" },
 
   -- all float windows of lspsaga
-  LspFloatWinNormal = { link = 'Normal' },
+  LspFloatWinNormal = { link = "Normal" },
 }
