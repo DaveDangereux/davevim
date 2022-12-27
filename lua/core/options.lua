@@ -48,7 +48,7 @@ local options = {
   splitright = true,
 
   -- popup menu
-  pumheight = 10,
+  pumheight = 20,
   completeopt = "menu,menuone,noselect",
 
   -- persistent undo
