@@ -74,7 +74,7 @@ vim.cmd("colorscheme " .. config.colorscheme)
 vim.opt.iskeyword:append("-")
 
 -- Gets rid of the ~ indicating non-text / end of buffer
-vim.cmd("set fillchars+=eob:\\ ")
+vim.opt.fillchars:append("eob: ")
 
 -- Change fold symbols
 vim.opt.fillchars:append("foldopen:🞃, foldsep:│, foldclose:🞂")
