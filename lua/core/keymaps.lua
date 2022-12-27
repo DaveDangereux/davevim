@@ -138,6 +138,10 @@ local keymaps = {
     -- Undotree
     ["<Leader>u"] = ":UndotreeToggle <CR>",
 
+    -- Easier fold deletion
+    ["ZD"] = "zD",
+    ["ZE"] = "zE",
+
     ["<F5>"] = function()
       vim.cmd("colorscheme " .. vim.g.colors_name)
     end,
