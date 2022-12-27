@@ -142,6 +142,65 @@ M.get_buffer_filetype = function()
   print(vim.bo.filetype)
 end
 
+M.toggle_quickfix = function()
+  local quickfix_exists = false
+  local loclist_exists = false
+  local current_window = vim.fn.win_gettype()
+
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win["quickfix"] == 1 then
+      quickfix_exists = true
+    end
+    if win["loclist"] == 1 then
+      loclist_exists = true
+    end
+  end
+
+  if quickfix_exists and current_window == "quickfix" then
+    vim.cmd("cclose")
+  else
+    if loclist_exists then
+      vim.cmd("lclose")
+    end
+    vim.cmd("copen")
+  end
+end
+
+M.toggle_loclist = function()
+  local loclist_exists = false
+  local quickfix_exists = false
+  local current_window = vim.fn.win_gettype()
+
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win["loclist"] == 1 then
+      loclist_exists = true
+    end
+    if win["quickfix"] == 1 then
+      quickfix_exists = true
+    end
+  end
+
+  if quickfix_exists then
+    vim.cmd("cclose")
+  end
+
+  if loclist_exists and current_window == "loclist" then
+    vim.cmd("lclose")
+  else
+    -- lopen throws an ugly error if the location list is unpopulated, so we
+    -- pcall it here
+    local status_ok, _ = pcall(vim.cmd, "lopen")
+    if not status_ok then
+      print("No location list")
+      -- If we fail to open the location list and the quickfix window had been
+      -- open, re-open it
+      if current_window == "quickfix" then
+        vim.cmd("copen")
+      end
+    end
+  end
+end
+
 M.clear_hlgroups_recursively = function(name, exclude)
   local groups = M.get_keys(vim.api.nvim__get_hl_defs(0))
   local filtered_groups = {}

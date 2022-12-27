@@ -58,7 +58,17 @@ local keymaps = {
     ["<Leader><S-f>"] = ":lua vim.lsp.buf.format({ async = true }) <CR>",
 
     -- Open a Quickfix window for the last search
-    ["<Leader>/"] = ":execute 'vimgrep /'.@/.'/g %' <CR>:copen <CR>",
+    ["<Leader>/"] = function()
+      for _, win in pairs(vim.fn.getwininfo()) do
+        if win["loclist"] == 1 then
+          vim.cmd("lclose")
+        else
+          local last_search = vim.fn.getreg("/")
+          vim.cmd("lvimgrep /" .. last_search .. "/gj %")
+          vim.cmd("lopen")
+        end
+      end
+    end,
 
     -- Substitute shortcut
     ["<Leader>s"] = ":%s/",
@@ -70,9 +80,16 @@ local keymaps = {
     ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]],
 
     -- Quickfix list
-    ["<Leader>q"] = ":copen <CR>",
     ["]q"] = ":cnext <CR>",
     ["[q"] = ":cprev <CR>",
+    ["<Leader>q"] = function()
+      utils.toggle_quickfix()
+    end,
+
+    -- Location list
+    ["<Leader>l"] = function()
+      utils.toggle_loclist()
+    end,
 
     -- Centralised page motion
     ["<C-d>"] = "<C-d>zz",
@@ -83,12 +100,40 @@ local keymaps = {
     ["N"] = "Nzzzv",
 
     -- Easier jumplist navigation
-    ["<A-h>"] = "<C-o>",
-    ["<A-l>"] = "<C-i>",
-
-    -- Open Lazygit
-    ["<Leader>lg"] = ":LazyGit <CR>",
-    ["<Leader>LG"] = ":LazyGitConfig <CR>",
+    ["<A-h>"] = function()
+      print(vim.fn.win_gettype())
+      if vim.fn.win_gettype() == "quickfix" then
+        local status_ok, _ = pcall(vim.cmd, "colder")
+        if not status_ok then
+          print("At bottom of quickfix stack")
+        end
+      elseif vim.fn.win_gettype() == "loclist" then
+        local status_ok, _ = pcall(vim.cmd, "lolder")
+        if not status_ok then
+          print("At bottom of loclist stack")
+        end
+      else
+        -- previous jumplist entry
+        vim.cmd(vim.api.nvim_replace_termcodes("<C-o>", true, true, true))
+      end
+    end,
+    ["<A-l>"] = function()
+      print(vim.fn.win_gettype())
+      if vim.fn.win_gettype() == "quickfix" then
+        local status_ok, _ = pcall(vim.cmd, "cnewer")
+        if not status_ok then
+          print("At top of quickfix stack")
+        end
+      elseif vim.fn.win_gettype() == "loclist" then
+        local status_ok, _ = pcall(vim.cmd, "lnewer")
+        if not status_ok then
+          print("At top of loclist stack")
+        end
+      else
+        -- next jumplist entry
+        vim.cmd(vim.api.nvim_replace_termcodes("<C-i>", true, true, true))
+      end
+    end,
 
     -- Undotree
     ["<Leader>u"] = ":UndotreeToggle <CR>",
