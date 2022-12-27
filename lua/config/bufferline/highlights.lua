@@ -1,265 +1,194 @@
-local c = require("colorschemes.davedark.palette")
+local c = require("colorschemes.davedark.themes.default")
 
 local highlights = {
   -------------------------------------------------------------------------------
   -- General
   -------------------------------------------------------------------------------
-  fill = {
-    fg = c.disabled,
-    bg = c.disabled,
+  fill = {},
+
+  -------------------------------------------------------------------------------
+  -- Selected buffer
+  -------------------------------------------------------------------------------
+  buffer_selected = {
+    bg = c.bufferline_buf_sel_bg,
+    italic = false,
+  },
+  close_button_selected = {
+    bg = c.bufferline_buf_sel_bg,
+  },
+  modified_selected = {
+    bg = c.bufferline_buf_sel_bg,
+  },
+  separator_selected = {
+    fg = c.bufferline_buf_sep_fg,
+    bg = c.bufferline_buf_sel_bg,
+  },
+  diagnostic_selected = {
+    bg = c.bufferline_buf_sel_bg,
+    italic = false,
+  },
+  hint_selected = {
+    bg = c.bufferline_buf_sel_bg,
+    italic = false,
+  },
+  hint_diagnostic_selected = {
+    bg = c.bufferline_buf_sel_bg,
+  },
+  info_selected = {
+    bg = c.bufferline_buf_sel_bg,
+    italic = false,
+  },
+  info_diagnostic_selected = {
+    bg = c.bufferline_buf_sel_bg,
+  },
+  warning_selected = {
+    bg = c.bufferline_buf_sel_bg,
+    italic = false,
+  },
+  warning_diagnostic_selected = {
+    bg = c.bufferline_buf_sel_bg,
+  },
+  error_selected = {
+    bg = c.bufferline_buf_sel_bg,
+    italic = false,
+  },
+  error_diagnostic_selected = {
+    bg = c.bufferline_buf_sel_bg,
+  },
+  indicator_selected = {},
+  duplicate_selected = {
+    fg = c.bufferline_text_dup_sel,
+    bg = c.bufferline_buf_sel_bg,
+  },
+  pick_selected = {
+    bg = c.bufferline_buf_sel_bg,
+  },
+
+  -------------------------------------------------------------------------------
+  -- Visible (unselected) buffer
+  -------------------------------------------------------------------------------
+  buffer_visible = {
+    bg = c.bufferline_buf_vis_bg,
+  },
+  close_button_visible = {
+    bg = c.bufferline_buf_vis_bg,
+  },
+  diagnostic_visible = {
+    bg = c.bufferline_buf_vis_bg,
+  },
+  hint_visible = {
+    -- fg = c.hint,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  hint_diagnostic_visible = {
+    -- fg = c.hint,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  info_visible = {
+    -- fg = c.info,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  info_diagnostic_visible = {
+    -- fg = c.info,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  warning_visible = {
+    -- fg = c.warn,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  warning_diagnostic_visible = {
+    -- fg = c.warn,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  error_visible = {
+    -- fg = c.error,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  error_diagnostic_visible = {
+    -- fg = c.error,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  modified_visible = {
+    bg = c.bufferline_buf_vis_bg,
+  },
+  separator_visible = {
+    fg = c.bufferline_buf_sep_fg,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  duplicate_visible = {
+    fg = c.bufferline_text_dup_vis,
+    bg = c.bufferline_buf_vis_bg,
+  },
+  pick_visible = {
+    bg = c.bufferline_buf_vis_bg,
+  },
+
+  -------------------------------------------------------------------------------
+  -- Inactive buffer
+  -------------------------------------------------------------------------------
+  background = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  close_button = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  modified = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  separator = {
+    fg = c.bufferline_buf_sep_fg,
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  diagnostic = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  hint = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  hint_diagnostic = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  info = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  info_diagnostic = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  warning = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  warning_diagnostic = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  error = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  error_diagnostic = {
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  duplicate = {
+    fg = c.bufferline_text_dup_vis,
+    bg = c.bufferline_buf_inactive_bg,
+  },
+  pick = {
+    bg = c.bufferline_buf_inactive_bg,
   },
 
   -------------------------------------------------------------------------------
   -- Tabs
   -------------------------------------------------------------------------------
   tab = {
-    fg = c.disabled,
-    bg = c.off_black,
+    bg = c.bufferline_buf_inactive_bg,
   },
   tab_separator = {
-    fg = c.off_black,
-    bg = c.none,
+    fg = c.bufferline_buf_inactive_bg,
   },
   tab_selected = {
     fg = c.fg,
-    bg = c.tab_blue_grey,
+    bg = c.bufferline_buf_sel_bg,
   },
   tab_separator_selected = {
-    fg = c.tab_blue_grey,
-    bg = c.none,
-  },
-
-  -------------------------------------------------------------------------------
-  -- Selected buffer
-  -------------------------------------------------------------------------------
-  buffer_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    italic = false,
-  },
-  close_button_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-  },
-  modified_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-  },
-  separator_selected = {
-    fg = c.black,
-    bg = c.tab_blue_grey,
-  },
-  diagnostic_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    bold_italic = true,
-  },
-  hint_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    bold_italic = true,
-  },
-  hint_diagnostic_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    bold_italic = true,
-  },
-  info_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    sp = c.disabled,
-    bold_italic = true,
-  },
-  info_diagnostic_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    sp = c.disabled,
-    bold_italic = true,
-  },
-  warning_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    sp = c.disabled,
-    bold_italic = true,
-  },
-  warning_diagnostic_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    sp = c.disabled,
-    bold_italic = true,
-  },
-  error_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    sp = c.disabled,
-    bold_italic = true,
-  },
-  error_diagnostic_selected = {
-    fg = c.disabled,
-    bg = c.tab_blue_grey,
-    sp = c.disabled,
-    bold_italic = true,
-  },
-  indicator_selected = {
-    fg = c.disabled,
-    bg = c.disabled,
-  },
-  duplicate_selected = {
-    fg = c.duplicate_selected_fg_blue,
-    bg = c.tab_blue_grey,
-    bold = true,
-    italic = true,
-  },
-  pick_selected = {
-    fg = c.disabled,
-    bg = c.disabled,
-    bold_italic = true,
-  },
-
-  -------------------------------------------------------------------------------
-  -- Unselected buffer
-  -------------------------------------------------------------------------------
-  buffer = {
-    fg = c.disabled,
-    bg = c.none,
-  },
-  background = {
-    fg = c.disabled, -- this is the main foreground of inactive tabs
-    bg = c.none, -- this is the main background of inactive tabs
-  },
-  close_button = {
-    fg = c.disabled,
-    bg = c.none,
-  },
-  modified = {
-    fg = c.disabled,
-    bg = c.none,
-  },
-  separator = {
-    fg = c.black,
-    bg = c.none,
-  },
-  diagnostic = {
-    fg = c.disabled,
-    bg = c.none,
-  },
-  hint = {
-    fg = c.dark_hint_green,
-    bg = c.none,
-    bold_italic = true,
-  },
-  hint_diagnostic = {
-    fg = c.dark_hint_green,
-    bg = c.none,
-    bold_italic = true,
-  },
-  info = {
-    fg = c.dark_info_blue,
-    bg = c.none,
-    guisp = c.disabled,
-  },
-  info_diagnostic = {
-    fg = c.dark_info_blue,
-    bg = c.none,
-    guisp = c.disabled,
-  },
-  warning = {
-    fg = c.dark_warn_yellow,
-    bg = c.none,
-    guisp = c.disabled,
-  },
-  warning_diagnostic = {
-    fg = c.dark_warn_yellow,
-    bg = c.none,
-    guisp = c.disabled,
-  },
-  error = {
-    fg = c.dark_error_red,
-    bg = c.none,
-    guisp = c.disabled,
-  },
-  error_diagnostic = {
-    fg = c.dark_error_red,
-    bg = c.none,
-    guisp = c.disabled,
-  },
-  duplicate = {
-    fg = c.dark_duplicate_fg,
-    bg = c.none,
-    italic = true,
-  },
-  pick = {
-    fg = c.disabled,
-    bg = c.none,
-    bold_italic = true,
-  },
-
-  -------------------------------------------------------------------------------
-  -- Visible (background) buffer
-  -------------------------------------------------------------------------------
-  buffer_visible = {
-    fg = c.disabled,
-    bg = c.grey,
-  },
-  close_button_visible = {
-    fg = c.disabled,
-    bg = c.grey,
-  },
-  diagnostic_visible = {
-    fg = c.disabled,
-    bg = c.grey,
-  },
-  hint_visible = {
-    fg = c.dark_hint_green,
-    bg = c.grey,
-    bold_italic = true,
-  },
-  hint_diagnostic_visible = {
-    fg = c.dark_hint_green,
-    bg = c.grey,
-    bold_italic = true,
-  },
-  info_visible = {
-    fg = c.dark_info_blue,
-    bg = c.grey,
-  },
-  info_diagnostic_visible = {
-    fg = c.dark_info_blue,
-    bg = c.grey,
-  },
-  warning_visible = {
-    fg = c.dark_warn_yellow,
-    bg = c.grey,
-  },
-  warning_diagnostic_visible = {
-    fg = c.dark_warn_yellow,
-    bg = c.grey,
-  },
-  error_visible = {
-    fg = c.dark_error_red,
-    bg = c.grey,
-  },
-  error_diagnostic_visible = {
-    fg = c.dark_error_red,
-    bg = c.grey,
-  },
-  modified_visible = {
-    fg = c.disabled,
-    bg = c.grey,
-  },
-  separator_visible = {
-    fg = c.black,
-    bg = c.grey,
-  },
-  duplicate_visible = {
-    fg = c.dark_duplicate_fg,
-    bg = c.grey,
-    italic = true,
-  },
-  pick_visible = {
-    fg = c.disabled,
-    bg = c.grey,
-    bold_italic = true,
+    fg = c.bufferline_buf_sel_bg,
   },
 }
 

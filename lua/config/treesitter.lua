@@ -8,6 +8,8 @@
 
 local M = {}
 
+local c = require("colorschemes.davedark.themes.default")
+
 local settings = {
   ensure_installed = {
     "bash",
@@ -60,23 +62,24 @@ local settings = {
   ignore_install = { "" },
   highlight = {
     enable = true,
-    disable = { "html" },
+    -- disable = { "html" },
     additional_vim_regex_highlighting = true,
   },
 
   -- ts-rainbow
   rainbow = {
     enable = true,
+    disable = { "html" },
     extended_mode = false,
     colors = {
       -- Color test: { { { { { { { } } } } } } }
-      "#ffd700", -- Gold
-      "#da70d6", -- Orchid
-      "#87cefa", -- LightSkyBlue
-      "#fa8072", -- Salmon
-      "#7cf800", -- LawnGreen
-      "#ff8c00", -- DarkOrange
-      "#fff8dc", -- Cornsilk
+      c.indent_1,
+      c.indent_2,
+      c.indent_3,
+      c.indent_4,
+      c.indent_5,
+      c.indent_6,
+      c.indent_7,
     },
   },
 

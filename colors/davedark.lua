@@ -1,1 +1,1 @@
-require("colorschemes.davedark")
+require("colorschemes.davedark")()

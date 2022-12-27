@@ -1,4 +1,3 @@
-local config = require("user_config")
 local utils = require("core.utils")
 
 -------------------------------------------------------------------------------
@@ -78,9 +77,17 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 -- Reload davedark colorscheme on save
 ------------------------------------------------------------------------------
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "*nvim/lua/colorschemes/davedark/**",
+  pattern = {
+    "*nvim/lua/colorschemes/davedark/**",
+    "*nvim/lua/config/feline/theme/**",
+  },
   callback = function()
+    utils.clear_packages_recursively("colorschemes.davedark")
     vim.cmd("colorscheme davedark")
+    require("config.feline").config()
+    -- NOTE: Autocommands can't call other autocommands, so to get BufferLine
+    -- to correctly reload highlights using its own autocommand requires the
+    -- colorscheme to be changed manually as well
   end,
   group = vim.api.nvim_create_augroup("davedark", { clear = true }),
 })

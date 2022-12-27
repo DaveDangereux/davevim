@@ -1,268 +1,352 @@
-local c = require("colorschemes.davedark.palette")
 local config = require("user_config")
 
-return {
-  -----------------------------------------------------------------------------
-  -- nvim-tree
-  -----------------------------------------------------------------------------
-  NvimTreeIndentMarker = { fg = c.fg },
-  NvimTreeNormal = { bg = config.transparent_background and c.none or c.nvim_tree_bg },
-  NvimTreeVertSplit = nil,
-  NvimTreeFolderIcon = { fg = c.folder_grey, bg = c.none },
-  NvimTreeFolderName = { fg = c.blue },
-  NvimTreeOpenedFolderName = { fg = c.blue },
-  NvimTreeSpecialFile = { fg = c.orange, bold = true, italic = true },
-  NvimTreeGitStaged = { fg = c.green },
-  NvimTreeCursorLine = nil,
-  NvimTreeGitNew = { fg = c.green },
-  NvimTreeGitDirty = { fg = c.orange },
-  NvimTreeGitDeleted = { fg = c.error_red },
-  NvimTreeRootFolder = { fg = c.fg, bold = true },
+return function(theme_variant)
+  local c = require("colorschemes.davedark.themes.default")
 
-  -- nvim-tree (testing)
-  NvimTreeImageFile = { fg = c.test_green },
-  NvimTreeGitMerge = { fg = c.test_green },
-  NvimTreeGitRenamed = { fg = c.test_green },
-  NvimTreeSymlink = { fg = c.test_green },
-  NvimTreeExecFile = { fg = c.test_green },
+  if theme_variant then
+    c = require("colorschemes.davedark.themes." .. theme_variant)
+  end
 
-  -----------------------------------------------------------------------------
-  -- Telescope
-  -----------------------------------------------------------------------------
-  TelescopeSelection = { fg = c.cyan },
-  TelescopeMatching = { fg = c.none, bold = true },
-  TelescopeBorder = { fg = c.float_border, bg = config.transparent_background and c.none or c.bg },
-  TelescopePromptPrefix = { fg = c.purple },
+  return {
+    -----------------------------------------------------------------------------
+    -- nvim-tree
+    -----------------------------------------------------------------------------
+    NvimTreeIndentMarker = { fg = c.fg_text },
+    NvimTreeNormal = { bg = config.nvimtree_transparent_background and c.none or c.nvimtree_bg },
+    NvimTreeVertSplit = nil,
+    NvimTreeFolderIcon = { fg = c.nvimtree_folder, bg = c.none },
+    NvimTreeFolderName = { fg = c.nvimtree_folder_name },
+    NvimTreeOpenedFolderName = { fg = c.nvimtree_folder_name_open },
+    NvimTreeSpecialFile = { fg = c.nvimtree_special_file, bold = true, italic = true },
+    NvimTreeGitStaged = { fg = c.diff_added },
+    NvimTreeCursorLine = nil,
+    NvimTreeGitNew = { fg = c.diff_added },
+    NvimTreeGitDirty = { fg = c.diff_change },
+    NvimTreeGitDeleted = { fg = c.diff_delete },
+    NvimTreeRootFolder = { fg = c.fg_text, bold = true, italic = true },
 
-  -----------------------------------------------------------------------------
-  -- Notify
-  -----------------------------------------------------------------------------
-  NotifyERRORBorder = { fg = c.error_red },
-  NotifyERRORIcon = { fg = c.error_red },
-  NotifyERRORTitle = { fg = c.error_red },
-  NotifyERRORBody = { fg = c.fg },
-  NotifyWARNBorder = { fg = c.orange },
-  NotifyWARNIcon = { fg = c.orange },
-  NotifyWARNTitle = { fg = c.orange },
-  NotifyWARNBody = { fg = c.fg },
-  NotifyINFOBorder = { fg = c.green },
-  NotifyINFOIcon = { fg = c.green },
-  NotifyINFOTitle = { fg = c.green },
-  NotifyINFOBody = { fg = c.fg },
-  NotifyDEBUGBorder = { fg = c.pink },
-  NotifyDEBUGIcon = { fg = c.pink },
-  NotifyDEBUGTitle = { fg = c.pink },
-  NotifyDEBUGBody = { fg = c.fg },
-  NotifyTRACEBorder = { fg = c.purple },
-  NotifyTRACEIcon = { fg = c.purple },
-  NotifyTRACETitle = { fg = c.purple },
-  NotifyTRACEBody = { fg = c.fg },
+    -- Processing:
+    -- NvimTreePopup = {},
+    -- NvimTreeLineNr = {},
+    -- NvimTreeFileNew = {},
+    -- NvimTreeBookmark = {},
+    -- NvimTreeNormalNC = {},
+    -- NvimTreeFileDirty = {},
+    -- NvimTreeFileMerge = {},
+    -- NvimTreeFileStaged = {},
+    -- NvimTreeGitIgnored = {},
+    -- NvimTreeOpenedFile = {},
+    -- NvimTreeSignColumn = {},
+    -- NvimTreeStatusLine = {},
+    -- NvimTreeEndOfBuffer = {},
+    -- NvimTreeFileDeleted = {},
+    -- NvimTreeFileIgnored = {},
+    -- NvimTreeFileRenamed = {},
+    -- NvimTreeCursorColumn = {},
+    -- NvimTreeCursorLineNr = {},
+    -- NvimTreeStatusLineNC = {},
+    -- NvimTreeWinSeparator = {},
+    -- NvimTreeWindowPicker = {},
+    -- NvimTreeEmptyFolderName = {},
+    -- NvimTreeLiveFilterValue = {},
+    -- NvimTreeClosedFolderIcon = {},
+    -- NvimTreeLiveFilterPrefix = {},
+    -- NvimTreeOpenedFolderIcon = {},
+    -- NvimTreeLspDiagnosticsHint = {},
+    -- NvimTreeLspDiagnosticsError = {},
+    -- NvimTreeLspDiagnosticsWarning = {},
+    -- NvimTreeLspDiagnosticsInformation = {},
+    -- NvimTreeImageFile = {},
+    -- NvimTreeGitMerge = {},
+    -- NvimTreeGitRenamed = {},
+    -- NvimTreeSymlink = {},
+    -- NvimTreeExecFile = {},
 
-  -----------------------------------------------------------------------------
-  -- Illuminate
-  -----------------------------------------------------------------------------
-  IlluminatedWordText = { fg = c.illuminate_text, bold = true },
-  IlluminatedWordRead = { fg = c.illuminate_read, bold = true },
-  IlluminatedWordWrite = { fg = c.illuminate_write, bold = true },
+    -----------------------------------------------------------------------------
+    -- Telescope
+    -----------------------------------------------------------------------------
+    TelescopeSelection = { fg = c.telescope_text_sel },
+    TelescopeMatching = { fg = c.none, bold = true },
+    TelescopeBorder = { fg = c.float_border, bg = config.transparent_background and c.none or c.bg },
+    TelescopePromptPrefix = { fg = c.keyword },
 
-  -----------------------------------------------------------------------------
-  -- Alpha
-  -----------------------------------------------------------------------------
-  AlphaHeader1 = { fg = c.red },
-  AlphaHeader2 = { fg = c.orange },
-  AlphaHeader3 = { fg = c.yellow },
-  AlphaHeader4 = { fg = c.green },
-  AlphaHeader5 = { fg = c.blue },
-  AlphaHeader6 = { fg = c.purple },
-  AlphaButton = { fg = c.fg },
-  AlphaButtonShortcut = { fg = c.orange },
+    -- Processing:
+    -- TelescopeTitle = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeNormal = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeMultiIcon = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewDate = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewLine = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewLink = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewPipe = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewRead = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewSize = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewUser = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePromptTitle = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewBlock = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewGroup = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewMatch = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewTitle = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewWrite = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePromptBorder = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePromptNormal = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsClass = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsField = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsTitle = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewBorder = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewHyphen = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewNormal = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewSocket = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewSticky = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePromptCounter = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsBorder = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsLineNr = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsMethod = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsNormal = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsNumber = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsStruct = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeMultiSelection = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewCharDev = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewExecute = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewMessage = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsComment = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsDiffAdd = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeSelectionCaret = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsConstant = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsFunction = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsOperator = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsVariable = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewDirectory = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsDiffChange = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsDiffDelete = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsIdentifier = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsDiffUntracked = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopeResultsSpecialComment = { fg = c.test_magenta, bg = c.test_green },
+    -- TelescopePreviewMessageFillchar = { fg = c.test_magenta, bg = c.test_green },
 
-  -----------------------------------------------------------------------------
-  -- toggleterm
-  -----------------------------------------------------------------------------
-  ToggleTermBorder = { fg = c.float_border, bg = config.transparent_background and c.none or c.bg },
-  ToggleTermBg = { bg = config.transparent_background and c.none or c.term_bg },
+    -----------------------------------------------------------------------------
+    -- Notify
+    -----------------------------------------------------------------------------
+    NotifyERRORBorder = { fg = c.error },
+    NotifyERRORIcon = { fg = c.error },
+    NotifyERRORTitle = { fg = c.error },
+    NotifyERRORBody = { fg = c.fg_text },
+    NotifyWARNBorder = { fg = c.warn },
+    NotifyWARNIcon = { fg = c.warn },
+    NotifyWARNTitle = { fg = c.warn },
+    NotifyWARNBody = { fg = c.fg_text },
+    NotifyINFOBorder = { fg = c.info },
+    NotifyINFOIcon = { fg = c.info },
+    NotifyINFOTitle = { fg = c.info },
+    NotifyINFOBody = { fg = c.fg_text },
+    NotifyDEBUGBorder = { fg = c.string },
+    NotifyDEBUGIcon = { fg = c.string },
+    NotifyDEBUGTitle = { fg = c.string },
+    NotifyDEBUGBody = { fg = c.fg_text },
+    NotifyTRACEBorder = { fg = c.keyword },
+    NotifyTRACEIcon = { fg = c.keyword },
+    NotifyTRACETitle = { fg = c.keyword },
+    NotifyTRACEBody = { fg = c.fg_text },
 
-  -----------------------------------------------------------------------------
-  -- indent-blankline
-  -----------------------------------------------------------------------------
-  IndentBlanklineIndent1 = { fg = c.indent1 },
-  IndentBlanklineIndent2 = { fg = c.indent2 },
-  IndentBlanklineIndent3 = { fg = c.indent3 },
-  IndentBlanklineIndent4 = { fg = c.indent4 },
-  IndentBlanklineIndent5 = { fg = c.indent5 },
-  IndentBlanklineIndent6 = { fg = c.indent6 },
-  IndentBlanklineIndent7 = { fg = c.indent7 },
+    -----------------------------------------------------------------------------
+    -- Illuminate
+    -----------------------------------------------------------------------------
+    IlluminatedWordText = { fg = c.test_yellow, bold = true },
+    IlluminatedWordRead = { fg = c.test_green, bold = true },
+    IlluminatedWordWrite = { fg = c.error, bold = true },
 
-  -----------------------------------------------------------------------------
-  -- lsp_signature
-  -----------------------------------------------------------------------------
-  LspSignatureActiveParameter = { fg = c.blue, bold = true },
+    -----------------------------------------------------------------------------
+    -- Alpha
+    -----------------------------------------------------------------------------
+    AlphaHeader1 = { fg = c.field },
+    AlphaHeader2 = { fg = c.number },
+    AlphaHeader3 = { fg = c.type },
+    AlphaHeader4 = { fg = c.string },
+    AlphaHeader5 = { fg = c.function_hl },
+    AlphaHeader6 = { fg = c.keyword },
+    AlphaButton = { fg = c.fg_text },
+    AlphaButtonShortcut = { fg = c.number },
 
-  -----------------------------------------------------------------------------
-  -- lspconfig
-  -----------------------------------------------------------------------------
-  LspInfoTitle = { fg = c.yellow, bold = true },
+    -----------------------------------------------------------------------------
+    -- indent-blankline
+    -----------------------------------------------------------------------------
+    IndentBlanklineIndent1 = { fg = c.indent_1 },
+    IndentBlanklineIndent2 = { fg = c.indent_2 },
+    IndentBlanklineIndent3 = { fg = c.indent_3 },
+    IndentBlanklineIndent4 = { fg = c.indent_4 },
+    IndentBlanklineIndent5 = { fg = c.indent_5 },
+    IndentBlanklineIndent6 = { fg = c.indent_6 },
+    IndentBlanklineIndent7 = { fg = c.indent_7 },
 
-  -----------------------------------------------------------------------------
-  -- gitsigns
-  -----------------------------------------------------------------------------
-  GitSignsUntracked = { fg = c.blue },
-  GitSignsUntrackedNr = { fg = c.blue },
-  GitSignsUntrackedLn = { fg = c.blue },
+    -----------------------------------------------------------------------------
+    -- lsp_signature
+    -----------------------------------------------------------------------------
+    LspSignatureActiveParameter = { fg = c.function_hl, bold = true },
 
-  -----------------------------------------------------------------------------
-  -- symbols-outline
-  -----------------------------------------------------------------------------
-  SymbolsOutlineConnector = { fg = c.blue_grey },
+    -----------------------------------------------------------------------------
+    -- lspconfig
+    -----------------------------------------------------------------------------
+    LspInfoTitle = { fg = c.type, bold = true },
 
-  -----------------------------------------------------------------------------
-  -- navic
-  -----------------------------------------------------------------------------
-  NavicText = { fg = c.navic_fg, bg = c.navic_bg },
-  NavicSeparator = { fg = c.navic_fg, bg = c.navic_bg },
-  NavicIconsBoolean = { fg = c.orange, bg = c.navic_bg },
-  NavicIconsConstant = { fg = c.red, bg = c.navic_bg },
-  NavicIconsFunction = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsNumber = { fg = c.orange, bg = c.navic_bg },
-  NavicIconsFile = { fg = c.green, bg = c.navic_bg },
-  NavicIconsModule = { fg = c.navic_fg, bg = c.navic_bg },
-  NavicIconsNamespace = { fg = c.navic_fg, bg = c.navic_bg },
-  NavicIconsPackage = { fg = c.navic_fg, bg = c.navic_bg },
-  NavicIconsClass = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsMethod = { fg = c.none, bg = c.navic_bg },
-  NavicIconsProperty = { fg = c.none, bg = c.navic_bg },
-  NavicIconsField = { fg = c.red, bg = c.navic_bg },
-  NavicIconsConstructor = { fg = c.navic_fg, bg = c.navic_bg },
-  NavicIconsEnum = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsInterface = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsVariable = { fg = c.red, bg = c.navic_bg },
-  NavicIconsString = { fg = c.green, bg = c.navic_bg },
-  NavicIconsArray = { fg = c.red, bg = c.navic_bg },
-  NavicIconsObject = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsKey = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsNull = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsEnumMember = { fg = c.red, bg = c.navic_bg },
-  NavicIconsStruct = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsEvent = { fg = c.blue, bg = c.navic_bg },
-  NavicIconsOperator = { fg = c.none, bg = c.navic_bg },
-  NavicIconsTypeParameter = { fg = c.none, bg = c.navic_bg },
+    -----------------------------------------------------------------------------
+    -- gitsigns
+    -----------------------------------------------------------------------------
+    GitSignsUntracked = { fg = c.diff_untracked },
+    GitSignsUntrackedNr = { fg = c.diff_untracked },
+    GitSignsUntrackedLn = { fg = c.diff_untracked },
 
-  -----------------------------------------------------------------------------
-  -- cmp
-  -----------------------------------------------------------------------------
-  CmpItemAbbrMatch = { fg = c.yellow, bold = true },
-  CmpItemAbbrMatchFuzzy = { fg = c.orange, bold = true },
-  CmpItemKind = { fg = c.off_black, bg = c.white },
-  CmpItemKindClass = { fg = c.off_black, bg = c.green },
-  CmpItemKindColor = { fg = c.off_black, bg = c.cyan },
-  CmpItemKindConstant = { fg = c.off_black, bg = c.purple },
-  CmpItemKindConstructor = { fg = c.off_black, bg = c.blue },
-  CmpItemKindEnum = { fg = c.off_black, bg = c.violet },
-  CmpItemKindEnumMember = { fg = c.off_black, bg = c.cyan },
-  CmpItemKindEvent = { fg = c.off_black, bg = c.violet },
-  CmpItemKindField = { fg = c.off_black, bg = c.cyan },
-  CmpItemKindFile = { fg = c.off_black, bg = c.blue },
-  CmpItemKindFolder = { fg = c.off_black, bg = c.blue },
-  CmpItemKindFunction = { fg = c.off_black, bg = c.blue },
-  CmpItemKindInterface = { fg = c.off_black, bg = c.green },
-  CmpItemKindKeyword = { fg = c.off_black, bg = c.violet },
-  CmpItemKindMethod = { fg = c.off_black, bg = c.blue },
-  CmpItemKindModule = { fg = c.off_black, bg = c.green },
-  CmpItemKindOperator = { fg = c.off_black, bg = c.violet },
-  CmpItemKindProperty = { fg = c.off_black, bg = c.cyan },
-  CmpItemKindReference = { fg = c.off_black, bg = c.cyan },
-  CmpItemKindSnippet = { fg = c.off_black, bg = c.green },
-  CmpItemKindStruct = { fg = c.off_black, bg = c.green },
-  CmpItemKindText = { fg = c.off_black, bg = c.light_blue_grey },
-  CmpItemKindTypeParameter = { fg = c.off_black, bg = c.green },
-  CmpItemKindUnit = { fg = c.off_black, bg = c.cyan },
-  CmpItemKindValue = { fg = c.off_black, bg = c.cyan },
-  CmpItemKindVariable = { fg = c.off_black, bg = c.cyan },
-  CmpItemMenu = { fg = c.light_blue_grey, italic = true },
+    -----------------------------------------------------------------------------
+    -- symbols-outline
+    -----------------------------------------------------------------------------
+    SymbolsOutlineConnector = { fg = c.fg_text_dim },
 
-  ---------------------------------------------------------
-  -- Lspsaga
-  ---------------------------------------------------------
-  -- code action
-  LspSagaCodeActionTitle = { fg = "#DA8548", bold = true },
-  LspSagaCodeActionBorder = { fg = c.float_border },
+    -----------------------------------------------------------------------------
+    -- navic
+    -----------------------------------------------------------------------------
+    NavicText = { fg = c.navic_fg, bg = c.statusline_navic_bg },
+    NavicSeparator = { fg = c.navic_fg, bg = c.statusline_navic_bg },
+    NavicIconsBoolean = { fg = c.number, bg = c.statusline_navic_bg },
+    NavicIconsConstant = { fg = c.constant, bg = c.statusline_navic_bg },
+    NavicIconsFunction = { fg = c.function_hl, bg = c.statusline_navic_bg },
+    NavicIconsNumber = { fg = c.number, bg = c.statusline_navic_bg },
+    NavicIconsFile = { fg = c.file, bg = c.statusline_navic_bg },
+    NavicIconsModule = { fg = c.navic_fg, bg = c.statusline_navic_bg },
+    NavicIconsNamespace = { fg = c.navic_fg, bg = c.statusline_navic_bg },
+    NavicIconsPackage = { fg = c.navic_fg, bg = c.statusline_navic_bg },
+    NavicIconsClass = { fg = c.type, bg = c.statusline_navic_bg },
+    NavicIconsMethod = { fg = c.none, bg = c.statusline_navic_bg },
+    NavicIconsProperty = { fg = c.none, bg = c.statusline_navic_bg },
+    NavicIconsField = { fg = c.field, bg = c.statusline_navic_bg },
+    NavicIconsConstructor = { fg = c.navic_fg, bg = c.statusline_navic_bg },
+    NavicIconsEnum = { fg = c.type, bg = c.statusline_navic_bg },
+    NavicIconsInterface = { fg = c.type, bg = c.statusline_navic_bg },
+    NavicIconsVariable = { fg = c.variable, bg = c.statusline_navic_bg },
+    NavicIconsString = { fg = c.string, bg = c.statusline_navic_bg },
+    NavicIconsArray = { fg = c.variable, bg = c.statusline_navic_bg },
+    NavicIconsObject = { fg = c.type, bg = c.statusline_navic_bg },
+    NavicIconsKey = { fg = c.keyword, bg = c.statusline_navic_bg },
+    NavicIconsNull = { fg = c.type, bg = c.statusline_navic_bg },
+    NavicIconsEnumMember = { fg = c.constant, bg = c.statusline_navic_bg },
+    NavicIconsStruct = { fg = c.type, bg = c.statusline_navic_bg },
+    NavicIconsEvent = { fg = c.type, bg = c.statusline_navic_bg },
+    NavicIconsOperator = { fg = c.none, bg = c.statusline_navic_bg },
+    NavicIconsTypeParameter = { fg = c.none, bg = c.statusline_navic_bg },
 
-  -- finder
-  LspSagaLspFinderBorder = { fg = c.float_border },
-  LspSagaAutoPreview = { fg = c.float_border },
-  LspSagaFinderSelection = { fg = "#89d957", bold = true },
-  TargetFileName = { fg = "#d1d4cf" },
-  FinderParam = { fg = "#CBA6F7", bg = "#392a52", bold = true },
-  FinderVirtText = { fg = "#c95942" },
-  DefinitionsIcon = { fg = "#e3e346" },
-  Definitions = { fg = "#CBA6F7", bold = true },
-  DefinitionCount = { link = "Title" },
-  ReferencesIcon = { fg = "#e3e346" },
-  References = { fg = "#CBA6F7", bold = true },
-  ReferencesCount = { link = "Title" },
-  ImplementsIcon = { fg = "#e3e346" },
-  Implements = { fg = "#CBA6F7", bold = true },
-  ImplementsCount = { link = "Title" },
+    -----------------------------------------------------------------------------
+    -- cmp
+    -----------------------------------------------------------------------------
+    CmpItemAbbrMatch = { fg = c.type, bold = true },
+    CmpItemAbbrMatchFuzzy = { fg = c.number, bold = true },
+    CmpItemKind = { fg = c.fg_text_dark, bg = c.fg_text },
+    CmpItemKindClass = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindColor = { fg = c.fg_text_dark, bg = c.info },
+    CmpItemKindConstant = { fg = c.fg_text_dark, bg = c.keyword },
+    CmpItemKindConstructor = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindEnum = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindEnumMember = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindEvent = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindField = { fg = c.fg_text_dark, bg = c.field },
+    CmpItemKindFile = { fg = c.fg_text_dark, bg = c.file },
+    CmpItemKindFolder = { fg = c.fg_text_dark, bg = c.file },
+    CmpItemKindFunction = { fg = c.fg_text_dark, bg = c.function_hl },
+    CmpItemKindInterface = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindKeyword = { fg = c.fg_text_dark, bg = c.keyword },
+    CmpItemKindMethod = { fg = c.fg_text_dark, bg = c.function_hl },
+    CmpItemKindModule = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindOperator = { fg = c.fg_text_dark, bg = c.operator },
+    CmpItemKindProperty = { fg = c.fg_text_dark, bg = c.property },
+    CmpItemKindReference = { fg = c.fg_text_dark, bg = c.operator },
+    CmpItemKindSnippet = { fg = c.fg_text_dark, bg = c.string },
+    CmpItemKindStruct = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindText = { fg = c.fg_text_dark, bg = c.comment },
+    CmpItemKindTypeParameter = { fg = c.fg_text_dark, bg = c.type },
+    CmpItemKindUnit = { fg = c.fg_text_dark, bg = c.operator },
+    CmpItemKindValue = { fg = c.fg_text_dark, bg = c.number },
+    CmpItemKindVariable = { fg = c.fg_text_dark, bg = c.variable },
+    CmpItemMenu = { fg = c.comment, italic = true },
 
-  -- finder spinner
-  FinderSpinnerBorder = { fg = c.float_border },
-  FinderSpinnerTitle = { fg = "#b33076", bold = true },
-  FinderSpinner = { fg = "#b33076", bold = true },
-  FinderPreviewSearch = { link = "Search" },
+    ---------------------------------------------------------
+    -- Lspsaga
+    ---------------------------------------------------------
+    -- code action
+    LspSagaCodeActionTitle = { fg = "#DA8548", bold = true },
+    LspSagaCodeActionBorder = { fg = c.float_border },
 
-  -- definition
-  DefinitionBorder = { fg = "#b3deef" },
-  DefinitionArrow = { fg = "#ad475f" },
-  DefinitionSearch = { link = "Search" },
-  DefinitionFile = { bg = "#151838" },
+    -- finder
+    LspSagaLspFinderBorder = { fg = c.float_border },
+    LspSagaAutoPreview = { fg = c.float_border },
+    LspSagaFinderSelection = { fg = "#89d957", bold = true },
+    TargetFileName = { fg = "#d1d4cf" },
+    FinderParam = { fg = "#CBA6F7", bg = "#392a52", bold = true },
+    FinderVirtText = { fg = "#c95942" },
+    DefinitionsIcon = { fg = "#e3e346" },
+    Definitions = { fg = "#CBA6F7", bold = true },
+    DefinitionCount = { link = "Title" },
+    ReferencesIcon = { fg = "#e3e346" },
+    References = { fg = "#CBA6F7", bold = true },
+    ReferencesCount = { link = "Title" },
+    ImplementsIcon = { fg = "#e3e346" },
+    Implements = { fg = "#CBA6F7", bold = true },
+    ImplementsCount = { link = "Title" },
 
-  -- hover
-  LspSagaHoverBorder = { fg = c.float_border },
-  LspSagaHoverTrunCateLine = { link = "LspSagaHoverBorder" },
+    -- finder spinner
+    FinderSpinnerBorder = { fg = c.float_border },
+    FinderSpinnerTitle = { fg = "#b33076", bold = true },
+    FinderSpinner = { fg = "#b33076", bold = true },
+    FinderPreviewSearch = { link = "Search" },
 
-  -- rename
-  LspSagaRenameBorder = { fg = c.float_border },
-  LspSagaRenameMatch = { link = "Search" },
+    -- definition
+    DefinitionBorder = { fg = "#b3deef" },
+    DefinitionArrow = { fg = "#ad475f" },
+    DefinitionSearch = { link = "Search" },
+    DefinitionFile = { bg = "#151838" },
 
-  -- diagnostic
-  LspSagaDiagnosticSource = { link = "Comment" },
-  LspSagaDiagnosticError = { link = "DiagnosticError" },
-  LspSagaDiagnosticWarn = { link = "DiagnosticWarn" },
-  LspSagaDiagnosticInfo = { link = "DiagnosticInfo" },
-  LspSagaDiagnosticHint = { link = "DiagnosticHint" },
-  LspSagaErrorTrunCateLine = { link = "DiagnosticError" },
-  LspSagaWarnTrunCateLine = { link = "DiagnosticWarn" },
-  LspSagaInfoTrunCateLine = { link = "DiagnosticInfo" },
-  LspSagaHintTrunCateLine = { link = "DiagnosticHint" },
-  LspSagaDiagnosticBorder = { fg = c.float_border },
-  LspSagaDiagnosticHeader = { fg = "#afd700" },
-  DiagnosticQuickFix = { fg = "#4dd158", bold = true },
-  DiagnosticMap = { fg = "#cf80ce" },
-  DiagnosticLineCol = { fg = "#73797e" },
-  LspSagaDiagnosticTruncateLine = { link = "LspSagaDiagnosticBorder" },
-  ColInLineDiagnostic = { link = "Comment" },
+    -- hover
+    LspSagaHoverBorder = { fg = c.float_border },
+    LspSagaHoverTrunCateLine = { link = "LspSagaHoverBorder" },
 
-  -- signature help
-  LspSagaSignatureHelpBorder = { fg = "#98be65" },
-  LspSagaShTrunCateLine = { link = "LspSagaSignatureHelpBorder" },
+    -- rename
+    LspSagaRenameBorder = { fg = c.float_border },
+    LspSagaRenameMatch = { link = "Search" },
 
-  -- lightbulb
-  LspSagaLightBulb = { link = "DiagnosticSignHint" },
+    -- diagnostic
+    LspSagaDiagnosticSource = { link = "Comment" },
+    LspSagaDiagnosticError = { link = "DiagnosticError" },
+    LspSagaDiagnosticWarn = { link = "DiagnosticWarn" },
+    LspSagaDiagnosticInfo = { link = "DiagnosticInfo" },
+    LspSagaDiagnosticHint = { link = "DiagnosticHint" },
+    LspSagaErrorTrunCateLine = { link = "DiagnosticError" },
+    LspSagaWarnTrunCateLine = { link = "DiagnosticWarn" },
+    LspSagaInfoTrunCateLine = { link = "DiagnosticInfo" },
+    LspSagaHintTrunCateLine = { link = "DiagnosticHint" },
+    LspSagaDiagnosticBorder = { fg = c.float_border },
+    LspSagaDiagnosticHeader = { fg = "#afd700" },
+    DiagnosticQuickFix = { fg = "#4dd158", bold = true },
+    DiagnosticMap = { fg = "#cf80ce" },
+    DiagnosticLineCol = { fg = "#73797e" },
+    LspSagaDiagnosticTruncateLine = { link = "LspSagaDiagnosticBorder" },
+    ColInLineDiagnostic = { link = "Comment" },
 
-  -- shadow
-  SagaShadow = { fg = "black" },
+    -- signature help
+    LspSagaSignatureHelpBorder = { fg = "#98be65" },
+    LspSagaShTrunCateLine = { link = "LspSagaSignatureHelpBorder" },
 
-  -- float
-  LspSagaBorderTitle = { link = "String" },
+    -- lightbulb
+    LspSagaLightBulb = { link = "DiagnosticSignHint" },
 
-  -- outline
-  LSOutlinePreviewBorder = { fg = "#52ad70" },
-  OutlineIndentEvn = { fg = "#c955ae" },
-  OutlineIndentOdd = { fg = "#b8733e" },
-  OutlineFoldPrefix = { fg = "#bf4537" },
-  OutlineDetail = { fg = "#73797e" },
+    -- shadow
+    SagaShadow = { fg = "black" },
 
-  -- all float windows of lspsaga
-  LspFloatWinNormal = { link = "Normal" },
-}
+    -- float
+    LspSagaBorderTitle = { link = "String" },
+
+    -- outline
+    LSOutlinePreviewBorder = { fg = "#52ad70" },
+    OutlineIndentEvn = { fg = "#c955ae" },
+    OutlineIndentOdd = { fg = "#b8733e" },
+    OutlineFoldPrefix = { fg = "#bf4537" },
+    OutlineDetail = { fg = "#73797e" },
+
+    -- all float windows of lspsaga
+    LspFloatWinNormal = { link = "Normal" },
+  }
+end

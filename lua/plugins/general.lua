@@ -194,6 +194,7 @@ return {
     end,
   },
 
+  -- Document outline
   {
     "simrat39/symbols-outline.nvim",
     config = function()

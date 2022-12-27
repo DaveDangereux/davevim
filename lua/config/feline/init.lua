@@ -6,7 +6,7 @@ M.config = function()
   -- Refresh cache in case we're reloading after making changes
   utils.clear_packages_recursively("config.feline")
 
-  require("config.feline.theme.davedark")
+  require("config.feline.theme.default")
 
   local c = require("config.feline.components")
 

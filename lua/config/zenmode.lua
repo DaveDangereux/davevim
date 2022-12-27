@@ -1,6 +1,6 @@
 local M = {}
 
-local c = require("colorschemes.davedark.palette")
+local c = require("colorschemes.davedark.themes.default")
 local config = require("user_config")
 
 local status_ok, zenmode = pcall(require, "zen-mode")
@@ -30,7 +30,7 @@ local settings = {
   end,
   on_close = function()
     local pmenu_bg = config.pmenu_transparent_background and c.none or c.pmenu_bg
-    vim.cmd("highlight Pmenu guibg=" .. pmenu_bg)
+    vim.cmd("highlight Pmenu guibg=" .. (pmenu_bg or "none"))
   end,
 }
 

@@ -93,6 +93,10 @@ local keymaps = {
     -- Undotree
     ["<Leader>u"] = ":UndotreeToggle <CR>",
 
+    ["<F5>"] = function()
+      vim.cmd("colorscheme " .. vim.g.colors_name)
+    end,
+
     --------------------------------------------------------------------------
     -- NvimTree
     --------------------------------------------------------------------------

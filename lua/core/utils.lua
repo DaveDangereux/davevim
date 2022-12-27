@@ -66,7 +66,7 @@ M.get_keys = function(t)
     table.insert(keys, key)
   end
   table.sort(keys)
-  print(vim.inspect(keys))
+  return keys
 end
 
 M.refresh_package_highlights = function()
@@ -140,6 +140,22 @@ end
 
 M.get_buffer_filetype = function()
   print(vim.bo.filetype)
+end
+
+M.clear_hlgroups_recursively = function(name, exclude)
+  local groups = M.get_keys(vim.api.nvim__get_hl_defs(0))
+  local filtered_groups = {}
+  for _, group in pairs(groups) do
+    if group:find("^" .. name) then
+      if exclude and group:find(exclude) then
+      else
+        table.insert(filtered_groups, group)
+      end
+    end
+  end
+  for _, hl in pairs(filtered_groups) do
+    vim.cmd("hi clear " .. hl)
+  end
 end
 
 return M
