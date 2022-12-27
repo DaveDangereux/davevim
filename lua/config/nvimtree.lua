@@ -23,7 +23,6 @@ local settings = {
         { key = "i", action = "toggle_dotfiles" },
         { key = "]g", action = "next_git_item" },
         { key = "[g", action = "prev_git_item" },
-
       },
     },
     float = {
@@ -39,7 +38,7 @@ local settings = {
     },
   },
   renderer = {
-    highlight_git = true,
+    highlight_git = false,
     highlight_opened_files = "none",
     indent_markers = {
       enable = true,
