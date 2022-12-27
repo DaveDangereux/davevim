@@ -2,14 +2,14 @@ local M = {}
 
 local settings = {
   providers = {
-    'lsp',
-    'treesitter',
-    'regex',
+    "lsp",
+    "treesitter",
+    "regex",
   },
   delay = 1000,
   filetypes_denylist = {
-    'markdown',
-    'NvimTree',
+    "markdown",
+    "NvimTree",
   },
   filetypes_allowlist = {
     "lua",
@@ -25,6 +25,9 @@ local settings = {
 
 M.config = function()
   require("illuminate").configure(settings)
+  vim.schedule(function()
+    vim.cmd("IlluminatePause")
+  end)
 end
 
 return M
