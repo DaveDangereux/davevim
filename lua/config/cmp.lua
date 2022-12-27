@@ -75,10 +75,9 @@ M.config = function()
     sources = cmp.config.sources({
       {
         name = "nvim_lsp",
-        keyword_length = 2,
-        max_item_count = 10,
         entry_filter = function(entry, _)
-          return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
+          local entry_type = require("cmp.types").lsp.CompletionItemKind[entry:get_kind()]
+          return entry_type ~= "Text" and entry_type ~= "Snippet"
         end,
       },
       { name = "luasnip", max_item_count = 10 },
