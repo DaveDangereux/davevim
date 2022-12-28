@@ -93,6 +93,18 @@ local settings = {
     enable = true,
     enable_autocmd = false,
   },
+
+  -- textobjects
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+      },
+    },
+  },
 }
 
 M.config = function()

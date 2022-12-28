@@ -29,4 +29,7 @@ return {
     "nvim-treesitter/playground",
     requires = { { "nvim-treesitter/nvim-treesitter" } },
   },
+
+  -- Treesitter text objects
+  { "nvim-treesitter/nvim-treesitter-textobjects" },
 }
