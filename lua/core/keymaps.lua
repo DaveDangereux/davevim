@@ -114,7 +114,7 @@ local keymaps = {
         end
       else
         -- previous jumplist entry
-        vim.cmd(vim.api.nvim_replace_termcodes("<C-o>", true, true, true))
+        vim.cmd(vim.api.nvim_replace_termcodes("normal <C-o>", true, true, true))
       end
     end,
     ["<A-l>"] = function()
@@ -131,7 +131,8 @@ local keymaps = {
         end
       else
         -- next jumplist entry
-        vim.cmd(vim.api.nvim_replace_termcodes("<C-i>", true, true, true))
+        -- 1<C-i> seems to work here, but no idea why
+        vim.cmd(vim.api.nvim_replace_termcodes("normal 1<C-i>", true, true, true))
       end
     end,
 
@@ -351,6 +352,7 @@ local lsp_keymaps = {
     ["GD"] = ":lua vim.lsp.buf.declaration() <CR>",
     ["gi"] = ":lua vim.lsp.buf.implementation() <CR>",
     ["go"] = ":SymbolsOutline <CR>",
+    -- TODO: Make this focus the outline if it's not the active buffer
     ["<F2>"] = ":Lspsaga rename <CR>",
   },
 }
