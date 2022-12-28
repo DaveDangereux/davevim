@@ -123,6 +123,11 @@ return {
   type_builtin = c.jellyfish,
   variable = c.light_carmine_pink,
 
+  -- markdown
+  bold = c.faded_orange,
+  italic = c.light_purple,
+  link = c.jellyfish,
+
   -- icons
   file = c.crystal_blue,
 

@@ -8,9 +8,9 @@ return function(theme_variant)
   end
 
   return {
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- nvim-tree
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     NvimTreeIndentMarker = { fg = c.fg_text },
     NvimTreeNormal = { bg = config.nvimtree_transparent_background and c.none or c.nvimtree_bg },
     NvimTreeVertSplit = nil,
@@ -62,9 +62,9 @@ return function(theme_variant)
     -- NvimTreeSymlink = {},
     -- NvimTreeExecFile = {},
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- Telescope
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     TelescopeSelection = { fg = c.telescope_text_sel },
     TelescopeMatching = { fg = c.none, bold = true },
     TelescopeBorder = { fg = c.float_border, bg = config.transparent_background and c.none or c.bg },
@@ -123,9 +123,9 @@ return function(theme_variant)
     -- TelescopeResultsSpecialComment = { fg = c.test_magenta, bg = c.test_green },
     -- TelescopePreviewMessageFillchar = { fg = c.test_magenta, bg = c.test_green },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- Notify
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     NotifyERRORBorder = { fg = c.error },
     NotifyERRORIcon = { fg = c.error },
     NotifyERRORTitle = { fg = c.error },
@@ -147,16 +147,16 @@ return function(theme_variant)
     NotifyTRACETitle = { fg = c.keyword },
     NotifyTRACEBody = { fg = c.fg_text },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- Illuminate
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     IlluminatedWordText = { fg = c.test_yellow, bold = true },
     IlluminatedWordRead = { fg = c.test_green, bold = true },
     IlluminatedWordWrite = { fg = c.error, bold = true },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- Alpha
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     AlphaHeader1 = { fg = c.field },
     AlphaHeader2 = { fg = c.number },
     AlphaHeader3 = { fg = c.type },
@@ -166,9 +166,9 @@ return function(theme_variant)
     AlphaButton = { fg = c.fg_text },
     AlphaButtonShortcut = { fg = c.number },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- indent-blankline
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     IndentBlanklineIndent1 = { fg = c.indent_1 },
     IndentBlanklineIndent2 = { fg = c.indent_2 },
     IndentBlanklineIndent3 = { fg = c.indent_3 },
@@ -177,31 +177,31 @@ return function(theme_variant)
     IndentBlanklineIndent6 = { fg = c.indent_6 },
     IndentBlanklineIndent7 = { fg = c.indent_7 },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- lsp_signature
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     LspSignatureActiveParameter = { fg = c.function_hl, bold = true },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- lspconfig
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     LspInfoTitle = { fg = c.type, bold = true },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- gitsigns
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     GitSignsUntracked = { fg = c.diff_untracked },
     GitSignsUntrackedNr = { fg = c.diff_untracked },
     GitSignsUntrackedLn = { fg = c.diff_untracked },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- symbols-outline
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     SymbolsOutlineConnector = { fg = c.fg_text_dim },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- navic
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     NavicText = { fg = c.navic_fg, bg = c.statusline_navic_bg },
     NavicSeparator = { fg = c.navic_fg, bg = c.statusline_navic_bg },
     NavicIconsBoolean = { fg = c.number, bg = c.statusline_navic_bg },
@@ -231,9 +231,9 @@ return function(theme_variant)
     NavicIconsOperator = { fg = c.none, bg = c.statusline_navic_bg },
     NavicIconsTypeParameter = { fg = c.none, bg = c.statusline_navic_bg },
 
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- cmp
-    -----------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     CmpItemAbbrMatch = { fg = c.type, bold = true },
     CmpItemAbbrMatchFuzzy = { fg = c.number, bold = true },
     CmpItemKind = { fg = c.fg_text_dark, bg = c.fg_text },
@@ -264,9 +264,9 @@ return function(theme_variant)
     CmpItemKindVariable = { fg = c.fg_text_dark, bg = c.variable },
     CmpItemMenu = { fg = c.comment, italic = true },
 
-    ---------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- Lspsaga
-    ---------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- code action
     LspSagaCodeActionTitle = { fg = "#DA8548", bold = true },
     LspSagaCodeActionBorder = { fg = c.float_border },
@@ -348,5 +348,130 @@ return function(theme_variant)
 
     -- all float windows of lspsaga
     LspFloatWinNormal = { link = "Normal" },
+
+    ---------------------------------------------------------------------------
+    -- Vimwiki
+    ---------------------------------------------------------------------------
+    -- Headers
+    VimwikiHeaderChar = { fg = c.tag },
+    VimwikiHeader1 = { fg = c.tag },
+    VimwikiHeader2 = { fg = c.tag },
+    VimwikiHeader3 = { fg = c.tag },
+    VimwikiHeader4 = { fg = c.tag },
+    VimwikiHeader5 = { fg = c.tag },
+    VimwikiHeader6 = { fg = c.tag },
+
+    -- Links
+    VimwikiLink = { fg = c.link },
+    -- VimwikiLinkT = {},
+    -- VimwikiLinkCharT = {},
+    -- VimwikiWikiLink1 = {},
+    -- VimwikiWikiLink1T = {},
+    -- VimwikiNoExistsLink = {},
+    -- VimwikiNoExistsLinkT = {},
+    -- VimwikiNoExistsLinkCharT = {},
+    -- VimwikiWeblink1 = {},
+    -- VimwikiWeblink1T = {},
+    -- VimwikiWeblink1Char = {},
+
+    -- Bold
+    VimwikiBold = { fg = c.bold, bold = true },
+    -- VimwikiBoldT = {},
+    -- VimwikiBoldChar = {},
+    -- VimwikiBoldCharT = {},
+
+    -- Italic
+    VimwikiItalic = { fg = c.italic, italic = true },
+    -- VimwikiItalicT = {},
+    -- VimwikiItalicChar = {},
+    -- VimwikiItalicCharT = {},
+
+    -- Underline
+    -- VimwikiUnderline = {},
+
+    -- Bold Underline
+    -- VimwikiBoldUnderline = {},
+    -- VimwikiUnderlineBold = {},
+
+    -- Bold Italic
+    -- VimwikiBoldItalic = {},
+    -- VimwikiBoldItalicT = {},
+    -- VimwikiBoldItalicChar = {},
+    -- VimwikiBoldItalicCharT = {},
+    -- VimwikiItalicBold = {},
+    -- VimwikiItalicBoldT = {},
+    -- VimwikiItalicBoldChar = {},
+    -- VimwikiItalicBoldCharT = {},
+    -- VimwikiItalicBoldUnderline = {},
+
+    -- Underline Italic
+    -- VimwikiItalicUnderline = {},
+    -- VimwikiUnderlineItalic = {},
+
+    -- Bold Italic Underline
+    -- VimwikiBoldItalicUnderline = {},
+    -- VimwikiBoldUnderlineItalic = {},
+    -- VimwikiItalicUnderlineBold = {},
+    -- VimwikiUnderlineBoldItalic = {},
+    -- VimwikiUnderlineItalicBold = {},
+
+    -- Unsorted
+    -- VimwikiHR = {},
+    -- VimwikiPre = {},
+    -- VimwikiTag = {},
+    -- Vimwikired = {},
+    -- VimwikiCode = {},
+    -- VimwikiEqIn = {},
+    -- VimwikiList = {},
+    -- VimwikiMath = {},
+    -- VimwikiPreT = {},
+    -- VimwikiTodo = {},
+    -- Vimwikiblue = {},
+    -- Vimwikibred = {},
+    -- Vimwikigray = {},
+    -- VimwikiCodeT = {},
+    -- VimwikiEqInT = {},
+    -- VimwikiError = {},
+    -- VimwikiImage = {},
+    -- VimwikiMathT = {},
+    -- Vimwikibblue = {},
+    -- Vimwikibgray = {},
+    -- Vimwikigreen = {},
+    -- VimwikiImageT = {},
+    -- Vimwikibgreen = {},
+    -- Vimwikiorange = {},
+    -- Vimwikipurple = {},
+    -- Vimwikiyellow = {},
+    -- VimwikiComment = {},
+    -- VimwikiDelText = {},
+    -- VimwikiHTMLtag = {},
+    -- VimwikiMarkers = {},
+    -- Vimwikiborange = {},
+    -- Vimwikibpurple = {},
+    -- Vimwikibyellow = {},
+    -- Vimwikidefault = {},
+    -- VimwikiCodeChar = {},
+    -- VimwikiDelTextT = {},
+    -- VimwikiEqInChar = {},
+    -- VimwikiListTodo = {},
+    -- VimwikiPreDelim = {},
+    -- VimwikiCodeCharT = {},
+    -- VimwikiEqInCharT = {},
+    -- VimwikiSubScript = {},
+    -- VimwikiSubScriptT = {},
+    -- VimwikiDelTextChar = {},
+    -- VimwikiHeaderCharT = {},
+    -- VimwikiPlaceholder = {},
+    -- VimwikiSuperScript = {},
+    -- VimwikiCheckBoxDone = {},
+    -- VimwikiDelTextCharT = {},
+    -- VimwikiSuperScriptT = {},
+    -- VimwikiCellSeparator = {},
+    -- VimwikiSubScriptChar = {},
+    -- VimwikiSubScriptCharT = {},
+    -- VimwikiSuperScriptChar = {},
+    -- VimwikiMultilineComment = {},
+    -- VimwikiPlaceholderParam = {},
+    -- VimwikiSuperScriptCharT = {},
   }
 end

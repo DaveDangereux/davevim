@@ -202,5 +202,12 @@ return {
     end,
   },
 
+  -- Vimwiki
+  {
+    "vimwiki/vimwiki",
+    config = function()
+      require("config.vimwiki")
+    end,
+  },
   -- TODO: Add debugger
 }

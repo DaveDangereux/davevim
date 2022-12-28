@@ -40,7 +40,7 @@ local settings = {
     formatting.stylua,
     formatting.eslint_d,
     formatting.prettier.with({
-      disabled_filetypes = { "markdown" },
+      disabled_filetypes = { "markdown", "vimwiki" },
     }),
     formatting.black,
     formatting.stylelint,
