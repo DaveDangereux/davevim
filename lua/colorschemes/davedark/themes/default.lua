@@ -108,7 +108,7 @@ return {
 
   -- nvimtree
   nvimtree_file_open = c.light_moss_green,
-  nvimtree_folder_name = c.rock_blue,
+  nvimtree_folder_name = c.crystal_blue,
   nvimtree_folder_name_open = c.faded_orange,
   nvimtree_special_file = c.faded_orange,
 

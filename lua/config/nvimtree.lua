@@ -38,8 +38,8 @@ local settings = {
     },
   },
   renderer = {
-    highlight_git = true,
-    highlight_opened_files = "none",
+    highlight_git = false,
+    highlight_opened_files = "all",
     indent_markers = {
       enable = true,
     },
