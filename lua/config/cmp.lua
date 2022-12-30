@@ -77,7 +77,7 @@ M.config = function()
         name = "nvim_lsp",
         entry_filter = function(entry, _)
           local entry_type = require("cmp.types").lsp.CompletionItemKind[entry:get_kind()]
-          return entry_type ~= "Text" and entry_type ~= "Snippet"
+          return entry_type ~= "Text"
         end,
       },
       { name = "luasnip", max_item_count = 10 },
