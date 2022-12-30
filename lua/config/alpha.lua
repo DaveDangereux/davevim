@@ -64,7 +64,6 @@ M.config = function()
       button("g", "📚 > Find text", ":Telescope live_grep <CR>"),
       button("c", "🔧 > Config", ":e ~/.config/nvim/lua/user_config.lua <CR>"),
       button("s", "🪛 > Setup", ":NvimTreeOpen <CR> :cd ~/.config/nvim/ <CR>"),
-      button("l", "💾 > LazyGit", ":LazyGit <CR>"),
       button("n", "🗒 > Notes", ":NvimTreeOpen <CR> :cd ~/web-dev/notes/ <CR>"),
       button("q", "🚪 > Quit", ":q <CR>"),
     },

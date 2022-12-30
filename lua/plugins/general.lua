@@ -164,9 +164,6 @@ return {
   -- Editable quickfix window
   { "stefandtw/quickfix-reflector.vim" },
 
-  -- Use lazygit
-  { "kdheepak/lazygit.nvim" },
-
   -- Session management
   {
     "Shatur/neovim-session-manager",
