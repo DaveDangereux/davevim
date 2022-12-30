@@ -38,12 +38,13 @@ local settings = {
     },
   },
   renderer = {
-    highlight_git = false,
+    highlight_git = true,
     highlight_opened_files = "none",
     indent_markers = {
       enable = true,
     },
     icons = {
+      git_placement = "after",
       glyphs = {
         default = "",
         symlink = "",
@@ -79,13 +80,14 @@ local settings = {
       info = "",
       hint = "",
     },
-    show_on_dirs = true,
+    show_on_dirs = false,
   },
   filters = {
     dotfiles = true,
   },
   git = {
     ignore = true,
+    show_on_open_dirs = false,
   },
   actions = {
     use_system_clipboard = true,
