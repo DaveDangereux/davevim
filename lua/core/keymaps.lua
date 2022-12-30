@@ -139,9 +139,13 @@ local keymaps = {
     -- Undotree
     ["<Leader>u"] = ":UndotreeToggle <CR>",
 
-    -- Easier fold deletion
-    ["ZD"] = "zD",
-    ["ZE"] = "zE",
+    -- Easier fold manipulation
+    ["ZR"] = "zR", -- open all folds
+    ["ZM"] = "zM", -- close all folds
+    ["ZD"] = "zD", -- delete all folds recursively at cursor
+    ["ZE"] = "zE", -- eliminate all folds
+    ["ZA"] = "zA", -- toggle fold recursively
+    ["ZN"] = "zN", -- fold normal
 
     ["<F5>"] = function()
       vim.cmd("colorscheme " .. vim.g.colors_name)

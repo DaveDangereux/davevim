@@ -39,9 +39,13 @@ local options = {
   scrolloff = 8, -- minimal number of lines to keep above / below cursor
   sidescrolloff = 8, -- minimal number of lines to keep left / right of cursor
 
+  -- folding
+  foldmethod = "syntax",
+  foldcolumn = "0",
+  foldlevelstart = 5,
+
   -- columns
   signcolumn = "yes",
-  foldcolumn = "2",
 
   -- windows
   splitbelow = true,
