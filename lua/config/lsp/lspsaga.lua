@@ -2,7 +2,7 @@ local M = {}
 
 local settings = {
   border_style = "rounded",
-  preview_lines_above = 3,
+  preview_lines_above = 2,
   max_preview_lines = 30,
   code_action_lightbulb = {
     enable = false,
