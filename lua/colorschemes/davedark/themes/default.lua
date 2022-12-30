@@ -98,7 +98,7 @@ return {
   hint = c.green_snake,
 
   -- diff
-  diff_add = c.diff_add,
+  diff_add = c.light_moss_green,
   diff_change = c.faded_orange,
   diff_delete = c.light_carmine_pink,
   diff_untracked = c.crystal_blue,
