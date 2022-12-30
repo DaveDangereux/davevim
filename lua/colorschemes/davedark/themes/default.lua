@@ -4,98 +4,65 @@ local c = {
   -- Neutral
   black = "#000000",
   cinder = "#0D1114",
-  cinder_light = "#101519",
   mirage = "#141a1f",
-  mirage_light = "#151c21",
-  dark = "#19232d",
   cloud_burst = "#21284e",
-  rhino_dim = "#343e78",
-  waikawa_gray = "#5974a5",
-  cadet_grey = "#90a4ae",
-  rock_blue = "#9faeca",
-  pastel_grey = "#cccccc",
-  half_dutch_white = "#fff8dc",
-
-  -- Rainbow bright
-  light_carmine_pink = "#ed5e6a",
-  rose_madder = "#e72333",
-  dark_orange = "#ff8c00",
-  sand = "#f0c36f",
-  test_yellow = "#ffff00",
-  rubber_ducky_yellow = "#ffd700",
-  spring_green = "#7cf800",
-  test_green = "#00ff00",
-  test_cyan = "#00ffff",
-  jellyfish = "#45c2d3",
-  butterfly_blue = "#24adff",
-  test_magenta = "#ff00ff",
-
-  -- Rainbow dark
-  brownish_orange = "#d27a27",
-  crystal_blue = "#54b0fc",
-  peacock_blue = "#156799",
   rhino = "#2e4d6b",
-  dark_blue_grey = "#20354b",
+  waikawa_gray = "#5974a5",
+  rock_blue = "#9faeca",
+  white = "#ffffff",
 
-  -- Rainbow desaturated
-  orchid = "#da70d6",
-  coral_pink = "#fa8072",
+  -- Rainbow
+  light_carmine_pink = "#ed5e6a",
   faded_orange = "#e09956",
+  sand = "#f0c36f",
   light_moss_green = "#95d16a",
-  green_snake = "#73c23b",
-  day_sky_blue = "#87cefa",
+  jellyfish = "#45c2d3",
+  crystal_blue = "#54b0fc",
   light_purple = "#cc6be9",
+
+  -- Test colours
+  green = "#00ff00",
+  magenta = "#ff00ff",
 }
 
 return {
   -- fg
   fg = c.rock_blue,
-  fg_text_dim = c.rhino,
-  fg_text_dark = c.cinder,
+  fg_dim = c.rhino,
+  fg_dark = c.cinder,
 
   -- bg
   bg = c.mirage,
-  bg_cursorline = c.dark_blue_grey,
-  bg_matchparen = c.dark_blue_grey,
-  bg_term = c.cinder_light,
-  bg_search = c.rhino,
   bg_visual = c.rhino,
+  bg_fold = c.cinder,
 
   -- borders
-  winseparator = c.cinder_light,
+  winseparator = c.cinder,
   float_border = c.sand,
 
   -- pmenu
   pmenu_bg = c.mirage,
-  pmenu_sel_bg = c.pastel_grey,
-  pmenu_scrollbar = c.cinder_light,
-
-  -- folds
-  fold_fg = c.waikawa_gray,
-  fold_bg = c.cinder_light,
+  pmenu_scrollbar = c.cinder,
 
   -- telescope
   telescope_text_sel = c.jellyfish,
 
   -- bufferline
-  bufferline_buf_sel_bg = c.rhino_dim,
-  bufferline_buf_vis_bg = c.cloud_burst,
-  bufferline_buf_inactive_bg = c.cinder,
-  bufferline_buf_sep_fg = config.transparent_background and c.black or c.none,
-  bufferline_text_dup_sel = c.butterfly_blue,
-  bufferline_text_dup_vis = c.peacock_blue,
+  bufferline_bg_buf_sel = c.rhino,
+  bufferline_bg_buf_vis = c.rhino,
+  bufferline_bg_buf_inactive = c.cloud_burst,
+  bufferline_fg_buf_sep = config.transparent_background and c.black or c.none,
 
   -- statusline
   statusline_bg = c.cinder,
-  statusline_tab_bg = c.dark_blue_grey,
-  statusline_alt_bg = c.jellyfish,
-  statusline_navic_bg = c.dark,
+  statusline_bg_tab = c.cloud_burst,
+  statusline_bg_alt = c.jellyfish,
 
   -- diagnostics
-  error = c.rose_madder,
-  warn = c.brownish_orange,
-  info = c.butterfly_blue,
-  hint = c.green_snake,
+  error = c.light_carmine_pink,
+  warn = c.faded_orange,
+  info = c.crystal_blue,
+  hint = c.light_moss_green,
 
   -- diff
   diff_add = c.light_moss_green,
@@ -105,7 +72,7 @@ return {
 
   -- syntax
   attribute = c.faded_orange,
-  boolean = c.test_green,
+  boolean = c.faded_orange,
   comment = c.waikawa_gray,
   constant = c.faded_orange,
   exception = c.jellyfish,
@@ -118,7 +85,6 @@ return {
   property = c.rock_blue,
   string = c.light_moss_green,
   tag = c.light_carmine_pink,
-  todo = c.rock_blue,
   type = c.sand,
   type_builtin = c.jellyfish,
   variable = c.light_carmine_pink,
@@ -132,27 +98,29 @@ return {
   file = c.crystal_blue,
 
   -- indents and brackets
-  indent_1 = c.rubber_ducky_yellow,
-  indent_2 = c.orchid,
-  indent_3 = c.day_sky_blue,
-  indent_4 = c.coral_pink,
-  indent_5 = c.spring_green,
-  indent_6 = c.dark_orange,
-  indent_7 = c.half_dutch_white,
+  indent_1 = c.sand,
+  indent_2 = c.light_purple,
+  indent_3 = c.crystal_blue,
+  indent_4 = c.light_carmine_pink,
+  indent_5 = c.light_moss_green,
+  indent_6 = c.faded_orange,
+  indent_7 = c.white,
 
   -- nvimtree
-  nvimtree_bg = c.mirage_light,
-  nvimtree_folder = c.cadet_grey,
-  nvimtree_folder_name = c.butterfly_blue,
-  nvimtree_folder_name_open = c.light_purple,
+  nvimtree_file_open = c.light_moss_green,
+  nvimtree_folder_name = c.rock_blue,
+  nvimtree_folder_name_open = c.faded_orange,
   nvimtree_special_file = c.faded_orange,
+
+  -- illuminate
+  illuminate_text = c.sand,
+  illuminate_read = c.light_moss_green,
+  illuminate_write = c.light_carmine_pink,
 
   -- utility
   none = "none",
 
   -- test
-  test_magenta = c.test_magenta,
-  test_cyan = c.test_cyan,
-  test_green = c.test_green,
-  test_yellow = c.test_yellow,
+  test_fg = c.magenta,
+  test_bg = c.green,
 }

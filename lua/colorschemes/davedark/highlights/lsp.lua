@@ -41,12 +41,5 @@ return function(theme_variant)
     DiagnosticUnderlineHint = { sp = c.hint },
     DiagnosticFloatingHint = { fg = c.hint },
     DiagnosticVirtualTextHint = { fg = c.comment },
-
-    ---------------------------------------------------------
-    -- TODO: Find out what these do
-    ---------------------------------------------------------
-    DiagnosticMap = {},
-    DiagnosticLineCol = {},
-    DiagnosticQuickFix = {},
   }
 end

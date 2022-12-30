@@ -83,8 +83,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   },
   callback = function()
     utils.clear_packages_recursively("colorschemes.davedark")
-    vim.cmd("colorscheme davedark")
+    utils.clear_packages_recursively("config.feline")
     require("config.feline").config()
+    vim.cmd("colorscheme davedark")
     -- NOTE: Autocommands can't call other autocommands, so to get BufferLine
     -- to correctly reload highlights using its own autocommand requires the
     -- colorscheme to be changed manually as well

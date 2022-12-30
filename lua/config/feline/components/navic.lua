@@ -7,7 +7,7 @@ return {
     -- to navic. Not sure who's to blame - navic or vim
     package.loaded["colorschemes.davedark.themes.default"] = nil
     local c = require("colorschemes.davedark.themes.default")
-    vim.cmd("hi StatusComponent_D0D0D0_1F1F23_NONE guibg=" .. c.statusline_navic_bg)
+    vim.cmd("hi StatusComponent_D0D0D0_1F1F23_NONE guibg=" .. c.statusline_bg_tab)
     return navic.is_available() and navic.get_location() ~= "" and string.format(" %s", navic.get_location()) or ""
   end,
   left_sep = {
