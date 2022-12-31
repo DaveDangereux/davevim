@@ -77,35 +77,27 @@ local highlights = {
     bg = c.bufferline_bg_buf_vis,
   },
   hint_visible = {
-    -- fg = c.hint,
     bg = c.bufferline_bg_buf_vis,
   },
   hint_diagnostic_visible = {
-    -- fg = c.hint,
     bg = c.bufferline_bg_buf_vis,
   },
   info_visible = {
-    -- fg = c.info,
     bg = c.bufferline_bg_buf_vis,
   },
   info_diagnostic_visible = {
-    -- fg = c.info,
     bg = c.bufferline_bg_buf_vis,
   },
   warning_visible = {
-    -- fg = c.warn,
     bg = c.bufferline_bg_buf_vis,
   },
   warning_diagnostic_visible = {
-    -- fg = c.warn,
     bg = c.bufferline_bg_buf_vis,
   },
   error_visible = {
-    -- fg = c.error,
     bg = c.bufferline_bg_buf_vis,
   },
   error_diagnostic_visible = {
-    -- fg = c.error,
     bg = c.bufferline_bg_buf_vis,
   },
   modified_visible = {
