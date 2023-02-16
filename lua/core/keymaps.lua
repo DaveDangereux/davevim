@@ -159,7 +159,7 @@ local keymaps = {
 
     -- Useful folders
     -- TODO: Update absolute directory paths with dynamic platform-independent variables
-    ["<Leader><S-n>"] = ":NvimTreeOpen <CR> :cd ~/web-dev/notes/ <CR>",
+    ["<Leader><S-n>"] = ":NvimTreeOpen <CR> :cd ~/dev/notes/ <CR>",
     ["<Leader><S-s>"] = ":NvimTreeOpen <CR> :cd ~/.config/nvim/ <CR>",
 
     --------------------------------------------------------------------------
