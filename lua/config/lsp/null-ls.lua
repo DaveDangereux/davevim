@@ -45,7 +45,13 @@ local settings = {
     formatting.black,
     formatting.stylelint,
     diagnostics.twigcs,
-    diagnostics.stylelint,
+    diagnostics.stylelint.with({
+      extra_args = function()
+        if config.use_stylelint_default_config then
+          return { "--config=" .. config.stylelint_default_config_location }
+        end
+      end,
+    }),
     require("typescript.extensions.null-ls.code-actions"),
   },
 }
