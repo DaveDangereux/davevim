@@ -102,6 +102,8 @@ local settings = {
       keymaps = {
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
+        ["ac"] = "@call.outer",
+        ["ic"] = "@call.inner",
       },
     },
   },
