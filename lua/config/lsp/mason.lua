@@ -124,6 +124,23 @@ M.config = function()
         },
       })
     end,
+
+    --------------------------------------------------------------------------
+    -- cssls
+    --------------------------------------------------------------------------
+    ["cssls"] = function(server_name)
+      require("lspconfig")[server_name].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = {
+          css = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+        },
+      })
+    end,
   })
 end
 
