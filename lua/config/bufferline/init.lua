@@ -1,4 +1,5 @@
 local M = {}
+local c = require("colorschemes.davedark.themes.default")
 
 M.config = function()
   local settings = {
@@ -29,19 +30,19 @@ M.config = function()
           local hint = #vim.diagnostic.get(0, { severity = seve.HINT })
 
           if error ~= 0 then
-            table.insert(result, { text = "  " .. error, guifg = "#EC5241" })
+            table.insert(result, { text = "  " .. error, fg = c.error })
           end
 
           if warning ~= 0 then
-            table.insert(result, { text = "  " .. warning, guifg = "#EFB839" })
+            table.insert(result, { text = "  " .. warning, fg = c.warn })
           end
 
           if hint ~= 0 then
-            table.insert(result, { text = "  " .. hint, guifg = "#A3BA5E" })
+            table.insert(result, { text = "  " .. hint, fg = c.hint })
           end
 
           if info ~= 0 then
-            table.insert(result, { text = "  " .. info, guifg = "#7EA9A7" })
+            table.insert(result, { text = "  " .. info, fg = c.info })
           end
           return result
         end,
