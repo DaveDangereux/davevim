@@ -44,7 +44,7 @@ return function(theme_variant)
     Exception = { link = "Statement" },
     Float = { link = "Number" },
     Function = { fg = c.function_hl },
-    Identifier = { fg = c.none },
+    Identifier = { fg = c.fg },
     Include = { fg = c.keyword },
     Keyword = { fg = c.keyword },
     Label = { fg = c.tag },
@@ -63,7 +63,7 @@ return function(theme_variant)
     Tag = { fg = c.tag },
     Title = { fg = c.fg },
     Todo = { fg = c.none, bg = config.transparent_background and c.none or c.bg }, -- doesn't affect the fg?
-    Type = { fg = c.type },
+    Type = { fg = c.none },
     TypeDef = { link = "Type" },
     Underlined = { fg = c.function_hl, bold = true, underline = true },
 

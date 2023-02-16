@@ -59,10 +59,6 @@ return function(theme_variant)
     ["@type.definition"] = { link = "TypeDef" },
     ["@variable"] = { fg = c.variable },
 
-    -- TODO:
-    -- -- Highlight @foo.bar as "Identifier" only in Lua files
-    -- vim.api.nvim_set_hl(0, "@foo.bar.lua", { link = "Identifier" })
-
     -----------------------------------------------------------------------------
     -- File-specific mods
     -----------------------------------------------------------------------------
@@ -73,6 +69,11 @@ return function(theme_variant)
     -- html
     ["@constant.html"] = {},
     ["@tag.delimiter.html"] = { fg = c.fg },
+
+    -- css
+    ["@string.css"] = {},
+    ["@property.css"] = {},
+    ["@type.css"] = {},
 
     -- javascript
     -- ["@constructor.javascript"] = {},
@@ -85,6 +86,7 @@ return function(theme_variant)
     -- tsx
     ["@constructor.tsx"] = {},
     ["@include.tsx"] = {},
+    ["@property.tsx"] = {},
     ["@variable.tsx"] = {},
     ["@tag.tsx"] = {},
     ["@type.tsx"] = {},

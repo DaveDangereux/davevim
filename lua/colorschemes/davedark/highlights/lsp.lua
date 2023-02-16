@@ -38,7 +38,7 @@ return function(theme_variant)
     ---------------------------------------------------------
     DiagnosticHint = { fg = c.hint },
     DiagnosticSignHint = { fg = c.hint },
-    DiagnosticUnderlineHint = { sp = c.hint },
+    DiagnosticUnderlineHint = { underline = true, sp = c.hint },
     DiagnosticFloatingHint = { fg = c.hint },
     DiagnosticVirtualTextHint = { fg = c.comment },
   }
