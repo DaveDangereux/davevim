@@ -151,6 +151,9 @@ local keymaps = {
       vim.cmd("colorscheme " .. vim.g.colors_name)
     end,
 
+    -- Use null register for x to avoid overwriting yannked text
+    ["x"] = [["_x]],
+
     --------------------------------------------------------------------------
     -- NvimTree
     --------------------------------------------------------------------------
@@ -229,6 +232,7 @@ local keymaps = {
     -- Toggleterm
     --------------------------------------------------------------------------
     ["<Leader>#"] = ":ToggleTerm direction=vertical <CR>",
+    ["<Leader>`"] = ":ToggleTerm direction=horizontal <CR>",
     ["<Leader>t"] = ":ToggleTerm direction=float <CR>",
     ["<Leader>~"] = ":ToggleTermToggleAll <CR>",
 
@@ -317,7 +321,7 @@ local keymaps = {
     ["<C-j>"] = [[<C-\><C-n><C-W>j]],
     ["<C-k>"] = [[<C-\><C-n><C-W>k]],
     ["<C-l>"] = [[<C-\><C-n><C-W>l]],
-    ["<C-w>"] = [[<C-\><C-n> :clo <CR>]],
+    -- ["<C-w>"] = [[<C-\><C-n> :clo <CR>]],
   },
 }
 
@@ -337,7 +341,7 @@ local gitsigns_keymaps = {
     ["<Leader>gu"] = ":Gitsigns undo_stage_hunk <CR>",
     ["<Leader>gp"] = ":Gitsigns preview_hunk <CR>",
     ["<Leader>GP"] = ":Gitsigns preview_hunk_inline <CR>",
-    ["<Leader>gt"] = ":Gitsigns toggle_current_line_blame <CR>",
+    ["<Leader>gb"] = ":Gitsigns toggle_current_line_blame <CR>",
     ["<Leader>gd"] = ":Gitsigns diffthis <CR>",
   },
 }
