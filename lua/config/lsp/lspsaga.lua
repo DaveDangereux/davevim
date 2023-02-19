@@ -29,7 +29,7 @@ M.config = function()
     return
   end
 
-  lspsaga.init_lsp_saga(settings)
+  lspsaga.setup(settings)
 end
 
 return M
