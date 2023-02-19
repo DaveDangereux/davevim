@@ -4,7 +4,7 @@ local settings = {
   border_style = "rounded",
   preview_lines_above = 2,
   max_preview_lines = 30,
-  code_action_lightbulb = {
+  lightbulb = {
     enable = false,
     sign = false,
     virtual_text = false,
@@ -19,6 +19,9 @@ local settings = {
   show_outline = {
     win_position = "right",
     win_width = 60,
+  },
+  symbol_in_winbar = {
+    enable = false,
   },
 }
 
