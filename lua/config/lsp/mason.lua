@@ -80,9 +80,9 @@ M.config = function()
     end,
 
     --------------------------------------------------------------------------
-    -- sumneko_lua
+    -- lua_ls
     --------------------------------------------------------------------------
-    ["sumneko_lua"] = function(server_name)
+    ["lua_ls"] = function(server_name)
       require("lspconfig")[server_name].setup({
         capabilities = capabilities,
         on_attach = on_attach,
