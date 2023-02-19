@@ -1,5 +1,9 @@
 local M = {}
 
+local mason_lspconfig_options = {
+  automatic_installation = true,
+}
+
 M.config = function()
   -- Protected calls
   local mason_status_ok, mason = pcall(require, "mason")
@@ -51,7 +55,7 @@ M.config = function()
   local capabilities = cmp_nvim_lsp.default_capabilities()
 
   mason.setup()
-  mason_lspconfig.setup({ automatic_installation = true })
+  mason_lspconfig.setup(mason_lspconfig_options)
   mason_null_ls.setup({ automatic_installation = true })
   require("config.lsp.diagnostic-config")()
 
