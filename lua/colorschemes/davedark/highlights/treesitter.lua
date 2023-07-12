@@ -15,9 +15,9 @@ return function(theme_variant)
     ["@comment"] = { link = "Comment" },
     ["@conditional"] = { link = "Conditional" },
     ["@constant"] = { link = "Constant" },
-    ["@constant.builtin"] = { fg = c.test_fg },
+    ["@constant.builtin"] = { fg = c.constant },
     ["@constant.macro"] = { link = "Define" },
-    ["@constructor"] = { link = "Special" },
+    ["@constructor"] = {},
     ["@debug"] = { link = "Debug" },
     ["@define"] = { link = "Define" },
     ["@exception"] = { link = "Exception" },
@@ -32,7 +32,7 @@ return function(theme_variant)
     ["@label"] = { link = "Label" },
     ["@macro"] = { link = "Macro" },
     ["@namespace"] = { link = "Identifier" },
-    ["@method"] = { fg = c.none },
+    ["@method"] = { fg = c.function_hl },
     ["@number"] = { link = "Number" },
     ["@operator"] = { link = "Operator" },
     ["@parameter"] = { link = "Identifier" },
@@ -75,27 +75,19 @@ return function(theme_variant)
     ["@property.css"] = {},
     ["@type.css"] = {},
 
-    -- javascript
-    -- ["@constructor.javascript"] = {},
-    ["@variable.javascript"] = {},
-
-    -- typescript
-    ["@type.typescript"] = {},
-    ["@variable.typescript"] = { fg = c.constant },
-
     -- tsx
-    ["@constructor.tsx"] = {},
-    ["@include.tsx"] = {},
-    ["@property.tsx"] = {},
-    ["@variable.tsx"] = {},
+    -- ["@constructor.tsx"] = {},
+    -- ["@include.tsx"] = {},
+    -- ["@property.tsx"] = {},
     ["@tag.tsx"] = {},
-    ["@type.tsx"] = {},
-    ["@tag.attribute.tsx"] = {},
-
-    -- python
-    ["@variable.python"] = {},
+    -- ["@type.tsx"] = {},
+    -- ["@tag.attribute.tsx"] = {},
 
     -- lua
     -- ["@field.lua"] = {},
+
+    -- prisma
+    ["@function.prisma"] = {},
+    ["@property.prisma"] = {},
   }
 end

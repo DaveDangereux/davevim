@@ -12,6 +12,18 @@ local completion = null_ls.builtins.completion
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
+local lsp_formatting = function(bufnr)
+  if config.format_on_save then
+    vim.lsp.buf.format({
+      timeout_ms = 40000,
+      filter = function(client)
+        return client.name == "null-ls"
+      end,
+      bufnr = bufnr,
+    })
+  end
+end
+
 local lsp_formatting_augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local settings = {
@@ -24,9 +36,7 @@ local settings = {
         group = lsp_formatting_augroup,
         buffer = bufnr,
         callback = function()
-          if config.format_on_save then
-            vim.lsp.buf.format()
-          end
+          lsp_formatting(bufnr)
         end,
       })
     end
@@ -34,17 +44,21 @@ local settings = {
   sources = {
     code_actions.eslint,
     code_actions.gitsigns,
+
     completion.luasnip.with({
       filetypes = { "lua" },
     }),
+
     formatting.stylua,
     formatting.eslint_d,
-    formatting.prettier.with({
+    formatting.prettierd.with({
       disabled_filetypes = { "markdown", "vimwiki" },
     }),
     formatting.black,
     formatting.stylelint,
-    diagnostics.twigcs,
+    formatting.autopep8,
+
+    -- diagnostics.twigcs,
     diagnostics.stylelint.with({
       extra_args = function()
         if config.use_stylelint_default_config then
@@ -52,13 +66,15 @@ local settings = {
         end
       end,
     }),
+
     require("typescript.extensions.null-ls.code-actions"),
   },
 }
 
 M.config = function()
   null_ls.setup(settings)
-  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+  -- Why is this here?
+  -- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
 return M

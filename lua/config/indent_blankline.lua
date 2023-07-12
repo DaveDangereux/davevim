@@ -18,8 +18,12 @@ local settings = {
     -- "Trouble",
     -- "checkhealth",
   },
-  char = "",
+  char = "▏",
+  char_highlight_list = {
+    "IndentBlanklineIndent",
+  },
   show_current_context = true,
+  -- show_current_context_start = true,
   context_char = "▏",
   context_highlight_list = {
     "IndentBlanklineIndent1",

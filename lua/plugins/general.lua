@@ -206,5 +206,18 @@ return {
       require("config.vimwiki")
     end,
   },
+
+  -- Prisma file detection and syntax highlighting
+  {
+    "prisma/vim-prisma",
+  },
   -- TODO: Add debugger
+
+  -- Pretty hover
+  {
+    "Fildo7525/pretty_hover",
+    config = function()
+      require("pretty_hover").setup()
+    end,
+  },
 }

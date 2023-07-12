@@ -6,6 +6,24 @@ return function(theme_variant)
   end
 
   return {
+    ["@lsp.type.class"] = {},
+    ["@lsp.type.decorator"] = {},
+    ["@lsp.type.enum"] = {},
+    ["@lsp.type.enumMember"] = {},
+    ["@lsp.type.function"] = {},
+    ["@lsp.type.interface"] = {},
+    ["@lsp.type.macro"] = {},
+    ["@lsp.type.method"] = { fg = c.function_hl },
+    ["@lsp.type.member"] = {},
+    ["@lsp.type.namespace"] = {},
+    ["@lsp.type.parameter"] = { fg = c.parameter },
+    ["@lsp.type.property"] = { fg = c.parameter },
+    ["@lsp.type.struct"] = {},
+    ["@lsp.type.type"] = { fg = c.type },
+    ["@lsp.type.typeParameter"] = {},
+    ["@lsp.type.variable"] = { fg = c.variable },
+    ["@lsp.typemod.function.readonly"] = { fg = c.function_hl },
+    ["@lsp.typemod.variable.readonly"] = { fg = c.constant },
     ---------------------------------------------------------
     -- Error
     ---------------------------------------------------------

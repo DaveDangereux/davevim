@@ -90,7 +90,7 @@ M.config = function()
       comparators = cmp.config.compare,
     },
     experimental = {
-      ghost_text = true,
+      ghost_text = false,
       native_menu = false,
     },
     window = {
@@ -118,27 +118,33 @@ M.config = function()
           cmdline = "Cmdline",
         }
         local duplicates = {
-          buffer = 1,
-          path = 1,
+          buffer = 0, -- was 1
+          path = 0, -- was 1
           nvim_lsp = 0,
-          luasnip = 1,
+          luasnip = 0, -- was 1
         }
         local duplicates_default = 0
 
-        local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-        local strings = vim.split(kind.kind, "%s", { trimempty = true })
-        kind.kind = " " .. strings[1] .. " "
+        local lspkind_vim_item = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+
+        -- Hack to fix missing TypeParameter icon
+        if string.match(lspkind_vim_item.kind, "TypeParameter") then
+          lspkind_vim_item.kind = " TypeParameter"
+        end
+
+        local strings = vim.split(lspkind_vim_item.kind, "%s", { trimempty = true })
+        lspkind_vim_item.kind = " " .. strings[1] .. " "
 
         local source_name = source_names[entry.source.name]
         if not source_name then
           print("No source_name for " .. entry.source.name)
         else
-          kind.menu = "    (" .. strings[2] .. ", " .. source_names[entry.source.name] .. ")"
+          lspkind_vim_item.menu = "    (" .. strings[2] .. ", " .. source_names[entry.source.name] .. ")"
         end
 
-        kind.dup = duplicates[entry.source.name] or duplicates_default
+        lspkind_vim_item.dup = duplicates[entry.source.name] or duplicates_default
 
-        return kind
+        return lspkind_vim_item
       end,
     },
   }

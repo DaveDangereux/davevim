@@ -25,10 +25,16 @@ return {
   -- Enhanced UI for LSP experience
   {
     "glepnir/lspsaga.nvim",
+    opt = true,
+    branch = "main",
+    event = "LspAttach",
     config = function()
       require("config.lsp.lspsaga").config()
     end,
-    branch = "main",
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
   },
 
   -- Improved breadcrumbs for status line

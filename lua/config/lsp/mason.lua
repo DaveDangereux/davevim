@@ -5,36 +5,9 @@ local mason_lspconfig_options = {
 }
 
 M.config = function()
-  -- Protected calls
-  local mason_status_ok, mason = pcall(require, "mason")
-  if not mason_status_ok then
-    print("Failed to require mason")
-    return
-  end
-
-  local mason_lspconfig_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-  if not mason_lspconfig_status_ok then
-    print("Failed to require mason-lspconfig")
-    return
-  end
-
-  local mason_null_ls_status_ok, mason_null_ls = pcall(require, "mason-null-ls")
-  if not mason_null_ls_status_ok then
-    print("Failed to require mason-null-ls")
-    return
-  end
-
-  local cmp_nvim_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-  if not cmp_nvim_lsp_status_ok then
-    print("Failed to require cmp_nvim_lsp")
-    return
-  end
-
-  local typescript_status_ok, typescript = pcall(require, "typescript")
-  if not typescript_status_ok then
-    return
-  end
-
+  ----------------------------------------------------------------------------
+  -- on_attach
+  ----------------------------------------------------------------------------
   local on_attach = function(client, bufnr)
     if client.server_capabilities.documentSymbolProvider then
       require("nvim-navic").attach(client, bufnr)
@@ -52,13 +25,18 @@ M.config = function()
     -- end
   end
 
-  local capabilities = cmp_nvim_lsp.default_capabilities()
+  ----------------------------------------------------------------------------
+  -- Setup
+  ----------------------------------------------------------------------------
+  require("mason").setup()
 
-  mason.setup()
+  local mason_lspconfig = require("mason-lspconfig")
   mason_lspconfig.setup(mason_lspconfig_options)
-  mason_null_ls.setup({ automatic_installation = true })
+
+  require("mason-null-ls").setup({ automatic_installation = true })
   require("config.lsp.diagnostic-config")()
 
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
   mason_lspconfig.setup_handlers({
     --------------------------------------------------------------------------
     -- Generic handler
@@ -71,7 +49,7 @@ M.config = function()
     end,
 
     ["tsserver"] = function()
-      typescript.setup({
+      require("typescript").setup({
         server = {
           capabilities = capabilities,
           on_attach = on_attach,
@@ -140,6 +118,23 @@ M.config = function()
           css = {
             lint = {
               unknownAtRules = "ignore",
+            },
+          },
+        },
+      })
+    end,
+
+    --------------------------------------------------------------------------
+    -- pylsp
+    --------------------------------------------------------------------------
+    ["pylsp"] = function(server_name)
+      require("lspconfig")[server_name].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = {
+          pylsp = {
+            plugins = {
+              pyflakes = { enabled = false },
             },
           },
         },

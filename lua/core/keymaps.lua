@@ -55,7 +55,7 @@ local keymaps = {
     ["<Leader>C"] = ":qa <CR>",
 
     -- Formatting
-    ["<Leader><S-f>"] = ":lua vim.lsp.buf.format({ async = true }) <CR>",
+    ["<Leader><S-f>"] = ":lua vim.lsp.buf.format({ timeout_ms = 4000 }) <CR>",
 
     -- Open a Quickfix window for the last search
     ["<Leader>/"] = function()
@@ -77,7 +77,8 @@ local keymaps = {
     ["S"] = "i<CR><Esc>k$",
 
     -- Reveal highlighting under cursor
-    ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]],
+    -- ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]],
+    ["<F6>"] = ":Inspect <CR>",
 
     -- Quickfix list
     ["]q"] = ":cnext <CR>",
@@ -164,6 +165,7 @@ local keymaps = {
     -- TODO: Update absolute directory paths with dynamic platform-independent variables
     ["<Leader><S-n>"] = ":NvimTreeOpen <CR> :cd ~/dev/notes/ <CR>",
     ["<Leader><S-s>"] = ":NvimTreeOpen <CR> :cd ~/.config/nvim/ <CR>",
+    ["<Leader><S-q>"] = ":NvimTreeOpen <CR> :cd ~/.config/qtile/ <CR>",
 
     --------------------------------------------------------------------------
     -- ZenMode
@@ -246,6 +248,16 @@ local keymaps = {
     -- Illuminate
     --------------------------------------------------------------------------
     ["<Leader>i"] = ":IlluminateToggle <CR>",
+
+    --------------------------------------------------------------------------
+    -- Illuminate
+    --------------------------------------------------------------------------
+    ["<Leader>wx"] = ":VimwikiToggleListItem <CR>",
+
+    --------------------------------------------------------------------------
+    -- Illuminate
+    --------------------------------------------------------------------------
+    ["K"] = ":lua require('pretty_hover').hover() <CR>",
   },
 
   ----------------------------------------------------------------------------
@@ -349,16 +361,18 @@ local gitsigns_keymaps = {
 -- LSP
 local lsp_keymaps = {
   normal_mode = {
+    ["]d"] = ":Lspsaga diagnostic_jump_next <CR>",
+    ["[d"] = ":Lspsaga diagnostic_jump_prev <CR>",
     ["gl"] = ":Lspsaga show_line_diagnostics <CR>",
-    ["[e"] = ":Lspsaga diagnostic_jump_prev <CR>",
-    ["]e"] = ":Lspsaga diagnostic_jump_next <CR>",
-    ["gd"] = ":Lspsaga peek_definition <CR>",
     ["gr"] = ":Lspsaga lsp_finder <CR>",
-    ["GR"] = ":lua vim.lsp.buf.references() <CR>",
-    ["K"] = ":Lspsaga hover_doc <CR>",
-    ["<Leader>a"] = ":Lspsaga code_action <CR>",
-    ["GD"] = ":lua vim.lsp.buf.declaration() <CR>",
+    ["gd"] = ":Lspsaga goto_definition <CR>",
+    ["gp"] = ":Lspsaga peek_definition <CR>",
+    ["gc"] = ":lua vim.lsp.buf.declaration() <CR>",
     ["gi"] = ":lua vim.lsp.buf.implementation() <CR>",
+    ["gic"] = ":Lspsaga incoming_calls <CR>",
+    ["goc"] = ":Lspsaga outgoing_calls <CR>",
+    -- ["K"] = ":Lspsaga hover_doc ++quiet <CR>",
+    ["gca"] = ":Lspsaga code_action <CR>",
     ["go"] = ":SymbolsOutline <CR>",
     -- TODO: Make this focus the outline if it's not the active buffer
     ["<F2>"] = ":Lspsaga rename <CR>",

@@ -172,15 +172,17 @@ local highlights = {
   tab = {
     bg = c.bufferline_bg_buf_inactive,
   },
-  tab_separator = {
-    fg = c.bufferline_bg_buf_inactive,
-  },
   tab_selected = {
     fg = c.fg,
     bg = c.bufferline_bg_buf_sel,
   },
+  tab_separator = {
+    fg = c.bufferline_fg_buf_sep,
+    bg = c.bufferline_bg_buf_inactive,
+  },
   tab_separator_selected = {
-    fg = c.bufferline_bg_buf_sel,
+    fg = c.bufferline_fg_buf_sep,
+    bg = c.bufferline_bg_buf_sel,
   },
 }
 

@@ -15,13 +15,10 @@ return {
     -- Config in config/treesitter.lua
   },
 
-  -- Autotag
+  -- Auto-close and auto-rename html tags
   {
     "windwp/nvim-ts-autotag",
     requires = { { "nvim-treesitter/nvim-treesitter" } },
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
   },
 
   -- Playground (required for TSHighlightCapturesUnderCursor)

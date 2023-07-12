@@ -82,6 +82,7 @@ return {
   keyword = c.light_purple,
   number = c.faded_orange,
   operator = c.jellyfish,
+  parameter = c.fg,
   property = c.rock_blue,
   string = c.light_moss_green,
   tag = c.light_carmine_pink,
@@ -98,6 +99,7 @@ return {
   file = c.crystal_blue,
 
   -- indents and brackets
+  indent = c.mirage,
   indent_1 = c.sand,
   indent_2 = c.light_purple,
   indent_3 = c.crystal_blue,

@@ -12,7 +12,7 @@ end
 local settings = {
   window = {
     height = 0.9,
-    width = 90,
+    width = 100,
     options = {},
   },
   plugins = {

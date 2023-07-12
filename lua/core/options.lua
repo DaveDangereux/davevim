@@ -27,13 +27,13 @@ local options = {
   -- search
   ignorecase = true, -- ignore case while searching
   smartcase = true, -- resume search case sensitivity if term includes capitals
-  incsearch = true, -- enable
+  incsearch = true, -- enable highlighting matches while you type
 
   -- ui
   termguicolors = true, -- enables 24-bit colour
   showtabline = 2, -- always show tabs at top of screen
   cursorline = false, -- gets confusing when cancelling out of Visual mode
-  cmdheight = 2, -- helps avoid 'Press Enter' messages when working in a narrow window
+  cmdheight = 1, -- helps avoid 'Press Enter' messages when working in a narrow window
   showmode = false, -- unneeded with feline statusline
   laststatus = 3, -- wide statusline for current buffer
   scrolloff = 8, -- minimal number of lines to keep above / below cursor
@@ -42,7 +42,7 @@ local options = {
   -- folding
   foldmethod = "syntax",
   foldcolumn = "0",
-  foldlevelstart = 5,
+  foldlevelstart = 99,
 
   -- columns
   signcolumn = "yes",
@@ -52,7 +52,7 @@ local options = {
   splitright = true,
 
   -- popup menu
-  pumheight = 10,
+  pumheight = 20,
   completeopt = "menu,menuone,noselect",
 
   -- persistent undo
@@ -60,7 +60,7 @@ local options = {
 
   -- unsorted
   mouse = "a", -- full mouse functionality
-  timeoutlen = 200,
+  timeoutlen = 250,
   fileencoding = "utf-8",
   hidden = true, -- the default, but insurance to prevent terminals being abandoned
   clipboard = "unnamedplus", -- yank to system clipboard via xcopy
@@ -81,7 +81,7 @@ vim.opt.iskeyword:append("-")
 vim.opt.fillchars:append("eob: ")
 
 -- Change fold symbols
-vim.opt.fillchars:append("foldopen:🞃, foldsep:│, foldclose:🞂")
+vim.opt.fillchars:append("foldopen:🞃, foldsep:▏, foldclose:🞂")
 
 -- Don't give ins-completion-menu messages
 vim.opt.shortmess:append("c")

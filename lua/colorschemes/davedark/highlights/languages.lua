@@ -102,8 +102,14 @@ return function(theme_variant)
     ---------------------------------------------------------
     -- TypeScript
     ---------------------------------------------------------
+    -- ["@type.typescript"] = {},
+    -- ["@lsp.typemod.property.declaration.typescript"] = { fg = c.fg },
+    -- ["@lsp.typemod.parameter.declaration.typescript"] = { fg = c.fg },
+    ["@lsp.mod.readonly.typescript"] = { fg = c.constant },
+    ["@keyword.tsx"] = {},
     typescriptAliasDeclaration = { fg = c.type },
     typescriptAliasKeyword = { fg = c.keyword },
+    typescriptAmbientDeclaration = { fg = c.keyword },
     typescriptArrayMethod = { link = "Function" },
     typescriptArrowFunc = { fg = c.keyword },
     typescriptArrowFuncArg = { fg = c.fg },
@@ -113,26 +119,37 @@ return function(theme_variant)
     typescriptCall = { fg = c.fg },
     typescriptCastKeyword = { fg = c.fg },
     typescriptConditional = { fg = c.keyword },
+    typescriptConditionalParen = {},
     typescriptDefault = { fg = c.variable },
     typescriptDefaultImportName = { fg = c.variable },
     typescriptDestructureVariable = { fg = c.constant },
     typescriptExport = { link = "Include" },
+    typescriptFuncCallArg = {},
     typescriptFuncKeyword = { fg = c.keyword },
     typescriptIdentifierName = { fg = c.variable },
     typescriptImport = { fg = c.keyword },
+    typescriptImportType = { fg = c.keyword },
+    typescriptInterfaceHeritage = { fg = c.string },
     typescriptInterfaceKeyword = { fg = c.keyword },
     typescriptInterfaceName = { fg = c.type },
     typescriptKeywordOp = { fg = c.keyword },
     typescriptMember = { fg = c.fg },
     typescriptMemberOptionality = { fg = c.operator },
+    typescriptModule = { fg = c.keyword },
+    typescriptNodeGlobal = { fg = c.variable },
     typescriptObjectType = { fg = c.type },
+    typescriptObjectLiteral = {},
+    typescriptOperator = { fg = c.keyword },
     typescriptPredefinedType = { fg = c.type_builtin },
+    -- typescriptProp = { fg = c.test_fg },
     typescriptRepeat = { fg = c.keyword },
     typescriptStatementKeyword = { fg = c.keyword },
     typescriptString = { fg = c.string },
     typescriptTernaryOperator = { fg = c.fg },
     typescriptTypeAnnotation = { fg = c.type_builtin },
-    typescriptTypeBlock = { fg = c.test_fg },
+    typescriptTypeBlock = {},
+    ["@type.tsx"] = { fg = c.type },
+    -- typescriptTypeBlock = { fg = c.variable },
     typescriptTypeReference = { fg = c.type },
     typescriptVariable = { fg = c.keyword },
     typescriptVariableDeclaration = { fg = c.constant },
@@ -218,5 +235,25 @@ return function(theme_variant)
     mkdCode = { fg = c.string },
     mkdHeading = { fg = c.tag },
     mkdLineBreak = { link = "Normal" },
+
+    ---------------------------------------------------------
+    -- Prisma (via prisma/vim-prisma)
+    ---------------------------------------------------------
+    -- prismaList
+    prismaType = { fg = c.operator },
+    -- prismaField
+    prismaModel = { fg = c.type },
+    -- prismaValue
+    -- prismaParans
+    -- prismaString
+    -- prismaComment
+    -- prismaFunction
+    -- prismaOperator
+    prismaDirective = { fg = c.function_hl },
+    prismaFunction = { fg = c.function_hl },
+    -- prismaFunctionArgs
+    -- prismaPartialDirective
+    -- prismaMultiFieldDirective
+    -- prismaTypeAliasDeclaration
   }
 end

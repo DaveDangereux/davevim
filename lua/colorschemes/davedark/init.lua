@@ -4,10 +4,11 @@ return function(theme_variant)
   -- Refresh cache in case we're reloading after making changes
   utils.clear_packages_recursively("colorschemes.davedark")
 
-  -- For LSP references to work whilst still allowing for theme variants (the re-colouring of theme elements), we need each highlight group to directly require the
-  -- default theme and then take an optional theme_variant string parameter
-  -- that, if present, will require the theme variant and overwrite the
-  -- default. This allows us to edit and refine the default theme elements,
+  -- For LSP references to work whilst still allowing for theme variants (the
+  -- re-colouring of theme elements), we need each highlight group to directly
+  -- require the default theme and then take an optional theme_variant string
+  -- parameter that, if present, will require the theme variant and overwrite
+  -- the default. This allows us to edit and refine the default theme elements,
   -- which then represent a template (like a type) that other themes must
   -- follow.
   local general = require("colorschemes.davedark.highlights.general")(theme_variant)
@@ -23,7 +24,8 @@ return function(theme_variant)
   local clear_hlgroups_recursively = function(name, opts)
     opts = opts or {}
 
-    for group in pairs(vim.api.nvim__get_hl_defs(0)) do
+    for group in pairs(vim.api.nvim_get_hl(0, {})) do
+      -- for group in pairs(vim.api.nvim__get_hl_defs(0)) do
       if group:find("^" .. name) and (opts.exclude == nil or not group:find(opts.exclude)) then
         vim.cmd("hi clear " .. group)
       end
