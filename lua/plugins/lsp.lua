@@ -24,10 +24,9 @@ return {
 
   -- Enhanced UI for LSP experience
   {
-    "glepnir/lspsaga.nvim",
-    opt = true,
-    branch = "main",
-    event = "LspAttach",
+    "nvimdev/lspsaga.nvim",
+    -- event = "LspAttach",
+    after = "nvim-lspconfig",
     config = function()
       require("config.lsp.lspsaga").config()
     end,
@@ -75,6 +74,24 @@ return {
     config = function()
       require("config.lsp.lsp_signature").config()
       -- require("lsp_signature").setup({ hint_enable = false })
+    end,
+  },
+
+  -- Debugger
+  {
+    "mfussenegger/nvim-dap",
+  },
+
+  -- Mason debugger plugin
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+  },
+
+  -- Debugger UI
+  {
+    "rcarriga/nvim-dap-ui",
+    config = function()
+      require("config.lsp.dap-ui").config()
     end,
   },
 }

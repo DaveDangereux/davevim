@@ -3,9 +3,9 @@ local M = {}
 local settings = {
   stages = "slide",
   icons = {
-    ERROR = "",
-    WARN = "",
-    INFO = "",
+    ERROR = "",
+    WARN = "",
+    INFO = "",
     DEBUG = "",
     TRACE = "✎",
   },

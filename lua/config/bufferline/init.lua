@@ -30,19 +30,19 @@ M.config = function()
           local hint = #vim.diagnostic.get(0, { severity = seve.HINT })
 
           if error ~= 0 then
-            table.insert(result, { text = "  " .. error, fg = c.error })
+            table.insert(result, { text = "  " .. error, fg = c.error })
           end
 
           if warning ~= 0 then
-            table.insert(result, { text = "  " .. warning, fg = c.warn })
+            table.insert(result, { text = "  " .. warning, fg = c.warn })
           end
 
           if hint ~= 0 then
-            table.insert(result, { text = "  " .. hint, fg = c.hint })
+            table.insert(result, { text = "  " .. hint, fg = c.hint })
           end
 
           if info ~= 0 then
-            table.insert(result, { text = "  " .. info, fg = c.info })
+            table.insert(result, { text = "  " .. info, fg = c.info })
           end
           return result
         end,

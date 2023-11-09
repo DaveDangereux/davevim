@@ -49,14 +49,18 @@ local settings = {
       filetypes = { "lua" },
     }),
 
+    diagnostics.mypy,
+    diagnostics.ruff,
+
     formatting.stylua,
     formatting.eslint_d,
     formatting.prettierd.with({
       disabled_filetypes = { "markdown", "vimwiki" },
     }),
-    formatting.black,
+    formatting.ruff,
     formatting.stylelint,
     formatting.autopep8,
+    formatting.clang_format,
 
     -- diagnostics.twigcs,
     diagnostics.stylelint.with({

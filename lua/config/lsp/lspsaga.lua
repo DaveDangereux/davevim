@@ -21,7 +21,7 @@ local settings = {
     win_width = 60,
   },
   symbol_in_winbar = {
-    enable = false,
+    enable = true,
   },
 }
 

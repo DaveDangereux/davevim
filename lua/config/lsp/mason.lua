@@ -4,6 +4,33 @@ local mason_lspconfig_options = {
   automatic_installation = true,
 }
 
+local mason_options = {
+  ensure_installed = {
+
+    "clang-format",
+    "autopep8",
+    "clangd",
+    "codelldb",
+    "commitlint",
+    "css-lsp",
+    "emmet-ls",
+    "eslint_d",
+    "html-lsp",
+    "json-lsp",
+    "lua-language-server",
+    "mypy",
+    "prettierd",
+    "prisma-language-server",
+    "pyright",
+    "ruff",
+    "stylelint",
+    "stylua",
+    "tailwindcss-language-server",
+    "typescript-language-server",
+    "vim-language-server",
+  },
+}
+
 M.config = function()
   ----------------------------------------------------------------------------
   -- on_attach
@@ -20,6 +47,10 @@ M.config = function()
     -- Load custom keymaps for the buffer
     require("core.keymaps").lsp(bufnr)
 
+    if client.name == "clangd" then
+      client.server_capabilities.signatureHelpProvider = false
+    end
+
     -- TODO: Load custom keymaps for TypeScript plugin
     -- if client.name == "tsserver" then
     -- end
@@ -28,7 +59,7 @@ M.config = function()
   ----------------------------------------------------------------------------
   -- Setup
   ----------------------------------------------------------------------------
-  require("mason").setup()
+  require("mason").setup(mason_options)
 
   local mason_lspconfig = require("mason-lspconfig")
   mason_lspconfig.setup(mason_lspconfig_options)
