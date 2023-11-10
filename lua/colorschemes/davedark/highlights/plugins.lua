@@ -168,7 +168,7 @@ return function(theme_variant)
     ---------------------------------------------------------------------------
     -- indent-blankline
     ---------------------------------------------------------------------------
-    IndentBlanklineIndent = { fg = c.indent },
+    IblIndent = { fg = c.indent },
     IndentBlanklineIndent1 = { fg = c.indent_1 },
     IndentBlanklineIndent2 = { fg = c.indent_2 },
     IndentBlanklineIndent3 = { fg = c.indent_3 },

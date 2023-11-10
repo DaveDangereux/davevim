@@ -99,7 +99,7 @@ return {
   file = c.crystal_blue,
 
   -- indents and brackets
-  indent = c.mirage,
+  indent = c.rhino,
   indent_1 = c.sand,
   indent_2 = c.light_purple,
   indent_3 = c.crystal_blue,

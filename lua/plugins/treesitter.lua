@@ -1,32 +1,120 @@
 return {
-  -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function()
-      require("config.treesitter").config()
-    end,
-  },
-
-  -- Rainbow brackets
-  {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  dependencies = {
     "p00f/nvim-ts-rainbow",
-    requires = { { "nvim-treesitter/nvim-treesitter" } },
-    -- Config in config/treesitter.lua
-  },
-
-  -- Auto-close and auto-rename html tags
-  {
-    "windwp/nvim-ts-autotag",
-    requires = { { "nvim-treesitter/nvim-treesitter" } },
-  },
-
-  -- Playground (required for TSHighlightCapturesUnderCursor)
-  {
     "nvim-treesitter/playground",
-    requires = { { "nvim-treesitter/nvim-treesitter" } },
+    "JoosepAlviste/nvim-ts-context-commentstring", -- fix jsx / tsx commenting
+    "nvim-treesitter/nvim-treesitter-textobjects", -- treesitter text objects
+    "windwp/nvim-ts-autotag",
   },
+  config = function()
+    local c = require("colorschemes.davedark.themes.default")
 
-  -- Treesitter text objects
-  { "nvim-treesitter/nvim-treesitter-textobjects" },
+    local settings = {
+      ensure_installed = {
+        "bash",
+        -- "c_sharp",
+        "comment",
+        "cpp",
+        "css",
+        "diff",
+        "dockerfile",
+        -- "elixir",
+        "git_rebase",
+        "gitcommit",
+        "gitignore",
+        -- "graphql",
+        -- "haskell",
+        "html",
+        "http",
+        -- "java",
+        "javascript",
+        "jsdoc",
+        "json",
+        "json5",
+        -- "kotlin",
+        "lua",
+        "make",
+        "markdown",
+        "markdown_inline",
+        -- "php",
+        -- "phpdoc",
+        "prisma",
+        "python",
+        -- "query",
+        "regex",
+        "ruby",
+        -- "rust",
+        "scss",
+        -- "solidity",
+        "sql",
+        -- "svelte",
+        -- "swift",
+        "toml",
+        "tsx",
+        -- "twig",
+        "typescript",
+        "vim",
+        -- "vue",
+        "yaml",
+      },
+      sync_install = false,
+      ignore_install = { "" },
+      highlight = {
+        enable = true,
+        -- disable = { "html" },
+        additional_vim_regex_highlighting = true,
+      },
+
+      -- ts-rainbow
+      rainbow = {
+        enable = false,
+        disable = { "html" },
+        extended_mode = false,
+        colors = {
+          -- Color test: { { { { { { { } } } } } } }
+          c.indent_1,
+          c.indent_2,
+          c.indent_3,
+          c.indent_4,
+          c.indent_5,
+          c.indent_6,
+          c.indent_7,
+        },
+      },
+
+      -- playground (required for TSHighlightCapturesUnderCursor)
+      playground = {
+        enable = true,
+      },
+
+      -- context-commentstring
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
+
+      -- textobjects
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@call.outer",
+            ["ic"] = "@call.inner",
+          },
+        },
+      },
+
+      -- autotag
+      autotag = {
+        enable = true,
+      },
+    }
+
+    require("nvim-treesitter.configs").setup(settings)
+  end,
 }

@@ -37,19 +37,19 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = vim.api.nvim_create_augroup("utils", { clear = true }),
 })
 
-------------------------------------------------------------------------------
--- Sync Packer when plugin files are saved
-------------------------------------------------------------------------------
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "*nvim/lua/plugins/**",
-  callback = function()
-    utils.clear_packages_recursively("plugins")
-    utils.clear_packages_recursively("load_packer")
-    require("load_packer")
-    vim.cmd("PackerSync")
-  end,
-  group = vim.api.nvim_create_augroup("plugins", { clear = true }),
-})
+-- ------------------------------------------------------------------------------
+-- -- Sync Packer when plugin files are saved
+-- ------------------------------------------------------------------------------
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--   pattern = "*nvim/lua/plugins/**",
+--   callback = function()
+--     utils.clear_packages_recursively("plugins")
+--     utils.clear_packages_recursively("load_packer")
+--     require("load_packer")
+--     vim.cmd("PackerSync")
+--   end,
+--   group = vim.api.nvim_create_augroup("plugins", { clear = true }),
+-- })
 
 -------------------------------------------------------------------------------
 -- Reload keymaps on save
@@ -79,12 +79,12 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = {
     "*nvim/lua/colorschemes/davedark/**",
-    "*nvim/lua/config/feline/theme/**",
+    "*nvim/lua/plugins/feline/theme/**",
   },
   callback = function()
     utils.clear_packages_recursively("colorschemes.davedark")
-    utils.clear_packages_recursively("config.feline")
-    require("config.feline").config()
+    utils.clear_packages_recursively("plugins.feline")
+    require("plugins.feline").config()
     vim.cmd("colorscheme davedark")
     -- NOTE: Autocommands can't call other autocommands, so to get BufferLine
     -- to correctly reload highlights using its own autocommand requires the
@@ -99,7 +99,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*nvim/lua/plugins/feline/**",
   callback = function()
-    require("config.feline").config()
+    require("plugins.feline").config()
   end,
   group = vim.api.nvim_create_augroup("feline", { clear = true }),
 })

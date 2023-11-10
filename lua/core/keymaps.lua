@@ -2,8 +2,7 @@ local M = {}
 
 local utils = require("core.utils")
 
--- Remap space as leader key
-vim.g.mapleader = " "
+-- Leader key is mapped in root init.lua for compatibility with lazy.nvim
 
 local keymaps = {
 
@@ -41,7 +40,7 @@ local keymaps = {
     ["<A-z>"] = ":set wrap! <CR>",
 
     -- Hide search highlighting
-    ["<Leader>n"] = ":noh <CR>",
+    ["<Leader>n"] = ":nohlsearch <CR>",
 
     -- Splits
     ["<Leader>v"] = ":vsplit <CR>",
@@ -64,6 +63,7 @@ local keymaps = {
           vim.cmd("lclose")
         else
           local last_search = vim.fn.getreg("/")
+          print(last_search)
           vim.cmd("lvimgrep /" .. last_search .. "/gj %")
           vim.cmd("lopen")
         end
@@ -77,7 +77,6 @@ local keymaps = {
     ["S"] = "i<CR><Esc>k$",
 
     -- Reveal highlighting under cursor
-    -- ["<F6>"] = [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#") <CR>]],
     ["<F6>"] = ":Inspect <CR>",
 
     -- Quickfix list
@@ -250,12 +249,12 @@ local keymaps = {
     ["<Leader>i"] = ":IlluminateToggle <CR>",
 
     --------------------------------------------------------------------------
-    -- Illuminate
+    -- Vimwiki
     --------------------------------------------------------------------------
     ["<Leader>wx"] = ":VimwikiToggleListItem <CR>",
 
     --------------------------------------------------------------------------
-    -- Illuminate
+    -- Pretty Hover
     --------------------------------------------------------------------------
     ["K"] = ":lua require('pretty_hover').hover() <CR>",
   },
@@ -364,17 +363,15 @@ local lsp_keymaps = {
     ["]d"] = ":Lspsaga diagnostic_jump_next <CR>",
     ["[d"] = ":Lspsaga diagnostic_jump_prev <CR>",
     ["gl"] = ":Lspsaga show_line_diagnostics <CR>",
-    ["gr"] = ":Lspsaga lsp_finder <CR>",
+    ["gr"] = ":Lspsaga finder <CR>",
     ["gd"] = ":Lspsaga goto_definition <CR>",
     ["gp"] = ":Lspsaga peek_definition <CR>",
     ["gc"] = ":lua vim.lsp.buf.declaration() <CR>",
     ["gi"] = ":lua vim.lsp.buf.implementation() <CR>",
     ["gic"] = ":Lspsaga incoming_calls <CR>",
     ["goc"] = ":Lspsaga outgoing_calls <CR>",
-    -- ["K"] = ":Lspsaga hover_doc ++quiet <CR>",
     ["gca"] = ":Lspsaga code_action <CR>",
     ["go"] = ":SymbolsOutline <CR>",
-    -- TODO: Make this focus the outline if it's not the active buffer
     ["<F2>"] = ":Lspsaga rename <CR>",
   },
 }

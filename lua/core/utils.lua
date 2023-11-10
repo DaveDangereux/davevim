@@ -78,7 +78,7 @@ M.refresh_package_highlights = function()
 
   -- Refresh feline config
   local feline_refresh = function()
-    local feline_config_status_ok, feline_config = pcall(require, "config.feline")
+    local feline_config_status_ok, feline_config = pcall(require, "plugins.feline")
     if not feline_config_status_ok then
       print("Failed to require plugins.feline")
       return
@@ -88,7 +88,7 @@ M.refresh_package_highlights = function()
 
   -- Refresh bufferline config
   local bufferline_refresh = function()
-    local bufferline_config_status_ok, bufferline_config = pcall(require, "config.bufferline")
+    local bufferline_config_status_ok, bufferline_config = pcall(require, "plugins.bufferline")
     if not bufferline_config_status_ok then
       print("Failed to require plugins.bufferline")
       return

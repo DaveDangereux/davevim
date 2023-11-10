@@ -1,24 +1,14 @@
-local plugin_table = {}
-
-local utils = require("core.utils")
-
-local module_names = {
-  "general",
-  "telescope",
-  "lsp",
-  "completion",
-  "treesitter",
+return {
+  "tpope/vim-surround", -- shortcuts for bracketing
+  "moll/vim-bbye", -- delete buffers without closing windows
+  "neoclide/jsonc.vim", -- recognise json with comments
+  "artnez/vim-wipeout", -- destroy all buffers that aren't open in windows or tabs
+  "sheerun/vim-polyglot", -- lots of syntax highlighting improvements
+  "pocke/rbs.vim", -- ruby signature syntax highlighting
+  "vim-scripts/restore_view.vim", -- automated saving and restoring of views
+  "stefandtw/quickfix-reflector.vim", -- editable quickfix window
+  "cocopon/colorswatch.vim", -- display buffer colours with :ColorSwatchGenerate
+  "prisma/vim-prisma", -- Prisma file detection and syntax highlighting
+  "jose-elias-alvarez/typescript.nvim", -- TypeScript auto-update imports on file rename
+  "mfussenegger/nvim-dap", -- debugger
 }
-
-for _, module_name in ipairs(module_names) do
-  local module = "plugins." .. module_name
-
-  utils.clear_packages_recursively(module)
-  local plugins = require(module)
-
-  for _, plugin in ipairs(plugins) do
-    table.insert(plugin_table, plugin)
-  end
-end
-
-return plugin_table
