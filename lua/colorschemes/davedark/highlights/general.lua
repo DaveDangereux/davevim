@@ -13,7 +13,9 @@ return function(theme_variant)
     ---------------------------------------------------------
     CursorLine = {},
     Directory = { fg = c.nvimtree_folder_name },
-    LineNr = { fg = c.fg_dim },
+    LineNrAbove = { fg = c.fg_dim },
+    LineNr = { fg = c.comment },
+    LineNrBelow = { fg = c.fg_dim },
     ErrorMsg = { fg = c.error, bg = config.transparent_background and c.none or c.bg, bold = true },
     FoldColumn = { fg = c.fg_dim, bg = config.transparent_background and c.none or c.bg },
     Folded = { fg = c.comment, bg = c.bg_fold, italic = true },
