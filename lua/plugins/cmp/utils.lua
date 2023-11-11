@@ -7,7 +7,8 @@ M.kind_comparator = function(entry1, entry2)
   local kind_mapper = require("cmp.types").lsp.CompletionItemKind
 
   local kind_score = {
-    EnumMember = 1,
+    Variable = 1,
+    EnumMember = 2,
   }
 
   local kind1 = kind_score[kind_mapper[entry1:get_kind()]] or 100
