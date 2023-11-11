@@ -10,10 +10,9 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
   },
   config = function()
-    local mason_lspconfig_options = {
-      automatic_installation = true,
-    }
-
+    --------------------------------------------------------------------------
+    -- Setup mason
+    --------------------------------------------------------------------------
     local mason_options = {
       ensure_installed = {
         "clang-format",
@@ -40,9 +39,13 @@ return {
       },
     }
 
-    ----------------------------------------------------------------------------
-    -- on_attach
-    ----------------------------------------------------------------------------
+    require("mason").setup(mason_options)
+    require("plugins.mason.diagnostic-config")()
+    require("mason-null-ls").setup({ automatic_installation = true })
+
+    --------------------------------------------------------------------------
+    -- Setup mason-lspconfig
+    --------------------------------------------------------------------------
     local on_attach = function(client, bufnr)
       if client.server_capabilities.documentSymbolProvider then
         require("nvim-navic").attach(client, bufnr)
@@ -64,22 +67,9 @@ return {
       -- end
     end
 
-    ----------------------------------------------------------------------------
-    -- Setup
-    ----------------------------------------------------------------------------
-    require("mason").setup(mason_options)
-
-    local mason_lspconfig = require("mason-lspconfig")
-    mason_lspconfig.setup(mason_lspconfig_options)
-
-    require("mason-null-ls").setup({ automatic_installation = true })
-    require("plugins.mason.diagnostic-config")()
-
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    mason_lspconfig.setup_handlers({
-      --------------------------------------------------------------------------
-      -- Generic handler
-      --------------------------------------------------------------------------
+
+    local handlers = {
       function(server_name)
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
@@ -96,9 +86,6 @@ return {
         })
       end,
 
-      --------------------------------------------------------------------------
-      -- lua_ls
-      --------------------------------------------------------------------------
       ["lua_ls"] = function(server_name)
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
@@ -122,9 +109,6 @@ return {
         })
       end,
 
-      --------------------------------------------------------------------------
-      -- jsonls
-      --------------------------------------------------------------------------
       ["jsonls"] = function(server_name)
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
@@ -146,9 +130,6 @@ return {
         })
       end,
 
-      --------------------------------------------------------------------------
-      -- cssls
-      --------------------------------------------------------------------------
       ["cssls"] = function(server_name)
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
@@ -163,9 +144,6 @@ return {
         })
       end,
 
-      --------------------------------------------------------------------------
-      -- pylsp
-      --------------------------------------------------------------------------
       ["pylsp"] = function(server_name)
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
@@ -179,6 +157,14 @@ return {
           },
         })
       end,
-    })
+    }
+
+    local mason_lspconfig_options = {
+      automatic_installation = true,
+    }
+
+    local mason_lspconfig = require("mason-lspconfig")
+    mason_lspconfig.setup(mason_lspconfig_options)
+    mason_lspconfig.setup_handlers(handlers)
   end,
 }
