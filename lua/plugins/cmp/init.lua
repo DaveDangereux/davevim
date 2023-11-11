@@ -19,37 +19,23 @@ return {
     "b0o/SchemaStore.nvim",
   },
   config = function()
-    -------------------------------------------------------------------------------
-    -- NOTES
-    --
-    -- First, a snippet engine must be set - we've installed Luasnip and followed
-    -- the recommended implementation under the 'snippet' key.
-    --
-    -- Completion uses 'sources', which are installed as plugins and referenced
-    -- in the 'sources' table of cmp settings. Luasnip can also be used as a
-    -- completion source, although this isn't strictly necessary.
-    -------------------------------------------------------------------------------
-
-    -----------------------------------------------------------------------------
-    -- Requires
-    -----------------------------------------------------------------------------
-    local cmp = require("cmp")
+    --------------------------------------------------------------------------
+    -- setup snippet engine
+    --------------------------------------------------------------------------
     local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
-    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-
     require("luasnip/loaders/from_vscode").lazy_load()
 
+    --------------------------------------------------------------------------
+    -- setup cmp
+    --------------------------------------------------------------------------
     local check_backspace = function()
       local col = vim.fn.col(".") - 1
       return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
     end
 
-    -----------------------------------------------------------------------------
-    -- Settings
-    -----------------------------------------------------------------------------
-    local settings = {
+    local cmp = require("cmp")
+
+    local cmp_settings = {
       enabled = function()
         local in_syntax_group = require("cmp.config.context").in_syntax_group
         return not in_syntax_group("Comment")
@@ -89,48 +75,6 @@ return {
           end
         end, { "i", "s" }),
       },
-      -- Reorder these to change the order in the popup menu
-      sources = cmp.config.sources({
-        {
-          name = "nvim_lsp",
-          entry_filter = function(entry, _)
-            local entry_type = require("cmp.types").lsp.CompletionItemKind[entry:get_kind()]
-            return entry_type ~= "Text"
-          end,
-        },
-        { name = "luasnip", max_item_count = 10 },
-        { name = "nvim_lua" },
-        { name = "buffer", keyword_length = 3, max_item_count = 5 },
-        { name = "path" },
-        { name = "calc" },
-      }),
-      sorting = {
-        -- comparators = cmp.config.compare,
-        comparators = {
-          cmp.config.compare.offset,
-          cmp.config.compare.exact,
-          cmp.config.compare.score,
-          cmp.config.compare.recently_used,
-          -- require("cmp-under-comparator").under,
-          cmp.config.compare.kind,
-        },
-      },
-      experimental = {
-        ghost_text = false,
-        native_menu = false,
-      },
-      window = {
-        completion = cmp.config.window.bordered({
-          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-          col_offset = -4,
-          side_padding = 0,
-        }),
-        documentation = cmp.config.window.bordered({
-          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-          col_offset = -4,
-          side_padding = 0,
-        }),
-      },
       formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
@@ -151,7 +95,8 @@ return {
           }
           local duplicates_default = 0
 
-          local lspkind_vim_item = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+          local lspkind_vim_item =
+            require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
 
           -- Hack to fix missing TypeParameter icon
           if string.match(lspkind_vim_item.kind, "TypeParameter") then
@@ -173,9 +118,54 @@ return {
           return lspkind_vim_item
         end,
       },
+      window = {
+        completion = cmp.config.window.bordered({
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+          col_offset = -4,
+          side_padding = 0,
+        }),
+        documentation = cmp.config.window.bordered({
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+          col_offset = -4,
+          side_padding = 0,
+        }),
+      },
+      experimental = {
+        ghost_text = false,
+        native_menu = false,
+      },
+      sources = cmp.config.sources({
+        {
+          name = "nvim_lsp",
+          entry_filter = require("plugins.cmp.utils").lsp_entry_filter,
+        },
+        { name = "luasnip", max_item_count = 10 },
+        { name = "nvim_lua" },
+        { name = "buffer", keyword_length = 3, max_item_count = 5 },
+        { name = "path" },
+        { name = "calc" },
+      }),
+      sorting = {
+        comparators = {
+          cmp.config.compare.exact,
+          require("plugins.cmp.utils").kind_comparator,
+          -- cmp.config.compare.offset,
+          -- cmp.config.compare.score,
+          -- cmp.config.compare.recently_used,
+          -- cmp.config.compare.kind,
+          -- cmp.config.compare.sort_text,
+          -- cmp.config.compare.length,
+          -- cmp.config.compare.order,
+          -- cmp.config.compare.locality,
+          -- cmp.config.compare.scope,
+        },
+      },
     }
 
-    cmp.setup(settings)
+    cmp.setup(cmp_settings)
+
+    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
     cmp.setup.cmdline(":", {
       sources = cmp.config.sources({
