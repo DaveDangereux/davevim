@@ -15,12 +15,13 @@ return {
     --------------------------------------------------------------------------
     local mason_options = {
       ensure_installed = {
-        "clang-format",
         "autopep8",
+        "clang-format",
         "clangd",
         "codelldb",
         "commitlint",
         "css-lsp",
+        "debugpy",
         "emmet-ls",
         "eslint_d",
         "html-lsp",

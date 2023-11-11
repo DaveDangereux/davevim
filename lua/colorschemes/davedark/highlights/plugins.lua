@@ -265,8 +265,57 @@ return function(theme_variant)
     CmpItemMenu = { fg = c.comment, italic = true },
 
     ---------------------------------------------------------------------------
-    -- Lspsaga
+    -- nvim-dap
     ---------------------------------------------------------------------------
+    DapBreakpoint = { fg = c.tag },
+    DapLogPoint = { fg = c.info },
+    DapStopped = { fg = c.hint },
+    -- DapUIStop = {},
+    -- DapUIType = {},
+    -- DapUIScope = {},
+    -- DapUIValue = {},
+    -- DapUINormal = {},
+    -- DapUISource = {},
+    -- DapUIStopNC = {},
+    -- DapUIThread = {},
+    -- DapUIRestart = {},
+    -- DapUIStepOut = {},
+    -- DapUINormalNC = {},
+    -- DapUIStepBack = {},
+    -- DapUIStepInto = {},
+    -- DapUIStepOver = {},
+    -- DapUIVariable = {},
+    -- DapUIFrameName = {},
+    -- DapUIPlayPause = {},
+    -- DapUIRestartNC = {},
+    -- DapUIStepOutNC = {},
+    -- DapUIWinSelect = {},
+    -- DapUIDecoration = {},
+    -- DapUILineNumber = {},
+    -- DapUIStepBackNC = {},
+    -- DapUIStepIntoNC = {},
+    -- DapUIStepOverNC = {},
+    -- DapUIEndofBuffer = {},
+    -- DapUIFloatBorder = {},
+    -- DapUIFloatNormal = {},
+    -- DapUIPlayPauseNC = {},
+    -- DapUIUnavailable = {},
+    -- DapUIWatchesEmpty = {},
+    -- DapUIWatchesError = {},
+    -- DapUIWatchesValue = {},
+    -- DapUIModifiedValue = {},
+    -- DapUIStoppedThread = {},
+    -- DapUIUnavailableNC = {},
+    -- DapUIBreakpointsInfo = {},
+    -- DapUIBreakpointsLine = {},
+    -- DapUIBreakpointsPath = {},
+    -- DapUICurrentFrameName = {},
+    -- DapUIBreakpointsCurrentLine = {},
+    -- DapUIBreakpointsDisabledLine = {},
+
+    ---------------------------------------------------------------------------
+    -- Lspsaga
+    --------------------------------------------------------------------------
     -- code action
     LspSagaCodeActionTitle = { fg = "#DA8548", bold = true },
     LspSagaCodeActionBorder = { fg = c.float_border },
@@ -475,3 +524,13 @@ return function(theme_variant)
     -- VimwikiSuperScriptCharT = {},
   }
 end
+
+-- vim.highlight.create('DapBreakpoint', { ctermbg=0, guifg='#993939', guibg='#31353f' }, false)
+-- vim.highlight.create('DapLogPoint', { ctermbg=0, guifg='#61afef', guibg='#31353f' }, false)
+-- vim.highlight.create('DapStopped', { ctermbg=0, guifg='#98c379', guibg='#31353f' }, false)
+--
+-- vim.fn.sign_define('DapBreakpoint', { text='', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })
+-- vim.fn.sign_define('DapBreakpointCondition', { text='ﳁ', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })
+-- vim.fn.sign_define('DapBreakpointRejected', { text='', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl= 'DapBreakpoint' })
+-- vim.fn.sign_define('DapLogPoint', { text='', texthl='DapLogPoint', linehl='DapLogPoint', numhl= 'DapLogPoint' })
+-- vim.fn.sign_define('DapStopped', { text='', texthl='DapStopped', linehl='DapStopped', numhl= 'DapStopped' })

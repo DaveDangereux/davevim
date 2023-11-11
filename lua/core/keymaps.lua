@@ -147,10 +147,6 @@ local keymaps = {
     ["ZA"] = "zA", -- toggle fold recursively
     ["ZN"] = "zN", -- fold normal
 
-    ["<F5>"] = function()
-      vim.cmd("colorscheme " .. vim.g.colors_name)
-    end,
-
     -- Use null register for x to avoid overwriting yannked text
     ["x"] = [["_x]],
 
@@ -257,6 +253,34 @@ local keymaps = {
     -- Pretty Hover
     --------------------------------------------------------------------------
     ["K"] = ":lua require('pretty_hover').hover() <CR>",
+
+    --------------------------------------------------------------------------
+    -- nvim-dap
+    --------------------------------------------------------------------------
+    ["<F5>"] = ":DapContinue <CR>",
+    ["<F10>"] = ":DapStepOver <CR>",
+    ["<F11>"] = ":DapStepInto <CR>",
+    ["<F12>"] = ":DapStepOut <CR>",
+    ["<Leader>db"] = ":DapToggleBreakpoint <CR>",
+    -- ["<Leader>DB"] = ":lua require('dap').set_breakpoint() <CR>",
+    -- [""] = ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point messages: ')) <CR>",
+    ["<Leader>dr"] = ":DapToggleRepl <CR>",
+    ["<Leader>dl"] = ":lua require('dap').run_last() <CR>",
+    ["<Leader>dh"] = ":lua require('dap.ui.widgets').hover() <CR>",
+    ["<Leader>dp"] = ":lua require('dap.ui.widgets').preview() <CR>",
+    ["<Leader>dt"] = ":DapTerminate <CR>",
+    ["<Leader>df"] = function()
+      local widgets = require("dap.ui.widgets")
+      widgets.centered_float(widgets.frames)
+    end,
+    ["<Leader>ds"] = function()
+      local widgets = require("dap.ui.widgets")
+      widgets.centered_float(widgets.scopes)
+    end,
+    ["<Leader>dpr"] = function()
+      require("dap-python").test_method()
+    end,
+    ["<Leader>du"] = ":lua require('dapui').toggle() <CR>",
   },
 
   ----------------------------------------------------------------------------
