@@ -18,7 +18,7 @@ return function(theme_variant)
     LineNrBelow = { fg = c.fg_dim },
     ErrorMsg = { fg = c.error, bg = config.transparent_background and c.none or c.bg, bold = true },
     FoldColumn = { fg = c.fg_dim, bg = config.transparent_background and c.none or c.bg },
-    Folded = { fg = c.comment, bg = c.bg_fold, italic = true },
+    Folded = { fg = c.fold_fg, bg = c.fold_bg, italic = true },
     ModeMsg = { fg = c.fg },
     NonText = { fg = c.comment }, -- remove style?
     Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },

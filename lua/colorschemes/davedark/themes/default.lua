@@ -34,7 +34,10 @@ return {
   -- bg
   bg = c.mirage,
   bg_visual = c.rhino,
-  bg_fold = c.cinder,
+
+  -- fold text
+  fold_fg = c.rhino,
+  fold_bg = c.none,
 
   -- borders
   winseparator = c.cinder,
