@@ -1,5 +1,6 @@
 return {
   "nvimtools/none-ls.nvim",
+  event = "VeryLazy",
   config = function()
     local config = require("user_config")
 
