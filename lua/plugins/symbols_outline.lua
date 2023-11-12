@@ -35,21 +35,21 @@ return {
     symbols = {
       -- From lsp-kind
       Method = { icon = "", hl = "@method" },
-      Function = { icon = "", hl = "@function" },
+      Function = { icon = "󰊕", hl = "@function" },
       Constructor = { icon = "", hl = "@constructor" },
-      Field = { icon = "ﰠ", hl = "@field" },
-      Variable = { icon = "", hl = "@variable" }, -- or TSConstant?
-      Class = { icon = "ﴯ", hl = "@type" },
+      Field = { icon = "󰜢", hl = "@field" },
+      Variable = { icon = "󰀫", hl = "@variable" }, -- or TSConstant?
+      Class = { icon = "󰠱", hl = "@type" },
       Interface = { icon = "", hl = "@type" },
       Module = { icon = "", hl = "@namespace" },
-      Property = { icon = "ﰠ", hl = "@property" }, -- or TSMethod?
+      Property = { icon = "󰜢", hl = "@property" }, -- or TSMethod?
       Enum = { icon = "", hl = "@type" },
-      File = { icon = "", hl = "@text.uri" },
+      File = { icon = "󰈙", hl = "@text.uri" },
       EnumMember = { icon = "", hl = "@field" },
-      Constant = { icon = "", hl = "@constant" },
-      Struct = { icon = "פּ", hl = "@type" },
+      Constant = { icon = "󰏿", hl = "@constant" },
+      Struct = { icon = "󰙅", hl = "@type" },
       Event = { icon = "", hl = "@type" },
-      Operator = { icon = "", hl = "@operator" },
+      Operator = { icon = "󰆕", hl = "@operator" },
       TypeParameter = { icon = "𝙏", hl = "@parameter" },
 
       -- From mortepau/codicons.nvim
