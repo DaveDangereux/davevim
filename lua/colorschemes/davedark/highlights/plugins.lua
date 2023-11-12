@@ -257,6 +257,7 @@ return function(theme_variant)
     CmpItemKindReference = { fg = c.fg_dark, bg = c.operator },
     CmpItemKindSnippet = { fg = c.fg_dark, bg = c.string },
     CmpItemKindStruct = { fg = c.fg_dark, bg = c.type },
+    CmpItemKindTabNine = { fg = c.fg_dark, bg = c.variable },
     CmpItemKindText = { fg = c.fg_dark, bg = c.comment },
     CmpItemKindTypeParameter = { fg = c.fg_dark, bg = c.type },
     CmpItemKindUnit = { fg = c.fg_dark, bg = c.operator },
@@ -315,7 +316,7 @@ return function(theme_variant)
 
     ---------------------------------------------------------------------------
     -- Lspsaga
-    --------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     -- code action
     LspSagaCodeActionTitle = { fg = "#DA8548", bold = true },
     LspSagaCodeActionBorder = { fg = c.float_border },

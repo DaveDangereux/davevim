@@ -11,12 +11,17 @@ return {
     "hrsh7th/cmp-calc",
     "hrsh7th/cmp-cmdline",
     "rafamadriz/friendly-snippets",
+    "https://github.com/nalabdou/Symfony-code-snippets",
+    "b0o/SchemaStore.nvim",
+    {
+      "tzachar/cmp-tabnine",
+      build = "./install.sh'",
+      dependencies = "hrsh7th/nvim-cmp",
+    },
     {
       "dsznajder/vscode-react-javascript-snippets",
       build = "yarn install --frozen-lockfile && yarn compile",
     },
-    "https://github.com/nalabdou/Symfony-code-snippets",
-    "b0o/SchemaStore.nvim",
   },
   config = function()
     --------------------------------------------------------------------------
@@ -86,7 +91,9 @@ return {
             path = "Path",
             calc = "Calc",
             cmdline = "Cmdline",
+            cmp_tabnine = "TabNine",
           }
+
           local duplicates = {
             buffer = 0, -- was 1
             path = 0, -- was 1
@@ -101,6 +108,10 @@ return {
           -- Hack to fix missing TypeParameter icon
           if string.match(lspkind_vim_item.kind, "TypeParameter") then
             lspkind_vim_item.kind = " TypeParameter"
+          end
+
+          if string.match(lspkind_vim_item.kind, "TabNine") then
+            lspkind_vim_item.kind = "󱐋 TabNine"
           end
 
           local strings = vim.split(lspkind_vim_item.kind, "%s", { trimempty = true })
@@ -135,13 +146,11 @@ return {
         native_menu = false,
       },
       sources = cmp.config.sources({
-        {
-          name = "nvim_lsp",
-          entry_filter = require("plugins.cmp.utils").lsp_entry_filter,
-        },
-        { name = "luasnip", max_item_count = 10 },
+        { name = "cmp_tabnine" },
+        { name = "nvim_lsp", entry_filter = require("plugins.cmp.utils").lsp_entry_filter },
+        { name = "luasnip" },
         { name = "nvim_lua" },
-        { name = "buffer", keyword_length = 3, max_item_count = 5 },
+        { name = "buffer" },
         { name = "path" },
         { name = "calc" },
       }),

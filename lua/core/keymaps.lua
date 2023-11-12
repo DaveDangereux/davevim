@@ -140,6 +140,8 @@ local keymaps = {
     ["<Leader>u"] = ":UndotreeToggle <CR>",
 
     -- Easier fold manipulation
+    ["zR"] = ":lua require('ufo').openAllFolds",
+    ["zM"] = ":lua require('ufo').closeAllFolds",
     ["ZR"] = "zR", -- open all folds
     ["ZM"] = "zM", -- close all folds
     ["ZD"] = "zD", -- delete all folds recursively at cursor
@@ -253,6 +255,11 @@ local keymaps = {
     -- Pretty Hover
     --------------------------------------------------------------------------
     ["K"] = ":lua require('pretty_hover').hover() <CR>",
+
+    --------------------------------------------------------------------------
+    -- Tabnine
+    --------------------------------------------------------------------------
+    ["<Leader>9"] = ":TabnineToggle <CR>",
 
     --------------------------------------------------------------------------
     -- nvim-dap

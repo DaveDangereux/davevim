@@ -1,5 +1,4 @@
 return {
-  "tpope/vim-surround", -- shortcuts for bracketing
   "moll/vim-bbye", -- delete buffers without closing windows
   "neoclide/jsonc.vim", -- recognise json with comments
   "artnez/vim-wipeout", -- destroy all buffers that aren't open in windows or tabs

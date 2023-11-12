@@ -1,6 +1,8 @@
 return {
   "akinsho/bufferline.nvim",
   config = function()
+    local c = require("colorschemes.davedark.themes.default")
+
     local settings = {
       highlights = require("plugins.bufferline.highlights"),
       options = {
