@@ -27,10 +27,10 @@ local keymaps = {
     ["<C-Right>"] = ":vertical resize +2 <CR>",
 
     -- Tab management
-    ["<CA-h>"] = ":tabprevious <CR>", -- gT
-    ["<CA-l>"] = ":tabnext <CR>", -- gt
-    ["<CA-t>"] = ":tabedit % <CR>", -- open current buffer in a new tab
-    ["<CA-w>"] = ":tabclose <CR>",
+    ["<A-H>"] = ":tabprevious <CR>",
+    ["<A-L>"] = ":tabnext <CR>",
+    ["<A-T>"] = ":tabedit % <CR>", -- open current buffer in a new eab
+    ["<A-W>"] = ":tabclose <CR>",
 
     -- Move text up and down
     ["<A-j>"] = ":m .+1 <CR>==",
