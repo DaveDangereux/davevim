@@ -70,11 +70,9 @@ return {
     end
 
     local settings = {
-      auto_reload_on_write = true,
-      disable_netrw = true,
-      sync_root_with_cwd = true,
-      respect_buf_cwd = true,
       on_attach = on_attach,
+      auto_reload_on_write = true,
+      respect_buf_cwd = true,
       view = {
         adaptive_size = true,
         float = {
@@ -120,10 +118,6 @@ return {
         },
         root_folder_label = table.concat({ ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }),
       },
-      update_focused_file = {
-        enable = true,
-        update_root = true,
-      },
       diagnostics = {
         enable = true,
         icons = {
@@ -142,6 +136,10 @@ return {
         show_on_open_dirs = false,
       },
       actions = {
+        change_dir = {
+          enable = true,
+          global = true,
+        },
         use_system_clipboard = true,
         open_file = {
           window_picker = {

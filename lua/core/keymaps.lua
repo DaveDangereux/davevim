@@ -155,8 +155,7 @@ local keymaps = {
     --------------------------------------------------------------------------
     -- NvimTree
     --------------------------------------------------------------------------
-    ["<Leader>e"] = ":NvimTreeToggle <CR>",
-    ["<Leader><S-e>"] = ":NvimTreeFocus <CR>",
+    ["<Leader>e"] = ":NvimTreeFindFileToggle! <CR>",
 
     -- Useful folders
     -- TODO: Update absolute directory paths with dynamic platform-independent variables
