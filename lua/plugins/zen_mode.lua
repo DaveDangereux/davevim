@@ -8,9 +8,18 @@ return {
       window = {
         height = 0.9,
         width = 100,
-        options = {},
+        options = {
+          signcolumn = "no",
+          number = false,
+          relativenumber = false,
+          list = false,
+        },
       },
       plugins = {
+        options = {
+          showcmd = false,
+          laststatus = 0,
+        },
         gitsigns = { enabled = true },
       },
       -- ZenMode seems to use the popup menu background, so this is a workaround
