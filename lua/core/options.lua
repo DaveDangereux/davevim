@@ -62,9 +62,6 @@ local options = {
   -- unsorted
   mouse = "a", -- full mouse functionality
   timeoutlen = 250,
-  -- TODO: Figure out why fileencoding option is causing an error when
-  -- lazy.nvim installs packages on startup
-  fileencoding = "utf-8",
   hidden = true, -- the default, but insurance to prevent terminals being abandoned
   clipboard = "unnamedplus", -- yank to system clipboard via xcopy
 }
