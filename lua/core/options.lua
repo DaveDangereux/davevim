@@ -83,6 +83,9 @@ vim.opt.fillchars:append("eob: ")
 -- Change fold symbols
 vim.opt.fillchars:append("foldopen:🞃, foldsep:▏, foldclose:🞂")
 
+-- Prettier blank lines in diffview
+vim.opt.fillchars:append({ diff = "░" })
+
 -- Don't give ins-completion-menu messages
 vim.opt.shortmess:append("c")
 

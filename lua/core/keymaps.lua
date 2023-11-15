@@ -261,6 +261,12 @@ local keymaps = {
     ["<Leader>9"] = ":TabnineToggle <CR>",
 
     --------------------------------------------------------------------------
+    -- diffview
+    --------------------------------------------------------------------------
+    ["<Leader>gd"] = ":DiffviewOpen <CR>",
+    ["<Leader>gh"] = ":DiffviewFileHistory <CR>",
+
+    --------------------------------------------------------------------------
     -- nvim-dap
     --------------------------------------------------------------------------
     ["<F5>"] = ":DapContinue <CR>",
@@ -383,7 +389,6 @@ local gitsigns_keymaps = {
     ["<Leader>gp"] = ":Gitsigns preview_hunk <CR>",
     ["<Leader>GP"] = ":Gitsigns preview_hunk_inline <CR>",
     ["<Leader>gb"] = ":Gitsigns toggle_current_line_blame <CR>",
-    ["<Leader>gd"] = ":Gitsigns diffthis <CR>",
   },
 }
 
