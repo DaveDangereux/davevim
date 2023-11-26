@@ -71,28 +71,32 @@ end
 
 M.refresh_package_highlights = function()
   -- We're putting these config requires in functions so we can return out of
-  -- them if the package or its config isn't available
+  -- them if the config isn't available
 
   -- Refresh devicon highlights
   package.loaded["nvim-web-devicons"] = nil
 
   -- Refresh feline config
   local feline_refresh = function()
-    local feline_config_status_ok, feline_config = pcall(require, "plugins.feline")
-    if not feline_config_status_ok then
-      print("Failed to require plugins.feline")
+    local feline_config = require("plugins.feline")
+
+    if not feline_config.config then
+      print("Unable to refresh feline config")
       return
     end
+
     feline_config.config()
   end
 
   -- Refresh bufferline config
   local bufferline_refresh = function()
-    local bufferline_config_status_ok, bufferline_config = pcall(require, "plugins.bufferline")
-    if not bufferline_config_status_ok then
-      print("Failed to require plugins.bufferline")
+    local bufferline_config = require("plugins.bufferline")
+
+    if not bufferline_config.config then
+      print("Unable to refresh bufferline config")
       return
     end
+
     bufferline_config.config()
   end
 
