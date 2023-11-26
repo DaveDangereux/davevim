@@ -15,7 +15,7 @@ return {
         entry_prefix = "   ",
         dynamic_preview_title = true,
         results_title = "",
-        path_display = { "smart" },
+        path_display = { "truncate" },
         sorting_strategy = "ascending",
         borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
         layout_strategy = "vertical",
