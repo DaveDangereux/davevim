@@ -61,6 +61,7 @@ return {
       formatting.stylelint,
       formatting.autopep8,
       formatting.clang_format,
+      formatting.taplo,
 
       -- diagnostics.twigcs,
       diagnostics.stylelint.with({
