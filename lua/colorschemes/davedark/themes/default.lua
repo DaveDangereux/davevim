@@ -40,7 +40,7 @@ return {
   fold_bg = c.none,
 
   -- borders
-  winseparator = c.cinder,
+  winseparator = c.cloud_burst,
   float_border = c.sand,
 
   -- pmenu
