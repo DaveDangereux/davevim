@@ -89,12 +89,6 @@ return {
         enable = true,
       },
 
-      -- context-commentstring
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
-
       -- textobjects
       textobjects = {
         select = {
@@ -114,6 +108,9 @@ return {
         enable = true,
       },
     }
+
+    -- context-commentstring
+    vim.g.skip_ts_context_commentstring_module = true
 
     require("nvim-treesitter.configs").setup(settings)
   end,
