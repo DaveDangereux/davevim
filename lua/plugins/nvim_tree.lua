@@ -50,7 +50,7 @@ return {
       vim.keymap.set("n", "-", api.tree.change_root_to_parent, opts("Up"))
       vim.keymap.set("n", ".", api.tree.toggle_hidden_filter, opts("Toggle Dotfiles"))
       vim.keymap.set("n", "b", api.tree.toggle_no_buffer_filter, opts("Toggle No Buffer"))
-      vim.keymap.set("n", "G", api.tree.toggle_git_clean_filter, opts("Toggle Git Clean"))
+      vim.keymap.set("n", "gc", api.tree.toggle_git_clean_filter, opts("Toggle Git Clean"))
       vim.keymap.set("n", "i", api.tree.toggle_gitignore_filter, opts("Toggle Git Ignore"))
       vim.keymap.set("n", "q", api.tree.close, opts("Close"))
       vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
