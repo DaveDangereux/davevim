@@ -148,20 +148,6 @@ return {
           },
         })
       end,
-
-      ["pylsp"] = function(server_name)
-        require("lspconfig")[server_name].setup({
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = {
-            pylsp = {
-              plugins = {
-                pyflakes = { enabled = false },
-              },
-            },
-          },
-        })
-      end,
     }
 
     local mason_lspconfig_options = {

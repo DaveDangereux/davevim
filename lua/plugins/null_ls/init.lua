@@ -50,26 +50,25 @@ return {
       }),
 
       diagnostics.mypy,
-      diagnostics.ruff,
+      diagnostics.ruff.with({
+        extra_args = { "--config", vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/pyproject.toml") },
+      }),
 
-      formatting.stylua,
+      formatting.stylua.with({
+        extra_args = { "--config-path", vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/stylua.toml") },
+      }),
       formatting.eslint_d,
       formatting.prettierd.with({
         disabled_filetypes = { "markdown", "vimwiki" },
       }),
-      formatting.ruff,
+      formatting.black,
+      formatting.isort,
       formatting.stylelint,
-      formatting.autopep8,
       formatting.clang_format,
       formatting.taplo,
 
-      -- diagnostics.twigcs,
       diagnostics.stylelint.with({
-        extra_args = function()
-          if config.use_stylelint_default_config then
-            return { "--config=" .. config.stylelint_default_config_location }
-          end
-        end,
+        extra_args = { "--config=" .. vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/.stylelintrc.json") },
       }),
 
       require("typescript.extensions.null-ls.code-actions"),
@@ -78,12 +77,14 @@ return {
     local settings = {
       -- Format on save
       -- TODO: Figure out a directory format shortcut
+      border = "rounded",
       on_attach = on_attach,
       sources = sources,
+      update_in_insert = true,
     }
 
     null_ls.setup(settings)
     -- Why is this here?
-    -- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
   end,
 }
