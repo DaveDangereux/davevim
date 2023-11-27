@@ -1,11 +1,12 @@
 return {
   "akinsho/toggleterm.nvim",
+  version = "*",
   opts = {
     size = function(term)
       if term.direction == "horizontal" then
-        return 12
+        return 6
       elseif term.direction == "vertical" then
-        return vim.o.columns * 0.33
+        return vim.o.columns * 0.4
       end
     end,
     highlights = {
@@ -14,9 +15,7 @@ return {
       },
     },
     shade_terminals = false,
-    -- open_mapping = "<Leader>#",
     direction = "vertical",
-    -- direction = "float",
     float_opts = {
       border = "curved",
     },
