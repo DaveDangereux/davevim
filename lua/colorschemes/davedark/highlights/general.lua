@@ -84,7 +84,7 @@ return function(theme_variant)
     ---------------------------------------------------------
     -- Popup menu
     ---------------------------------------------------------
-    Pmenu = { fg = c.fg, bg = config.pmenu_transparent_background and c.none or c.pmenu_bg },
+    Pmenu = { fg = c.fg, bg = config.transparent_background and c.none or c.pmenu_bg },
 
     ---------------------------------------------------------
     -- Float

@@ -12,7 +12,7 @@ return function(theme_variant)
     -- nvim-tree
     ---------------------------------------------------------------------------
     NvimTreeIndentMarker = { fg = c.fg },
-    NvimTreeNormal = { bg = config.nvimtree_transparent_background and c.none or c.bg },
+    NvimTreeNormal = { bg = config.transparent_background and c.none or c.bg },
     NvimTreeVertSplit = nil,
     NvimTreeFolderName = { fg = c.nvimtree_folder_name },
     NvimTreeFolderIcon = { fg = c.nvimtree_folder_name, bg = c.none },

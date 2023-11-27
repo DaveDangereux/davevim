@@ -28,7 +28,7 @@ return {
         vim.cmd("highlight Pmenu guibg=" .. bg)
       end,
       on_close = function()
-        local pmenu_bg = config.pmenu_transparent_background and c.none or c.pmenu_bg
+        local pmenu_bg = config.transparent_background and c.none or c.pmenu_bg
         vim.cmd("highlight Pmenu guibg=" .. (pmenu_bg or "none"))
       end,
     }
