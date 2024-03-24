@@ -29,6 +29,7 @@ Happy Vimming :]
 ## Screenshots
 ![Telescope](https://github.com/D4n93r3ux/davevim/assets/61416292/9e21ec6c-6fae-4721-8f14-4170306d70ca)
 ![Lspsaga](https://github.com/D4n93r3ux/davevim/assets/61416292/bb9020b0-1ed6-4b13-a10f-61c1e35414fd)
+![Completion](https://github.com/D4n93r3ux/davevim/assets/61416292/2ae318f9-63d1-41ec-b3e1-5357d53315ef)
 
 ## Known Issues
 <a name="known-issues"></a>
