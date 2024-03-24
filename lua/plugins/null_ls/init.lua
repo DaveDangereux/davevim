@@ -66,11 +66,6 @@ return {
             formatting.asmfmt,
             formatting.black,
             formatting.clang_format,
-            -- formatting.clang_format.with({
-            --     extra_args = {
-            --         "-style=file:" .. vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/.clang-format"),
-            --     },
-            -- }),
             formatting.cmake_format,
             -- formatting.esLint_d, -- deprecated
             formatting.isort,
