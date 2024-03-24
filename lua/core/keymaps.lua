@@ -2,7 +2,7 @@ local M = {}
 
 local utils = require("core.utils")
 
--- Leader key is mapped in root init.lua for compatibility with lazy.nvim
+-- Leader key is mapped in core/init.lua for compatibility with lazy.nvim
 
 local keymaps = {
 
