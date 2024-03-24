@@ -56,6 +56,7 @@ return {
                     "--config=" .. vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/.stylelintrc.json"),
                 },
             }),
+            diagnostics.yamllint,
 
             -- Formatting
             formatting.asmfmt,

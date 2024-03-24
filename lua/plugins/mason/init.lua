@@ -37,6 +37,7 @@ return {
                 "tailwindcss-language-server",
                 "typescript-language-server",
                 "vim-language-server",
+                "yamllint",
             },
         }
 
