@@ -1,4 +1,5 @@
 # Dave's Lovely Neovim Config
+![Main Menu](https://github.com/D4n93r3ux/davevim/assets/61416292/7f3e14fc-8b66-472e-a97c-382e689a4347)
 
 ## Building My Own Lightsaber
 That's what configuring Neovim feels like to me.
@@ -26,6 +27,8 @@ some capacity.
 Happy Vimming :]
 
 ## Screenshots
+![Telescope](https://github.com/D4n93r3ux/davevim/assets/61416292/9e21ec6c-6fae-4721-8f14-4170306d70ca)
+![Lspsaga](https://github.com/D4n93r3ux/davevim/assets/61416292/bb9020b0-1ed6-4b13-a10f-61c1e35414fd)
 
 ## Known Issues
 <a name="known-issues"></a>
