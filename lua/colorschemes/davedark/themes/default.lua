@@ -27,6 +27,7 @@ local c = {
 
 return {
   -- fg
+  fg_bright = c.white,
   fg = c.rock_blue,
   fg_dim = c.rhino,
   fg_dark = c.cinder,
@@ -52,7 +53,7 @@ return {
 
   -- bufferline
   bufferline_bg_buf_sel = c.rhino,
-  bufferline_bg_buf_vis = c.rhino,
+  bufferline_bg_buf_vis = c.cloud_burst,
   bufferline_bg_buf_inactive = c.cinder,
   bufferline_fg_buf_sep = config.transparent_background and c.black or c.none,
 

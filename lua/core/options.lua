@@ -1,75 +1,75 @@
 local config = require("user_config")
 
 local options = {
-  -- tabbing
-  tabstop = 2, -- insert this many spaces for <Tab>
-  expandtab = true, -- convert tabs to spaces
-  smarttab = true, -- delete spaces like they're tabs
-  shiftwidth = 0, -- number of steps for (auto)indent, uses tabstop when 0
+    -- tabbing
+    tabstop = 4, -- insert this many spaces for <Tab>
+    expandtab = true, -- convert tabs to spaces
+    smarttab = true, -- delete spaces like they're tabs
+    shiftwidth = 0, -- number of steps for (auto)indent, uses tabstop when 0
 
-  -- word wrap and auto-new-line
-  wrap = false,
-  linebreak = true, -- prevents wrapping in the middle of a word
-  textwidth = 79,
+    -- word wrap and auto-new-line
+    wrap = false,
+    linebreak = true, -- prevents wrapping in the middle of a word
+    -- textwidth = 79,
 
-  -- cursor behaviour
-  whichwrap = "b,s,<,>,[,],h,l",
+    -- cursor behaviour
+    whichwrap = "b,s,<,>,[,],h,l",
 
-  -- indentation
-  autoindent = false,
-  -- smartindent = true,
+    -- indentation
+    autoindent = true,
+    -- smartindent = true,
 
-  -- line numbers
-  number = true,
-  relativenumber = true,
-  numberwidth = 3,
+    -- line numbers
+    number = true,
+    relativenumber = false,
+    numberwidth = 3,
 
-  -- search
-  ignorecase = true, -- ignore case while searching
-  smartcase = true, -- resume search case sensitivity if term includes capitals
-  incsearch = true, -- enable highlighting matches while you type
+    -- search
+    ignorecase = true, -- ignore case while searching
+    smartcase = true, -- resume search case sensitivity if term includes capitals
+    incsearch = true, -- enable highlighting matches while you type
 
-  -- ui
-  termguicolors = true, -- enables 24-bit colour
-  showtabline = 2, -- always show tabs at top of screen
-  cursorline = false, -- gets confusing when cancelling out of Visual mode
-  cmdheight = 1, -- helps avoid 'Press Enter' messages when working in a narrow window
-  showmode = false, -- unneeded with feline statusline
-  laststatus = 3, -- wide statusline for current buffer
-  scrolloff = 8, -- minimal number of lines to keep above / below cursor
-  sidescrolloff = 8, -- minimal number of lines to keep left / right of cursor
+    -- ui
+    termguicolors = true, -- enables 24-bit colour
+    showtabline = 2, -- always show tabs at top of screen
+    cursorline = false, -- gets confusing when cancelling out of Visual mode
+    cmdheight = 1, -- helps avoid 'Press Enter' messages when working in a narrow window
+    showmode = false, -- unneeded with feline statusline
+    laststatus = 3, -- wide statusline for current buffer
+    scrolloff = 8, -- minimal number of lines to keep above / below cursor
+    sidescrolloff = 8, -- minimal number of lines to keep left / right of cursor
 
-  -- folding
-  foldmethod = "expr",
-  foldexpr = "nvim_treesitter#foldexpr()",
-  foldcolumn = "0",
-  foldlevel = 99,
-  foldlevelstart = 99,
+    -- folding
+    foldmethod = "expr",
+    foldexpr = "nvim_treesitter#foldexpr()",
+    foldcolumn = "0",
+    foldlevel = 99,
+    foldlevelstart = 99,
 
-  -- columns
-  signcolumn = "yes",
+    -- columns
+    signcolumn = "yes",
 
-  -- windows
-  splitbelow = true,
-  splitright = true,
+    -- windows
+    splitbelow = true,
+    splitright = true,
 
-  -- popup menu
-  pumheight = 20,
-  completeopt = "menu,menuone,noselect",
+    -- popup menu
+    pumheight = 20,
+    completeopt = "menu,menuone,noselect",
 
-  -- persistent undo
-  undofile = true,
+    -- persistent undo
+    undofile = true,
 
-  -- unsorted
-  mouse = "a", -- full mouse functionality
-  timeoutlen = 250,
-  hidden = true, -- the default, but insurance to prevent terminals being abandoned
-  clipboard = "unnamedplus", -- yank to system clipboard via xcopy
+    -- unsorted
+    mouse = "a", -- full mouse functionality
+    timeoutlen = 250,
+    hidden = true, -- the default, but insurance to prevent terminals being abandoned
+    clipboard = "unnamedplus", -- yank to system clipboard via xcopy
 }
 
 -- Apply options
-for k, v in pairs(options) do
-  vim.opt[k] = v
+for key, value in pairs(options) do
+    vim.opt[key] = value
 end
 
 -- Set colour scheme

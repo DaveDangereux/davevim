@@ -7,12 +7,22 @@ return {
     "JoosepAlviste/nvim-ts-context-commentstring", -- fix jsx / tsx commenting
     "nvim-treesitter/nvim-treesitter-textobjects", -- treesitter text objects
     "windwp/nvim-ts-autotag",
+    "rush-rs/tree-sitter-asm",
   },
   config = function()
     local c = require("colorschemes.davedark.themes.default")
 
+    require("nvim-treesitter.parsers").get_parser_configs().asm = {
+      install_info = {
+        url = "https://github.com/rush-rs/tree-sitter-asm.git",
+        files = { "src/parser.c" },
+        branch = "main",
+      },
+    }
+
     local settings = {
       ensure_installed = {
+        "asm",
         "bash",
         "c_sharp",
         "comment",
@@ -29,6 +39,7 @@ return {
         "jsdoc",
         "json",
         "json5",
+        -- "latex",
         "lua",
         "make",
         "markdown",
@@ -58,7 +69,7 @@ return {
 
       -- ts-rainbow
       rainbow = {
-        enable = false,
+        enable = true,
         disable = { "html" },
         extended_mode = false,
         colors = {
@@ -89,6 +100,9 @@ return {
             ["ac"] = "@call.outer",
             ["ic"] = "@call.inner",
           },
+          -- selection_modes = {
+          --   ["@function.outer"] = "V",
+          -- },
         },
       },
 

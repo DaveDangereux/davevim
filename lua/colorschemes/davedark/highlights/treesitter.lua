@@ -43,8 +43,8 @@ return function(theme_variant)
     ["@repeat"] = { link = "Keyword" },
     ["@storageclass"] = { link = "StorageClass" },
     ["@string"] = { link = "String" },
-    ["@string.escape"] = { fg = c.test_fg },
-    ["@string.special"] = { fg = c.test_fg },
+    ["@string.escape"] = { fg = c.operator },
+    -- ["@string.special"] = { fg = c.test_fg },
     ["@structure"] = { link = "Structure" },
     ["@tag"] = { link = "Tag" },
     ["@tag.attribute"] = { link = "Number" },
@@ -63,9 +63,24 @@ return function(theme_variant)
     -- File-specific mods
     -----------------------------------------------------------------------------
 
-    -----------------------------------------------------------------------------
-    -- File-specific disables
-    -----------------------------------------------------------------------------
+    -- c++
+    ["@exception.cpp"] = { fg = c.keyword },
+    ["@operator.cpp"] = { fg = c.keyword },
+    ["@type.cpp"] = { fg = c.type },
+    ["@type.builtin.cpp"] = { fg = c.keyword },
+    ["@type.qualifier.cpp"] = { fg = c.keyword },
+    ["@conditional.cpp"] = { fg = c.keyword },
+    ["@storageclass.cpp"] = { fg = c.keyword },
+    ["@module.cpp"] = { fg = c.fg },
+    ["@function.builtin.cpp"] = { fg = c.keyword },
+
+    -- c
+    ["@operator.c"] = { fg = c.keyword },
+    ["@type.c"] = { fg = c.type },
+    ["@type.builtin.c"] = { fg = c.keyword },
+    ["@type.qualifier.c"] = { fg = c.keyword },
+    ["@variable.parameter.c"] = { fg = c.fg },
+
     -- html
     ["@constant.html"] = {},
     ["@tag.delimiter.html"] = { fg = c.fg },
@@ -85,6 +100,14 @@ return function(theme_variant)
 
     -- lua
     -- ["@field.lua"] = {},
+
+    -- markdown
+    ["@markup.heading.1.markdown"] = { fg = c.variable },
+    ["@markup.heading.2.markdown"] = { fg = c.variable },
+    ["@markup.heading.3.markdown"] = { fg = c.variable },
+    ["@markup.heading.4.markdown"] = { fg = c.variable },
+    ["@markup.heading.5.markdown"] = { fg = c.variable },
+    ["@markup.heading.6.markdown"] = { fg = c.variable },
 
     -- prisma
     ["@function.prisma"] = {},

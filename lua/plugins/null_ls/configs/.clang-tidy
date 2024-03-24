@@ -1,0 +1,10 @@
+Checks: "*,
+  -llvmlibc-callee-namespace,
+  -llvmlibc-implementation-in-namespace,
+  -llvmlibc-restrict-system-libc-headers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -readability-magic-numbers,
+  -modernize-use-trailing-return-type,
+  -altera-unroll-loops,
+  -llvmlibc-inline-function-decl,
+  -modernize-use-nodiscard"

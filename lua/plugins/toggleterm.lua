@@ -10,6 +10,12 @@ return {
       end
     end,
     highlights = {
+      Normal = {
+        guifg = "#ffffff",
+      },
+      NormalFloat = {
+        guifg = "#ffffff",
+      },
       FloatBorder = {
         link = "FloatBorder",
       },

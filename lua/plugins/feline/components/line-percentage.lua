@@ -3,7 +3,7 @@ local icons = require("plugins.feline.icons")
 
 return {
   provider = function()
-    return string.format(" %s ", cursor_utils.line_percentage())
+    return string.format(" %s ", cursor_utils.line_percentage({}, {}))
   end,
   hl = "FelinePosition",
   left_sep = {

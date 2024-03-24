@@ -1,5 +1,6 @@
 return {
-  "moll/vim-bbye", -- delete buffers without closing windows
+  -- "moll/vim-bbye", -- delete buffers without closing windows
+  "famiu/bufdelete.nvim", -- delete buffers without closing windows
   "neoclide/jsonc.vim", -- recognise json with comments
   "artnez/vim-wipeout", -- destroy all buffers that aren't open in windows or tabs
   "sheerun/vim-polyglot", -- lots of syntax highlighting improvements

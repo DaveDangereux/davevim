@@ -37,20 +37,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = vim.api.nvim_create_augroup("utils", { clear = true }),
 })
 
--- ------------------------------------------------------------------------------
--- -- Sync Packer when plugin files are saved
--- ------------------------------------------------------------------------------
--- vim.api.nvim_create_autocmd("BufWritePost", {
---   pattern = "*nvim/lua/plugins/**",
---   callback = function()
---     utils.clear_packages_recursively("plugins")
---     utils.clear_packages_recursively("load_packer")
---     require("load_packer")
---     vim.cmd("PackerSync")
---   end,
---   group = vim.api.nvim_create_augroup("plugins", { clear = true }),
--- })
-
 -------------------------------------------------------------------------------
 -- Reload keymaps on save
 -------------------------------------------------------------------------------
@@ -122,3 +108,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
   group = vim.api.nvim_create_augroup("colorizer", { clear = true }),
 })
+
+-------------------------------------------------------------------------------
+-- Recognize .cls files as TeX files
+-------------------------------------------------------------------------------
+vim.api.nvim_exec(
+  [[
+  autocmd BufNewFile,BufRead *.cls set filetype=tex
+]],
+  false
+)

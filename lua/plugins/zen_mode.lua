@@ -21,6 +21,7 @@ return {
           laststatus = 0,
         },
         gitsigns = { enabled = true },
+        tmux = { enabled = false },
       },
       -- ZenMode seems to use the popup menu background, so this is a workaround
       on_open = function()

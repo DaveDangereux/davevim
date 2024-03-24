@@ -1,23 +1,5 @@
 return {
   "freddiehaddad/feline.nvim",
-  -- config = function()
-  --   require("feline").setup({
-  --     components = {
-  --       active = {
-  --         {
-  --           { provider = "git_diff_added", hl = "FelineDiffAdded" },
-  --           -- { provider = "git_diff_added", hl = { fg = "#ff0000" } },
-  --         },
-  --         {
-  --           { provider = "git_diff_changed" },
-  --         },
-  --         {
-  --           { provider = "git_diff_removed" },
-  --         },
-  --       },
-  --     },
-  --   })
-  -- end,
   config = function()
     local utils = require("core.utils")
 

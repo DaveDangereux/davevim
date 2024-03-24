@@ -221,4 +221,13 @@ M.clear_hlgroups_recursively = function(name, exclude)
   end
 end
 
+M.format = function()
+  vim.lsp.buf.format({
+    filter = function(client)
+      return client.name == "null-ls"
+    end,
+    bufnr = vim.fn.bufnr("%"),
+  })
+end
+
 return M
