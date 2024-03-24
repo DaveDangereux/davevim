@@ -43,7 +43,6 @@ return {
 
         local sources = {
             -- Code actions
-            -- code_actions.eslint, -- deprecated
             code_actions.gitsigns,
 
             -- Completion
@@ -52,10 +51,6 @@ return {
             }),
 
             -- Diagnostics
-            -- diagnostics.chktex, -- deprecated
-            -- diagnostics.ruff.with({
-            --     extra_args = { "--config", vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/pyproject.toml") },
-            -- }), -- deprecated
             diagnostics.stylelint.with({
                 extra_args = {
                     "--config=" .. vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/.stylelintrc.json"),
@@ -67,9 +62,7 @@ return {
             formatting.black,
             formatting.clang_format,
             formatting.cmake_format,
-            -- formatting.esLint_d, -- deprecated
             formatting.isort,
-            -- formatting.latexindent, -- deprecated
             formatting.prettierd.with({
                 disabled_filetypes = { "markdown", "vimwiki" },
             }),
@@ -81,7 +74,6 @@ return {
                     vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/stylua.toml"),
                 },
             }),
-            -- formatting.taplo, -- deprecated
 
             require("typescript.extensions.null-ls.code-actions"),
         }
