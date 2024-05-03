@@ -51,11 +51,7 @@ return {
             }),
 
             -- Diagnostics
-            diagnostics.stylelint.with({
-                extra_args = {
-                    "--config=" .. vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/.stylelintrc.json"),
-                },
-            }),
+            diagnostics.stylelint,
             diagnostics.yamllint,
 
             -- Formatting
