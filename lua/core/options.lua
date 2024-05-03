@@ -10,7 +10,7 @@ local options = {
     -- word wrap and auto-new-line
     wrap = false,
     linebreak = true, -- prevents wrapping in the middle of a word
-    -- textwidth = 79,
+    textwidth = 80,
 
     -- cursor behaviour
     whichwrap = "b,s,<,>,[,],h,l",
