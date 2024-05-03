@@ -1,21 +1,26 @@
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
-        "onsails/lspkind.nvim",
-        { "L3MON4D3/LuaSnip", version = "v2.*" },
-        "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-nvim-lua",
-        "saadparwaiz1/cmp_luasnip",
+        "b0o/SchemaStore.nvim",
+        "onsails/lspkind.nvim",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-calc",
+        "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-cmdline",
-        "rafamadriz/friendly-snippets",
-        "https://github.com/nalabdou/Symfony-code-snippets",
-        "b0o/SchemaStore.nvim",
+        "hrsh7th/cmp-nvim-lua",
         {
-            "dsznajder/vscode-react-javascript-snippets",
-            build = "yarn install --frozen-lockfile && yarn compile",
+            "L3MON4D3/LuaSnip",
+            version = "v2.*",
+            build = "make install_jsregexp",
+            dependencies = {
+                "saadparwaiz1/cmp_luasnip",
+                "rafamadriz/friendly-snippets",
+                {
+                    "dsznajder/vscode-es7-javascript-react-snippets",
+                    build = "yarn install --frozen-lockfile && yarn compile",
+                },
+            },
         },
     },
     config = function()
@@ -81,11 +86,11 @@ return {
                     local source_names = {
                         nvim_lua = "vim.lsp",
                         nvim_lsp = "LSP",
-                        luasnip = "Luasnip",
+                        luasnip = "LuaSnip",
                         buffer = "Buffer",
                         path = "Path",
                         calc = "Calc",
-                        cmdline = "Cmdline",
+                        cmdline = "Command",
                         cmp_tabnine = "TabNine",
                     }
 
