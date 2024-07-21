@@ -65,12 +65,7 @@ return {
       }),
       formatting.shfmt,
       formatting.stylelint,
-      formatting.stylua.with({
-        extra_args = {
-          "--config-path",
-          vim.fn.expand("~/.config/nvim/lua/plugins/null_ls/configs/stylua.toml"),
-        },
-      }),
+      formatting.stylua,
 
       require("typescript.extensions.null-ls.code-actions"),
     }
