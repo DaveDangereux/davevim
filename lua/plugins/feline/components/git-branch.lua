@@ -3,8 +3,8 @@ return {
   hl = "FelineFileInfo",
   left_sep = {
     str = " ",
-    hl = "FelineFileInfo"
+    hl = "FelineFileInfo",
   },
   truncate_hide = true,
-  priority = 1
+  priority = 1,
 }
