@@ -7,7 +7,7 @@ return {
         local settings = {
             window = {
                 height = 0.9,
-                width = 120,
+                width = 80,
                 options = {
                     signcolumn = "no",
                     number = false,
