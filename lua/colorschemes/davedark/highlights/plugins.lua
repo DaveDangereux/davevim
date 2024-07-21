@@ -190,6 +190,15 @@ return function(theme_variant)
         -----------------------------------------------------------------------
         -- gitsigns
         -----------------------------------------------------------------------
+        GitSignsAdd = { fg = c.diff_add },
+        GitSignsAddNr = { fg = c.diff_add },
+        GitSignsAddLn = { fg = c.diff_add },
+        GitSignsChange = { fg = c.diff_change },
+        GitSignsChangeNr = { fg = c.diff_change },
+        GitSignsChangeLn = { fg = c.diff_change },
+        GitSignsDelete = { fg = c.diff_delete },
+        GitSignsDeleteNr = { fg = c.diff_delete },
+        GitSignsDeleteLn = { fg = c.diff_delete },
         GitSignsUntracked = { fg = c.diff_untracked },
         GitSignsUntrackedNr = { fg = c.diff_untracked },
         GitSignsUntrackedLn = { fg = c.diff_untracked },
