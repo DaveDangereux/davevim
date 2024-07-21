@@ -22,6 +22,7 @@ return function(theme_variant)
     ModeMsg = { fg = c.fg },
     NonText = { fg = c.comment }, -- remove style?
     Normal = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
+    NormalFloat = { fg = c.fg, bg = config.transparent_background and c.none or c.bg },
     Search = { fg = c.none, bg = c.bg_visual, bold = true },
     SignColumn = { bg = config.transparent_background and c.none or c.bg },
     StatusLine = nil, -- these seem to cause carets to appear when set
