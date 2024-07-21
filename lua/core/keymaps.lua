@@ -20,6 +20,10 @@ local keymaps = {
         ["<C-k>"] = "<C-w>k",
         ["<C-l>"] = "<C-w>l",
 
+        -- Intuitive navigation through wrapped lines
+        ["j"] = "gj",
+        ["k"] = "gk",
+
         -- Resize with arrows
         ["<A-Up>"] = ":resize -2 <CR>",
         ["<A-Down>"] = ":resize +2 <CR>",
