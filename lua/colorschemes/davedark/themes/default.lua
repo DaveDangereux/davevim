@@ -38,7 +38,7 @@ return {
 
     -- fold text
     fold_fg = c.rhino,
-    fold_bg = c.none,
+    fold_bg = c.cinder,
 
     -- borders
     winseparator = c.rhino,

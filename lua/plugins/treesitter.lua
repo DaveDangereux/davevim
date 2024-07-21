@@ -68,6 +68,9 @@ return {
                 -- disable = { "html" },
                 additional_vim_regex_highlighting = true,
             },
+            fold = {
+                enable = true,
+            },
 
             -- playground (required for TSHighlightCapturesUnderCursor)
             playground = {
