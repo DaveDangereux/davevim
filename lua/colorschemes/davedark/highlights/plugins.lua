@@ -315,5 +315,10 @@ return function(theme_variant)
         RainbowDelimiter5 = { fg = c.indent_5 },
         RainbowDelimiter6 = { fg = c.indent_6 },
         RainbowDelimiter7 = { fg = c.indent_7 },
+
+        -----------------------------------------------------------------------
+        -- zen-mode
+        -----------------------------------------------------------------------
+        ZenBg = { bg = config.transparent_background and c.none or c.bg },
     }
 end
