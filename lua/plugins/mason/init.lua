@@ -210,6 +210,9 @@ return {
       automatic_installation = true,
     }
 
+    -- Add border to LspInfo window
+    require("lspconfig.ui.windows").default_options.border = "rounded"
+
     local mason_lspconfig = require("mason-lspconfig")
     mason_lspconfig.setup(mason_lspconfig_options)
     mason_lspconfig.setup_handlers(handlers)
