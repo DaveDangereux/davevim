@@ -40,8 +40,7 @@ local options = {
   sidescrolloff = 8, -- minimal number of lines to keep left / right of cursor
 
   -- folding
-  foldmethod = "expr",
-  foldexpr = "nvim_treesitter#foldexpr()",
+  foldmethod = "manual",
   foldcolumn = "0",
   foldlevel = 99,
   foldlevelstart = 99,
