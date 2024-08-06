@@ -277,7 +277,6 @@ local keymaps = {
     ["<F10>"] = ":DapStepOver <CR>",
     ["<F11>"] = ":DapStepInto <CR>",
     ["<F12>"] = ":DapStepOut <CR>",
-    ["<Leader>db"] = ":DapToggleBreakpoint <CR>",
     ["<F9>"] = ":DapToggleBreakpoint <CR>",
     ["<Leader>dr"] = ":DapToggleRepl <CR>",
     ["<Leader>dl"] = ":lua require('dap').run_last() <CR>",
@@ -296,6 +295,11 @@ local keymaps = {
       require("dap-python").test_method()
     end,
     ["<Leader>du"] = ":lua require('dapui').toggle() <CR>",
+
+    --------------------------------------------------------------------------
+    -- DBUI
+    --------------------------------------------------------------------------
+    ["<Leader>db"] = ":DBUIToggle <CR>",
   },
 
   ----------------------------------------------------------------------------

@@ -9,6 +9,7 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lua",
+    "kristijanhusak/vim-dadbod-completion",
     {
       "L3MON4D3/LuaSnip",
       version = "v2.*",
@@ -87,6 +88,7 @@ return {
             nvim_lua = "vim.lsp",
             nvim_lsp = "LSP",
             luasnip = "LuaSnip",
+            ["vim-dadbod-completion"] = "DB",
             buffer = "Buffer",
             path = "Path",
             calc = "Calc",
@@ -149,6 +151,7 @@ return {
         { name = "cmp_tabnine" },
         { name = "nvim_lsp", entry_filter = require("plugins.cmp.utils").lsp_entry_filter },
         { name = "luasnip" },
+        { name = "vim-dadbod-completion" },
         { name = "nvim_lua" },
         { name = "buffer" },
         { name = "path" },
