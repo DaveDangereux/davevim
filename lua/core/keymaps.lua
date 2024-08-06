@@ -408,7 +408,6 @@ local lsp_keymaps = {
     ["gca"] = ":Lspsaga code_action <CR>",
     ["go"] = ":SymbolsOutline <CR>",
     ["<F2>"] = ":Lspsaga rename <CR>",
-    ["K"] = ":Lspsaga hover_doc <CR>",
   },
 }
 
