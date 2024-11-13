@@ -63,10 +63,6 @@ return {
       if client.name == "clangd" then
         client.server_capabilities.signatureHelpProvider = false
       end
-
-      -- TODO: Load custom keymaps for TypeScript plugin
-      -- if client.name == "tsserver" then
-      -- end
     end
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -80,15 +76,6 @@ return {
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
           on_attach = on_attach,
-        })
-      end,
-
-      ["tsserver"] = function()
-        require("typescript").setup({
-          server = {
-            capabilities = capabilities,
-            on_attach = on_attach,
-          },
         })
       end,
 

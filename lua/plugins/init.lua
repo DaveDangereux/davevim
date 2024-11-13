@@ -9,5 +9,4 @@ return {
   "stefandtw/quickfix-reflector.vim", -- editable quickfix window
   "cocopon/colorswatch.vim", -- display buffer colours with :ColorSwatchGenerate
   "prisma/vim-prisma", -- Prisma file detection and syntax highlighting
-  "jose-elias-alvarez/typescript.nvim", -- TypeScript auto-update imports on file rename
 }

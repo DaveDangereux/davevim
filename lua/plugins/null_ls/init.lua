@@ -66,8 +66,6 @@ return {
       formatting.shfmt,
       formatting.stylelint,
       formatting.stylua,
-
-      require("typescript.extensions.null-ls.code-actions"),
     }
 
     local settings = {
